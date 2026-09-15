@@ -165,9 +165,9 @@ async function checkKeyboard(page, owner, base, prefix) {
   await page.waitForFunction(previous => document.documentElement.classList.contains('dark') !== previous, wasDark)
   accessibility.push(await interactiveAccessibility(page, 'menu-open'))
   screenshot(owner, `${prefix}-menu-focus`)
-  await reach(page, owner, '.VPNavScreen a[href$="/docs/guide/getting-started.html"]', trace, true)
+  await reach(page, owner, '.VPNavScreen a[href$="/docs/"]', trace, true)
   await keys(owner, ['Return'])
-  await page.waitForURL(`${origin}${base}docs/guide/getting-started.html`)
+  await page.waitForURL(`${origin}${base}docs/`)
   const failed = accessibility.some(state => state.violations.some(item => ['serious', 'critical'].includes(item.impact)))
   return { status: failed ? 'accessibility-failed' : 'passed', trace, accessibility }
 }

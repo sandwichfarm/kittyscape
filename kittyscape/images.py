@@ -148,8 +148,8 @@ def _chunks(data: bytes) -> list[tuple[bytes, bytes]]:
     return chunks
 
 
-def load_image(path: str) -> Image:
-    """Read one regular local file with a strict byte limit and no conversion."""
+def read_image_bytes(path: str) -> bytes:
+    """Read one regular local file with a strict byte limit."""
     try:
         flags = os.O_RDONLY | getattr(os, "O_NONBLOCK", 0)
         fd = os.open(path, flags)
@@ -160,4 +160,30 @@ def load_image(path: str) -> Image:
             data = stream.read(MAX_BYTES + 1)
     except OSError as error:
         raise ImageError("image-unreadable") from error
-    return validate_png(data)
+    return data
+
+
+def inspect_png(data: bytes) -> Image:
+    """Keep mandatory PNG size/allocation checks separate from semantic validation."""
+    _png_prefix(data)
+    width, height = struct.unpack_from("!II", data, 16)
+    _bounded_dimensions(width, height)
+    return Image(data, hashlib.sha256(data).hexdigest(), width, height)
+
+
+def _png_prefix(data: bytes) -> None:
+    if len(data) < 24 or len(data) > MAX_BYTES or data[:8] != b"\x89PNG\r\n\x1a\n":
+        raise ImageError("image-format-or-size")
+    if data[12:16] != b"IHDR" or struct.unpack_from("!I", data, 8)[0] != 13:
+        raise ImageError("image-header")
+
+
+def _bounded_dimensions(width: int, height: int) -> None:
+    if not 0 < width <= MAX_DIMENSION or not 0 < height <= MAX_DIMENSION or width * height > MAX_PIXELS:
+        raise ImageError("image-dimensions")
+
+
+def load_image(path: str, *, validate_bytes: bool = True) -> Image:
+    """Load a PNG; disabling validation skips only the semantic PNG validator."""
+    data = read_image_bytes(path)
+    return validate_png(data) if validate_bytes else inspect_png(data)

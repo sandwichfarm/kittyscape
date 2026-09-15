@@ -8,7 +8,7 @@ choose another rules directory without moving kitty’s own configuration.
 
 ## Match a directory
 
-Each rule has a directory root and a local PNG image. A rule applies to that directory and its descendants.
+Each rule has a directory root and a local PNG, JPEG, or GIF image. A rule applies to that directory and its descendants.
 The deepest matching root wins, regardless of rule order.
 
 ```json
@@ -20,6 +20,11 @@ The deepest matching root wins, regardless of rule order.
   ]
 }
 ```
+
+JPEG and GIF use ImageMagick when it is available. Animated GIFs replace the OS-window background frame by frame;
+set `"animation": {"enabled": false}` to display only the coalesced first frame. The default is a 24 FPS ceiling,
+source timing, and source loop count. `validate_bytes: false` skips only Kittyscape's semantic PNG validation; it does
+not disable size, decoding, timeout, or cache limits.
 
 The first rule matches `Little Garden/notes`. The second wins inside `Little Garden/seedlings`.
 A root ending in `app` never matches a sibling named `application`.

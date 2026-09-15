@@ -12,6 +12,9 @@ It is user-owned data. No visited repository is searched for configuration.
 | `enabled` | Boolean | `true` | Enable automatic directory selection. |
 | `rules` | Array | `[]` | Directory/image mappings. An empty array is valid. |
 | `fallback` | String or `null` | `null` | Local image used when no rule matches; omission or `null` selects baseline restoration. |
+| `validate_bytes` | Boolean | `true` | Run Kittyscape's semantic PNG validator. `false` keeps all resource and file-integrity limits. |
+| `background` | Object | Omitted | Requested layout and dynamic per-window opacity. Top-level `linear` is process-wide; tint fields are rejected pending a safe native scope. |
+| `animation` | Object | enabled, 24 FPS, source loop | GIF enablement, speed, FPS ceiling, and loop policy. |
 
 Unknown fields, repeated JSON fields, unsupported versions, wrong types, and duplicate normalized roots are
 validation errors. The UTF-8 JSON file must be a regular file at most 1 MiB, with at most 10,000 rules.
@@ -22,7 +25,7 @@ Invalid reloads retain the last valid configuration.
 | Field | Type | Meaning |
 | --- | --- | --- |
 | `directory` | String | Existing absolute directory root, or a path beginning with the user’s `~/` home shortcut. |
-| `image` | String | Local PNG path; relative values resolve beside the configuration file. |
+| `image` | String | Local PNG, JPEG, or GIF path; relative values resolve beside the configuration file. |
 
 The deepest component ancestor wins. Symlinked roots and reported directories are physically normalized.
 A sibling that merely starts with the same characters does not match.
@@ -31,7 +34,9 @@ the symlink target.
 
 ## Images
 
-Rule and fallback images must be local static PNGs. HTTP URLs, executable providers, and automatic downloads are outside this build.
+Rule and fallback images must be local PNG, JPEG, or GIF files. JPEG/GIF normalization requires local ImageMagick and a
+system Python launcher for its bounded worker; setup reports ImageMagick availability and never installs either dependency.
+HTTP URLs, executable providers, and automatic downloads are outside this build.
 The image must be a readable local file. A missing, invalid, or oversized image uses the fallback policy
 and a bounded diagnostic instead of interrupting the shell.
 

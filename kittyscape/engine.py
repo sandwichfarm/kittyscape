@@ -13,8 +13,9 @@ from typing import Any
 
 from .compat import Background, Kitty, local_directory
 from .config import Config, ConfigError, load_config
-from .images import Image, ImageError, load_image
-from .rules import normalize_directory, resolve
+from .images import ImageError
+from .media import Media, load_media
+from .rules import AnimationOptions, Selection, normalize_directory, resolve
 
 
 @dataclass
@@ -31,6 +32,12 @@ class WindowState:
     applied: tuple = ()
     uploads: int = 0
     failed: tuple = ()
+    playback_timer: int = 0
+    playback_token: int = 0
+    playback_frame: int = 0
+    playback_loops: int = 0
+    playback_started: float = 0.0
+    playback: str = "static"
 
 
 class Runtime:
@@ -54,7 +61,7 @@ class Runtime:
         self.stalled: Future | None = None
         self.job_timer = 0
         self.pool = ThreadPoolExecutor(max_workers=1, thread_name_prefix="kittyscape-files")
-        self.images: OrderedDict[str, Image] = OrderedDict()
+        self.images: OrderedDict[tuple[str, bool], Media] = OrderedDict()
         self.kitty = Kitty(boss, self.external, self.options_changed)
         self.reload()
 
@@ -240,45 +247,59 @@ class Runtime:
             lambda value, error: self._selected((os_id, generation, window.id, request), value, error),
         )
 
-    def _image(self, path: str) -> Image:
-        if path in self.images:
-            self.images.move_to_end(path)
-            return self.images[path]
-        image = load_image(path)
-        self.images[path] = image
-        while len(self.images) > 64 or sum(len(value.data) for value in self.images.values()) > 32 * 1024 * 1024:
+    def _image(self, path: str) -> Media:
+        validate_bytes = self.config.validate_bytes if self.config else True
+        key = (path, validate_bytes)
+        if key in self.images:
+            self.images.move_to_end(key)
+            return self.images[key]
+        image = load_media(path, validate_bytes=validate_bytes)
+        self.images[key] = image
+        while len(self.images) > 64 or sum(value.bytes for value in self.images.values()) > 32 * 1024 * 1024:
             self.images.popitem(last=False)
         return image
 
     def _select(self, config: Config, directory: str | None, baseline: Background) -> tuple:
         baseline = self._prepare_baseline(baseline)
         directory, issue = _usable_directory(directory)
-        path = resolve(config, directory) if directory else config.fallback
-        if path:
-            return self._select_image(path, config.fallback, baseline, issue)
+        selection = resolve(config, directory)
+        if selection:
+            return self._select_image(selection, config, baseline, issue)
         return _baseline_selection(baseline, issue)
 
     def _prepare_baseline(self, baseline: Background) -> Background:
         if not baseline.path or baseline.data:
             return baseline
         if baseline.kind == "override":
-            return replace(baseline, data=load_image(baseline.path).data)
+            validate_bytes = self.config.validate_bytes if self.config else True
+            return replace(baseline, data=load_media(baseline.path, validate_bytes=validate_bytes).frames[0].image.data)
         if not self.kitty.modern and baseline.kind == "inherited":
-            return replace(baseline, data=self._image(baseline.path).data)
+            return replace(baseline, data=self._image(baseline.path).frames[0].image.data)
         return baseline
 
-    def _select_image(self, path: str, fallback: str | None, baseline: Background, issue: str) -> tuple:
+    def _select_image(self, selection: Selection, config: Config, baseline: Background, issue: str) -> tuple:
         try:
-            image = self._image(path)
+            image = self._image(selection.image)
         except (ImageError, OSError):
             issue = "image-unavailable-or-invalid"
-            image = self._fallback_image(fallback if fallback != path else None)
+            fallback = config.fallback if config.fallback != selection.image else None
+            image = self._fallback_image(fallback)
+            if image is not None and fallback is not None:
+                selection = Selection(fallback, None, config.background, config.animation)
         if image is None:
             return _baseline_selection(baseline, issue)
-        spec = replace(baseline, kind="override", path="kittyscape.png", data=image.data)
-        return baseline, spec, (image.digest, spec.layout, spec.linear, spec.tint, spec.tint_gaps), False, issue
+        frame = image.frames[0].image
+        spec = replace(baseline, kind="override", path="kittyscape.png", data=frame.data,
+                       layout=selection.background.layout or baseline.layout,
+                       opacity=selection.background.opacity if selection.background.opacity is not None else baseline.opacity)
+        key = (
+            frame.digest, spec.layout, selection.background.layout, selection.background.linear,
+            selection.background.tint, selection.background.tint_gaps, selection.background.opacity,
+            selection.animation.enabled, selection.animation.fps_limit, selection.animation.speed, selection.animation.loop,
+        )
+        return baseline, spec, key, False, issue, image, selection.animation
 
-    def _fallback_image(self, path: str | None) -> Image | None:
+    def _fallback_image(self, path: str | None) -> Media | None:
         if path:
             try:
                 return self._image(path)
@@ -312,18 +333,77 @@ class Runtime:
         return state
 
     def _display(self, os_id: int, state: WindowState, selection: tuple) -> None:
-        _, spec, key, restore, _ = selection
+        _, spec, key, restore, _, media, animation = selection
         if state.applied == key or state.failed == key or (restore and not state.owned):
             return
         try:
+            self.kitty.acquire_linear(os_id, self.config.background.linear if self.config else None)
             self.kitty.apply(os_id, spec, restore=restore)
         except Exception:
+            self.kitty.release_linear(os_id)
             state.reason = "image-apply-failed"
             state.failed = key
             return
         state.applied, state.owned = key, not restore
+        if restore:
+            self.kitty.release_linear(os_id)
         state.failed = ()
         state.uploads += 1
+        self._start_playback(os_id, state, (spec, media, animation))
+
+    def _start_playback(self, os_id: int, state: WindowState, payload: tuple[Background, Media, AnimationOptions]) -> None:
+        spec, media, animation = payload
+        self._cancel_playback(state)
+        if media.source_format != "gif" or len(media.frames) < 2 or animation.enabled is False:
+            state.playback = "static"
+            return
+        state.playback_token += 1
+        state.playback_frame = 0
+        state.playback_loops = 0
+        state.playback_started = time.monotonic()
+        state.playback = "playing"
+        self._arm_playback(os_id, state, payload)
+
+    def _arm_playback(self, os_id: int, state: WindowState, payload: tuple[Background, Media, AnimationOptions]) -> None:
+        spec, media, animation = payload
+        delay = 1 / (animation.fps_limit or 24)
+        token = state.playback_token
+        state.playback_timer = self.kitty.timer(
+            lambda _: self._advance_playback(os_id, token, payload), delay, False,
+        )
+
+    def _advance_playback(self, os_id: int, token: int, payload: tuple[Background, Media, AnimationOptions]) -> None:
+        spec, media, animation = payload
+        state = self.windows.get(os_id)
+        if not state or state.playback_token != token or state.paused or not state.owned:
+            return
+        state.playback_timer = 0
+        frame, loops = _timeline_frame(media, animation, time.monotonic() - state.playback_started)
+        if frame is None:
+            state.playback_loops = loops
+            state.playback = "completed"
+            return
+        state.playback_loops = loops
+        if frame == state.playback_frame:
+            self._arm_playback(os_id, state, payload)
+            return
+        state.playback_frame = frame
+        try:
+            self.kitty.apply(os_id, replace(spec, data=media.frames[frame].image.data))
+        except Exception:
+            state.playback = "failed"
+            state.reason = "image-apply-failed"
+            return
+        state.uploads += 1
+        self._arm_playback(os_id, state, payload)
+
+    def _cancel_playback(self, state: WindowState) -> None:
+        state.playback_token += 1
+        if state.playback_timer:
+            self.kitty.remove_timer(state.playback_timer)
+            state.playback_timer = 0
+        if state.playback == "playing":
+            state.playback = "paused"
 
     def _cancel_event(self, state: WindowState) -> None:
         state.generation += 1
@@ -334,6 +414,7 @@ class Runtime:
 
     def _restore(self, os_id: int, state: WindowState) -> None:
         self._cancel_event(state)
+        self._cancel_playback(state)
         self.waiting.pop(f"window:{os_id}", None)
         if state.owned:
             try:
@@ -342,6 +423,7 @@ class Runtime:
                 state.reason = "restore-failed"
                 return
             state.owned = False
+            self.kitty.release_linear(os_id)
             state.applied = ()
             if state.reason == "restore-failed":
                 state.reason = ""
@@ -355,6 +437,8 @@ class Runtime:
         state = self.windows.get(os_id)
         if state:
             self._cancel_event(state)
+            self._cancel_playback(state)
+            self.kitty.release_linear(os_id)
             self.waiting.pop(f"window:{os_id}", None)
             state.baseline = baseline
             state.owned = False
@@ -416,8 +500,11 @@ class Runtime:
             "pending_jobs": len(self.jobs) + len(self.waiting) + int(stalled), "filesystem_stalled": stalled,
             "modern_background_api": self.kitty.modern,
             "pending_events": sum(bool(state.timer) for state in self.windows.values()),
+            "validate_bytes": self.config.validate_bytes if self.config else True,
             "windows": {
-                str(os_id): {key: getattr(state, key) for key in ("pane", "owned", "paused", "reason", "uploads")}
+                str(os_id): {key: getattr(state, key) for key in (
+                    "pane", "owned", "paused", "reason", "uploads", "playback", "playback_frame", "playback_loops",
+                )}
                 for os_id, state in self.windows.items()
             },
         }
@@ -435,6 +522,8 @@ class Runtime:
                 state = self.windows.pop(os_id)
                 if state.timer:
                     self.kitty.remove_timer(state.timer)
+                self._cancel_playback(state)
+                self.kitty.release_linear(os_id)
                 self.kitty.overrides.pop(os_id, None)
                 self.waiting.pop(f"window:{os_id}", None)
         self._schedule_all()
@@ -444,9 +533,11 @@ class Runtime:
         self.waiting.clear()
         if self.job_timer:
             self.kitty.remove_timer(self.job_timer)
-        for state in self.windows.values():
+        for os_id, state in self.windows.items():
             if state.timer:
                 self.kitty.remove_timer(state.timer)
+            self.kitty.release_linear(os_id)
+            self._cancel_playback(state)
         self.pool.shutdown(wait=False, cancel_futures=True)
 
 
@@ -470,7 +561,29 @@ def _usable_directory(directory: str | None) -> tuple[str | None, str]:
 
 def _baseline_selection(baseline: Background, issue: str) -> tuple:
     digest = hashlib.sha256(baseline.data).hexdigest() if baseline.data else ""
-    return baseline, baseline, ("baseline", baseline.path, baseline.index, digest), True, issue
+    return baseline, baseline, ("baseline", baseline.path, baseline.index, digest), True, issue, Media((), "png", 1), AnimationOptions()
+
+
+def _loop_complete(media: Media, animation: AnimationOptions, completed: int) -> bool:
+    selected = animation.loop
+    limit = media.loop if selected in (None, "source") else None if selected == "forever" else selected
+    return limit is not None and completed >= limit
+
+
+def _timeline_frame(media: Media, animation: AnimationOptions, elapsed: float) -> tuple[int | None, int]:
+    duration = sum(frame.duration_ms for frame in media.frames) / 1000
+    if duration <= 0:
+        return None, 0
+    elapsed *= animation.speed or 1.0
+    loops, offset = divmod(elapsed, duration)
+    completed = int(loops)
+    if _loop_complete(media, animation, completed):
+        return None, completed
+    for index, frame in enumerate(media.frames):
+        offset -= frame.duration_ms / 1000
+        if offset < 0:
+            return index, completed
+    return len(media.frames) - 1, completed
 
 
 def _unsupported_command(command: str) -> bool:

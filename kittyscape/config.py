@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 import json
+import math
 import os
 import re
 import stat
 from dataclasses import dataclass
 
-from .rules import Rule, _comparison_key, normalize_directory
+from .rules import AnimationOptions, BackgroundOptions, Rule, _comparison_key, normalize_directory
 
 MAX_CONFIG_BYTES = 1024 * 1024
 MAX_RULES = 10000
@@ -26,6 +27,9 @@ class Config:
     enabled: bool = True
     rules: tuple[Rule, ...] = ()
     fallback: str | None = None
+    validate_bytes: bool = True
+    background: BackgroundOptions = BackgroundOptions()
+    animation: AnimationOptions = AnimationOptions(enabled=True, fps_limit=24, speed=1.0, loop="source")
 
 
 def _read(path: str | os.PathLike[str]) -> bytes:
@@ -94,16 +98,99 @@ def _image(value: object, config_directory: str, location: str) -> str:
     return os.path.abspath(os.path.join(config_directory, expanded))
 
 
+def _number(value: object, location: str) -> float:
+    if type(value) not in (int, float) or not math.isfinite(value):
+        raise ConfigError(f"{location}: expected a finite number")
+    if not 0 <= value <= 1:
+        raise ConfigError(f"{location}: expected a number from 0 through 1")
+    return float(value)
+
+
+def _optional_number(data: dict[str, object], field: str, location: str) -> float | None:
+    return None if field not in data else _number(data[field], f"{location}.{field}")
+
+
+def _layout(value: object, location: str) -> str | None:
+    if value is None:
+        return value
+    if type(value) is str and value in {"tiled", "mirror-tiled", "scaled", "clamped", "centered", "cscaled"}:
+        return value
+    raise ConfigError(f"{location}: unsupported layout")
+
+
+def _optional_bool(value: object, location: str) -> bool | None:
+    if value is None or type(value) is bool:
+        return value
+    raise ConfigError(f"{location}: expected a boolean")
+
+
+def _background(value: object, location: str) -> BackgroundOptions:
+    if value is None:
+        return BackgroundOptions()
+    data = _fields(value, {"layout", "linear", "tint", "tint_gaps", "opacity"}, location)
+    return BackgroundOptions(
+        layout=_layout(data.get("layout"), f"{location}.layout"),
+        linear=_optional_bool(data.get("linear"), f"{location}.linear"),
+        tint=_optional_number(data, "tint", location), tint_gaps=_optional_number(data, "tint_gaps", location),
+        opacity=_optional_number(data, "opacity", location),
+    )
+
+
+def _supported_process_options(options: BackgroundOptions, location: str) -> BackgroundOptions:
+    if options.tint is not None or options.tint_gaps is not None:
+        raise ConfigError(f"{location}: tint and tint_gaps are unsupported by this kitty API")
+    return options
+
+
+def _fps(value: object, location: str) -> int | None:
+    if value is None or (type(value) is int and 1 <= value <= 60):
+        return value
+    raise ConfigError(f"{location}: expected an integer from 1 through 60")
+
+
+def _speed(value: object, location: str) -> float | None:
+    if value is None:
+        return None
+    if type(value) in (int, float) and math.isfinite(value) and 0.1 <= value <= 4.0:
+        return float(value)
+    raise ConfigError(f"{location}: expected a finite number from 0.1 through 4")
+
+
+def _loop(value: object, location: str) -> str | int | None:
+    if value is None or value in ("source", "forever") or (type(value) is int and value >= 1):
+        return value
+    raise ConfigError(f"{location}: expected source, forever, or a positive integer")
+
+
+def _animation(value: object, location: str, *, defaults: bool) -> AnimationOptions:
+    if value is None:
+        return AnimationOptions(enabled=True, fps_limit=24, speed=1.0, loop="source") if defaults else AnimationOptions()
+    data = _fields(value, {"enabled", "fps_limit", "speed", "loop"}, location)
+    enabled = _optional_bool(data.get("enabled"), f"{location}.enabled")
+    fps = _fps(data.get("fps_limit"), f"{location}.fps_limit")
+    speed = _speed(data.get("speed"), f"{location}.speed")
+    loop = _loop(data.get("loop"), f"{location}.loop")
+    if defaults:
+        return AnimationOptions(
+            enabled=True if enabled is None else enabled, fps_limit=24 if fps is None else fps,
+            speed=1.0 if speed is None else speed, loop="source" if loop is None else loop,
+        )
+    return AnimationOptions(enabled=enabled, fps_limit=fps, speed=speed, loop=loop)
+
+
 def _rule(value: object, index: int, config_directory: str) -> Rule:
     location = f"rules[{index}]"
-    data = _fields(value, {"directory", "image"}, location)
+    data = _fields(value, {"directory", "image", "background", "animation"}, location)
     directory = _path_string(data.get("directory"), f"{location}.directory")
     try:
         directory = normalize_directory(directory)
     except ValueError:
         raise ConfigError(f"{location}.directory: expected an existing absolute local directory") from None
     image = _image(data.get("image"), config_directory, f"{location}.image")
-    return Rule(directory, image)
+    background = _background(data.get("background"), f"{location}.background")
+    if any(value is not None for value in (background.linear, background.tint, background.tint_gaps)):
+        raise ConfigError(f"{location}.background: field requires process-wide top-level scope")
+    return Rule(directory, image, background, _animation(data.get("animation"), f"{location}.animation", defaults=False))
 
 
 def _rules(value: object, config_directory: str) -> tuple[Rule, ...]:
@@ -145,7 +232,8 @@ def load_config(path: str | os.PathLike[str]) -> Config:
     path, including when that file is a symlink. This function never reads images.
     """
     selected_path = _config_path(path)
-    data = _fields(_decode(_read(selected_path)), {"version", "enabled", "rules", "fallback"}, "config")
+    data = _fields(_decode(_read(selected_path)),
+                   {"version", "enabled", "rules", "fallback", "validate_bytes", "background", "animation"}, "config")
     version = data.get("version")
     if type(version) is not int or version != 1:
         raise ConfigError("version: expected integer schema version 1")
@@ -156,4 +244,9 @@ def load_config(path: str | os.PathLike[str]) -> Config:
     rules = _rules(data.get("rules", []), config_directory)
     fallback = data.get("fallback")
     fallback_image = None if fallback is None else _image(fallback, config_directory, "fallback")
-    return Config(version=version, enabled=enabled, rules=rules, fallback=fallback_image)
+    validate_bytes = data.get("validate_bytes", True)
+    if type(validate_bytes) is not bool:
+        raise ConfigError("validate_bytes: expected a boolean")
+    return Config(version=version, enabled=enabled, rules=rules, fallback=fallback_image, validate_bytes=validate_bytes,
+                  background=_supported_process_options(_background(data.get("background"), "background"), "background"),
+                  animation=_animation(data.get("animation"), "animation", defaults=True))

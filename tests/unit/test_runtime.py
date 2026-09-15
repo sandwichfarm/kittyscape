@@ -9,7 +9,11 @@ from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from kittyscape.compat import Background, Kitty, local_directory
-from kittyscape.engine import Runtime
+from kittyscape.config import Config
+from kittyscape.engine import Runtime, _timeline_frame
+from kittyscape.images import Image
+from kittyscape.media import Frame, Media
+from kittyscape.rules import AnimationOptions, Rule
 
 
 class FakeKitty:
@@ -60,6 +64,12 @@ class FakeKitty:
 
     def apply(self, os_id, spec, *, restore=False):
         self.writes.append((os_id, spec, restore))
+
+    def acquire_linear(self, _os_id, _value):
+        pass
+
+    def release_linear(self, _os_id):
+        pass
 
 
 class RuntimeTests(unittest.TestCase):
@@ -163,6 +173,28 @@ class RuntimeTests(unittest.TestCase):
         self.backend.drain()
         self.assertEqual(self.runtime.status()["pending_events"], 0)
 
+    def test_finite_animated_media_stops_its_single_window_timer(self):
+        image = Image(b"frame", "digest", 1, 1)
+        media = Media((Frame(image, 100), Frame(Image(b"next", "next", 1, 1), 100)), "gif", 1)
+        self.runtime.config = Config(rules=(Rule(str(self.root), "animated.gif"),),
+                                     animation=AnimationOptions(True, 60, 1.0, "source"))
+        self.runtime._image = lambda _path: media
+        pane = self.pane(1)
+        self.boss.active[1] = pane
+        self.runtime.event(pane)
+        self.backend.drain()
+        state = self.runtime.windows[1]
+        self.assertEqual(state.playback, "completed")
+        self.assertEqual(state.playback_timer, 0)
+        self.assertEqual(state.uploads, 2)
+
+    def test_playback_timeline_skips_frames_without_stretching_source_time(self):
+        image = Image(b"first", "first", 1, 1)
+        media = Media((Frame(image, 10), Frame(Image(b"second", "second", 1, 1), 10),
+                       Frame(Image(b"third", "third", 1, 1), 10)), "gif", None)
+        animation = AnimationOptions(True, 24, 1.0, "source")
+        self.assertEqual(_timeline_frame(media, animation, 0.025), (2, 0))
+
     def test_report_native_metacharacters_and_remote_locality(self):
         self.assertEqual(local_directory(b"kitty-shell-cwd://localhost/tmp/a#b?c%20"), "/tmp/a#b?c%20")
         self.assertEqual(local_directory("file://localhost/tmp/a%20b"), "/tmp/a b")
@@ -175,6 +207,7 @@ class CompatibilityTests(unittest.TestCase):
         backend = object.__new__(Kitty)
         backend.modern = True
         backend.original_set, backend.wake = Mock(), Mock()
+        backend.options = lambda: SimpleNamespace(dynamic_background_opacity=True)
         windows = {key: SimpleNamespace(destroyed=False, refresh=Mock()) for key in (1, 2)}
         backend.boss = SimpleNamespace(os_window_map={
             key: SimpleNamespace(active_tab=SimpleNamespace(active_window=window)) for key, window in windows.items()
@@ -183,6 +216,30 @@ class CompatibilityTests(unittest.TestCase):
         backend.original_set.assert_called_once_with(None, (1,), False, None, global_index=0)
         windows[1].refresh.assert_called_once_with()
         windows[2].refresh.assert_not_called()
+
+    def test_dynamic_opacity_uses_only_the_target_os_window(self):
+        backend = object.__new__(Kitty)
+        backend.modern = True
+        backend.original_set, backend.wake = Mock(), Mock()
+        backend.options = lambda: SimpleNamespace(dynamic_background_opacity=True)
+        backend.boss = SimpleNamespace(_set_os_window_background_opacity=Mock(), os_window_map={})
+        backend.apply(7, Background(opacity=0.5))
+        backend.boss._set_os_window_background_opacity.assert_called_once_with(7, 0.5)
+
+    def test_global_linear_layer_restores_after_the_last_owner(self):
+        backend = object.__new__(Kitty)
+        backend.original_set = Mock()
+        backend.options = lambda: SimpleNamespace(background_image_linear=False)
+        backend._linear_owners, backend._linear_baseline = set(), None
+        backend.internal = False
+        backend.acquire_linear(1, True)
+        backend.acquire_linear(2, True)
+        backend.release_linear(1)
+        backend.release_linear(2)
+        self.assertEqual(backend.original_set.call_args_list, [
+            ((None, (), True, None, b""), {"linear_interpolation": True}),
+            ((None, (), True, None, b""), {"linear_interpolation": False}),
+        ])
 
     def test_cancelled_timer_in_native_dispatch_batch_never_runs_user_callback(self):
         native, observed = {}, []
@@ -202,6 +259,7 @@ class CompatibilityTests(unittest.TestCase):
                 pass
 
         api = SimpleNamespace(add_timer=add, remove_timer=lambda timer: native.pop(timer),
+                              background_opacity_of=lambda _os_id: None,
                               get_options=lambda: None, wakeup_main_loop=lambda: None)
         with patch.dict("sys.modules", {"kitty.fast_data_types": api}):
             backend = Kitty(Boss(), lambda *args: None, lambda *args: None)
