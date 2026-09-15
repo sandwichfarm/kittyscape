@@ -1,6 +1,7 @@
 # Configuration fields
 
-The configuration is a JSON object in `kittyscape.json`, in kitty’s active configuration directory.
+The configuration is a JSON object in `kittyscape.json`, in Kittyscape’s own
+configuration directory. The default path is `~/.config/kittyscape/kittyscape.json`.
 It is user-owned data. No visited repository is searched for configuration.
 
 ## Top-level fields

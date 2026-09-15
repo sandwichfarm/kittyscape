@@ -17,15 +17,16 @@ The extension uses kitty’s embedded Python. Node.js is only needed to work on 
 Check the exact versions and configuration profiles in [compatibility](../reference/compatibility.md).
 An installed shell executable alone does not establish working directory reports.
 
-## Install in a test configuration
+## Install
 
-Follow [installation](./installation.md) to preview the user-local setup, review the owned files, and apply it
-to an isolated configuration. Start a new kitty process with that configuration so the watcher observes the
-original background before changing it. See [startup and existing windows](./installation.md#startup-and-existing-windows).
+Run `kitty +launch ./setup.py install` from the extracted bundle. It writes the
+small kitty loader, creates `~/.config/kittyscape/kittyscape.json` when absent,
+and opens a fresh configured kitty window. See [installation](./installation.md)
+for a custom location, preview mode, and removal.
 
 ## Give two directories a background
 
-Place `kittyscape.json` in the active kitty configuration directory. The following example gives a project
+Edit `~/.config/kittyscape/kittyscape.json`. The following example gives a project
 one image and a nested directory another. Replace the directory paths and provide the two PNG files.
 
 ```json

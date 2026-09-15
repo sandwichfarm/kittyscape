@@ -109,7 +109,8 @@ class InstalledSession(Session):
 
     def setup(self, action, *, apply=False, installed=False):
         source = self.install_root if installed else self.args.bundle
-        command = [str(self.args.kitty), "+launch", str(source / "setup.py"), action, "--config-dir", str(self.root)]
+        command = [str(self.args.kitty), "+launch", str(source / "setup.py"), action,
+                   "--kitty-config-dir", str(self.root), "--config-dir", str(self.root)]
         if apply:
             command.append("--apply")
         process = subprocess.run(command, capture_output=True, text=True, timeout=30)

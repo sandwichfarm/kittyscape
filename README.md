@@ -26,22 +26,20 @@ history and performs no idle polling. SSH, multiplexers, containers, nested
 interactive shells, and unknown image baselines require the documented
 [unsupported-context workflow](docs/guide/shells.md).
 
-## Try the local bundle
+## Install
 
-Read [compatibility](docs/reference/compatibility.md) and
-[removal](docs/guide/uninstall.md) before setup. Use a disposable configuration
-while evaluating this build.
-
-From the extracted bundle directory:
+From an extracted bundle, one command installs the loader, creates your
+editable rules file, and opens a fresh configured kitty window:
 
 ```sh
-kitty +launch ./setup.py install --config-dir /tmp/kittyscape-demo
-kitty +launch ./setup.py install --config-dir /tmp/kittyscape-demo --apply
+kitty +launch ./setup.py install
 ```
 
-The first command previews changes. The second applies only the owned files and
-include block, with an ownership receipt and backup. Create
-`/tmp/kittyscape-demo/kittyscape.json` with existing directories and PNG files:
+The loader lives in kitty’s active configuration directory. Your rules live in
+their own directory: `~/.config/kittyscape/kittyscape.json` by default. The
+installer never replaces an existing rules file and leaves it behind on uninstall.
+
+Edit that file immediately with existing directories and PNG files:
 
 ```json
 {
@@ -53,17 +51,23 @@ include block, with an ownership receipt and backup. Create
 }
 ```
 
-Relative image paths resolve beside this JSON file. Start a separate kitty with
-`KITTY_CONFIG_DIRECTORY=/tmp/kittyscape-demo kitty`. Use **Ctrl+Shift+F6** for
-status, **F7** with the same modifiers to pause and restore, **F8** to resume,
-**F9** to reload rules, and **F10** to restore and pause before removal.
+Relative image paths resolve beside this JSON file. The installer opens a fresh
+kitty window with the watcher loaded. Use **Ctrl+Shift+F6** for status,
+**F7** with the same modifiers to pause and restore, **F8** to resume, **F9**
+to reload rules after every save, and **F10** to restore and pause before removal.
+
+The installer does not restart existing kitty processes or alter their current
+windows. It opens a new OS window with the watcher already loaded, so the new
+window works immediately and has a known baseline. To target a non-default kitty
+configuration or rules location, pass `--kitty-config-dir` or `--config-dir`.
+Use `--preview` to inspect changes without writing files and `--no-launch` for
+automation.
 
 The controls affect all OS windows in that kitty process. Another image writer
 pauses the affected window until explicit resume. Unknown baselines stay paused.
 
 ```sh
-kitty +launch ./setup.py uninstall --config-dir /tmp/kittyscape-demo
-kitty +launch ./setup.py uninstall --config-dir /tmp/kittyscape-demo --apply
+kitty +launch ./setup.py uninstall --apply
 ```
 
 Restore each running instance first. Removal preserves the user-owned JSON,
