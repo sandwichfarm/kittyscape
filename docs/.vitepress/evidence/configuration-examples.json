@@ -1,0 +1,20 @@
+[
+  {
+    "source": "docs/guide/getting-started.md",
+    "example": 1,
+    "rules": 2,
+    "result": "passed"
+  },
+  {
+    "source": "docs/guide/configuration.md",
+    "example": 1,
+    "rules": 2,
+    "result": "passed"
+  },
+  {
+    "source": "docs/guide/configuration.md",
+    "example": 2,
+    "rules": 0,
+    "result": "passed"
+  }
+]

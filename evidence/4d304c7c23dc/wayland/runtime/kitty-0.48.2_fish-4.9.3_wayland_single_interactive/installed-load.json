@@ -1,0 +1,8 @@
+{
+  "engine_file": "$FIXTURE/kittyscape/0.1.0.dev1/kittyscape/engine.py",
+  "config_path": "$FIXTURE/kittyscape.json",
+  "watchers": [
+    "$BUNDLE/tests/runtime/observer.py",
+    "$FIXTURE/kittyscape/0.1.0.dev1/kittyscape/watcher.py"
+  ]
+}

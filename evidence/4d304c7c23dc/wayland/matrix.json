@@ -1,0 +1,1241 @@
+{
+  "archive": "kittyscape-0.1.0.dev1.tar.gz",
+  "sha256": "4d304c7c23dc343addd42500a05ca7c7607b3b5641ff60bae9324b99eb3a251a",
+  "toolchain": {
+    "kitty": [
+      {
+        "version": "0.48.2",
+        "path": "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty"
+      },
+      {
+        "version": "0.38.1",
+        "path": "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty"
+      }
+    ],
+    "shells": [
+      {
+        "name": "bash",
+        "version": "5.2.15",
+        "path": "/tmp/kittyscape-tools/debian-bookworm/bin/bash"
+      },
+      {
+        "name": "bash",
+        "version": "5.3.20",
+        "path": "/tmp/kittyscape-bash-5.3.20/build/bash"
+      },
+      {
+        "name": "zsh",
+        "version": "5.9",
+        "path": "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+        "zsh_modules": "/tmp/kittyscape-tools/debian-bookworm/usr/lib/x86_64-linux-gnu/zsh/5.9"
+      },
+      {
+        "name": "zsh",
+        "version": "5.9.2",
+        "path": "/usr/bin/zsh"
+      },
+      {
+        "name": "fish",
+        "version": "3.6.0",
+        "path": "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish"
+      },
+      {
+        "name": "fish",
+        "version": "4.9.3",
+        "path": "/tmp/kittyscape-tools/fish-4.9.3/fish"
+      }
+    ],
+    "backends": [
+      "wayland"
+    ],
+    "baselines": [
+      "none",
+      "single"
+    ],
+    "startup": [
+      "interactive",
+      "login"
+    ],
+    "x11": {
+      "display": ":101",
+      "framebuffer": "/tmp/kittyscape-x11-experiment/frames/Xvfb_screen0"
+    },
+    "wayland_profile": {
+      "verified_at": "2026-09-15T14:19:51.850755+00:00",
+      "package": "wayland 1.26.0-1",
+      "library": "/usr/lib/libwayland-client.so.0",
+      "resolved_library": "/usr/lib/libwayland-client.so.0.26.0",
+      "library_sha256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+      "environment": {
+        "LD_PRELOAD": "/usr/lib/libwayland-client.so.0",
+        "LIBGL_ALWAYS_SOFTWARE": "1",
+        "__EGL_VENDOR_LIBRARY_FILENAMES": "/usr/share/glvnd/egl_vendor.d/50_mesa.json"
+      },
+      "qualification_note": "Explicit host-library preload for the portable binaries; no unmodified portable Wayland claim.",
+      "tested_portable_versions": [
+        "0.38.1",
+        "0.48.2"
+      ],
+      "layout": {
+        "mode": "tiled",
+        "workspace": 15,
+        "output_pixels": [
+          1280,
+          800
+        ],
+        "expected_single_window_pixels": [
+          1280,
+          800
+        ],
+        "expected_two_window_pixels_each": [
+          640,
+          800
+        ],
+        "reason": "Keep both OS windows visible so frame callbacks continue while another window has focus.",
+        "applied_at": "2026-09-15T14:28:54.858668+00:00",
+        "config_sha256": "d57e9fe425084c2698ac24ee80224d456dd3674f52cc5e15eabf742f47545dc8",
+        "previous_config": "/tmp/kittyscape-private-wayland-27ldgord/hyprland-floating-before-tiling-20260915T142854Z.lua"
+      }
+    }
+  },
+  "executables": [
+    {
+      "path": "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+      "sha256": "7e0f6db3876b60c6ea9293af5dceeb8fa1c4c55c080deecc49cee18b7d029d74",
+      "version": "0.48.2"
+    },
+    {
+      "path": "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+      "sha256": "56a96d8dbec99099ef2e86159625b8e4334dd7dff9597e9ca27d2eb383d6f06a",
+      "version": "0.38.1"
+    },
+    {
+      "path": "/tmp/kittyscape-tools/debian-bookworm/bin/bash",
+      "sha256": "55b89ab22bee4792a210f493a53fb066accd5d30b69837c28d98be5ff863efcf",
+      "version": "5.2.15"
+    },
+    {
+      "path": "/tmp/kittyscape-bash-5.3.20/build/bash",
+      "sha256": "c62d104046374b2d4bad53127f02dc9fcdb50e823f396f893494520e0761a8d9",
+      "version": "5.3.20"
+    },
+    {
+      "path": "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+      "sha256": "c474c2fda01aa9e4482f2d9baadc7b81cbf62f516b30c03078dbc74c514d820b",
+      "version": "5.9"
+    },
+    {
+      "path": "/usr/bin/zsh",
+      "sha256": "76e36b725f80c3b57a19b3747da0ad75fbfe4d5ae19d8b5c259fe52ac8891099",
+      "version": "5.9.2"
+    },
+    {
+      "path": "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish",
+      "sha256": "f69a739675e436b3d4355226a77c8bd4c554d52f44802773ad5d661e4a37d9c5",
+      "version": "3.6.0"
+    },
+    {
+      "path": "/tmp/kittyscape-tools/fish-4.9.3/fish",
+      "sha256": "95f99899a210debeb483a6d63cc4d713b394037581833ec19c32f3cfd07f78ee",
+      "version": "4.9.3"
+    }
+  ],
+  "rows": [
+    {
+      "id": "kitty-0.48.2_bash-5.2.15_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_bash-5.2.15_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_bash-5.2.15_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_bash-5.2.15_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_bash-5.2.15_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_bash-5.2.15_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_bash-5.2.15_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_bash-5.2.15_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_bash-5.3.20_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_bash-5.3.20_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-bash-5.3.20/build/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_bash-5.3.20_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_bash-5.3.20_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-bash-5.3.20/build/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_bash-5.3.20_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_bash-5.3.20_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-bash-5.3.20/build/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_bash-5.3.20_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_bash-5.3.20_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-bash-5.3.20/build/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_zsh-5.9_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_zsh-5.9_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--zsh-modules",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/lib/x86_64-linux-gnu/zsh/5.9"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_zsh-5.9_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_zsh-5.9_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login",
+        "--zsh-modules",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/lib/x86_64-linux-gnu/zsh/5.9"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_zsh-5.9_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_zsh-5.9_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--zsh-modules",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/lib/x86_64-linux-gnu/zsh/5.9"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_zsh-5.9_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_zsh-5.9_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login",
+        "--zsh-modules",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/lib/x86_64-linux-gnu/zsh/5.9"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_zsh-5.9.2_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_zsh-5.9.2_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/usr/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_zsh-5.9.2_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_zsh-5.9.2_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/usr/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_zsh-5.9.2_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_zsh-5.9.2_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/usr/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_zsh-5.9.2_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_zsh-5.9.2_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/usr/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_fish-3.6.0_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_fish-3.6.0_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_fish-3.6.0_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_fish-3.6.0_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_fish-3.6.0_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_fish-3.6.0_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_fish-3.6.0_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_fish-3.6.0_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_fish-4.9.3_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_fish-4.9.3_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/fish-4.9.3/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_fish-4.9.3_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_fish-4.9.3_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/fish-4.9.3/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_fish-4.9.3_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_fish-4.9.3_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/fish-4.9.3/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single"
+      ]
+    },
+    {
+      "id": "kitty-0.48.2_fish-4.9.3_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.48.2_fish-4.9.3_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/fish-4.9.3/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_bash-5.2.15_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_bash-5.2.15_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_bash-5.2.15_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_bash-5.2.15_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_bash-5.2.15_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_bash-5.2.15_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_bash-5.2.15_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_bash-5.2.15_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_bash-5.3.20_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_bash-5.3.20_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-bash-5.3.20/build/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_bash-5.3.20_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_bash-5.3.20_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-bash-5.3.20/build/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_bash-5.3.20_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_bash-5.3.20_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-bash-5.3.20/build/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_bash-5.3.20_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_bash-5.3.20_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-bash-5.3.20/build/bash",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_zsh-5.9_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_zsh-5.9_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--zsh-modules",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/lib/x86_64-linux-gnu/zsh/5.9"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_zsh-5.9_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_zsh-5.9_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login",
+        "--zsh-modules",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/lib/x86_64-linux-gnu/zsh/5.9"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_zsh-5.9_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_zsh-5.9_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--zsh-modules",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/lib/x86_64-linux-gnu/zsh/5.9"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_zsh-5.9_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_zsh-5.9_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login",
+        "--zsh-modules",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/lib/x86_64-linux-gnu/zsh/5.9"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_zsh-5.9.2_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_zsh-5.9.2_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/usr/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_zsh-5.9.2_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_zsh-5.9.2_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/usr/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_zsh-5.9.2_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_zsh-5.9.2_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/usr/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_zsh-5.9.2_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_zsh-5.9.2_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/usr/bin/zsh",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_fish-3.6.0_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_fish-3.6.0_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_fish-3.6.0_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_fish-3.6.0_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_fish-3.6.0_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_fish-3.6.0_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_fish-3.6.0_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_fish-3.6.0_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_fish-4.9.3_wayland_none_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_fish-4.9.3_wayland_none_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/fish-4.9.3/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_fish-4.9.3_wayland_none_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_fish-4.9.3_wayland_none_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/fish-4.9.3/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "none",
+        "--login"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_fish-4.9.3_wayland_single_interactive",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_fish-4.9.3_wayland_single_interactive/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/fish-4.9.3/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single"
+      ]
+    },
+    {
+      "id": "kitty-0.38.1_fish-4.9.3_wayland_single_login",
+      "result": "pass",
+      "evidence": "runtime/kitty-0.38.1_fish-4.9.3_wayland_single_login/result.json",
+      "command": [
+        "/usr/bin/python",
+        "-B",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1/tests/runtime/installed.py",
+        "--bundle",
+        "/tmp/kittyscape-release-h3qxv939/kittyscape-0.1.0.dev1",
+        "--archive",
+        "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+        "--kitty",
+        "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+        "--shell",
+        "/tmp/kittyscape-tools/fish-4.9.3/fish",
+        "--backend",
+        "wayland",
+        "--baseline",
+        "single",
+        "--login"
+      ]
+    }
+  ]
+}

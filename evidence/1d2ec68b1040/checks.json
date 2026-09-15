@@ -1,0 +1,26 @@
+{
+  "artifact_sha256": "1d2ec68b1040f9faf8304583be273aff5f1e7e69d6411a4466afc58b16335828",
+  "unit_tests": 77,
+  "installation_tests": 35,
+  "static_python_files": 29,
+  "embedded_unit_tests": [
+    {
+      "kitty": "0.38.1",
+      "python": "3.12.3",
+      "tests": 77,
+      "status": "passed"
+    },
+    {
+      "kitty": "0.48.2",
+      "python": "3.14.6",
+      "tests": 77,
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "commands": [
+    "make check",
+    "kitty0.38.1 +launch embedded.py <extracted source>",
+    "kitty0.48.2 +launch embedded.py <extracted source>"
+  ]
+}

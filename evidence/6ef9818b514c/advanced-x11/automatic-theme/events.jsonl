@@ -1,0 +1,19 @@
+{"event": "load", "pid": 2130749, "kitty": [0, 48, 2], "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]", "time": 20887.866671912}
+{"event": "command-start", "pane": 1, "time": 20888.024813618}
+{"event": "command-stop", "pane": 1, "time": 20888.025086938}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 20888.173271863}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 20888.312367685}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": true, "time": 20888.338504642}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 20888.382364523}
+{"event": "command-start", "pane": 1, "time": 20888.538169461}
+{"event": "command-stop", "pane": 1, "time": 20888.538352057}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 20888.578651491}
+{"event": "command-start", "pane": 1, "time": 20888.716578827}
+{"event": "command-stop", "pane": 1, "time": 20888.716790463}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 20888.780651676}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 20888.817688487}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": true, "time": 20888.836638313}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 20889.062584503}
+{"event": "command-start", "pane": 1, "time": 20889.112192145}
+{"event": "command-stop", "pane": 1, "time": 20889.112361609}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 20889.142443171}

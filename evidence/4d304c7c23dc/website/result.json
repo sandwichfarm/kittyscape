@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-15T15:00:55.549577+00:00",
+  "source_edits_by_agent": [],
+  "frontend_source_sha256": "3ed9fdec4f8e23efedb19bde9bc1e0c1cd597850e15b93c1142785c2f46872e1",
+  "frontend_comparison": {
+    "inputs": 33,
+    "unchanged": 31,
+    "changed": [
+      "docs/contributing/index.md",
+      "docs/development/compatibility-findings.md"
+    ],
+    "evidence": {
+      "path": "/tmp/kittyscape-final-frontend-scoped-redraw/frontend-input-fingerprints.json",
+      "sha256": "06bc2c5266fdb201cdda73f17a3e273c2a7ad1872fd7c621e931bdc3f73b7f1f",
+      "bytes": 7947
+    }
+  },
+  "build_and_static": {
+    "evidence": {
+      "path": "/tmp/kittyscape-final-frontend-scoped-redraw/build-check-results.json",
+      "sha256": "197c89344cfdcb2c7207f14dddf3370c83d0146b38d59d54421b8c8e17cff4e4",
+      "bytes": 1775
+    },
+    "commands_passed": 8,
+    "html_pages_per_base": 17,
+    "local_links_and_assets_per_base": 603,
+    "bases": [
+      "/",
+      "/kittyscape/"
+    ]
+  },
+  "targeted_browsers": {
+    "evidence": {
+      "path": "/tmp/kittyscape-final-frontend-scoped-redraw/route-results.json",
+      "sha256": "3fcc39e70cb39b9edcccf57816eed3478ac51a2d6e9985d66f68b31d0c02eeb4",
+      "bytes": 18793
+    },
+    "versions": {
+      "chromium": "149.0.7827.55",
+      "firefox": "151.0",
+      "webkit": "26.5"
+    },
+    "axe_version": "4.12.0",
+    "routes": [
+      "contributing/index.html",
+      "development/compatibility-findings.html"
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "widths": [
+      320,
+      768,
+      1440
+    ],
+    "bases": [
+      "/",
+      "/kittyscape/"
+    ],
+    "layout_checks": 72,
+    "axe_scans": 72,
+    "axe_violations": 0,
+    "search_flows": 72
+  },
+  "assets": {
+    "fingerprints": {
+      "path": "/tmp/kittyscape-final-frontend-scoped-redraw/tested-asset-fingerprints.json",
+      "sha256": "aed8c06cf77a3c4b58362298d0d130c8bd0f1ba065715f8b13b41450d3fdfcd5",
+      "bytes": 57794
+    },
+    "functional_html_js_css_svg": 116,
+    "all_built_files": 120,
+    "stable_non_evidence_files": 118,
+    "unchanged_during_tests": true,
+    "comparison_with_previous": {
+      "path": "/tmp/kittyscape-final-frontend-scoped-redraw/rebuild-output-comparison.json",
+      "sha256": "be4dff35084e937fb54886d5e3a5f34b977c63935a6c76b64f44372090e79ebe",
+      "bytes": 6845
+    }
+  },
+  "observed_archive": {
+    "path": "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+    "sha256": "4d304c7c23dc343addd42500a05ca7c7607b3b5641ff60bae9324b99eb3a251a",
+    "frontend_mismatches": []
+  },
+  "prior_full_browser_evidence": "/tmp/kittyscape-final-frontend-17c35e39/result.json",
+  "limits": [
+    "Full headless and native zoom suites were not repeated for these documentation-only changes.",
+    "No headed browser or live screen-reader session ran in this stage.",
+    "Final runtime qualification JSON and data remain for parent assembly."
+  ],
+  "handoff": "Builds are frozen. After updating only nonexecuted evidence JSON/data and rebuilding, compare exact paths and hashes in stable_non_evidence_files; this includes hashmap.json and excludes evidence/."
+}

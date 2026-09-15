@@ -1,0 +1,43 @@
+{
+  "archive_sha256": "1d2ec68b1040f9faf8304583be273aff5f1e7e69d6411a4466afc58b16335828",
+  "manifest_files": 74,
+  "archive_members": 75,
+  "changed_from_6ef": [
+    "tests/runtime/qualify.py"
+  ],
+  "matched_frontend_inputs": [
+    "docs/.vitepress/config.mjs",
+    "docs/.vitepress/theme/Layout.vue",
+    "docs/.vitepress/theme/index.js",
+    "docs/.vitepress/theme/style.css",
+    "docs/contributing/index.md",
+    "docs/development/compatibility-findings.md",
+    "docs/development/release-checklist.md",
+    "docs/development/website.md",
+    "docs/guide/configuration.md",
+    "docs/guide/getting-started.md",
+    "docs/guide/installation.md",
+    "docs/guide/kitty-settings.md",
+    "docs/guide/shells.md",
+    "docs/guide/troubleshooting.md",
+    "docs/guide/uninstall.md",
+    "docs/index.md",
+    "docs/public/cat-mark.svg",
+    "docs/public/terminal-cat.svg",
+    "docs/reference/actions.md",
+    "docs/reference/compatibility.md",
+    "docs/reference/configuration.md",
+    "docs/releases.md",
+    "package.json",
+    "patches/README.md",
+    "patches/vitepress@1.6.4.patch",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "tests/site/browser.mjs",
+    "tests/site/check.mjs",
+    "tests/site/common.mjs",
+    "tests/site/webkit_zoom.py",
+    "tests/site/zoom.mjs",
+    "tests/site/zoom.py"
+  ]
+}

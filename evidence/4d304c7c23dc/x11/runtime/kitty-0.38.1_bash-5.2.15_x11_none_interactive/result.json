@@ -1,0 +1,262 @@
+{
+  "created_at": "2026-09-15T15:00:11Z",
+  "backend": "x11",
+  "platform": "Linux",
+  "architecture": "x86_64",
+  "kitty": {
+    "event": "load",
+    "pid": 3146933,
+    "kitty": [
+      0,
+      38,
+      1
+    ],
+    "python": "3.12.3 (main, Aug 24 2024, 02:01:57) [GCC 7.5.0]",
+    "time": 24538.576279514
+  },
+  "shell": "GNU bash, version 5.2.15(1)-release (x86_64-pc-linux-gnu)",
+  "baseline": "none",
+  "startup": "interactive",
+  "artifact": {
+    "archive": "$ARCHIVE",
+    "sha256": "4d304c7c23dc343addd42500a05ca7c7607b3b5641ff60bae9324b99eb3a251a",
+    "manifest_sha256": "ba6f8cea33626d40110f06a91de380cad6f9dd7a4bdfd27fb047f4588364ba0a",
+    "files_verified": 74,
+    "version": "0.1.0.dev1",
+    "extracted_bundle": "$BUNDLE"
+  },
+  "installation": "generated-include-only",
+  "setup_calls": [
+    {
+      "action": "install",
+      "apply": false,
+      "helper": "$BUNDLE/setup.py",
+      "result": {
+        "status": "preview",
+        "action": "install",
+        "config_dir": "$FIXTURE",
+        "version": "0.1.0.dev1",
+        "files": [
+          "kittyscape.conf",
+          "kittyscape/0.1.0.dev1/README.md",
+          "kittyscape/0.1.0.dev1/kittyscape/__init__.py",
+          "kittyscape/0.1.0.dev1/kittyscape/action.py",
+          "kittyscape/0.1.0.dev1/kittyscape/compat.py",
+          "kittyscape/0.1.0.dev1/kittyscape/config.py",
+          "kittyscape/0.1.0.dev1/kittyscape/engine.py",
+          "kittyscape/0.1.0.dev1/kittyscape/images.py",
+          "kittyscape/0.1.0.dev1/kittyscape/location.json",
+          "kittyscape/0.1.0.dev1/kittyscape/rules.py",
+          "kittyscape/0.1.0.dev1/kittyscape/watcher.py",
+          "kittyscape/0.1.0.dev1/packaging/builder.py",
+          "kittyscape/0.1.0.dev1/packaging/installer.py",
+          "kittyscape/0.1.0.dev1/setup.py"
+        ],
+        "config_append": "# BEGIN KITTYSCAPE (managed by setup.py)\ninclude $FIXTURE/kittyscape.conf\n# END KITTYSCAPE\n",
+        "generated_config": "# Owned by Kittyscape setup; edit your rules in kittyscape.json.\nwatcher $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/watcher.py\nmap ctrl+shift+f6 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py status\nmap ctrl+shift+f7 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py pause\nmap ctrl+shift+f8 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py resume\nmap ctrl+shift+f9 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py reload\nmap ctrl+shift+f10 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py restore\n",
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher.",
+        "capabilities": {
+          "kitty": "0.38.1",
+          "python": "3.12.3",
+          "required_apis": "present",
+          "qualification": "Capability check only; consult the release-specific tested compatibility matrix."
+        }
+      }
+    },
+    {
+      "action": "install",
+      "apply": true,
+      "helper": "$BUNDLE/setup.py",
+      "result": {
+        "status": "installed",
+        "action": "install",
+        "config_dir": "$FIXTURE",
+        "version": "0.1.0.dev1",
+        "files": [
+          "kittyscape.conf",
+          "kittyscape/0.1.0.dev1/README.md",
+          "kittyscape/0.1.0.dev1/kittyscape/__init__.py",
+          "kittyscape/0.1.0.dev1/kittyscape/action.py",
+          "kittyscape/0.1.0.dev1/kittyscape/compat.py",
+          "kittyscape/0.1.0.dev1/kittyscape/config.py",
+          "kittyscape/0.1.0.dev1/kittyscape/engine.py",
+          "kittyscape/0.1.0.dev1/kittyscape/images.py",
+          "kittyscape/0.1.0.dev1/kittyscape/location.json",
+          "kittyscape/0.1.0.dev1/kittyscape/rules.py",
+          "kittyscape/0.1.0.dev1/kittyscape/watcher.py",
+          "kittyscape/0.1.0.dev1/packaging/builder.py",
+          "kittyscape/0.1.0.dev1/packaging/installer.py",
+          "kittyscape/0.1.0.dev1/setup.py"
+        ],
+        "config_append": "# BEGIN KITTYSCAPE (managed by setup.py)\ninclude $FIXTURE/kittyscape.conf\n# END KITTYSCAPE\n",
+        "generated_config": "# Owned by Kittyscape setup; edit your rules in kittyscape.json.\nwatcher $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/watcher.py\nmap ctrl+shift+f6 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py status\nmap ctrl+shift+f7 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py pause\nmap ctrl+shift+f8 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py resume\nmap ctrl+shift+f9 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py reload\nmap ctrl+shift+f10 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py restore\n",
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher.",
+        "capabilities": {
+          "kitty": "0.38.1",
+          "python": "3.12.3",
+          "required_apis": "present",
+          "qualification": "Capability check only; consult the release-specific tested compatibility matrix."
+        }
+      }
+    },
+    {
+      "action": "install",
+      "apply": true,
+      "helper": "$BUNDLE/setup.py",
+      "result": {
+        "status": "already-installed",
+        "action": "install",
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher.",
+        "capabilities": {
+          "kitty": "0.38.1",
+          "python": "3.12.3",
+          "required_apis": "present",
+          "qualification": "Capability check only; consult the release-specific tested compatibility matrix."
+        }
+      }
+    },
+    {
+      "action": "uninstall",
+      "apply": false,
+      "helper": "$FIXTURE/kittyscape/0.1.0.dev1/setup.py",
+      "result": {
+        "status": "preview",
+        "action": "uninstall",
+        "config_dir": "$FIXTURE",
+        "retained": [],
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher."
+      }
+    },
+    {
+      "action": "uninstall",
+      "apply": true,
+      "helper": "$FIXTURE/kittyscape/0.1.0.dev1/setup.py",
+      "result": {
+        "status": "removed",
+        "action": "uninstall",
+        "config_dir": "$FIXTURE",
+        "retained": [],
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher."
+      }
+    },
+    {
+      "action": "uninstall",
+      "apply": true,
+      "helper": "$BUNDLE/setup.py",
+      "result": {
+        "status": "already-removed",
+        "action": "uninstall",
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher."
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "T09-install-preview",
+      "result": "pass",
+      "detail": {
+        "writes": 0
+      }
+    },
+    {
+      "scenario": "T09-install-apply-repeat",
+      "result": "pass",
+      "detail": {
+        "version": "0.1.0.dev1",
+        "user_rules_preserved": true
+      }
+    },
+    {
+      "scenario": "artifact-installed-runtime-origin",
+      "result": "pass",
+      "detail": {
+        "engine_file": "$FIXTURE/kittyscape/0.1.0.dev1/kittyscape/engine.py",
+        "config_path": "$FIXTURE/kittyscape.json",
+        "watchers": [
+          "$BUNDLE/tests/runtime/observer.py",
+          "$FIXTURE/kittyscape/0.1.0.dev1/kittyscape/watcher.py"
+        ]
+      }
+    },
+    {
+      "scenario": "T01-T03-T07-restoration",
+      "result": "pass",
+      "detail": {
+        "rendering": {
+          "background_image": "None",
+          "background_image_layout": "scaled",
+          "background_image_linear": "True",
+          "background_tint": "0.2",
+          "background_tint_gaps": "0.4",
+          "background_opacity": "0.85",
+          "background": "Color(22, 21, 27)",
+          "foreground": "Color(240, 232, 223)"
+        }
+      }
+    },
+    {
+      "scenario": "T03-directory-stack",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T14-unchanged-prompts",
+      "result": "pass",
+      "detail": {
+        "extra_writes": 0,
+        "screenshot": "directory-A.png"
+      }
+    },
+    {
+      "scenario": "T08-pause-resume-restore",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T04-T06-tabs-splits-focus",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T05-independent-OS-windows",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T14-window-state-release",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T13-external-writer-resume",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T10-last-valid-configuration",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T08-installed-explicit-restore",
+      "result": "pass",
+      "detail": {
+        "owned": false,
+        "baseline": "external image B"
+      }
+    },
+    {
+      "scenario": "T09-artifact-uninstall-preview-apply-repeat",
+      "result": "pass",
+      "detail": {
+        "config_restored": true,
+        "user_rules_preserved": true
+      }
+    }
+  ],
+  "error": null,
+  "executables": {
+    "kitty": "56a96d8dbec99099ef2e86159625b8e4334dd7dff9597e9ca27d2eb383d6f06a",
+    "shell": "55b89ab22bee4792a210f493a53fb066accd5d30b69837c28d98be5ff863efcf"
+  }
+}

@@ -1,0 +1,81 @@
+{"event": "load", "pid": 2810624, "kitty": [0, 38, 1], "python": "3.12.3 (main, Aug 24 2024, 02:01:57) [GCC 7.5.0]", "time": 23718.814965089}
+{"event": "command-start", "pane": 1, "time": 23719.236774381}
+{"event": "command-stop", "pane": 1, "time": 23719.254974156}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23719.410995304}
+{"event": "command-start", "pane": 1, "time": 23719.56207789}
+{"event": "command-stop", "pane": 1, "time": 23719.582304881}
+{"event": "image", "os_windows": [1], "digest": "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f", "configured": false, "time": 23719.731966461}
+{"event": "command-start", "pane": 1, "time": 23719.87736885}
+{"event": "command-stop", "pane": 1, "time": 23719.894996843}
+{"event": "command-start", "pane": 1, "time": 23720.105808705}
+{"event": "command-stop", "pane": 1, "time": 23720.128220552}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23720.200636491}
+{"event": "command-start", "pane": 1, "time": 23720.367558557}
+{"event": "command-stop", "pane": 1, "time": 23720.386146608}
+{"event": "image", "os_windows": [1], "digest": "0e43454ec816f528eb338dd3e5cea749598e71bd3ce6630d6f42f400d1dd66ec", "configured": false, "time": 23720.468974048}
+{"event": "command-start", "pane": 1, "time": 23720.613744544}
+{"event": "command-stop", "pane": 1, "time": 23720.631612714}
+{"event": "command-start", "pane": 1, "time": 23720.744367275}
+{"event": "command-stop", "pane": 1, "time": 23720.762682861}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23720.831625952}
+{"event": "command-start", "pane": 1, "time": 23720.966576768}
+{"event": "command-stop", "pane": 1, "time": 23720.984231908}
+{"event": "image", "os_windows": [1], "digest": "0e43454ec816f528eb338dd3e5cea749598e71bd3ce6630d6f42f400d1dd66ec", "configured": false, "time": 23721.065198441}
+{"event": "command-start", "pane": 1, "time": 23721.187205026}
+{"event": "command-stop", "pane": 1, "time": 23721.204584526}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23721.267047484}
+{"event": "command-start", "pane": 1, "time": 23721.402814218}
+{"event": "command-stop", "pane": 1, "time": 23721.421876523}
+{"event": "command-start", "pane": 1, "time": 23721.425973156}
+{"event": "command-stop", "pane": 1, "time": 23721.443044952}
+{"event": "command-start", "pane": 1, "time": 23721.447001929}
+{"event": "command-stop", "pane": 1, "time": 23721.463874037}
+{"event": "command-start", "pane": 1, "time": 23721.467891258}
+{"event": "command-stop", "pane": 1, "time": 23721.48821592}
+{"event": "command-start", "pane": 1, "time": 23721.488444418}
+{"event": "command-stop", "pane": 1, "time": 23721.488542356}
+{"event": "command-start", "pane": 1, "time": 23721.491868665}
+{"event": "command-stop", "pane": 1, "time": 23721.510619648}
+{"event": "command-start", "pane": 1, "time": 23721.514717249}
+{"event": "command-stop", "pane": 1, "time": 23721.532346458}
+{"event": "command-start", "pane": 1, "time": 23721.536469593}
+{"event": "command-stop", "pane": 1, "time": 23721.554256437}
+{"event": "command-start", "pane": 1, "time": 23721.558347005}
+{"event": "command-stop", "pane": 1, "time": 23721.575242028}
+{"event": "command-start", "pane": 1, "time": 23721.57541288}
+{"event": "command-stop", "pane": 1, "time": 23721.575515618}
+{"event": "command-start", "pane": 1, "time": 23721.579872342}
+{"event": "command-stop", "pane": 1, "time": 23721.59691932}
+{"event": "command-start", "pane": 1, "time": 23721.60216729}
+{"event": "command-stop", "pane": 1, "time": 23721.619181387}
+{"event": "image", "os_windows": [1], "digest": "0e43454ec816f528eb338dd3e5cea749598e71bd3ce6630d6f42f400d1dd66ec", "configured": false, "time": 23722.048633552}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23722.16514917}
+{"event": "image", "os_windows": [1], "digest": "0e43454ec816f528eb338dd3e5cea749598e71bd3ce6630d6f42f400d1dd66ec", "configured": false, "time": 23722.209774799}
+{"event": "command-start", "pane": 1, "time": 23722.273282124}
+{"event": "command-stop", "pane": 1, "time": 23722.291042564}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23722.360927552}
+{"event": "image", "os_windows": [1], "digest": "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f", "configured": false, "time": 23722.499572351}
+{"event": "command-start", "pane": 1, "time": 23722.654695902}
+{"event": "command-stop", "pane": 1, "time": 23722.65951338}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23723.171973724}
+{"event": "image", "os_windows": [1], "digest": "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f", "configured": false, "time": 23723.383122184}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23723.638415744}
+{"event": "image", "os_windows": [1], "digest": "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f", "configured": false, "time": 23723.966808063}
+{"event": "image", "os_windows": [2], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23724.289515706}
+{"event": "command-start", "pane": 2, "time": 23724.563955142}
+{"event": "command-stop", "pane": 2, "time": 23724.564118139}
+{"event": "image", "os_windows": [1], "digest": "0e43454ec816f528eb338dd3e5cea749598e71bd3ce6630d6f42f400d1dd66ec", "configured": false, "time": 23724.639659264}
+{"event": "command-start", "pane": 1, "time": 23724.952142986}
+{"event": "command-stop", "pane": 1, "time": 23724.952295399}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23725.026192422}
+{"event": "image", "os_windows": [1], "digest": "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f", "configured": false, "time": 23725.089808623}
+{"event": "command-start", "pane": 1, "time": 23725.139840508}
+{"event": "command-stop", "pane": 1, "time": 23725.156319941}
+{"event": "command-start", "pane": 1, "time": 23725.507187228}
+{"event": "command-stop", "pane": 1, "time": 23725.525030528}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23725.590581271}
+{"event": "image", "os_windows": [1], "digest": "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f", "configured": false, "time": 23725.657459119}
+{"event": "command-start", "pane": 1, "time": 23725.891638117}
+{"event": "command-stop", "pane": 1, "time": 23725.908907142}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 23726.055546484}
+{"event": "image", "os_windows": [1], "digest": "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f", "configured": false, "time": 23726.126409124}

@@ -1,0 +1,172 @@
+- link "Skip to content":
+  - /url: "#VPContent"
+- banner:
+  - link "Kittyscape":
+    - /url: /
+  - button "Search"
+  - button "mobile navigation"
+- button "Menu"
+- button "On this page"
+- complementary:
+  - navigation "Sidebar Navigation":
+    - text: Sidebar Navigation
+    - button "Guide":
+      - heading "Guide" [level=2]
+    - link "Getting started":
+      - /url: /guide/getting-started.html
+      - paragraph: Getting started
+    - link "Installation":
+      - /url: /guide/installation.html
+      - paragraph: Installation
+    - link "Configuration":
+      - /url: /guide/configuration.html
+      - paragraph: Configuration
+    - link "Shells":
+      - /url: /guide/shells.html
+      - paragraph: Shells
+    - link "Kitty settings":
+      - /url: /guide/kitty-settings.html
+      - paragraph: Kitty settings
+    - link "Troubleshooting":
+      - /url: /guide/troubleshooting.html
+      - paragraph: Troubleshooting
+    - link "Uninstall & rollback":
+      - /url: /guide/uninstall.html
+      - paragraph: Uninstall & rollback
+    - button "Reference":
+      - heading "Reference" [level=2]
+    - link "Compatibility":
+      - /url: /reference/compatibility.html
+      - paragraph: Compatibility
+    - link "Configuration fields":
+      - /url: /reference/configuration.html
+      - paragraph: Configuration fields
+    - link "Actions":
+      - /url: /reference/actions.html
+      - paragraph: Actions
+    - button "Project":
+      - heading "Project" [level=2]
+    - link "Contributing":
+      - /url: /contributing/
+      - paragraph: Contributing
+    - link "Runtime findings":
+      - /url: /development/compatibility-findings.html
+      - paragraph: Runtime findings
+    - link "Website & assets":
+      - /url: /development/website.html
+      - paragraph: Website & assets
+    - link "Release checks":
+      - /url: /development/release-checklist.html
+      - paragraph: Release checks
+    - link "Release notes":
+      - /url: /releases.html
+      - paragraph: Release notes
+- main:
+  - heading "Configuration Permalink to \"Configuration\"" [level=1]:
+    - text: Configuration
+    - link "Permalink to \"Configuration\"":
+      - /url: "#configuration"
+      - text: "#"
+  - paragraph:
+    - text: Kittyscape reads
+    - code: kittyscape.json
+    - text: from kitty’s active configuration directory. Rules are shared by every qualified shell in that kitty instance. The file is data only; directory visits never execute project hooks.
+  - heading "Match a directory Permalink to \"Match a directory\"" [level=2]:
+    - text: Match a directory
+    - link "Permalink to \"Match a directory\"":
+      - /url: "#match-a-directory"
+      - text: "#"
+  - paragraph: Each rule has a directory root and a local PNG image. A rule applies to that directory and its descendants. The deepest matching root wins, regardless of rule order.
+  - button "Copy Code"
+  - text: json
+  - code: "{ \"version\": 1, \"rules\": [ { \"directory\": \"~/Projects/Little Garden\", \"image\": \"images/garden.png\" }, { \"directory\": \"~/Projects/Little Garden/seedlings\", \"image\": \"images/seedlings.png\" } ] }"
+  - paragraph:
+    - text: The first rule matches
+    - code: Little Garden/notes
+    - text: . The second wins inside
+    - code: Little Garden/seedlings
+    - text: . A root ending in
+    - code: app
+    - text: never matches a sibling named
+    - code: application
+    - text: .
+  - heading "Paths and symlinks Permalink to \"Paths and symlinks\"" [level=2]:
+    - text: Paths and symlinks
+    - link "Permalink to \"Paths and symlinks\"":
+      - /url: "#paths-and-symlinks"
+      - text: "#"
+  - list:
+    - listitem:
+      - text: Directory roots must exist and be absolute after expanding a leading
+      - code: ~/
+      - text: home shortcut.
+    - listitem: Rule roots and reported directories use physical, normalized paths. A symlinked route and its target therefore select the same rule.
+    - listitem: Duplicate roots after normalization are rejected. File order does not resolve ambiguity.
+    - listitem: Relative image paths resolve against the configuration file’s directory.
+    - listitem: Unicode, spaces, and punctuation are ordinary path characters. Use valid JSON escaping for backslashes and quotes.
+    - listitem: Paths are never expanded as shell commands. Arbitrary environment expressions are not interpolated.
+    - listitem: Matching does not lowercase every path; filesystem case behavior matters.
+  - paragraph:
+    - text: The
+    - link "compatibility matrix":
+      - /url: ./../reference/compatibility.html
+    - text: distinguishes verified filesystem behavior from platforms that still require qualification.
+  - heading "Leaving a project Permalink to \"Leaving a project\"" [level=2]:
+    - text: Leaving a project
+    - link "Permalink to \"Leaving a project\"":
+      - /url: "#leaving-a-project"
+      - text: "#"
+  - paragraph: With no matching rule, Kittyscape restores the original background it captured for that OS window, including the absence of an image. It does not use removal as a universal replacement for restoration.
+  - paragraph: "An optional fallback image changes that choice:"
+  - button "Copy Code"
+  - text: json
+  - code: "{ \"version\": 1, \"rules\": [], \"fallback\": \"images/quiet.png\" }"
+  - paragraph:
+    - text: The fallback path follows the same local-image rules. See the
+    - link "restoration limitations":
+      - /url: ./kitty-settings.html
+    - text: before using themes, image lists, or another background writer.
+  - paragraph:
+    - text: "An unmatched directory using a valid fallback is normal: status can show"
+    - code: "owned: true"
+    - text: with an empty
+    - code: reason
+    - text: . If a matching rule’s image is invalid, the fallback can still display while
+    - code: image-unavailable-or-invalid
+    - text: identifies the failed rule image. A later valid selection clears that diagnostic, even when the displayed image does not need another upload. Pause and restore still return the original background.
+  - heading "Reload safely Permalink to \"Reload safely\"" [level=2]:
+    - text: Reload safely
+    - link "Permalink to \"Reload safely\"":
+      - /url: "#reload-safely"
+      - text: "#"
+  - paragraph:
+    - text: Changes are explicit; there is no filesystem watcher or per-prompt configuration reload. Use
+    - strong: Ctrl+Shift+F9
+    - text: ", the shipped"
+    - link "reload action":
+      - /url: ./../reference/actions.html
+    - text: ", after saving JSON. Reload returns before validation and image work finish."
+    - strong: Ctrl+Shift+F6
+    - text: shows pending work and the configuration
+    - code: revision
+    - text: ; a successful reload advances that revision. A malformed reload retains the last valid rules and reports a bounded diagnostic with the relevant field or JSON location. Correct the file and reload again to recover.
+  - paragraph:
+    - text: To disable automatic updates, set
+    - code: enabled
+    - text: to
+    - code: "false"
+    - text: and reload. This restores owned backgrounds. For a temporary pause with the same restoration behavior, use
+    - strong: Ctrl+Shift+F7
+    - text: .
+  - paragraph:
+    - text: See
+    - link "configuration fields":
+      - /url: ./../reference/configuration.html
+    - text: for defaults, validation errors, and image limits.
+- contentinfo:
+  - navigation "Pager":
+    - text: Pager
+    - link "Previous Installation":
+      - /url: /guide/installation.html
+    - link "Next Shells":
+      - /url: /guide/shells.html

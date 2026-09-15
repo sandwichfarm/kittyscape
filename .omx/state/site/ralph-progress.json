@@ -1,0 +1,18 @@
+{
+  "score": 95,
+  "verdict": "pass",
+  "category_match": true,
+  "differences": [],
+  "suggestions": [],
+  "reasoning": "The updated home copy names the implemented shell families without broad version or platform claims. Desktop and 320px screenshots retain the specified palette, spacing, original illustration, and clear hierarchy with no page overflow.",
+  "threshold": 90,
+  "threshold_pass": true,
+  "reference": ".omx/plans/site-kittyscape.md (written brief)",
+  "screenshot": "/tmp/kittyscape-doc-home-after.png",
+  "additional_screenshots": [
+    "/tmp/kittyscape-doc-home-after-mobile.png"
+  ],
+  "next_actions": [
+    "Wait for the final release evidence asset before complete browser verification"
+  ]
+}

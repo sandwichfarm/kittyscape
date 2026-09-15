@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "completed_at": "2026-09-15T15:10:59.770387+00:00",
+  "session_root": "/tmp/kittyscape-private-wayland-27ldgord",
+  "runtime": "/tmp/kswl-xzdvy13g",
+  "stop_command": [
+    "/usr/bin/python",
+    "-B",
+    "/tmp/kittyscape-wayland-research/private_session.py",
+    "stop",
+    "--root",
+    "/tmp/kittyscape-private-wayland-27ldgord"
+  ],
+  "owned_processes_before": {
+    "2150745": "/usr/bin/python /tmp/kittyscape-wayland-research/private_session.py run --root /tmp/kittyscape-private-wayland-27ldgord ",
+    "2150793": "/usr/bin/dbus-daemon --config-file=/tmp/kittyscape-private-wayland-27ldgord/dbus.conf --nofork --nopidfile ",
+    "2150825": "/usr/bin/bwrap --ro-bind / / --dev /dev --dir /dev/dri --dev-bind /dev/dri/renderD129 /dev/dri/renderD129 --bind /tmp /tmp --unshare-net --unshare-ipc --die-with-parent /usr/bin/wayfire --config /tmp/kittyscape-private-wayland-27ldgord/wayfire.ini ",
+    "2150826": "/usr/bin/wayfire --config /tmp/kittyscape-private-wayland-27ldgord/wayfire.ini ",
+    "2150891": "/usr/bin/bwrap --ro-bind / / --dev /dev --dir /dev/dri --dev-bind /dev/dri/renderD129 /dev/dri/renderD129 --bind /tmp /tmp --unshare-net --unshare-ipc --die-with-parent /usr/bin/Hyprland --config /tmp/kittyscape-private-wayland-27ldgord/hyprland.lua ",
+    "2150892": "/usr/bin/Hyprland --config /tmp/kittyscape-private-wayland-27ldgord/hyprland.lua "
+  },
+  "remaining_owned_pids": [],
+  "private_sockets_before": [
+    "/tmp/kswl-xzdvy13g/wayland-2",
+    "/tmp/kswl-xzdvy13g/wayland-1",
+    "/tmp/kswl-xzdvy13g/bus",
+    "/tmp/kswl-xzdvy13g/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1789480785_464689180/.socket.sock",
+    "/tmp/kswl-xzdvy13g/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1789480785_464689180/.socket2.sock"
+  ],
+  "stale_private_sockets_removed": [
+    "/tmp/kswl-xzdvy13g/wayland-2",
+    "/tmp/kswl-xzdvy13g/wayland-1",
+    "/tmp/kswl-xzdvy13g/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1789480785_464689180/.socket.sock",
+    "/tmp/kswl-xzdvy13g/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1789480785_464689180/.socket2.sock"
+  ],
+  "remaining_private_sockets": [],
+  "retained": [
+    "bootstrap scripts",
+    "configuration backups",
+    "logs",
+    "screenshots",
+    "qualification metadata"
+  ],
+  "scope": "Only this private session was stopped; no host compositor, Xwayland, X0/X0_, or parent Xvfb :101 operation was issued."
+}

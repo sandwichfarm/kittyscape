@@ -1,0 +1,96 @@
+{
+  "pixel": [
+    136,
+    63,
+    29
+  ],
+  "inspect": {
+    "background_image": "('$FIXTURE/nested-shell/baseline.png',)",
+    "background_image_layout": "scaled",
+    "background_image_linear": "True",
+    "background_tint": "0.2",
+    "background_tint_gaps": "0.4",
+    "background_opacity": "0.85",
+    "background": "Color(22, 21, 27)",
+    "foreground": "Color(240, 232, 223)",
+    "watchers": [
+      "$BUNDLE/tests/runtime/observer.py",
+      "$BUNDLE/kittyscape/watcher.py"
+    ],
+    "has_image": true,
+    "cwd": "kitty-shell-cwd://arch$FIXTURE/nested-shell/projects/Project A",
+    "prompt": true,
+    "engine_file": "$BUNDLE/kittyscape/engine.py",
+    "config_path": "$FIXTURE/nested-shell/kittyscape.json",
+    "test_timer_count": null,
+    "jobs": {},
+    "job_timer": 0,
+    "runtime": {
+      "enabled": true,
+      "revision": 1,
+      "reason": "",
+      "detail": "",
+      "pending_jobs": 0,
+      "filesystem_stalled": false,
+      "modern_background_api": true,
+      "pending_events": 0,
+      "windows": {
+        "1": {
+          "pane": 1,
+          "owned": true,
+          "paused": false,
+          "reason": "",
+          "uploads": 3
+        }
+      }
+    },
+    "state": {
+      "request": [
+        1,
+        "$FIXTURE/nested-shell/projects/Project A",
+        "",
+        1
+      ],
+      "generation": 32,
+      "timer": 0,
+      "applied": [
+        "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40",
+        "scaled",
+        true,
+        0.2,
+        0.4
+      ]
+    }
+  },
+  "native": {
+    "theme": "",
+    "dark": false,
+    "light": false,
+    "baseline": {
+      "kind": "inherited",
+      "layout": "scaled",
+      "index": 0,
+      "bytes": 0
+    },
+    "status": {
+      "enabled": true,
+      "revision": 1,
+      "reason": "",
+      "detail": "",
+      "pending_jobs": 0,
+      "filesystem_stalled": false,
+      "modern_background_api": true,
+      "pending_events": 0,
+      "windows": {
+        "1": {
+          "pane": 1,
+          "owned": true,
+          "paused": false,
+          "reason": "",
+          "uploads": 3
+        }
+      }
+    }
+  },
+  "screenshot": "$FIXTURE/nested-shell/nested-recovered.png"
+}

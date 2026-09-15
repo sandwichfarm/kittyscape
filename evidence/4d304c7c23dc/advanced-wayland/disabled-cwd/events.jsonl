@@ -1,0 +1,5 @@
+{"event": "load", "pid": 3307187, "kitty": [0, 48, 2], "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]", "time": 24815.347599958}
+{"event": "command-start", "pane": 1, "time": 24815.492930074}
+{"event": "command-stop", "pane": 1, "time": 24815.49305856}
+{"event": "command-start", "pane": 1, "time": 24815.511897202}
+{"event": "command-stop", "pane": 1, "time": 24815.512038925}

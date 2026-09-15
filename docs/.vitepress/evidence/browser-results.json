@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-09-15T12:30:55.734Z",
+  "playwrightPath": "/home/sandwich/.npm/_npx/e41f203b7505f1fb/node_modules/playwright-core",
+  "axePath": "/home/sandwich/.npm/_npx/0f94ee7615faf582/node_modules/axe-core/axe.min.js",
+  "browserNames": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "browsers": [
+    {
+      "name": "chromium",
+      "routes": 30,
+      "layoutChecks": 180,
+      "accessibilityRuns": 210,
+      "version": "149.0.7827.55",
+      "axeVersion": "4.12.0",
+      "status": "passed"
+    },
+    {
+      "name": "firefox",
+      "routes": 30,
+      "layoutChecks": 180,
+      "accessibilityRuns": 210,
+      "version": "151.0",
+      "axeVersion": "4.12.0",
+      "status": "passed"
+    },
+    {
+      "name": "webkit",
+      "routes": 30,
+      "layoutChecks": 180,
+      "accessibilityRuns": 210,
+      "version": "26.5",
+      "axeVersion": "4.12.0",
+      "status": "passed"
+    }
+  ],
+  "failures": []
+}

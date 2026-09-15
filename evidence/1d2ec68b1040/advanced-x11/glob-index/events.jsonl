@@ -1,0 +1,21 @@
+{"event": "load", "pid": 2324618, "kitty": [0, 48, 2], "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]", "time": 21793.382525897}
+{"event": "command-start", "pane": 1, "time": 21793.554525071}
+{"event": "command-stop", "pane": 1, "time": 21793.554765268}
+{"event": "image", "os_windows": [1], "digest": "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f", "configured": false, "time": 21793.7016662}
+{"event": "command-start", "pane": 1, "time": 21793.73187323}
+{"event": "command-stop", "pane": 1, "time": 21793.732143629}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 21793.762125082}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 21793.803607873}
+{"event": "command-start", "pane": 1, "time": 21793.8960396}
+{"event": "command-stop", "pane": 1, "time": 21793.896286713}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 21794.049105544}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 21794.077862609}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 21794.152039857}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 21794.212019684}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 21794.406701415}
+{"event": "command-start", "pane": 1, "time": 21794.459576782}
+{"event": "command-stop", "pane": 1, "time": 21794.459744655}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 21794.499949737}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 21794.660111155}
+{"event": "command-start", "pane": 1, "time": 21794.741237751}
+{"event": "command-stop", "pane": 1, "time": 21794.741555733}

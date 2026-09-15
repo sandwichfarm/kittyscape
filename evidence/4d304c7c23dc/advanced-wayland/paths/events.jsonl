@@ -1,0 +1,13 @@
+{"event": "load", "pid": 3298424, "kitty": [0, 48, 2], "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]", "time": 24798.759908222}
+{"event": "command-start", "pane": 1, "time": 24799.1559823}
+{"event": "command-stop", "pane": 1, "time": 24799.15623064}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 24799.30874659}
+{"event": "command-start", "pane": 1, "time": 24799.560449013}
+{"event": "command-stop", "pane": 1, "time": 24799.560612667}
+{"event": "command-start", "pane": 1, "time": 24799.854827026}
+{"event": "command-stop", "pane": 1, "time": 24799.854992758}
+{"event": "command-start", "pane": 1, "time": 24799.916445036}
+{"event": "command-stop", "pane": 1, "time": 24799.916638185}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 24799.957244854}
+{"event": "command-start", "pane": 1, "time": 24800.241782268}
+{"event": "command-stop", "pane": 1, "time": 24800.241920253}

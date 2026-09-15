@@ -1,0 +1,25 @@
+T09-install-preview: pass
+T09-install-apply-repeat: pass
+artifact-installed-runtime-origin: pass
+T01-T03-T07-restoration: pass
+T03-directory-stack: pass
+T14-unchanged-prompts: pass
+T08-pause-resume-restore: pass
+T04-T06-tabs-splits-focus: pass
+Evidence: /tmp/kittyscape-qualify-oxcivg0_
+Traceback (most recent call last):
+  File "/tmp/kittyscape-release-nx52uh28/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 236, in <module>
+    main()
+    ~~~~^^
+  File "/tmp/kittyscape-release-nx52uh28/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 232, in main
+    qualify_installed(parser.parse_args())
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/kittyscape-release-nx52uh28/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 202, in qualify_installed
+    focus_scenarios(session)
+    ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/tmp/kittyscape-release-nx52uh28/kittyscape-0.1.0.dev1/tests/runtime/qualify.py", line 339, in focus_scenarios
+    session.wait(lambda: session.pixel(pane=tab) == session.baseline_pixel, "first OS restores its baseline")
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/kittyscape-release-nx52uh28/kittyscape-0.1.0.dev1/tests/runtime/qualify.py", line 161, in wait
+    raise AssertionError(label + " timed out; " + json.dumps(self.status()))
+AssertionError: first OS restores its baseline timed out; {"enabled": true, "revision": 1, "reason": "", "detail": "", "pending_jobs": 0, "filesystem_stalled": false, "modern_background_api": true, "pending_events": 0, "windows": {"1": {"pane": 2, "owned": false, "paused": false, "reason": "", "uploads": 17}, "2": {"pane": 4, "owned": true, "paused": false, "reason": "", "uploads": 1}}}

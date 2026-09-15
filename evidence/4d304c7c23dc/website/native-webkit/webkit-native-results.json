@@ -1,0 +1,339 @@
+{
+  "checkedAt": "2026-09-15T14:44:26Z",
+  "display": ":103",
+  "rows": [
+    {
+      "base": "/",
+      "baseline": {
+        "dpr": 1,
+        "innerWidth": 1440,
+        "innerHeight": 1000,
+        "outerWidth": 1440,
+        "outerHeight": 1000,
+        "cssZoom": "1",
+        "viewportScale": 1,
+        "scrollWidth": 1440,
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+        "theme": "light",
+        "heading": "A different view for every directory.",
+        "nativeWindow": {
+          "width": 1440,
+          "height": 1000
+        },
+        "nativeZoom": 1.0
+      },
+      "zoomed": {
+        "dpr": 2,
+        "innerWidth": 720,
+        "innerHeight": 500,
+        "outerWidth": 1440,
+        "outerHeight": 1000,
+        "cssZoom": "1",
+        "viewportScale": 1,
+        "scrollWidth": 720,
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+        "theme": "light",
+        "heading": "A different view for every directory.",
+        "nativeWindow": {
+          "width": 1440,
+          "height": 1000
+        },
+        "nativeZoom": 2.0
+      },
+      "routes": [
+        {
+          "route": "index.html",
+          "theme": "light",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "A different view for every directory.",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        },
+        {
+          "route": "guide/configuration.html",
+          "theme": "light",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "Configuration \u200b",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        },
+        {
+          "route": "reference/configuration.html",
+          "theme": "light",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "Configuration fields \u200b",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        },
+        {
+          "route": "index.html",
+          "theme": "dark",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "A different view for every directory.",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        },
+        {
+          "route": "guide/configuration.html",
+          "theme": "dark",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "Configuration \u200b",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        },
+        {
+          "route": "reference/configuration.html",
+          "theme": "dark",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "Configuration fields \u200b",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        }
+      ],
+      "keyboard": {
+        "status": "passed",
+        "skipFocus": {
+          "name": "Skip to content",
+          "outline": "solid"
+        }
+      },
+      "exact200": true
+    },
+    {
+      "base": "/kittyscape/",
+      "baseline": {
+        "dpr": 1,
+        "innerWidth": 1440,
+        "innerHeight": 1000,
+        "outerWidth": 1440,
+        "outerHeight": 1000,
+        "cssZoom": "1",
+        "viewportScale": 1,
+        "scrollWidth": 1440,
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+        "theme": "dark",
+        "heading": "A different view for every directory.",
+        "nativeWindow": {
+          "width": 1440,
+          "height": 1000
+        },
+        "nativeZoom": 1.0
+      },
+      "zoomed": {
+        "dpr": 2,
+        "innerWidth": 720,
+        "innerHeight": 500,
+        "outerWidth": 1440,
+        "outerHeight": 1000,
+        "cssZoom": "1",
+        "viewportScale": 1,
+        "scrollWidth": 720,
+        "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+        "theme": "dark",
+        "heading": "A different view for every directory.",
+        "nativeWindow": {
+          "width": 1440,
+          "height": 1000
+        },
+        "nativeZoom": 2.0
+      },
+      "routes": [
+        {
+          "route": "index.html",
+          "theme": "light",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "A different view for every directory.",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        },
+        {
+          "route": "guide/configuration.html",
+          "theme": "light",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "Configuration \u200b",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        },
+        {
+          "route": "reference/configuration.html",
+          "theme": "light",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "Configuration fields \u200b",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        },
+        {
+          "route": "index.html",
+          "theme": "dark",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "A different view for every directory.",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        },
+        {
+          "route": "guide/configuration.html",
+          "theme": "dark",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "Configuration \u200b",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        },
+        {
+          "route": "reference/configuration.html",
+          "theme": "dark",
+          "dpr": 2,
+          "innerWidth": 720,
+          "innerHeight": 500,
+          "outerWidth": 1440,
+          "outerHeight": 1000,
+          "cssZoom": "1",
+          "viewportScale": 1,
+          "scrollWidth": 720,
+          "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/60.5 Safari/605.1.15",
+          "heading": "Configuration fields \u200b",
+          "nativeWindow": {
+            "width": 1440,
+            "height": 1000
+          },
+          "nativeZoom": 2.0
+        }
+      ],
+      "keyboard": {
+        "status": "passed",
+        "skipFocus": {
+          "name": "Skip to content",
+          "outline": "solid"
+        }
+      },
+      "exact200": true
+    }
+  ],
+  "webkitGtkVersion": "2.53.3",
+  "bundle": "/home/sandwich/.cache/ms-playwright/webkit-2311/minibrowser-gtk",
+  "libraries": {
+    "/home/sandwich/.cache/ms-playwright/webkit-2311/minibrowser-gtk/lib/libwebkitgtk-6.0.so.4.17.2": "70635861ec80f347b6843187be6f56789da07948c5a9081ad5e4ac747528ef9b",
+    "/home/sandwich/.cache/ms-playwright/webkit-2311/minibrowser-gtk/lib/libjavascriptcoregtk-6.0.so.1.8.2": "e17b7497daeb795ae0e7b69321faf30c5c457e155750c2df57a1824e3b9d64bc"
+  },
+  "status": "passed"
+}

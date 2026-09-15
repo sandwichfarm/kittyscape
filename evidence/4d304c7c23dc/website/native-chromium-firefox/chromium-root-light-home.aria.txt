@@ -1,0 +1,38 @@
+- link "Skip to content":
+  - /url: "#VPContent"
+- banner:
+  - link "Kittyscape":
+    - /url: /
+  - button "Search"
+  - button "mobile navigation"
+- main:
+  - region "A different view for every directory.":
+    - paragraph: In development
+    - paragraph: Kittyscape
+    - heading "A different view for every directory." [level=1]
+    - paragraph: Directory-aware backgrounds for kitty, with your image settings intact.
+    - link "Read the docs":
+      - /url: ./guide/getting-started.html
+    - link "See compatibility":
+      - /url: ./reference/compatibility.html
+    - paragraph: Small, local, and made for your terminal.
+    - figure "An original terminal illustration.":
+      - img "Illustration of a landscape behind a kitty terminal prompt."
+      - text: An original terminal illustration.
+  - region "Designed to keep things simple":
+    - heading "Follows your directory" [level=2]
+    - paragraph: Give each project its own background, with separate images for nested directories.
+    - heading "Keeps your kitty settings" [level=2]
+    - paragraph: Keep layout, interpolation, tint, and opacity as configured in kitty.
+    - heading "One set of rules" [level=2]
+    - paragraph: One rules file for Bash, Zsh, and Fish. See tested versions and limitations.
+  - paragraph: Experimental local build. Linux test evidence is available; macOS qualification remains open.
+  - link "Check the current status →":
+    - /url: ./reference/compatibility.html
+- contentinfo:
+  - text: A little change of scenery.
+  - navigation "Footer":
+    - link "Documentation":
+      - /url: /guide/getting-started.html
+    - link "Release notes":
+      - /url: /releases.html

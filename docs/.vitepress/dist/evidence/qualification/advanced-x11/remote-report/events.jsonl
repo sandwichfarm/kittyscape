@@ -1,0 +1,20 @@
+{"event": "load", "pid": 3042918, "kitty": [0, 48, 2], "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]", "time": 24410.297202153}
+{"event": "command-start", "pane": 1, "time": 24410.476044331}
+{"event": "command-stop", "pane": 1, "time": 24410.476315592}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 24410.650529525}
+{"event": "command-start", "pane": 1, "time": 24410.693218856}
+{"event": "command-stop", "pane": 1, "time": 24410.69343935}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 24410.723857919}
+{"event": "command-start", "pane": 1, "time": 24410.875510858}
+{"event": "command-stop", "pane": 1, "time": 24410.87576259}
+{"event": "command-start", "pane": 1, "time": 24410.891463135}
+{"event": "command-stop", "pane": 1, "time": 24410.891625744}
+{"event": "image", "os_windows": [1], "digest": "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f", "configured": false, "time": 24411.069248656}
+{"event": "command-start", "pane": 1, "time": 24411.207116121}
+{"event": "command-stop", "pane": 1, "time": 24411.207413681}
+{"event": "image", "os_windows": [1], "digest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "configured": false, "time": 24411.237817209}
+{"event": "command-start", "pane": 1, "time": 24411.429546362}
+{"event": "command-stop", "pane": 1, "time": 24411.429837252}
+{"event": "command-start", "pane": 1, "time": 24411.444384678}
+{"event": "command-stop", "pane": 1, "time": 24411.44456528}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 24411.521044179}

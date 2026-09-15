@@ -1,0 +1,90 @@
+{
+  "kitty_pid": 2353027,
+  "kitty_executable": "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty",
+  "client": {
+    "address": "0x55ec6c1f2340",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      20,
+      20
+    ],
+    "size": [
+      960,
+      640
+    ],
+    "workspace": {
+      "id": 15,
+      "name": "15"
+    },
+    "floating": true,
+    "monitor": 0,
+    "class": "kittyscape-qualification",
+    "title": "Kittyscape private Wayland proof portable-0.38.1 kittyscape-private-wayland-27ldgord",
+    "initialClass": "kittyscape-qualification",
+    "initialTitle": "Kittyscape private Wayland proof portable-0.38.1 kittyscape-private-wayland-27ldgord",
+    "pid": 2353027,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "1800000a"
+  },
+  "identifier": "1800000a",
+  "capture": "/tmp/kittyscape-private-wayland-27ldgord/portable-0.38.1-private-kitty-grim-T.png",
+  "capture_sha256": "f8633ee76c6f60c312dbbde1c2bd2316206a449570e49d2912db5bc340bb70b9",
+  "pixel": [
+    40,
+    90,
+    61
+  ],
+  "private_active_workspace": {
+    "id": 15,
+    "name": "15",
+    "monitor": "KITTYSCAPE-HEADLESS",
+    "monitorID": 0,
+    "windows": 1,
+    "hasfullscreen": false,
+    "lastwindow": "0x55ec6c1f2340",
+    "lastwindowtitle": "Kittyscape private Wayland proof portable-0.38.1 kittyscape-private-wayland-27ldgord",
+    "ispersistent": false,
+    "tiledLayout": "dwindle"
+  },
+  "xwayland_setting": {
+    "option": "xwayland:enabled",
+    "bool": false,
+    "set": true
+  },
+  "environment_file": "/tmp/kittyscape-private-wayland-27ldgord/environment.json",
+  "renderer_profile": {
+    "verified_at": "2026-09-15T14:19:51.850755+00:00",
+    "package": "wayland 1.26.0-1",
+    "library": "/usr/lib/libwayland-client.so.0",
+    "resolved_library": "/usr/lib/libwayland-client.so.0.26.0",
+    "library_sha256": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+    "environment": {
+      "LD_PRELOAD": "/usr/lib/libwayland-client.so.0",
+      "LIBGL_ALWAYS_SOFTWARE": "1",
+      "__EGL_VENDOR_LIBRARY_FILENAMES": "/usr/share/glvnd/egl_vendor.d/50_mesa.json"
+    },
+    "qualification_note": "Explicit host-library preload for the portable binaries; no unmodified portable Wayland claim.",
+    "tested_portable_versions": [
+      "0.38.1",
+      "0.48.2"
+    ]
+  }
+}

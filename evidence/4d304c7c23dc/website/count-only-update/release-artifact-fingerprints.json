@@ -1,0 +1,14 @@
+{
+  "SHA256SUMS": {
+    "sha256": "c2e22a8e29c616427b0857c998a62697ab1a60fcd04504c690803da33e0fc3c3",
+    "bytes": 197
+  },
+  "kittyscape-0.1.0.dev1.manifest.json": {
+    "sha256": "1bcf80bb5662db27478ac7042bea76380b131d9af721f0f5dd9445f83d3a6208",
+    "bytes": 11844
+  },
+  "kittyscape-0.1.0.dev1.tar.gz": {
+    "sha256": "17c35e39abd86f2d39fa5f55303899e45a7a74c40dbb9ab564f4ed061f453cdb",
+    "bytes": 141198
+  }
+}

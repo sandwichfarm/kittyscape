@@ -1,0 +1,18 @@
+{
+  "bash": {
+    "executable": "/tmp/kittyscape-tools/debian-bookworm/bin/bash",
+    "sha256": "55b89ab22bee4792a210f493a53fb066accd5d30b69837c28d98be5ff863efcf"
+  },
+  "zsh": {
+    "executable": "/tmp/kittyscape-tools/debian-bookworm/bin/zsh",
+    "sha256": "c474c2fda01aa9e4482f2d9baadc7b81cbf62f516b30c03078dbc74c514d820b"
+  },
+  "fish": {
+    "executable": "/tmp/kittyscape-tools/debian-bookworm/usr/bin/fish",
+    "sha256": "f69a739675e436b3d4355226a77c8bd4c554d52f44802773ad5d661e4a37d9c5"
+  },
+  "nu": {
+    "executable": "/tmp/kittyscape-tools/nu-0.115.1/nu",
+    "sha256": "0821da2f16e4e594dc032ee83978b75aa8e2bdb2ff34474a150d954128412d54"
+  }
+}

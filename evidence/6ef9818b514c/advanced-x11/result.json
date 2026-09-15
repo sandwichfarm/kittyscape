@@ -1,0 +1,4051 @@
+{
+  "backend": "x11",
+  "display": ":102",
+  "platform": "Linux",
+  "architecture": "x86_64",
+  "artifact": {
+    "archive": "$ARCHIVE",
+    "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+    "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+    "files_verified": 74,
+    "version": "0.1.0.dev1",
+    "extracted_bundle": "$BUNDLE"
+  },
+  "created_at": "2026-09-15T13:59:28Z",
+  "cases": [
+    {
+      "case": "paths",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:03Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-i4sh47db",
+      "runtime": {
+        "event": "load",
+        "pid": 2120281,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20876.556648515
+      },
+      "scenarios": [
+        {
+          "scenario": "T03-literal-punctuation",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              136,
+              63,
+              29
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-i4sh47db/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-i4sh47db/literal $() `printf none` ; quote' backslash\\ \u00fc",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-i4sh47db/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 2,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 1
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-i4sh47db/literal $() `printf none` ; quote' backslash\\ \u00fc",
+                  "",
+                  2
+                ],
+                "generation": 20,
+                "timer": 0,
+                "applied": [
+                  "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40",
+                  "scaled",
+                  true,
+                  0.2,
+                  0.4
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 2,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 1
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-i4sh47db/punctuation.png"
+          }
+        },
+        {
+          "scenario": "T03-symlink",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              136,
+              63,
+              29
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-i4sh47db/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-i4sh47db/symlink with spaces \u00fc",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-i4sh47db/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 2,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 1
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-i4sh47db/symlink with spaces \u00fc",
+                  "",
+                  2
+                ],
+                "generation": 28,
+                "timer": 0,
+                "applied": [
+                  "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40",
+                  "scaled",
+                  true,
+                  0.2,
+                  0.4
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 2,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 1
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-i4sh47db/symlink.png"
+          }
+        },
+        {
+          "scenario": "T03-deleted-cwd",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-i4sh47db/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-i4sh47db/projects/Project A/vanished",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-i4sh47db/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 2,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "directory-unavailable",
+                    "uploads": 2
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-i4sh47db/projects/Project A/vanished",
+                  "",
+                  2
+                ],
+                "generation": 44,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-i4sh47db/baseline.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 2,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "directory-unavailable",
+                    "uploads": 2
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-i4sh47db/deleted-cwd.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "invalid-images",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:05Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-x32a5sll",
+      "runtime": {
+        "event": "load",
+        "pid": 2121893,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20877.983688641
+      },
+      "scenarios": [
+        {
+          "scenario": "T10-image-missing",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-x32a5sll/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-x32a5sll/projects/Project A",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-x32a5sll/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 2,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "image-unavailable-or-invalid",
+                    "uploads": 0
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-x32a5sll/projects/Project A",
+                  "",
+                  2
+                ],
+                "generation": 60,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 2,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "image-unavailable-or-invalid",
+                    "uploads": 0
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-x32a5sll/image-missing.png"
+          }
+        },
+        {
+          "scenario": "T10-image-corrupt",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-x32a5sll/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-x32a5sll/projects/Project A",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-x32a5sll/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 3,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "image-unavailable-or-invalid",
+                    "uploads": 0
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-x32a5sll/projects/Project A",
+                  "",
+                  3
+                ],
+                "generation": 109,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 3,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "image-unavailable-or-invalid",
+                    "uploads": 0
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-x32a5sll/image-corrupt.png"
+          }
+        },
+        {
+          "scenario": "T10-image-oversized",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-x32a5sll/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-x32a5sll/projects/Project A",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-x32a5sll/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 4,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "image-unavailable-or-invalid",
+                    "uploads": 0
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-x32a5sll/projects/Project A",
+                  "",
+                  4
+                ],
+                "generation": 158,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 4,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "image-unavailable-or-invalid",
+                    "uploads": 0
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-x32a5sll/image-oversized.png"
+          }
+        },
+        {
+          "scenario": "T10-image-unreadable",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-x32a5sll/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-x32a5sll/projects/Project A",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-x32a5sll/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 5,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "image-unavailable-or-invalid",
+                    "uploads": 0
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-x32a5sll/projects/Project A",
+                  "",
+                  5
+                ],
+                "generation": 207,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 5,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "image-unavailable-or-invalid",
+                    "uploads": 0
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-x32a5sll/image-unreadable.png"
+          }
+        },
+        {
+          "scenario": "T10-image-recovery",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              33,
+              100,
+              64
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-x32a5sll/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-x32a5sll/projects/Project B",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-x32a5sll/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 6,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 1
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-x32a5sll/projects/Project B",
+                  "",
+                  6
+                ],
+                "generation": 216,
+                "timer": 0,
+                "applied": [
+                  "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f",
+                  "scaled",
+                  true,
+                  0.2,
+                  0.4
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 6,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 1
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-x32a5sll/image-recovered.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "disabled-runtime",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:08Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-dwui_ap2",
+      "runtime": {
+        "event": "load",
+        "pid": 2125081,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20881.378264784
+      },
+      "scenarios": [
+        {
+          "scenario": "T10-enabled-false",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-dwui_ap2/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-dwui_ap2/projects/Project B",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-dwui_ap2/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": false,
+                "revision": 2,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "disabled",
+                    "uploads": 2
+                  }
+                }
+              },
+              "state": {
+                "request": [],
+                "generation": 31,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": false,
+                "revision": 2,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "disabled",
+                    "uploads": 2
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-dwui_ap2/disabled.png"
+          }
+        },
+        {
+          "scenario": "T10-enabled-recovery",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              33,
+              100,
+              64
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-dwui_ap2/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-dwui_ap2/projects/Project B",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-dwui_ap2/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 3,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 3
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-dwui_ap2/projects/Project B",
+                  "",
+                  3
+                ],
+                "generation": 32,
+                "timer": 0,
+                "applied": [
+                  "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f",
+                  "scaled",
+                  true,
+                  0.2,
+                  0.4
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 3,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 3
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-dwui_ap2/enabled-again.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "reload-inherited",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:10Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-n_85keyq",
+      "runtime": {
+        "event": "load",
+        "pid": 2126470,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20882.916618716
+      },
+      "scenarios": [
+        {
+          "scenario": "T09-reload-inherited",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              33,
+              100,
+              64
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-n_85keyq/B.png',)",
+              "background_image_layout": "mirror-tiled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-n_85keyq/home",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-n_85keyq/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 6
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-n_85keyq/home",
+                  "",
+                  1
+                ],
+                "generation": 35,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-n_85keyq/B.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "mirror-tiled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 6
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-n_85keyq/reload-inherited.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "reload-override",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:11Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-xj7yr6xc",
+      "runtime": {
+        "event": "load",
+        "pid": 2127567,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20884.085230521
+      },
+      "scenarios": [
+        {
+          "scenario": "T09-reload-explicit-override",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-xj7yr6xc/B.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-xj7yr6xc/home",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-xj7yr6xc/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 6
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-xj7yr6xc/home",
+                  "",
+                  1
+                ],
+                "generation": 37,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "fixture.png",
+                  0,
+                  "c9b3618d88ec9c3c37e8c882104eb3407dd4ebb8c9ce05eda0fbd28535109f7a"
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "override",
+                "layout": "centered",
+                "index": 0,
+                "bytes": 12167
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 6
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-xj7yr6xc/reload-override.png"
+          }
+        },
+        {
+          "scenario": "T13-path-only-writer-rejected",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              33,
+              100,
+              64
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-xj7yr6xc/B.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-xj7yr6xc/projects/Project A",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-xj7yr6xc/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": true,
+                    "reason": "baseline-unknown",
+                    "uploads": 6
+                  }
+                }
+              },
+              "state": {
+                "request": [],
+                "generation": 47,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "unknown",
+                "layout": "tiled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": true,
+                    "reason": "baseline-unknown",
+                    "uploads": 6
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-xj7yr6xc/path-only-rejected.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "glob-index",
+      "status": "passed",
+      "baseline": "list",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:12Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-1xffxga8",
+      "runtime": {
+        "event": "load",
+        "pid": 2128930,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20885.82890497
+      },
+      "scenarios": [
+        {
+          "scenario": "T09-glob-index-reload-pause",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              33,
+              100,
+              64
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-1xffxga8/A.png', '/tmp/kittyscape-qualify-1xffxga8/B.png', '/tmp/kittyscape-qualify-1xffxga8/baseline.png')",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-1xffxga8/projects/Project A",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-1xffxga8/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": true,
+                    "reason": "paused",
+                    "uploads": 6
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-1xffxga8/projects/Project A",
+                  "",
+                  1
+                ],
+                "generation": 42,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 1,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": true,
+                    "reason": "paused",
+                    "uploads": 6
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-1xffxga8/glob-index-reload-paused.png"
+          }
+        },
+        {
+          "scenario": "T09-glob-absolute-index",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              33,
+              100,
+              64
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-1xffxga8/A.png', '/tmp/kittyscape-qualify-1xffxga8/B.png', '/tmp/kittyscape-qualify-1xffxga8/baseline.png')",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-1xffxga8/home",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-1xffxga8/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 8
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-1xffxga8/home",
+                  "",
+                  1
+                ],
+                "generation": 51,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-1xffxga8/A.png",
+                  1,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 1,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 8
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-1xffxga8/glob-index-one.png"
+          }
+        },
+        {
+          "scenario": "T09-relative-index-rejected",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-1xffxga8/A.png', '/tmp/kittyscape-qualify-1xffxga8/B.png', '/tmp/kittyscape-qualify-1xffxga8/baseline.png')",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-1xffxga8/projects/Project A",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-1xffxga8/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": true,
+                    "reason": "baseline-unknown",
+                    "uploads": 8
+                  }
+                }
+              },
+              "state": {
+                "request": [],
+                "generation": 61,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "unknown",
+                "layout": "tiled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": true,
+                    "reason": "baseline-unknown",
+                    "uploads": 8
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-1xffxga8/relative-index-rejected.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "automatic-theme",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": true,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:15Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-znmoeby3",
+      "runtime": {
+        "event": "load",
+        "pid": 2130749,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20887.866671912
+      },
+      "scenarios": [
+        {
+          "scenario": "T09-auto-theme-boundary",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              33,
+              100,
+              64
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-znmoeby3/B.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-znmoeby3/home",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-znmoeby3/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 4
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-znmoeby3/home",
+                  "",
+                  1
+                ],
+                "generation": 28,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-znmoeby3/B.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "light",
+              "dark": true,
+              "light": true,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 4
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-znmoeby3/theme-resume.png"
+          }
+        },
+        {
+          "scenario": "T09-theme-respects-manual-pause",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-znmoeby3/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-znmoeby3/projects/Project A",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-znmoeby3/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": true,
+                    "reason": "paused",
+                    "uploads": 6
+                  }
+                }
+              },
+              "state": {
+                "request": [],
+                "generation": 40,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "dark",
+              "dark": true,
+              "light": true,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": true,
+                    "reason": "paused",
+                    "uploads": 6
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-znmoeby3/theme-manual-pause.png"
+          }
+        },
+        {
+          "scenario": "T09-theme-dark-restoration",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-znmoeby3/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-znmoeby3/home",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-znmoeby3/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 8
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-znmoeby3/home",
+                  "",
+                  1
+                ],
+                "generation": 49,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-znmoeby3/baseline.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "dark",
+              "dark": true,
+              "light": true,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 8
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-znmoeby3/theme-dark-restored.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "disabled-integration",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [
+        "shell_integration disabled"
+      ],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:16Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-7jgxcbv5",
+      "runtime": {
+        "event": "load",
+        "pid": 2132482,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20889.724853568
+      },
+      "scenarios": [
+        {
+          "scenario": "T11-shell_integration-disabled",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-7jgxcbv5/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "",
+              "prompt": false,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-7jgxcbv5/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "shell-reports-disabled",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "shell-reports-disabled",
+                    "uploads": 0
+                  }
+                }
+              },
+              "state": {
+                "request": [],
+                "generation": 8,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "shell-reports-disabled",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "shell-reports-disabled",
+                    "uploads": 0
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-7jgxcbv5/reports-disabled.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "disabled-cwd",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [
+        "shell_integration no-cwd"
+      ],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:17Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-onxwugs7",
+      "runtime": {
+        "event": "load",
+        "pid": 2133123,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20890.484045239
+      },
+      "scenarios": [
+        {
+          "scenario": "T11-shell_integration-no-cwd",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-onxwugs7/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-onxwugs7/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "shell-reports-disabled",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "shell-reports-disabled",
+                    "uploads": 0
+                  }
+                }
+              },
+              "state": {
+                "request": [],
+                "generation": 29,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "shell-reports-disabled",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "shell-reports-disabled",
+                    "uploads": 0
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-onxwugs7/reports-disabled.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "disabled-prompt",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [
+        "shell_integration no-prompt-mark"
+      ],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:18Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-hgzajice",
+      "runtime": {
+        "event": "load",
+        "pid": 2133887,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20891.269818765
+      },
+      "scenarios": [
+        {
+          "scenario": "T11-shell_integration-no-prompt-mark",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-hgzajice/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-hgzajice/projects/Project A",
+              "prompt": false,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-hgzajice/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "shell-reports-disabled",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "shell-reports-disabled",
+                    "uploads": 0
+                  }
+                }
+              },
+              "state": {
+                "request": [],
+                "generation": 25,
+                "timer": 0,
+                "applied": []
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "shell-reports-disabled",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "shell-reports-disabled",
+                    "uploads": 0
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-hgzajice/reports-disabled.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "remote-report",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:19Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-4iw5jbri",
+      "runtime": {
+        "event": "load",
+        "pid": 2134573,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20892.021286186
+      },
+      "scenarios": [
+        {
+          "scenario": "T11-remote-OSC7",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-4iw5jbri/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "file://remote.invalid/example/Project",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-4iw5jbri/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "directory-invalid-remote-or-unreported",
+                    "uploads": 2
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  null,
+                  "directory-invalid-remote-or-unreported",
+                  1
+                ],
+                "generation": 27,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-4iw5jbri/baseline.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "directory-invalid-remote-or-unreported",
+                    "uploads": 2
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-4iw5jbri/remote-report.png"
+          }
+        },
+        {
+          "scenario": "T11-remote-report-recovery",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              33,
+              100,
+              64
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-4iw5jbri/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-4iw5jbri/projects/Project B",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-4iw5jbri/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 3
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-4iw5jbri/projects/Project B",
+                  "",
+                  1
+                ],
+                "generation": 43,
+                "timer": 0,
+                "applied": [
+                  "95d67b9deca8f1ba143ed4e05ee41b30741448e63af1415e66627ab68370230f",
+                  "scaled",
+                  true,
+                  0.2,
+                  0.4
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 3
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-4iw5jbri/remote-recovered.png"
+          }
+        },
+        {
+          "scenario": "T11-lost-OSC7",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-4iw5jbri/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-4iw5jbri/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "directory-report-lost",
+                    "uploads": 4
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  null,
+                  "directory-report-lost",
+                  1
+                ],
+                "generation": 51,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-4iw5jbri/baseline.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "directory-report-lost",
+                    "uploads": 4
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-4iw5jbri/lost-report.png"
+          }
+        },
+        {
+          "scenario": "T11-lost-report-recovery",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              136,
+              63,
+              29
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-4iw5jbri/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-4iw5jbri/projects/Project A",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-4iw5jbri/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 5
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  "/tmp/kittyscape-qualify-4iw5jbri/projects/Project A",
+                  "",
+                  1
+                ],
+                "generation": 67,
+                "timer": 0,
+                "applied": [
+                  "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40",
+                  "scaled",
+                  true,
+                  0.2,
+                  0.4
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": true,
+                    "paused": false,
+                    "reason": "",
+                    "uploads": 5
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-4iw5jbri/lost-recovered.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "nested-shell",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:20Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-a154u8go",
+      "runtime": {
+        "event": "load",
+        "pid": 2136060,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20893.656645134
+      },
+      "scenarios": [
+        {
+          "scenario": "T11-nested-local-shell-rejected",
+          "result": "pass",
+          "detail": {
+            "observation": {
+              "pixel": [
+                29,
+                41,
+                127
+              ],
+              "inspect": {
+                "background_image": "('/tmp/kittyscape-qualify-a154u8go/baseline.png',)",
+                "background_image_layout": "scaled",
+                "background_image_linear": "True",
+                "background_tint": "0.2",
+                "background_tint_gaps": "0.4",
+                "background_opacity": "0.85",
+                "background": "Color(22, 21, 27)",
+                "foreground": "Color(240, 232, 223)",
+                "watchers": [
+                  "$BUNDLE/tests/runtime/observer.py",
+                  "$BUNDLE/kittyscape/watcher.py"
+                ],
+                "has_image": true,
+                "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-a154u8go/projects/Project A",
+                "prompt": false,
+                "engine_file": "$BUNDLE/kittyscape/engine.py",
+                "config_path": "/tmp/kittyscape-qualify-a154u8go/kittyscape.json",
+                "test_timer_count": null,
+                "jobs": {},
+                "job_timer": 0,
+                "runtime": {
+                  "enabled": true,
+                  "revision": 1,
+                  "reason": "",
+                  "detail": "",
+                  "pending_jobs": 0,
+                  "filesystem_stalled": false,
+                  "modern_background_api": true,
+                  "pending_events": 0,
+                  "windows": {
+                    "1": {
+                      "pane": 1,
+                      "owned": false,
+                      "paused": false,
+                      "reason": "context-unsupported",
+                      "uploads": 2
+                    }
+                  }
+                },
+                "state": {
+                  "request": [
+                    1,
+                    null,
+                    "context-unsupported",
+                    1
+                  ],
+                  "generation": 26,
+                  "timer": 0,
+                  "applied": [
+                    "baseline",
+                    "/tmp/kittyscape-qualify-a154u8go/baseline.png",
+                    0,
+                    ""
+                  ]
+                }
+              },
+              "native": {
+                "theme": "",
+                "dark": false,
+                "light": false,
+                "baseline": {
+                  "kind": "inherited",
+                  "layout": "scaled",
+                  "index": 0,
+                  "bytes": 0
+                },
+                "status": {
+                  "enabled": true,
+                  "revision": 1,
+                  "reason": "",
+                  "detail": "",
+                  "pending_jobs": 0,
+                  "filesystem_stalled": false,
+                  "modern_background_api": true,
+                  "pending_events": 0,
+                  "windows": {
+                    "1": {
+                      "pane": 1,
+                      "owned": false,
+                      "paused": false,
+                      "reason": "context-unsupported",
+                      "uploads": 2
+                    }
+                  }
+                }
+              },
+              "screenshot": "/tmp/kittyscape-qualify-a154u8go/nested-shell.png"
+            },
+            "recovered": {
+              "pixel": [
+                136,
+                63,
+                29
+              ],
+              "inspect": {
+                "background_image": "('/tmp/kittyscape-qualify-a154u8go/baseline.png',)",
+                "background_image_layout": "scaled",
+                "background_image_linear": "True",
+                "background_tint": "0.2",
+                "background_tint_gaps": "0.4",
+                "background_opacity": "0.85",
+                "background": "Color(22, 21, 27)",
+                "foreground": "Color(240, 232, 223)",
+                "watchers": [
+                  "$BUNDLE/tests/runtime/observer.py",
+                  "$BUNDLE/kittyscape/watcher.py"
+                ],
+                "has_image": true,
+                "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-a154u8go/projects/Project A",
+                "prompt": true,
+                "engine_file": "$BUNDLE/kittyscape/engine.py",
+                "config_path": "/tmp/kittyscape-qualify-a154u8go/kittyscape.json",
+                "test_timer_count": null,
+                "jobs": {},
+                "job_timer": 0,
+                "runtime": {
+                  "enabled": true,
+                  "revision": 1,
+                  "reason": "",
+                  "detail": "",
+                  "pending_jobs": 0,
+                  "filesystem_stalled": false,
+                  "modern_background_api": true,
+                  "pending_events": 0,
+                  "windows": {
+                    "1": {
+                      "pane": 1,
+                      "owned": true,
+                      "paused": false,
+                      "reason": "",
+                      "uploads": 3
+                    }
+                  }
+                },
+                "state": {
+                  "request": [
+                    1,
+                    "/tmp/kittyscape-qualify-a154u8go/projects/Project A",
+                    "",
+                    1
+                  ],
+                  "generation": 32,
+                  "timer": 0,
+                  "applied": [
+                    "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40",
+                    "scaled",
+                    true,
+                    0.2,
+                    0.4
+                  ]
+                }
+              },
+              "native": {
+                "theme": "",
+                "dark": false,
+                "light": false,
+                "baseline": {
+                  "kind": "inherited",
+                  "layout": "scaled",
+                  "index": 0,
+                  "bytes": 0
+                },
+                "status": {
+                  "enabled": true,
+                  "revision": 1,
+                  "reason": "",
+                  "detail": "",
+                  "pending_jobs": 0,
+                  "filesystem_stalled": false,
+                  "modern_background_api": true,
+                  "pending_events": 0,
+                  "windows": {
+                    "1": {
+                      "pane": 1,
+                      "owned": true,
+                      "paused": false,
+                      "reason": "",
+                      "uploads": 3
+                    }
+                  }
+                }
+              },
+              "screenshot": "/tmp/kittyscape-qualify-a154u8go/nested-recovered.png"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "unsupported-commands",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:22Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-21k0kb6w",
+      "runtime": {
+        "event": "load",
+        "pid": 2137581,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20895.455266616
+      },
+      "scenarios": [
+        {
+          "scenario": "T11-unsupported-command-ssh",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-21k0kb6w/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-21k0kb6w/projects/Project B",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-21k0kb6w/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "context-unsupported",
+                    "uploads": 2
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  null,
+                  "context-unsupported",
+                  1
+                ],
+                "generation": 35,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-21k0kb6w/baseline.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "context-unsupported",
+                    "uploads": 2
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-21k0kb6w/unsupported-ssh.png"
+          }
+        },
+        {
+          "scenario": "T11-unsupported-command-tmux",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-21k0kb6w/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-21k0kb6w/projects/Project B",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-21k0kb6w/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "context-unsupported",
+                    "uploads": 5
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  null,
+                  "context-unsupported",
+                  1
+                ],
+                "generation": 60,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-21k0kb6w/baseline.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "context-unsupported",
+                    "uploads": 5
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-21k0kb6w/unsupported-tmux.png"
+          }
+        },
+        {
+          "scenario": "T11-unsupported-command-zellij",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-21k0kb6w/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-21k0kb6w/projects/Project B",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-21k0kb6w/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "context-unsupported",
+                    "uploads": 8
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  null,
+                  "context-unsupported",
+                  1
+                ],
+                "generation": 85,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-21k0kb6w/baseline.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "context-unsupported",
+                    "uploads": 8
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-21k0kb6w/unsupported-zellij.png"
+          }
+        },
+        {
+          "scenario": "T11-unsupported-command-docker",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-21k0kb6w/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-21k0kb6w/projects/Project B",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-21k0kb6w/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "context-unsupported",
+                    "uploads": 11
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  1,
+                  null,
+                  "context-unsupported",
+                  1
+                ],
+                "generation": 110,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-21k0kb6w/baseline.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 1,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "context-unsupported",
+                    "uploads": 11
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-21k0kb6w/unsupported-docker.png"
+          }
+        }
+      ]
+    },
+    {
+      "case": "unsupported-environment",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:25Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-yz8gy8r0",
+      "runtime": {
+        "event": "load",
+        "pid": 2139943,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20898.497870412
+      },
+      "scenarios": [
+        {
+          "scenario": "T11-declared-environment-TMUX",
+          "result": "pass",
+          "detail": {
+            "status": {
+              "enabled": true,
+              "revision": 1,
+              "reason": "",
+              "detail": "",
+              "pending_jobs": 0,
+              "filesystem_stalled": false,
+              "modern_background_api": true,
+              "pending_events": 0,
+              "windows": {
+                "1": {
+                  "pane": 2,
+                  "owned": false,
+                  "paused": false,
+                  "reason": "context-unsupported",
+                  "uploads": 0
+                }
+              }
+            },
+            "pixel": [
+              29,
+              41,
+              127
+            ]
+          }
+        },
+        {
+          "scenario": "T11-declared-environment-ZELLIJ",
+          "result": "pass",
+          "detail": {
+            "status": {
+              "enabled": true,
+              "revision": 1,
+              "reason": "",
+              "detail": "",
+              "pending_jobs": 0,
+              "filesystem_stalled": false,
+              "modern_background_api": true,
+              "pending_events": 0,
+              "windows": {
+                "1": {
+                  "pane": 3,
+                  "owned": false,
+                  "paused": false,
+                  "reason": "context-unsupported",
+                  "uploads": 0
+                }
+              }
+            },
+            "pixel": [
+              29,
+              41,
+              127
+            ]
+          }
+        },
+        {
+          "scenario": "T11-declared-environment-container",
+          "result": "pass",
+          "detail": {
+            "status": {
+              "enabled": true,
+              "revision": 1,
+              "reason": "",
+              "detail": "",
+              "pending_jobs": 0,
+              "filesystem_stalled": false,
+              "modern_background_api": true,
+              "pending_events": 0,
+              "windows": {
+                "1": {
+                  "pane": 4,
+                  "owned": false,
+                  "paused": false,
+                  "reason": "context-unsupported",
+                  "uploads": 0
+                }
+              }
+            },
+            "pixel": [
+              29,
+              41,
+              127
+            ]
+          }
+        },
+        {
+          "scenario": "T11-declared-environment-SSH_CONNECTION",
+          "result": "pass",
+          "detail": {
+            "status": {
+              "enabled": true,
+              "revision": 1,
+              "reason": "",
+              "detail": "",
+              "pending_jobs": 0,
+              "filesystem_stalled": false,
+              "modern_background_api": true,
+              "pending_events": 0,
+              "windows": {
+                "1": {
+                  "pane": 5,
+                  "owned": false,
+                  "paused": false,
+                  "reason": "context-unsupported",
+                  "uploads": 0
+                }
+              }
+            },
+            "pixel": [
+              29,
+              41,
+              127
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "case": "unsupported-shell",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:26Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-p69majlh",
+      "runtime": {
+        "event": "load",
+        "pid": 2141372,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20899.669914925
+      },
+      "scenarios": [
+        {
+          "scenario": "T11-unqualified-shell-fallback",
+          "result": "pass",
+          "detail": {
+            "pixel": [
+              29,
+              41,
+              127
+            ],
+            "inspect": {
+              "background_image": "('/tmp/kittyscape-qualify-p69majlh/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "kitty-shell-cwd://arch/tmp/kittyscape-qualify-p69majlh/projects/Project A",
+              "prompt": true,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-p69majlh/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 2,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "shell-unqualified",
+                    "uploads": 2
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  2,
+                  null,
+                  "shell-unqualified",
+                  1
+                ],
+                "generation": 25,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-p69majlh/baseline.png",
+                  0,
+                  ""
+                ]
+              }
+            },
+            "native": {
+              "theme": "",
+              "dark": false,
+              "light": false,
+              "baseline": {
+                "kind": "inherited",
+                "layout": "scaled",
+                "index": 0,
+                "bytes": 0
+              },
+              "status": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 2,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "shell-unqualified",
+                    "uploads": 2
+                  }
+                }
+              }
+            },
+            "screenshot": "/tmp/kittyscape-qualify-p69majlh/unsupported-sh.png",
+            "active_pane": {
+              "background_image": "('/tmp/kittyscape-qualify-p69majlh/baseline.png',)",
+              "background_image_layout": "scaled",
+              "background_image_linear": "True",
+              "background_tint": "0.2",
+              "background_tint_gaps": "0.4",
+              "background_opacity": "0.85",
+              "background": "Color(22, 21, 27)",
+              "foreground": "Color(240, 232, 223)",
+              "watchers": [
+                "$BUNDLE/tests/runtime/observer.py",
+                "$BUNDLE/kittyscape/watcher.py"
+              ],
+              "has_image": true,
+              "cwd": "",
+              "prompt": false,
+              "engine_file": "$BUNDLE/kittyscape/engine.py",
+              "config_path": "/tmp/kittyscape-qualify-p69majlh/kittyscape.json",
+              "test_timer_count": null,
+              "jobs": {},
+              "job_timer": 0,
+              "runtime": {
+                "enabled": true,
+                "revision": 1,
+                "reason": "",
+                "detail": "",
+                "pending_jobs": 0,
+                "filesystem_stalled": false,
+                "modern_background_api": true,
+                "pending_events": 0,
+                "windows": {
+                  "1": {
+                    "pane": 2,
+                    "owned": false,
+                    "paused": false,
+                    "reason": "shell-unqualified",
+                    "uploads": 2
+                  }
+                }
+              },
+              "state": {
+                "request": [
+                  2,
+                  null,
+                  "shell-unqualified",
+                  1
+                ],
+                "generation": 25,
+                "timer": 0,
+                "applied": [
+                  "baseline",
+                  "/tmp/kittyscape-qualify-p69majlh/baseline.png",
+                  0,
+                  ""
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "exit-status",
+      "status": "passed",
+      "baseline": "single",
+      "extra_config": [],
+      "automatic_theme_files": false,
+      "backend": "x11",
+      "artifact": {
+        "archive": "$ARCHIVE",
+        "sha256": "6ef9818b514c7aa78df2385e49ff8a4ef39eaf540105c5495a311bb8d093ec26",
+        "manifest_sha256": "f7fbc8656c6c48f9b1d003226d698295b17f99bfd13583cf4a737ed898e5c135",
+        "files_verified": 74,
+        "version": "0.1.0.dev1",
+        "extracted_bundle": "$BUNDLE"
+      },
+      "created_at": "2026-09-15T13:59:28Z",
+      "sources": {
+        "kittyscape/__init__.py": "bf4e16f054d9dc98f13133bd3fdbba9a9d487803344cdddb9b9c77284c9c34d5",
+        "kittyscape/action.py": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3",
+        "kittyscape/compat.py": "f635dc7f77467ac97000b0f547baca9ceaac081a51cde115e3e140b10c99acd9",
+        "kittyscape/config.py": "b05632a471955e37357e143339c0132d5775399d15d58c77561391e4bebca82b",
+        "kittyscape/engine.py": "740c3b1b82f1b4776f566080eb1d63e8e66f18ac2d19843f0ed6aab6ed6ff8cb",
+        "kittyscape/images.py": "ae85b10ceb987bf29d497ea75c2fbb930f02835fd5007de01961d413e7410257",
+        "kittyscape/rules.py": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+        "kittyscape/watcher.py": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+      },
+      "evidence": "/tmp/kittyscape-qualify-knagqett",
+      "runtime": {
+        "event": "load",
+        "pid": 2142340,
+        "kitty": [
+          0,
+          48,
+          2
+        ],
+        "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+        "time": 20900.850747757
+      },
+      "scenarios": [
+        {
+          "scenario": "T11-prompt-exit-status",
+          "result": "pass",
+          "detail": {
+            "captured_status": 1,
+            "pixel": [
+              136,
+              63,
+              29
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "error": null,
+  "kitty_executable": "/tmp/kittyscape-tools/kitty-0.48.2/bin/kitty",
+  "shell_executable": "/tmp/kittyscape-bash-5.3.20/build/bash",
+  "shell_version": "GNU bash, version 5.3.20(1)-release (x86_64-pc-linux-gnu)",
+  "scope": "Bash advanced cases; unsupported-command fixtures are API/OSC injection, not actual remote support",
+  "verifier_sha256": "40ded4ea53e0e115cf3b2b2878aea076e4e0ad81f90b79bf57865a83b1bcc3c2"
+}

@@ -1,0 +1,6 @@
+[0.298] The output buffer does not support sRGB color encoding, colors will be incorrect.
+[0.299] Failed to enable transparency. This happens when your desktop environment does not support compositing.
+[0.350] [PARSE ERROR] Unknown terminfo property: query-os-name
+[2.883] [PARSE ERROR] Unknown terminfo property: query-os-name
+[3.360] [PARSE ERROR] Unknown terminfo property: query-os-name
+[3.960] [PARSE ERROR] Unknown terminfo property: query-os-name

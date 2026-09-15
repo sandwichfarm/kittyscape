@@ -1,0 +1,16 @@
+[
+  {
+    "site": "dist",
+    "linked_result_records": 100,
+    "rows": 96,
+    "advanced_scenarios": 74,
+    "status": "passed"
+  },
+  {
+    "site": "dist-subpath",
+    "linked_result_records": 100,
+    "rows": 96,
+    "advanced_scenarios": 74,
+    "status": "passed"
+  }
+]

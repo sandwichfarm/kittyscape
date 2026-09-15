@@ -1,0 +1,27 @@
+$ node tests/site/check.mjs
+{
+  "checkedAt": "2026-09-15T14:56:17.121Z",
+  "artifacts": [
+    {
+      "base": "/",
+      "pages": 17,
+      "localLinksAndAssets": 603
+    },
+    {
+      "base": "/kittyscape/",
+      "pages": 17,
+      "localLinksAndAssets": 603
+    }
+  ],
+  "assets": {
+    "cat-mark.svg": {
+      "bytes": 382,
+      "gzipBytes": 227
+    },
+    "terminal-cat.svg": {
+      "bytes": 2461,
+      "gzipBytes": 1059
+    },
+    "customThemeSourceGzipBytes": 373
+  }
+}

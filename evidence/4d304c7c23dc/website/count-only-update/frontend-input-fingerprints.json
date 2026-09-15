@@ -1,0 +1,200 @@
+[
+  {
+    "path": "docs/.vitepress/config.mjs",
+    "old_sha256": "ba3319928ae96005465942057b82d0d5c5e776c4645c6d80a60248d7bf7c8401",
+    "new_sha256": "ba3319928ae96005465942057b82d0d5c5e776c4645c6d80a60248d7bf7c8401",
+    "repo_sha256": "ba3319928ae96005465942057b82d0d5c5e776c4645c6d80a60248d7bf7c8401"
+  },
+  {
+    "path": "docs/.vitepress/theme/Layout.vue",
+    "old_sha256": "e6b7e965a77dccf8e23cf5a9476af84d4f93d569fc86ab4bb064416085c4a57d",
+    "new_sha256": "e6b7e965a77dccf8e23cf5a9476af84d4f93d569fc86ab4bb064416085c4a57d",
+    "repo_sha256": "e6b7e965a77dccf8e23cf5a9476af84d4f93d569fc86ab4bb064416085c4a57d"
+  },
+  {
+    "path": "docs/.vitepress/theme/index.js",
+    "old_sha256": "2e6fb8226b484f3bf345173b338f2ff857beeeb8eb2b4e4b08456b75f843ca53",
+    "new_sha256": "2e6fb8226b484f3bf345173b338f2ff857beeeb8eb2b4e4b08456b75f843ca53",
+    "repo_sha256": "2e6fb8226b484f3bf345173b338f2ff857beeeb8eb2b4e4b08456b75f843ca53"
+  },
+  {
+    "path": "docs/.vitepress/theme/style.css",
+    "old_sha256": "2e8de7bf1fb4b0fdff880f140762cac8dbff187de0dd33d563c65b801161fae8",
+    "new_sha256": "2e8de7bf1fb4b0fdff880f140762cac8dbff187de0dd33d563c65b801161fae8",
+    "repo_sha256": "2e8de7bf1fb4b0fdff880f140762cac8dbff187de0dd33d563c65b801161fae8"
+  },
+  {
+    "path": "docs/contributing/index.md",
+    "old_sha256": "d757435b7892de23067d189628a1ace0f740f34f3ddf30de505ef24405a01f30",
+    "new_sha256": "a8911f0d8945653490014efe07806f16f4e0c02aa793a57526a0a955c49da975",
+    "repo_sha256": "a8911f0d8945653490014efe07806f16f4e0c02aa793a57526a0a955c49da975"
+  },
+  {
+    "path": "docs/development/compatibility-findings.md",
+    "old_sha256": "a0c9e39877a678a7a5fd5233fc990bcc032b709095da0a03aaf48a32a35b6779",
+    "new_sha256": "a0c9e39877a678a7a5fd5233fc990bcc032b709095da0a03aaf48a32a35b6779",
+    "repo_sha256": "a0c9e39877a678a7a5fd5233fc990bcc032b709095da0a03aaf48a32a35b6779"
+  },
+  {
+    "path": "docs/development/release-checklist.md",
+    "old_sha256": "784e88352d3c7d10c4057337fd37f98e6902a33d20c93d7991c0dd2794000d87",
+    "new_sha256": "784e88352d3c7d10c4057337fd37f98e6902a33d20c93d7991c0dd2794000d87",
+    "repo_sha256": "784e88352d3c7d10c4057337fd37f98e6902a33d20c93d7991c0dd2794000d87"
+  },
+  {
+    "path": "docs/development/website.md",
+    "old_sha256": "0319954801a9adb5c7d1cb4f9ce163c2ae1badec130bcfb5f1c705516ea4b06c",
+    "new_sha256": "0319954801a9adb5c7d1cb4f9ce163c2ae1badec130bcfb5f1c705516ea4b06c",
+    "repo_sha256": "0319954801a9adb5c7d1cb4f9ce163c2ae1badec130bcfb5f1c705516ea4b06c"
+  },
+  {
+    "path": "docs/guide/configuration.md",
+    "old_sha256": "17d9bc149581de82e8428267ab46011cc4a00b27b94eeffc79cc1811de4eff38",
+    "new_sha256": "17d9bc149581de82e8428267ab46011cc4a00b27b94eeffc79cc1811de4eff38",
+    "repo_sha256": "17d9bc149581de82e8428267ab46011cc4a00b27b94eeffc79cc1811de4eff38"
+  },
+  {
+    "path": "docs/guide/getting-started.md",
+    "old_sha256": "47e8c18222e0302696bf6d964c26aae71acdba2d517f314c08900b2be6fc5dc5",
+    "new_sha256": "47e8c18222e0302696bf6d964c26aae71acdba2d517f314c08900b2be6fc5dc5",
+    "repo_sha256": "47e8c18222e0302696bf6d964c26aae71acdba2d517f314c08900b2be6fc5dc5"
+  },
+  {
+    "path": "docs/guide/installation.md",
+    "old_sha256": "feb61f1a9769603222f6c9f3d17bec50793e3694ef5a4ceff6b03ee606e232e4",
+    "new_sha256": "feb61f1a9769603222f6c9f3d17bec50793e3694ef5a4ceff6b03ee606e232e4",
+    "repo_sha256": "feb61f1a9769603222f6c9f3d17bec50793e3694ef5a4ceff6b03ee606e232e4"
+  },
+  {
+    "path": "docs/guide/kitty-settings.md",
+    "old_sha256": "177538ff27257a972b1622576d1565bf21b9fc0e3d4e8a48bd2712f0ec0eab01",
+    "new_sha256": "177538ff27257a972b1622576d1565bf21b9fc0e3d4e8a48bd2712f0ec0eab01",
+    "repo_sha256": "177538ff27257a972b1622576d1565bf21b9fc0e3d4e8a48bd2712f0ec0eab01"
+  },
+  {
+    "path": "docs/guide/shells.md",
+    "old_sha256": "333644a9650c4a63ca420e4928d707304c59094a282320883098f02173770783",
+    "new_sha256": "333644a9650c4a63ca420e4928d707304c59094a282320883098f02173770783",
+    "repo_sha256": "333644a9650c4a63ca420e4928d707304c59094a282320883098f02173770783"
+  },
+  {
+    "path": "docs/guide/troubleshooting.md",
+    "old_sha256": "2e700da6ec88401d17891baa1972d4c24ca211c264308bfd38c3548623e0efbe",
+    "new_sha256": "2e700da6ec88401d17891baa1972d4c24ca211c264308bfd38c3548623e0efbe",
+    "repo_sha256": "2e700da6ec88401d17891baa1972d4c24ca211c264308bfd38c3548623e0efbe"
+  },
+  {
+    "path": "docs/guide/uninstall.md",
+    "old_sha256": "955333dc85519f4890773a35659ca9c51a34a6d2725682a586141c6ca1d74adc",
+    "new_sha256": "955333dc85519f4890773a35659ca9c51a34a6d2725682a586141c6ca1d74adc",
+    "repo_sha256": "955333dc85519f4890773a35659ca9c51a34a6d2725682a586141c6ca1d74adc"
+  },
+  {
+    "path": "docs/index.md",
+    "old_sha256": "39b6d2127e211430f0ab9a8c838b8b14aa26d6ec7e33e8a09deed833fde84f5c",
+    "new_sha256": "39b6d2127e211430f0ab9a8c838b8b14aa26d6ec7e33e8a09deed833fde84f5c",
+    "repo_sha256": "39b6d2127e211430f0ab9a8c838b8b14aa26d6ec7e33e8a09deed833fde84f5c"
+  },
+  {
+    "path": "docs/public/cat-mark.svg",
+    "old_sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d",
+    "new_sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d",
+    "repo_sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d"
+  },
+  {
+    "path": "docs/public/terminal-cat.svg",
+    "old_sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f",
+    "new_sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f",
+    "repo_sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f"
+  },
+  {
+    "path": "docs/reference/actions.md",
+    "old_sha256": "2aa9cdeaa3a0b974e3fafc762e4de3513007ea8c393c21cfe89b85c7d5f7cfca",
+    "new_sha256": "2aa9cdeaa3a0b974e3fafc762e4de3513007ea8c393c21cfe89b85c7d5f7cfca",
+    "repo_sha256": "2aa9cdeaa3a0b974e3fafc762e4de3513007ea8c393c21cfe89b85c7d5f7cfca"
+  },
+  {
+    "path": "docs/reference/compatibility.md",
+    "old_sha256": "763a5008328cdf05b5bcdd0d79924d621bf97444f533b9f8572d2046de7d4dd7",
+    "new_sha256": "763a5008328cdf05b5bcdd0d79924d621bf97444f533b9f8572d2046de7d4dd7",
+    "repo_sha256": "763a5008328cdf05b5bcdd0d79924d621bf97444f533b9f8572d2046de7d4dd7"
+  },
+  {
+    "path": "docs/reference/configuration.md",
+    "old_sha256": "38d4367010dd6833f5957c40af9fbe3728db7b982512cb71925230547e604158",
+    "new_sha256": "38d4367010dd6833f5957c40af9fbe3728db7b982512cb71925230547e604158",
+    "repo_sha256": "38d4367010dd6833f5957c40af9fbe3728db7b982512cb71925230547e604158"
+  },
+  {
+    "path": "docs/releases.md",
+    "old_sha256": "a279c53669bd79ce08c05cb234cc4f17cd220367378d5a61b5f1ad5f84d7d0ed",
+    "new_sha256": "a279c53669bd79ce08c05cb234cc4f17cd220367378d5a61b5f1ad5f84d7d0ed",
+    "repo_sha256": "a279c53669bd79ce08c05cb234cc4f17cd220367378d5a61b5f1ad5f84d7d0ed"
+  },
+  {
+    "path": "package.json",
+    "old_sha256": "4423f08d3ec3eb8d714562e34aa538d306103994a93e936a7c4ba458ebf83ccf",
+    "new_sha256": "4423f08d3ec3eb8d714562e34aa538d306103994a93e936a7c4ba458ebf83ccf",
+    "repo_sha256": "4423f08d3ec3eb8d714562e34aa538d306103994a93e936a7c4ba458ebf83ccf"
+  },
+  {
+    "path": "patches/README.md",
+    "old_sha256": "88aa4836a4d61b61e4c9b3dd7b7bfa2a584d3c2b43363227bf7c1f103840a272",
+    "new_sha256": "88aa4836a4d61b61e4c9b3dd7b7bfa2a584d3c2b43363227bf7c1f103840a272",
+    "repo_sha256": "88aa4836a4d61b61e4c9b3dd7b7bfa2a584d3c2b43363227bf7c1f103840a272"
+  },
+  {
+    "path": "patches/vitepress@1.6.4.patch",
+    "old_sha256": "3052b445758b6a68fea67b8c0725bcc1dab315b09f71a124c0ec7a673b905666",
+    "new_sha256": "3052b445758b6a68fea67b8c0725bcc1dab315b09f71a124c0ec7a673b905666",
+    "repo_sha256": "3052b445758b6a68fea67b8c0725bcc1dab315b09f71a124c0ec7a673b905666"
+  },
+  {
+    "path": "pnpm-lock.yaml",
+    "old_sha256": "ef45efae3f6eae3a731ff41dbfb29d20a30ac85f7f0bd2905e9ff0fe81554bb0",
+    "new_sha256": "ef45efae3f6eae3a731ff41dbfb29d20a30ac85f7f0bd2905e9ff0fe81554bb0",
+    "repo_sha256": "ef45efae3f6eae3a731ff41dbfb29d20a30ac85f7f0bd2905e9ff0fe81554bb0"
+  },
+  {
+    "path": "pnpm-workspace.yaml",
+    "old_sha256": "fc9dd098d6c5d0614115a19314b965721dc275b6b6be038186027904a22a0773",
+    "new_sha256": "fc9dd098d6c5d0614115a19314b965721dc275b6b6be038186027904a22a0773",
+    "repo_sha256": "fc9dd098d6c5d0614115a19314b965721dc275b6b6be038186027904a22a0773"
+  },
+  {
+    "path": "tests/site/browser.mjs",
+    "old_sha256": "65d22845f4e6e22421b74fefb73cfd7e9a9f820b48f92450f57d36fed6d0b79d",
+    "new_sha256": "65d22845f4e6e22421b74fefb73cfd7e9a9f820b48f92450f57d36fed6d0b79d",
+    "repo_sha256": "65d22845f4e6e22421b74fefb73cfd7e9a9f820b48f92450f57d36fed6d0b79d"
+  },
+  {
+    "path": "tests/site/check.mjs",
+    "old_sha256": "7251ee5168f901d24f95c8b874903595b97065b1f428fc21d521c57a60b13753",
+    "new_sha256": "7251ee5168f901d24f95c8b874903595b97065b1f428fc21d521c57a60b13753",
+    "repo_sha256": "7251ee5168f901d24f95c8b874903595b97065b1f428fc21d521c57a60b13753"
+  },
+  {
+    "path": "tests/site/common.mjs",
+    "old_sha256": "08f16c668696d7df7de46a59fd5f989ae449862796d64ea698255ac414a0fcda",
+    "new_sha256": "08f16c668696d7df7de46a59fd5f989ae449862796d64ea698255ac414a0fcda",
+    "repo_sha256": "08f16c668696d7df7de46a59fd5f989ae449862796d64ea698255ac414a0fcda"
+  },
+  {
+    "path": "tests/site/webkit_zoom.py",
+    "old_sha256": "8335d6070f9840213b6138f5e74e7ad99677c16abf2f52ccbbed1e13796e843b",
+    "new_sha256": "8335d6070f9840213b6138f5e74e7ad99677c16abf2f52ccbbed1e13796e843b",
+    "repo_sha256": "8335d6070f9840213b6138f5e74e7ad99677c16abf2f52ccbbed1e13796e843b"
+  },
+  {
+    "path": "tests/site/zoom.mjs",
+    "old_sha256": "13db73bf05c9b5d1bef9ebf6c03a645227b0278b41b035c37d16a25f012435bf",
+    "new_sha256": "13db73bf05c9b5d1bef9ebf6c03a645227b0278b41b035c37d16a25f012435bf",
+    "repo_sha256": "13db73bf05c9b5d1bef9ebf6c03a645227b0278b41b035c37d16a25f012435bf"
+  },
+  {
+    "path": "tests/site/zoom.py",
+    "old_sha256": "fbc03060b3f4fdae1c3dd22094c82aa6950df6811e346838958ec0b1614fae7c",
+    "new_sha256": "fbc03060b3f4fdae1c3dd22094c82aa6950df6811e346838958ec0b1614fae7c",
+    "repo_sha256": "fbc03060b3f4fdae1c3dd22094c82aa6950df6811e346838958ec0b1614fae7c"
+  }
+]

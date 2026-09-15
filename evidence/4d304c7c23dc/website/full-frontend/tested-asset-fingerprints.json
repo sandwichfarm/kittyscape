@@ -1,0 +1,1426 @@
+{
+  "created_at": "2026-09-15T14:34:04.752235+00:00",
+  "archive_sha256": "1d2ec68b1040f9faf8304583be273aff5f1e7e69d6411a4466afc58b16335828",
+  "functional_files": {
+    "/404.html": {
+      "sha256": "5fc8b3d0967268625435b9aafb007c8c129790e325c51a16b2324d11dc328f51",
+      "bytes": 3598
+    },
+    "/assets/app.DmCMM-uA.js": {
+      "sha256": "1fb77c27434a7360e6f5ab83c12f5f5f0ada5b24343e7d2a239674a451b980e7",
+      "bytes": 1352
+    },
+    "/assets/chunks/@localSearchIndexroot.B8nP0BuC.js": {
+      "sha256": "cb842db4f57cd3691bbf397df7eefbb827b8679d73147ca549aee01129923751",
+      "bytes": 83307
+    },
+    "/assets/chunks/VPLocalSearchBox.BUG-phN3.js": {
+      "sha256": "0b1fe869275e0c8a8956f395b75475631e8a03a7df29ddca71f700a7b873f213",
+      "bytes": 64044
+    },
+    "/assets/chunks/framework.BXzK3EA4.js": {
+      "sha256": "aab48e5afe404fb51be147b08f8e482a9abee217b591a6235171b35b071cd506",
+      "bytes": 112959
+    },
+    "/assets/chunks/theme.IBdY9ELa.js": {
+      "sha256": "d6f457a0960b0348284ad865a10561d610c81903294d01ac795fc25644643b9b",
+      "bytes": 54204
+    },
+    "/assets/contributing_index.md.DFIXB_G6.js": {
+      "sha256": "bc67189066283795b0793bb5861e98f17ca95f829ddba95fb8fab2454d466692",
+      "bytes": 12062
+    },
+    "/assets/contributing_index.md.DFIXB_G6.lean.js": {
+      "sha256": "ecdbf6a4377a500ea59e153deb1a2285a011157838ca1b9d329034a518aa92da",
+      "bytes": 418
+    },
+    "/assets/development_compatibility-findings.md.DJHqN7RA.js": {
+      "sha256": "97899f4c8559c64f5bc460740cf884fa18991c4a2fb516e2b8b5c31766bb06fb",
+      "bytes": 8364
+    },
+    "/assets/development_compatibility-findings.md.DJHqN7RA.lean.js": {
+      "sha256": "d29a791a7a76174719ec9e12d0bc21e5c8de0fc1e7afe73925245351c0825243",
+      "bytes": 477
+    },
+    "/assets/development_release-checklist.md.CKJ1OC_M.js": {
+      "sha256": "197c0a19f820cc64d1d041b5068925620b901046c8de3d56a226261ba17b0abd",
+      "bytes": 4800
+    },
+    "/assets/development_release-checklist.md.CKJ1OC_M.lean.js": {
+      "sha256": "b156a93e1e7d5b05080001307d25c8c805231d789e4eec5eac99bf4d5b6c8ea5",
+      "bytes": 453
+    },
+    "/assets/development_website.md.CFRgfveb.js": {
+      "sha256": "c094a68e402f246b13daf9622f67ecad36bdfd1a8c24342dc216e41be4fbc343",
+      "bytes": 8588
+    },
+    "/assets/development_website.md.CFRgfveb.lean.js": {
+      "sha256": "32fa5eb8549e2a2dce3cd90d94acc36c581fe519bda112bafa3f184e54371d3d",
+      "bytes": 428
+    },
+    "/assets/guide_configuration.md.Dr3BcPTF.js": {
+      "sha256": "4260e8b6ad224573b5c6f57eb18bfc0642fb05786bc4c25cfc052182d1e8c1c5",
+      "bytes": 8319
+    },
+    "/assets/guide_configuration.md.Dr3BcPTF.lean.js": {
+      "sha256": "8407951e72b5c5e2ffaf60c4e39e4dab14c22417c56a01465114ced069173876",
+      "bytes": 422
+    },
+    "/assets/guide_getting-started.md.Du3wGoLW.js": {
+      "sha256": "43ee12ab6a17dfb17e761e47c6d003d0343555a7cb23d483a101d619bb3558dc",
+      "bytes": 7733
+    },
+    "/assets/guide_getting-started.md.Du3wGoLW.lean.js": {
+      "sha256": "8f1e577ce8a1d40f519d187c22b3c8e0cc1a5f338e883eecf104c8a8099caf57",
+      "bytes": 430
+    },
+    "/assets/guide_installation.md.BpX8zRy6.js": {
+      "sha256": "ea1540fa8936f230d99f6d4a8d8543085d00480d53ad9a70844e42efb9195460",
+      "bytes": 13988
+    },
+    "/assets/guide_installation.md.BpX8zRy6.lean.js": {
+      "sha256": "ca7e811071af139ec8426945f5b4bc7d90bf3d5ad61e0d978c559e6185a62673",
+      "bytes": 418
+    },
+    "/assets/guide_kitty-settings.md.Duc7QRi4.js": {
+      "sha256": "6648507dade1bc0e631b88f809c4b7ea3e2932d633d5a301061881b2e1025213",
+      "bytes": 6016
+    },
+    "/assets/guide_kitty-settings.md.Duc7QRi4.lean.js": {
+      "sha256": "f175209203268f4e7e2dc2129fd399316469809d75c09c9b71483ad70c6431a3",
+      "bytes": 442
+    },
+    "/assets/guide_shells.md.DPiwqZAF.js": {
+      "sha256": "de953606ba0a8b133efe0dbaa0b1d4b63fef7d16b289110f8627552242fe13fe",
+      "bytes": 4598
+    },
+    "/assets/guide_shells.md.DPiwqZAF.lean.js": {
+      "sha256": "9e48ec10d5cb7c46f14245e1508b79168eba8e8f8e3513bf8d76e031998376a8",
+      "bytes": 394
+    },
+    "/assets/guide_troubleshooting.md.DcX3zcjs.js": {
+      "sha256": "ce16ab7134f525661b708cefa9fac25367f96d83a0c19f0be44d41293175fc97",
+      "bytes": 5809
+    },
+    "/assets/guide_troubleshooting.md.DcX3zcjs.lean.js": {
+      "sha256": "58d4229428e833b5b7fb2d44235872779ffa19f92868f2f45d6ff2a30a9726d5",
+      "bytes": 429
+    },
+    "/assets/guide_uninstall.md.C1vlJIKP.js": {
+      "sha256": "a8484fd97bda8dd1d920ccce285433c129f6623bdb1dcef7c2074aecfa7ac0b6",
+      "bytes": 7370
+    },
+    "/assets/guide_uninstall.md.C1vlJIKP.lean.js": {
+      "sha256": "8040d6518e3bf5c09d0b90866fce170ec8b4d8c975270194545824a55e884898",
+      "bytes": 419
+    },
+    "/assets/index.md.CFdFXbVX.js": {
+      "sha256": "05832a433e3c4810f2448d1e4303f7fd8c1fe399f304abe0a47e82863139a8f3",
+      "bytes": 2307
+    },
+    "/assets/index.md.CFdFXbVX.lean.js": {
+      "sha256": "7ad0200313091191ca1d12f76a49724a9433a023faca7b9e9e3c6b0b9b38a1e8",
+      "bytes": 530
+    },
+    "/assets/reference_actions.md.B4rKX7p9.js": {
+      "sha256": "55c6efb420b891ea92f17f59230956fc37c6ba9d2f2c38f0f3704ce3c3648379",
+      "bytes": 4949
+    },
+    "/assets/reference_actions.md.B4rKX7p9.lean.js": {
+      "sha256": "52ea8c846fb9acd0ddad8acdedb235c9502b499093446ab3f31fed56cd8f9ff8",
+      "bytes": 410
+    },
+    "/assets/reference_compatibility.md.DOyBuNeO.js": {
+      "sha256": "9c4e08bdcd48cc490c619b01b773add8d8f6784dfff5c4d5fb6e692e6b4e7dca",
+      "bytes": 6695
+    },
+    "/assets/reference_compatibility.md.DOyBuNeO.lean.js": {
+      "sha256": "649d40e22ed97f41db059bad8f16906598f57714032f76fb87f1de0d56df4890",
+      "bytes": 434
+    },
+    "/assets/reference_configuration.md.CX2M-HrX.js": {
+      "sha256": "a450c7a432e32a81e02daec81f144e493cea03b958c5d194d8af426cc0b9b24a",
+      "bytes": 4770
+    },
+    "/assets/reference_configuration.md.CX2M-HrX.lean.js": {
+      "sha256": "03d568844aa6eb5dd0d4523a5c6f6d242bf8b637fee0ac44ab87f9cf36dd8bd9",
+      "bytes": 441
+    },
+    "/assets/releases.md.DR0hpEPZ.js": {
+      "sha256": "c37d44f4190ce69c16a2d118c4471045e356ffa0135f8e377c8cb6372852ff65",
+      "bytes": 2214
+    },
+    "/assets/releases.md.DR0hpEPZ.lean.js": {
+      "sha256": "0fab19b4be5ec82163ef62a37efa30e985fe2619f1d50ce23bc49fb9f01c038c",
+      "bytes": 388
+    },
+    "/assets/style.DNLp0JT6.css": {
+      "sha256": "0d30490604d49aced561420e6ac7c6a0aa418d4a4a45793664c01bd52eb26e62",
+      "bytes": 114909
+    },
+    "/cat-mark.svg": {
+      "sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d",
+      "bytes": 382
+    },
+    "/contributing/index.html": {
+      "sha256": "9c8bd5f4ee2695decfc4fea65c85c4ade3766587f557846d45c25eddf7a72002",
+      "bytes": 28133
+    },
+    "/development/compatibility-findings.html": {
+      "sha256": "d134cb7d262c19618515adca21867f41981a83243496b24b20db8a5213895dde",
+      "bytes": 24416
+    },
+    "/development/release-checklist.html": {
+      "sha256": "1505a7e1292fae0d408e787915c8bf305e0c5b4f5b0ed34cbe227222262edb12",
+      "bytes": 20858
+    },
+    "/development/website.html": {
+      "sha256": "6d6718942424042163997d8afd410a1e185bcc25403c6c9e17c258764ea28fb0",
+      "bytes": 24693
+    },
+    "/guide/configuration.html": {
+      "sha256": "647ca9f469f6eba8399f9f27cd408a0287c17bf72859a7197d898a7a8574c906",
+      "bytes": 24379
+    },
+    "/guide/getting-started.html": {
+      "sha256": "3eaa236e10d7c069aa3d47c42042a14813fb2945f195af6c1eb5fefac90b40de",
+      "bytes": 23605
+    },
+    "/guide/installation.html": {
+      "sha256": "51d3f3f43e3e56eee4a40f7793ba0836f7ceb214336f1385a1724a15da45f2d8",
+      "bytes": 30069
+    },
+    "/guide/kitty-settings.html": {
+      "sha256": "862da5ecd699bc901409f2ea0be3d64d7245ae4219dcddaa50e5d33c72b63681",
+      "bytes": 22081
+    },
+    "/guide/shells.html": {
+      "sha256": "005c5520550bdd2e58b0fac65309f1a37135f1db108154b7579c77c336e1fd6d",
+      "bytes": 20683
+    },
+    "/guide/troubleshooting.html": {
+      "sha256": "cecb10d2e1c5ea93c33ee08bb9f2382cea0d0ed319c4105b3697d46f9d0bf594",
+      "bytes": 21889
+    },
+    "/guide/uninstall.html": {
+      "sha256": "22b9bbfc4cd05fb7760a594e9c6b82737aa6e0ad8c74adab59d882f9cc6d55bc",
+      "bytes": 23458
+    },
+    "/index.html": {
+      "sha256": "f036c164e8f5feb644817bd2098c81fbcd878e555d8b973c36a64e1306b7627a",
+      "bytes": 10291
+    },
+    "/reference/actions.html": {
+      "sha256": "a806b886377217d048c461610da83dec9cc5ee6ec6a0121695e643b017c3570a",
+      "bytes": 21026
+    },
+    "/reference/compatibility.html": {
+      "sha256": "f5cbebc8d5b81e68e2a83b0fb33faa6b3a4e40c2b8e9d6eda24215fd3d7dc528",
+      "bytes": 22788
+    },
+    "/reference/configuration.html": {
+      "sha256": "4d5d3de57a672efeb46cc252ff1ce0c6441d0640ee06d425fc9ddcef3b8f2866",
+      "bytes": 20838
+    },
+    "/releases.html": {
+      "sha256": "f46ed32a8bd1861b1ed5e5c872429e3efd87c6c6ed34cbc7fc36240d9992e001",
+      "bytes": 18110
+    },
+    "/terminal-cat.svg": {
+      "sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f",
+      "bytes": 2461
+    },
+    "/vp-icons.css": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "/kittyscape/404.html": {
+      "sha256": "2488a0fb2dd39f27ad4b85272b5e64935e7b4634aa12083585010667271af78c",
+      "bytes": 3653
+    },
+    "/kittyscape/assets/app.CkF-1qSd.js": {
+      "sha256": "2a1ac7e32f15333b9a9582d224541679e1f5f1e7e7d34ba1dca77db4403bcf36",
+      "bytes": 1352
+    },
+    "/kittyscape/assets/chunks/@localSearchIndexroot.BdJC06Y4.js": {
+      "sha256": "df1060f75133d4e66e742dac285014a85d0156f19206d85180dec5e98025a721",
+      "bytes": 84176
+    },
+    "/kittyscape/assets/chunks/VPLocalSearchBox.B3oqEWZN.js": {
+      "sha256": "10a120c142130b98f63467a32b76eeeedc2236d88f331f414b9df29b2701ffaf",
+      "bytes": 64044
+    },
+    "/kittyscape/assets/chunks/framework.Dsl682W-.js": {
+      "sha256": "daf021676b1e39b681edf6c113974fd70dbef8751c33bb632544acade5ecde5e",
+      "bytes": 112981
+    },
+    "/kittyscape/assets/chunks/theme.CUDssrIs.js": {
+      "sha256": "c1d275a661e1cbd53a75a37448c4f6cc1de522652c299925aa150a0bfe613037",
+      "bytes": 54204
+    },
+    "/kittyscape/assets/contributing_index.md.BaL1G9yN.js": {
+      "sha256": "26b69425c0b862cf7d0f2c2791761ec252195e7e63e5b59844e88e64eb1a4ed3",
+      "bytes": 12073
+    },
+    "/kittyscape/assets/contributing_index.md.BaL1G9yN.lean.js": {
+      "sha256": "f5e341530976ea9845f7bda10f08dd4a4c28b62bce26845f93e82c765c951661",
+      "bytes": 418
+    },
+    "/kittyscape/assets/development_compatibility-findings.md.CzAvKV16.js": {
+      "sha256": "1d963f567c8b4bba68c866ebe35ce515a8b2dd1fef3e1fa0a8e738dca1589af8",
+      "bytes": 8375
+    },
+    "/kittyscape/assets/development_compatibility-findings.md.CzAvKV16.lean.js": {
+      "sha256": "728daec31fca8682c9a3033951edf68f942d8b0800a28fbd0e1f353db9891b1d",
+      "bytes": 477
+    },
+    "/kittyscape/assets/development_release-checklist.md.JGotClJx.js": {
+      "sha256": "c0b4063cbf58e68fdcb0e951a935b414dda6f49b6ce39ba4481582947e71a10b",
+      "bytes": 4811
+    },
+    "/kittyscape/assets/development_release-checklist.md.JGotClJx.lean.js": {
+      "sha256": "14a5f4c5dc9b1651f59cdece6205cb02a4a999a20915e3dddf1470d78acd0f53",
+      "bytes": 453
+    },
+    "/kittyscape/assets/development_website.md.BnuuoyJg.js": {
+      "sha256": "3db8ad8793511b511e4a9d17161259bc4857cc5e8935d390d81bbf37a4fd591d",
+      "bytes": 8599
+    },
+    "/kittyscape/assets/development_website.md.BnuuoyJg.lean.js": {
+      "sha256": "023396f9bcdb6e67397010e39ff70229e66e39333ac770b660b29fa28a7baa48",
+      "bytes": 428
+    },
+    "/kittyscape/assets/guide_configuration.md.DBXpsowR.js": {
+      "sha256": "30750238eebc4f2f985db784728121eb3a48d660d637df0f2c6444362bc38d52",
+      "bytes": 8319
+    },
+    "/kittyscape/assets/guide_configuration.md.DBXpsowR.lean.js": {
+      "sha256": "30257ac4884f0119e0b572aedac0e0bca8ad5c3ea40255c05b0771f7d9a9ad30",
+      "bytes": 422
+    },
+    "/kittyscape/assets/guide_getting-started.md.D8cyBgzu.js": {
+      "sha256": "33ee5ca3f5005a0e1bb8e8010798adaaf2aec825d61d95c819a4c26ed261061c",
+      "bytes": 7733
+    },
+    "/kittyscape/assets/guide_getting-started.md.D8cyBgzu.lean.js": {
+      "sha256": "e7c34d2446f42373428367c12e8028da6a988ef42685f70bd4307e0317ca0cf0",
+      "bytes": 430
+    },
+    "/kittyscape/assets/guide_installation.md.Dtc1dyzT.js": {
+      "sha256": "501f162726336f03e7d6c24921b9cf1f18524ca4561593e44edc5d504f8dcadc",
+      "bytes": 13999
+    },
+    "/kittyscape/assets/guide_installation.md.Dtc1dyzT.lean.js": {
+      "sha256": "c79f91f28d3ecc940c1940743f6deb38662478b2199d6ba151198ef41aa51e12",
+      "bytes": 418
+    },
+    "/kittyscape/assets/guide_kitty-settings.md.BE3Z3TyH.js": {
+      "sha256": "b0fbee11209f08ee8963c25d9639c53107e339c9c4329cb118fc7e0997962ab2",
+      "bytes": 6016
+    },
+    "/kittyscape/assets/guide_kitty-settings.md.BE3Z3TyH.lean.js": {
+      "sha256": "cad288cad0489327b539579a81baabfee8c18f13253b0fb3b03247443e38b628",
+      "bytes": 442
+    },
+    "/kittyscape/assets/guide_shells.md.bqDHvCru.js": {
+      "sha256": "a6ee733283892e41eed84e8398603c68a72490c04b489d542c5de47a07a198a6",
+      "bytes": 4598
+    },
+    "/kittyscape/assets/guide_shells.md.bqDHvCru.lean.js": {
+      "sha256": "aed8f258e50d12aedac0f3ead3d40b9a529edcbd83df5ad6728525938da69e5c",
+      "bytes": 394
+    },
+    "/kittyscape/assets/guide_troubleshooting.md.iydcNpnc.js": {
+      "sha256": "94997466363d5df01f7257c1ff48c03b88d095e8808a872e9cd4e60ccc820707",
+      "bytes": 5809
+    },
+    "/kittyscape/assets/guide_troubleshooting.md.iydcNpnc.lean.js": {
+      "sha256": "b4bfba6673c29f0a8c21b5ec149029b0ba37b7685937e336578028485a13769b",
+      "bytes": 429
+    },
+    "/kittyscape/assets/guide_uninstall.md.faoZJdk4.js": {
+      "sha256": "d161de5c0d36973f2fe1315550143d3549b5ca6ebc9958ba92436239399effd0",
+      "bytes": 7370
+    },
+    "/kittyscape/assets/guide_uninstall.md.faoZJdk4.lean.js": {
+      "sha256": "9c52e9b1557f1b3d91efc0ac776b0b14b89f9b3381d1707d59144463872b72ea",
+      "bytes": 419
+    },
+    "/kittyscape/assets/index.md.q-RJ2L71.js": {
+      "sha256": "6192a758fd84dcf7d2f423f115a330a1768e7f0f9a577ba9c6fdcfd92db03960",
+      "bytes": 2318
+    },
+    "/kittyscape/assets/index.md.q-RJ2L71.lean.js": {
+      "sha256": "f8a7be7f0bc8570c40b24cf34d5502d734e709b8af638fcdedb5b6fddddd5119",
+      "bytes": 541
+    },
+    "/kittyscape/assets/reference_actions.md.af6U4Nr-.js": {
+      "sha256": "f4476df5f201e9ee47a60bee270152105ab505dcc390abb9918f09556dbf2e86",
+      "bytes": 4949
+    },
+    "/kittyscape/assets/reference_actions.md.af6U4Nr-.lean.js": {
+      "sha256": "aea3f5bdf6c4891bb36287167a5912d33b0130e11640ab8333c24af4fd382cb1",
+      "bytes": 410
+    },
+    "/kittyscape/assets/reference_compatibility.md.CbOfMI9N.js": {
+      "sha256": "010963b192054709c4c7fa3cb39062107ec29de371c42658c51cec6397f254c5",
+      "bytes": 6706
+    },
+    "/kittyscape/assets/reference_compatibility.md.CbOfMI9N.lean.js": {
+      "sha256": "a43748856a73fdbf677e4034f637c88dc397b13356232f69aa1fb1522c41dbaa",
+      "bytes": 434
+    },
+    "/kittyscape/assets/reference_configuration.md.CvtHa_h_.js": {
+      "sha256": "459b5a2594acc30c329d1d1fc11049394f149242665fa603c8ac7524825382a6",
+      "bytes": 4770
+    },
+    "/kittyscape/assets/reference_configuration.md.CvtHa_h_.lean.js": {
+      "sha256": "159170a7f7acec6572e0e6c914a1ef051196fc41c2dc238abf98cdb101f4bea7",
+      "bytes": 441
+    },
+    "/kittyscape/assets/releases.md.DJm0r7fv.js": {
+      "sha256": "6f171ef75e82892e1317b238508471dd395053add9dfa8d006351913b15014e9",
+      "bytes": 2225
+    },
+    "/kittyscape/assets/releases.md.DJm0r7fv.lean.js": {
+      "sha256": "4a37378ef0c6fe1d64e5ad66fe8702cd0d54e2f8963edf29d18bfe28d2c2a63f",
+      "bytes": 388
+    },
+    "/kittyscape/assets/style.DNLp0JT6.css": {
+      "sha256": "0d30490604d49aced561420e6ac7c6a0aa418d4a4a45793664c01bd52eb26e62",
+      "bytes": 114909
+    },
+    "/kittyscape/cat-mark.svg": {
+      "sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d",
+      "bytes": 382
+    },
+    "/kittyscape/contributing/index.html": {
+      "sha256": "3e54ccf5a2843b63a4f3cca8f0347853ebdb53e1e3efef83d99724ff5419a099",
+      "bytes": 28474
+    },
+    "/kittyscape/development/compatibility-findings.html": {
+      "sha256": "ac529af745cb4bdf8c237ee1b2cab84167b0903920fddd4b384ee7e1d4042d6f",
+      "bytes": 24757
+    },
+    "/kittyscape/development/release-checklist.html": {
+      "sha256": "284f379a0c1e2ee2a080e265b6f2a71fe56ed11612a80c141bc9084cfca35df8",
+      "bytes": 21199
+    },
+    "/kittyscape/development/website.html": {
+      "sha256": "f410e1f801c47839a2f6974f1cecf3e99d93e85d95d77ed315403f6f3c02dca0",
+      "bytes": 25034
+    },
+    "/kittyscape/guide/configuration.html": {
+      "sha256": "fdba00cd2e2f4c5c1e2de7be7ec201e7ec853521b7c0b4a23d226c6f862d9575",
+      "bytes": 24709
+    },
+    "/kittyscape/guide/getting-started.html": {
+      "sha256": "5eabcd21186b7d7556c651cebb05a2f0f9d57e46821ef49d7ddcaa5e5bf06f20",
+      "bytes": 23924
+    },
+    "/kittyscape/guide/installation.html": {
+      "sha256": "5c0751a9ae87ec3e88d5af10db535456aeb280b5836ce1eb963b26cd6e5fd26e",
+      "bytes": 30410
+    },
+    "/kittyscape/guide/kitty-settings.html": {
+      "sha256": "07e39b93597d92fe9155de0ec6f6d91ace80ae2746fff551c232b50f2820dbe7",
+      "bytes": 22411
+    },
+    "/kittyscape/guide/shells.html": {
+      "sha256": "f123d6e420c2eb8fbe70e668d03d692a811950c83e94c507c1eacd3345918b68",
+      "bytes": 21013
+    },
+    "/kittyscape/guide/troubleshooting.html": {
+      "sha256": "3fbfe88ade271bddf8ffaf461376b23c3ab73f8c164e5b14cd585122b06329df",
+      "bytes": 22219
+    },
+    "/kittyscape/guide/uninstall.html": {
+      "sha256": "20b7123c771e39a962ac3e75fb681a524861aac3fa877f3442b2ddeaf09efb82",
+      "bytes": 23788
+    },
+    "/kittyscape/index.html": {
+      "sha256": "326c7ad29100f9faed232d957d27fa40e6b8aa5796bfa375a98400e1407dc3cd",
+      "bytes": 10456
+    },
+    "/kittyscape/reference/actions.html": {
+      "sha256": "0084c6680ac0ebce7b4279d8858b0e438569a82e2b0db4df8f1b2daa4ac7cb7e",
+      "bytes": 21356
+    },
+    "/kittyscape/reference/compatibility.html": {
+      "sha256": "858f6809e85a90c882e9b8c6ebbc57466cf0296247cdeaab7d033b4878ddbac2",
+      "bytes": 23129
+    },
+    "/kittyscape/reference/configuration.html": {
+      "sha256": "15b506a996a1aeeb106959181b844aad5394104f42bd0e21061e03951ba8256b",
+      "bytes": 21168
+    },
+    "/kittyscape/releases.html": {
+      "sha256": "c3c7fc6478ffc01fc99359c19e523a259b74e168eb199a5af99d5b111427ed1e",
+      "bytes": 18440
+    },
+    "/kittyscape/terminal-cat.svg": {
+      "sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f",
+      "bytes": 2461
+    },
+    "/kittyscape/vp-icons.css": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "all_files": {
+    "/404.html": {
+      "sha256": "5fc8b3d0967268625435b9aafb007c8c129790e325c51a16b2324d11dc328f51",
+      "bytes": 3598
+    },
+    "/assets/app.DmCMM-uA.js": {
+      "sha256": "1fb77c27434a7360e6f5ab83c12f5f5f0ada5b24343e7d2a239674a451b980e7",
+      "bytes": 1352
+    },
+    "/assets/chunks/@localSearchIndexroot.B8nP0BuC.js": {
+      "sha256": "cb842db4f57cd3691bbf397df7eefbb827b8679d73147ca549aee01129923751",
+      "bytes": 83307
+    },
+    "/assets/chunks/VPLocalSearchBox.BUG-phN3.js": {
+      "sha256": "0b1fe869275e0c8a8956f395b75475631e8a03a7df29ddca71f700a7b873f213",
+      "bytes": 64044
+    },
+    "/assets/chunks/framework.BXzK3EA4.js": {
+      "sha256": "aab48e5afe404fb51be147b08f8e482a9abee217b591a6235171b35b071cd506",
+      "bytes": 112959
+    },
+    "/assets/chunks/theme.IBdY9ELa.js": {
+      "sha256": "d6f457a0960b0348284ad865a10561d610c81903294d01ac795fc25644643b9b",
+      "bytes": 54204
+    },
+    "/assets/contributing_index.md.DFIXB_G6.js": {
+      "sha256": "bc67189066283795b0793bb5861e98f17ca95f829ddba95fb8fab2454d466692",
+      "bytes": 12062
+    },
+    "/assets/contributing_index.md.DFIXB_G6.lean.js": {
+      "sha256": "ecdbf6a4377a500ea59e153deb1a2285a011157838ca1b9d329034a518aa92da",
+      "bytes": 418
+    },
+    "/assets/development_compatibility-findings.md.DJHqN7RA.js": {
+      "sha256": "97899f4c8559c64f5bc460740cf884fa18991c4a2fb516e2b8b5c31766bb06fb",
+      "bytes": 8364
+    },
+    "/assets/development_compatibility-findings.md.DJHqN7RA.lean.js": {
+      "sha256": "d29a791a7a76174719ec9e12d0bc21e5c8de0fc1e7afe73925245351c0825243",
+      "bytes": 477
+    },
+    "/assets/development_release-checklist.md.CKJ1OC_M.js": {
+      "sha256": "197c0a19f820cc64d1d041b5068925620b901046c8de3d56a226261ba17b0abd",
+      "bytes": 4800
+    },
+    "/assets/development_release-checklist.md.CKJ1OC_M.lean.js": {
+      "sha256": "b156a93e1e7d5b05080001307d25c8c805231d789e4eec5eac99bf4d5b6c8ea5",
+      "bytes": 453
+    },
+    "/assets/development_website.md.CFRgfveb.js": {
+      "sha256": "c094a68e402f246b13daf9622f67ecad36bdfd1a8c24342dc216e41be4fbc343",
+      "bytes": 8588
+    },
+    "/assets/development_website.md.CFRgfveb.lean.js": {
+      "sha256": "32fa5eb8549e2a2dce3cd90d94acc36c581fe519bda112bafa3f184e54371d3d",
+      "bytes": 428
+    },
+    "/assets/guide_configuration.md.Dr3BcPTF.js": {
+      "sha256": "4260e8b6ad224573b5c6f57eb18bfc0642fb05786bc4c25cfc052182d1e8c1c5",
+      "bytes": 8319
+    },
+    "/assets/guide_configuration.md.Dr3BcPTF.lean.js": {
+      "sha256": "8407951e72b5c5e2ffaf60c4e39e4dab14c22417c56a01465114ced069173876",
+      "bytes": 422
+    },
+    "/assets/guide_getting-started.md.Du3wGoLW.js": {
+      "sha256": "43ee12ab6a17dfb17e761e47c6d003d0343555a7cb23d483a101d619bb3558dc",
+      "bytes": 7733
+    },
+    "/assets/guide_getting-started.md.Du3wGoLW.lean.js": {
+      "sha256": "8f1e577ce8a1d40f519d187c22b3c8e0cc1a5f338e883eecf104c8a8099caf57",
+      "bytes": 430
+    },
+    "/assets/guide_installation.md.BpX8zRy6.js": {
+      "sha256": "ea1540fa8936f230d99f6d4a8d8543085d00480d53ad9a70844e42efb9195460",
+      "bytes": 13988
+    },
+    "/assets/guide_installation.md.BpX8zRy6.lean.js": {
+      "sha256": "ca7e811071af139ec8426945f5b4bc7d90bf3d5ad61e0d978c559e6185a62673",
+      "bytes": 418
+    },
+    "/assets/guide_kitty-settings.md.Duc7QRi4.js": {
+      "sha256": "6648507dade1bc0e631b88f809c4b7ea3e2932d633d5a301061881b2e1025213",
+      "bytes": 6016
+    },
+    "/assets/guide_kitty-settings.md.Duc7QRi4.lean.js": {
+      "sha256": "f175209203268f4e7e2dc2129fd399316469809d75c09c9b71483ad70c6431a3",
+      "bytes": 442
+    },
+    "/assets/guide_shells.md.DPiwqZAF.js": {
+      "sha256": "de953606ba0a8b133efe0dbaa0b1d4b63fef7d16b289110f8627552242fe13fe",
+      "bytes": 4598
+    },
+    "/assets/guide_shells.md.DPiwqZAF.lean.js": {
+      "sha256": "9e48ec10d5cb7c46f14245e1508b79168eba8e8f8e3513bf8d76e031998376a8",
+      "bytes": 394
+    },
+    "/assets/guide_troubleshooting.md.DcX3zcjs.js": {
+      "sha256": "ce16ab7134f525661b708cefa9fac25367f96d83a0c19f0be44d41293175fc97",
+      "bytes": 5809
+    },
+    "/assets/guide_troubleshooting.md.DcX3zcjs.lean.js": {
+      "sha256": "58d4229428e833b5b7fb2d44235872779ffa19f92868f2f45d6ff2a30a9726d5",
+      "bytes": 429
+    },
+    "/assets/guide_uninstall.md.C1vlJIKP.js": {
+      "sha256": "a8484fd97bda8dd1d920ccce285433c129f6623bdb1dcef7c2074aecfa7ac0b6",
+      "bytes": 7370
+    },
+    "/assets/guide_uninstall.md.C1vlJIKP.lean.js": {
+      "sha256": "8040d6518e3bf5c09d0b90866fce170ec8b4d8c975270194545824a55e884898",
+      "bytes": 419
+    },
+    "/assets/index.md.CFdFXbVX.js": {
+      "sha256": "05832a433e3c4810f2448d1e4303f7fd8c1fe399f304abe0a47e82863139a8f3",
+      "bytes": 2307
+    },
+    "/assets/index.md.CFdFXbVX.lean.js": {
+      "sha256": "7ad0200313091191ca1d12f76a49724a9433a023faca7b9e9e3c6b0b9b38a1e8",
+      "bytes": 530
+    },
+    "/assets/reference_actions.md.B4rKX7p9.js": {
+      "sha256": "55c6efb420b891ea92f17f59230956fc37c6ba9d2f2c38f0f3704ce3c3648379",
+      "bytes": 4949
+    },
+    "/assets/reference_actions.md.B4rKX7p9.lean.js": {
+      "sha256": "52ea8c846fb9acd0ddad8acdedb235c9502b499093446ab3f31fed56cd8f9ff8",
+      "bytes": 410
+    },
+    "/assets/reference_compatibility.md.DOyBuNeO.js": {
+      "sha256": "9c4e08bdcd48cc490c619b01b773add8d8f6784dfff5c4d5fb6e692e6b4e7dca",
+      "bytes": 6695
+    },
+    "/assets/reference_compatibility.md.DOyBuNeO.lean.js": {
+      "sha256": "649d40e22ed97f41db059bad8f16906598f57714032f76fb87f1de0d56df4890",
+      "bytes": 434
+    },
+    "/assets/reference_configuration.md.CX2M-HrX.js": {
+      "sha256": "a450c7a432e32a81e02daec81f144e493cea03b958c5d194d8af426cc0b9b24a",
+      "bytes": 4770
+    },
+    "/assets/reference_configuration.md.CX2M-HrX.lean.js": {
+      "sha256": "03d568844aa6eb5dd0d4523a5c6f6d242bf8b637fee0ac44ab87f9cf36dd8bd9",
+      "bytes": 441
+    },
+    "/assets/releases.md.DR0hpEPZ.js": {
+      "sha256": "c37d44f4190ce69c16a2d118c4471045e356ffa0135f8e377c8cb6372852ff65",
+      "bytes": 2214
+    },
+    "/assets/releases.md.DR0hpEPZ.lean.js": {
+      "sha256": "0fab19b4be5ec82163ef62a37efa30e985fe2619f1d50ce23bc49fb9f01c038c",
+      "bytes": 388
+    },
+    "/assets/style.DNLp0JT6.css": {
+      "sha256": "0d30490604d49aced561420e6ac7c6a0aa418d4a4a45793664c01bd52eb26e62",
+      "bytes": 114909
+    },
+    "/cat-mark.svg": {
+      "sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d",
+      "bytes": 382
+    },
+    "/contributing/index.html": {
+      "sha256": "9c8bd5f4ee2695decfc4fea65c85c4ade3766587f557846d45c25eddf7a72002",
+      "bytes": 28133
+    },
+    "/development/compatibility-findings.html": {
+      "sha256": "d134cb7d262c19618515adca21867f41981a83243496b24b20db8a5213895dde",
+      "bytes": 24416
+    },
+    "/development/release-checklist.html": {
+      "sha256": "1505a7e1292fae0d408e787915c8bf305e0c5b4f5b0ed34cbe227222262edb12",
+      "bytes": 20858
+    },
+    "/development/website.html": {
+      "sha256": "6d6718942424042163997d8afd410a1e185bcc25403c6c9e17c258764ea28fb0",
+      "bytes": 24693
+    },
+    "/evidence/release.json": {
+      "sha256": "0d7621064999b6d17523342014b63a8ee49e988596ba7a0b72980e853f5e5793",
+      "bytes": 269
+    },
+    "/guide/configuration.html": {
+      "sha256": "647ca9f469f6eba8399f9f27cd408a0287c17bf72859a7197d898a7a8574c906",
+      "bytes": 24379
+    },
+    "/guide/getting-started.html": {
+      "sha256": "3eaa236e10d7c069aa3d47c42042a14813fb2945f195af6c1eb5fefac90b40de",
+      "bytes": 23605
+    },
+    "/guide/installation.html": {
+      "sha256": "51d3f3f43e3e56eee4a40f7793ba0836f7ceb214336f1385a1724a15da45f2d8",
+      "bytes": 30069
+    },
+    "/guide/kitty-settings.html": {
+      "sha256": "862da5ecd699bc901409f2ea0be3d64d7245ae4219dcddaa50e5d33c72b63681",
+      "bytes": 22081
+    },
+    "/guide/shells.html": {
+      "sha256": "005c5520550bdd2e58b0fac65309f1a37135f1db108154b7579c77c336e1fd6d",
+      "bytes": 20683
+    },
+    "/guide/troubleshooting.html": {
+      "sha256": "cecb10d2e1c5ea93c33ee08bb9f2382cea0d0ed319c4105b3697d46f9d0bf594",
+      "bytes": 21889
+    },
+    "/guide/uninstall.html": {
+      "sha256": "22b9bbfc4cd05fb7760a594e9c6b82737aa6e0ad8c74adab59d882f9cc6d55bc",
+      "bytes": 23458
+    },
+    "/hashmap.json": {
+      "sha256": "6c9370141a58a4c5158fbed740b4079095c4a5674faa8632581dee780d337970",
+      "bytes": 576
+    },
+    "/index.html": {
+      "sha256": "f036c164e8f5feb644817bd2098c81fbcd878e555d8b973c36a64e1306b7627a",
+      "bytes": 10291
+    },
+    "/reference/actions.html": {
+      "sha256": "a806b886377217d048c461610da83dec9cc5ee6ec6a0121695e643b017c3570a",
+      "bytes": 21026
+    },
+    "/reference/compatibility.html": {
+      "sha256": "f5cbebc8d5b81e68e2a83b0fb33faa6b3a4e40c2b8e9d6eda24215fd3d7dc528",
+      "bytes": 22788
+    },
+    "/reference/configuration.html": {
+      "sha256": "4d5d3de57a672efeb46cc252ff1ce0c6441d0640ee06d425fc9ddcef3b8f2866",
+      "bytes": 20838
+    },
+    "/releases.html": {
+      "sha256": "f46ed32a8bd1861b1ed5e5c872429e3efd87c6c6ed34cbc7fc36240d9992e001",
+      "bytes": 18110
+    },
+    "/terminal-cat.svg": {
+      "sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f",
+      "bytes": 2461
+    },
+    "/vp-icons.css": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "/kittyscape/404.html": {
+      "sha256": "2488a0fb2dd39f27ad4b85272b5e64935e7b4634aa12083585010667271af78c",
+      "bytes": 3653
+    },
+    "/kittyscape/assets/app.CkF-1qSd.js": {
+      "sha256": "2a1ac7e32f15333b9a9582d224541679e1f5f1e7e7d34ba1dca77db4403bcf36",
+      "bytes": 1352
+    },
+    "/kittyscape/assets/chunks/@localSearchIndexroot.BdJC06Y4.js": {
+      "sha256": "df1060f75133d4e66e742dac285014a85d0156f19206d85180dec5e98025a721",
+      "bytes": 84176
+    },
+    "/kittyscape/assets/chunks/VPLocalSearchBox.B3oqEWZN.js": {
+      "sha256": "10a120c142130b98f63467a32b76eeeedc2236d88f331f414b9df29b2701ffaf",
+      "bytes": 64044
+    },
+    "/kittyscape/assets/chunks/framework.Dsl682W-.js": {
+      "sha256": "daf021676b1e39b681edf6c113974fd70dbef8751c33bb632544acade5ecde5e",
+      "bytes": 112981
+    },
+    "/kittyscape/assets/chunks/theme.CUDssrIs.js": {
+      "sha256": "c1d275a661e1cbd53a75a37448c4f6cc1de522652c299925aa150a0bfe613037",
+      "bytes": 54204
+    },
+    "/kittyscape/assets/contributing_index.md.BaL1G9yN.js": {
+      "sha256": "26b69425c0b862cf7d0f2c2791761ec252195e7e63e5b59844e88e64eb1a4ed3",
+      "bytes": 12073
+    },
+    "/kittyscape/assets/contributing_index.md.BaL1G9yN.lean.js": {
+      "sha256": "f5e341530976ea9845f7bda10f08dd4a4c28b62bce26845f93e82c765c951661",
+      "bytes": 418
+    },
+    "/kittyscape/assets/development_compatibility-findings.md.CzAvKV16.js": {
+      "sha256": "1d963f567c8b4bba68c866ebe35ce515a8b2dd1fef3e1fa0a8e738dca1589af8",
+      "bytes": 8375
+    },
+    "/kittyscape/assets/development_compatibility-findings.md.CzAvKV16.lean.js": {
+      "sha256": "728daec31fca8682c9a3033951edf68f942d8b0800a28fbd0e1f353db9891b1d",
+      "bytes": 477
+    },
+    "/kittyscape/assets/development_release-checklist.md.JGotClJx.js": {
+      "sha256": "c0b4063cbf58e68fdcb0e951a935b414dda6f49b6ce39ba4481582947e71a10b",
+      "bytes": 4811
+    },
+    "/kittyscape/assets/development_release-checklist.md.JGotClJx.lean.js": {
+      "sha256": "14a5f4c5dc9b1651f59cdece6205cb02a4a999a20915e3dddf1470d78acd0f53",
+      "bytes": 453
+    },
+    "/kittyscape/assets/development_website.md.BnuuoyJg.js": {
+      "sha256": "3db8ad8793511b511e4a9d17161259bc4857cc5e8935d390d81bbf37a4fd591d",
+      "bytes": 8599
+    },
+    "/kittyscape/assets/development_website.md.BnuuoyJg.lean.js": {
+      "sha256": "023396f9bcdb6e67397010e39ff70229e66e39333ac770b660b29fa28a7baa48",
+      "bytes": 428
+    },
+    "/kittyscape/assets/guide_configuration.md.DBXpsowR.js": {
+      "sha256": "30750238eebc4f2f985db784728121eb3a48d660d637df0f2c6444362bc38d52",
+      "bytes": 8319
+    },
+    "/kittyscape/assets/guide_configuration.md.DBXpsowR.lean.js": {
+      "sha256": "30257ac4884f0119e0b572aedac0e0bca8ad5c3ea40255c05b0771f7d9a9ad30",
+      "bytes": 422
+    },
+    "/kittyscape/assets/guide_getting-started.md.D8cyBgzu.js": {
+      "sha256": "33ee5ca3f5005a0e1bb8e8010798adaaf2aec825d61d95c819a4c26ed261061c",
+      "bytes": 7733
+    },
+    "/kittyscape/assets/guide_getting-started.md.D8cyBgzu.lean.js": {
+      "sha256": "e7c34d2446f42373428367c12e8028da6a988ef42685f70bd4307e0317ca0cf0",
+      "bytes": 430
+    },
+    "/kittyscape/assets/guide_installation.md.Dtc1dyzT.js": {
+      "sha256": "501f162726336f03e7d6c24921b9cf1f18524ca4561593e44edc5d504f8dcadc",
+      "bytes": 13999
+    },
+    "/kittyscape/assets/guide_installation.md.Dtc1dyzT.lean.js": {
+      "sha256": "c79f91f28d3ecc940c1940743f6deb38662478b2199d6ba151198ef41aa51e12",
+      "bytes": 418
+    },
+    "/kittyscape/assets/guide_kitty-settings.md.BE3Z3TyH.js": {
+      "sha256": "b0fbee11209f08ee8963c25d9639c53107e339c9c4329cb118fc7e0997962ab2",
+      "bytes": 6016
+    },
+    "/kittyscape/assets/guide_kitty-settings.md.BE3Z3TyH.lean.js": {
+      "sha256": "cad288cad0489327b539579a81baabfee8c18f13253b0fb3b03247443e38b628",
+      "bytes": 442
+    },
+    "/kittyscape/assets/guide_shells.md.bqDHvCru.js": {
+      "sha256": "a6ee733283892e41eed84e8398603c68a72490c04b489d542c5de47a07a198a6",
+      "bytes": 4598
+    },
+    "/kittyscape/assets/guide_shells.md.bqDHvCru.lean.js": {
+      "sha256": "aed8f258e50d12aedac0f3ead3d40b9a529edcbd83df5ad6728525938da69e5c",
+      "bytes": 394
+    },
+    "/kittyscape/assets/guide_troubleshooting.md.iydcNpnc.js": {
+      "sha256": "94997466363d5df01f7257c1ff48c03b88d095e8808a872e9cd4e60ccc820707",
+      "bytes": 5809
+    },
+    "/kittyscape/assets/guide_troubleshooting.md.iydcNpnc.lean.js": {
+      "sha256": "b4bfba6673c29f0a8c21b5ec149029b0ba37b7685937e336578028485a13769b",
+      "bytes": 429
+    },
+    "/kittyscape/assets/guide_uninstall.md.faoZJdk4.js": {
+      "sha256": "d161de5c0d36973f2fe1315550143d3549b5ca6ebc9958ba92436239399effd0",
+      "bytes": 7370
+    },
+    "/kittyscape/assets/guide_uninstall.md.faoZJdk4.lean.js": {
+      "sha256": "9c52e9b1557f1b3d91efc0ac776b0b14b89f9b3381d1707d59144463872b72ea",
+      "bytes": 419
+    },
+    "/kittyscape/assets/index.md.q-RJ2L71.js": {
+      "sha256": "6192a758fd84dcf7d2f423f115a330a1768e7f0f9a577ba9c6fdcfd92db03960",
+      "bytes": 2318
+    },
+    "/kittyscape/assets/index.md.q-RJ2L71.lean.js": {
+      "sha256": "f8a7be7f0bc8570c40b24cf34d5502d734e709b8af638fcdedb5b6fddddd5119",
+      "bytes": 541
+    },
+    "/kittyscape/assets/reference_actions.md.af6U4Nr-.js": {
+      "sha256": "f4476df5f201e9ee47a60bee270152105ab505dcc390abb9918f09556dbf2e86",
+      "bytes": 4949
+    },
+    "/kittyscape/assets/reference_actions.md.af6U4Nr-.lean.js": {
+      "sha256": "aea3f5bdf6c4891bb36287167a5912d33b0130e11640ab8333c24af4fd382cb1",
+      "bytes": 410
+    },
+    "/kittyscape/assets/reference_compatibility.md.CbOfMI9N.js": {
+      "sha256": "010963b192054709c4c7fa3cb39062107ec29de371c42658c51cec6397f254c5",
+      "bytes": 6706
+    },
+    "/kittyscape/assets/reference_compatibility.md.CbOfMI9N.lean.js": {
+      "sha256": "a43748856a73fdbf677e4034f637c88dc397b13356232f69aa1fb1522c41dbaa",
+      "bytes": 434
+    },
+    "/kittyscape/assets/reference_configuration.md.CvtHa_h_.js": {
+      "sha256": "459b5a2594acc30c329d1d1fc11049394f149242665fa603c8ac7524825382a6",
+      "bytes": 4770
+    },
+    "/kittyscape/assets/reference_configuration.md.CvtHa_h_.lean.js": {
+      "sha256": "159170a7f7acec6572e0e6c914a1ef051196fc41c2dc238abf98cdb101f4bea7",
+      "bytes": 441
+    },
+    "/kittyscape/assets/releases.md.DJm0r7fv.js": {
+      "sha256": "6f171ef75e82892e1317b238508471dd395053add9dfa8d006351913b15014e9",
+      "bytes": 2225
+    },
+    "/kittyscape/assets/releases.md.DJm0r7fv.lean.js": {
+      "sha256": "4a37378ef0c6fe1d64e5ad66fe8702cd0d54e2f8963edf29d18bfe28d2c2a63f",
+      "bytes": 388
+    },
+    "/kittyscape/assets/style.DNLp0JT6.css": {
+      "sha256": "0d30490604d49aced561420e6ac7c6a0aa418d4a4a45793664c01bd52eb26e62",
+      "bytes": 114909
+    },
+    "/kittyscape/cat-mark.svg": {
+      "sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d",
+      "bytes": 382
+    },
+    "/kittyscape/contributing/index.html": {
+      "sha256": "3e54ccf5a2843b63a4f3cca8f0347853ebdb53e1e3efef83d99724ff5419a099",
+      "bytes": 28474
+    },
+    "/kittyscape/development/compatibility-findings.html": {
+      "sha256": "ac529af745cb4bdf8c237ee1b2cab84167b0903920fddd4b384ee7e1d4042d6f",
+      "bytes": 24757
+    },
+    "/kittyscape/development/release-checklist.html": {
+      "sha256": "284f379a0c1e2ee2a080e265b6f2a71fe56ed11612a80c141bc9084cfca35df8",
+      "bytes": 21199
+    },
+    "/kittyscape/development/website.html": {
+      "sha256": "f410e1f801c47839a2f6974f1cecf3e99d93e85d95d77ed315403f6f3c02dca0",
+      "bytes": 25034
+    },
+    "/kittyscape/evidence/release.json": {
+      "sha256": "0d7621064999b6d17523342014b63a8ee49e988596ba7a0b72980e853f5e5793",
+      "bytes": 269
+    },
+    "/kittyscape/guide/configuration.html": {
+      "sha256": "fdba00cd2e2f4c5c1e2de7be7ec201e7ec853521b7c0b4a23d226c6f862d9575",
+      "bytes": 24709
+    },
+    "/kittyscape/guide/getting-started.html": {
+      "sha256": "5eabcd21186b7d7556c651cebb05a2f0f9d57e46821ef49d7ddcaa5e5bf06f20",
+      "bytes": 23924
+    },
+    "/kittyscape/guide/installation.html": {
+      "sha256": "5c0751a9ae87ec3e88d5af10db535456aeb280b5836ce1eb963b26cd6e5fd26e",
+      "bytes": 30410
+    },
+    "/kittyscape/guide/kitty-settings.html": {
+      "sha256": "07e39b93597d92fe9155de0ec6f6d91ace80ae2746fff551c232b50f2820dbe7",
+      "bytes": 22411
+    },
+    "/kittyscape/guide/shells.html": {
+      "sha256": "f123d6e420c2eb8fbe70e668d03d692a811950c83e94c507c1eacd3345918b68",
+      "bytes": 21013
+    },
+    "/kittyscape/guide/troubleshooting.html": {
+      "sha256": "3fbfe88ade271bddf8ffaf461376b23c3ab73f8c164e5b14cd585122b06329df",
+      "bytes": 22219
+    },
+    "/kittyscape/guide/uninstall.html": {
+      "sha256": "20b7123c771e39a962ac3e75fb681a524861aac3fa877f3442b2ddeaf09efb82",
+      "bytes": 23788
+    },
+    "/kittyscape/hashmap.json": {
+      "sha256": "d249dc4664237b594d6f9ced522a71996062251d7942c003ddb7c5b93dc563d1",
+      "bytes": 576
+    },
+    "/kittyscape/index.html": {
+      "sha256": "326c7ad29100f9faed232d957d27fa40e6b8aa5796bfa375a98400e1407dc3cd",
+      "bytes": 10456
+    },
+    "/kittyscape/reference/actions.html": {
+      "sha256": "0084c6680ac0ebce7b4279d8858b0e438569a82e2b0db4df8f1b2daa4ac7cb7e",
+      "bytes": 21356
+    },
+    "/kittyscape/reference/compatibility.html": {
+      "sha256": "858f6809e85a90c882e9b8c6ebbc57466cf0296247cdeaab7d033b4878ddbac2",
+      "bytes": 23129
+    },
+    "/kittyscape/reference/configuration.html": {
+      "sha256": "15b506a996a1aeeb106959181b844aad5394104f42bd0e21061e03951ba8256b",
+      "bytes": 21168
+    },
+    "/kittyscape/releases.html": {
+      "sha256": "c3c7fc6478ffc01fc99359c19e523a259b74e168eb199a5af99d5b111427ed1e",
+      "bytes": 18440
+    },
+    "/kittyscape/terminal-cat.svg": {
+      "sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f",
+      "bytes": 2461
+    },
+    "/kittyscape/vp-icons.css": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "stable_non_evidence_files": {
+    "/404.html": {
+      "sha256": "5fc8b3d0967268625435b9aafb007c8c129790e325c51a16b2324d11dc328f51",
+      "bytes": 3598
+    },
+    "/assets/app.DmCMM-uA.js": {
+      "sha256": "1fb77c27434a7360e6f5ab83c12f5f5f0ada5b24343e7d2a239674a451b980e7",
+      "bytes": 1352
+    },
+    "/assets/chunks/@localSearchIndexroot.B8nP0BuC.js": {
+      "sha256": "cb842db4f57cd3691bbf397df7eefbb827b8679d73147ca549aee01129923751",
+      "bytes": 83307
+    },
+    "/assets/chunks/VPLocalSearchBox.BUG-phN3.js": {
+      "sha256": "0b1fe869275e0c8a8956f395b75475631e8a03a7df29ddca71f700a7b873f213",
+      "bytes": 64044
+    },
+    "/assets/chunks/framework.BXzK3EA4.js": {
+      "sha256": "aab48e5afe404fb51be147b08f8e482a9abee217b591a6235171b35b071cd506",
+      "bytes": 112959
+    },
+    "/assets/chunks/theme.IBdY9ELa.js": {
+      "sha256": "d6f457a0960b0348284ad865a10561d610c81903294d01ac795fc25644643b9b",
+      "bytes": 54204
+    },
+    "/assets/contributing_index.md.DFIXB_G6.js": {
+      "sha256": "bc67189066283795b0793bb5861e98f17ca95f829ddba95fb8fab2454d466692",
+      "bytes": 12062
+    },
+    "/assets/contributing_index.md.DFIXB_G6.lean.js": {
+      "sha256": "ecdbf6a4377a500ea59e153deb1a2285a011157838ca1b9d329034a518aa92da",
+      "bytes": 418
+    },
+    "/assets/development_compatibility-findings.md.DJHqN7RA.js": {
+      "sha256": "97899f4c8559c64f5bc460740cf884fa18991c4a2fb516e2b8b5c31766bb06fb",
+      "bytes": 8364
+    },
+    "/assets/development_compatibility-findings.md.DJHqN7RA.lean.js": {
+      "sha256": "d29a791a7a76174719ec9e12d0bc21e5c8de0fc1e7afe73925245351c0825243",
+      "bytes": 477
+    },
+    "/assets/development_release-checklist.md.CKJ1OC_M.js": {
+      "sha256": "197c0a19f820cc64d1d041b5068925620b901046c8de3d56a226261ba17b0abd",
+      "bytes": 4800
+    },
+    "/assets/development_release-checklist.md.CKJ1OC_M.lean.js": {
+      "sha256": "b156a93e1e7d5b05080001307d25c8c805231d789e4eec5eac99bf4d5b6c8ea5",
+      "bytes": 453
+    },
+    "/assets/development_website.md.CFRgfveb.js": {
+      "sha256": "c094a68e402f246b13daf9622f67ecad36bdfd1a8c24342dc216e41be4fbc343",
+      "bytes": 8588
+    },
+    "/assets/development_website.md.CFRgfveb.lean.js": {
+      "sha256": "32fa5eb8549e2a2dce3cd90d94acc36c581fe519bda112bafa3f184e54371d3d",
+      "bytes": 428
+    },
+    "/assets/guide_configuration.md.Dr3BcPTF.js": {
+      "sha256": "4260e8b6ad224573b5c6f57eb18bfc0642fb05786bc4c25cfc052182d1e8c1c5",
+      "bytes": 8319
+    },
+    "/assets/guide_configuration.md.Dr3BcPTF.lean.js": {
+      "sha256": "8407951e72b5c5e2ffaf60c4e39e4dab14c22417c56a01465114ced069173876",
+      "bytes": 422
+    },
+    "/assets/guide_getting-started.md.Du3wGoLW.js": {
+      "sha256": "43ee12ab6a17dfb17e761e47c6d003d0343555a7cb23d483a101d619bb3558dc",
+      "bytes": 7733
+    },
+    "/assets/guide_getting-started.md.Du3wGoLW.lean.js": {
+      "sha256": "8f1e577ce8a1d40f519d187c22b3c8e0cc1a5f338e883eecf104c8a8099caf57",
+      "bytes": 430
+    },
+    "/assets/guide_installation.md.BpX8zRy6.js": {
+      "sha256": "ea1540fa8936f230d99f6d4a8d8543085d00480d53ad9a70844e42efb9195460",
+      "bytes": 13988
+    },
+    "/assets/guide_installation.md.BpX8zRy6.lean.js": {
+      "sha256": "ca7e811071af139ec8426945f5b4bc7d90bf3d5ad61e0d978c559e6185a62673",
+      "bytes": 418
+    },
+    "/assets/guide_kitty-settings.md.Duc7QRi4.js": {
+      "sha256": "6648507dade1bc0e631b88f809c4b7ea3e2932d633d5a301061881b2e1025213",
+      "bytes": 6016
+    },
+    "/assets/guide_kitty-settings.md.Duc7QRi4.lean.js": {
+      "sha256": "f175209203268f4e7e2dc2129fd399316469809d75c09c9b71483ad70c6431a3",
+      "bytes": 442
+    },
+    "/assets/guide_shells.md.DPiwqZAF.js": {
+      "sha256": "de953606ba0a8b133efe0dbaa0b1d4b63fef7d16b289110f8627552242fe13fe",
+      "bytes": 4598
+    },
+    "/assets/guide_shells.md.DPiwqZAF.lean.js": {
+      "sha256": "9e48ec10d5cb7c46f14245e1508b79168eba8e8f8e3513bf8d76e031998376a8",
+      "bytes": 394
+    },
+    "/assets/guide_troubleshooting.md.DcX3zcjs.js": {
+      "sha256": "ce16ab7134f525661b708cefa9fac25367f96d83a0c19f0be44d41293175fc97",
+      "bytes": 5809
+    },
+    "/assets/guide_troubleshooting.md.DcX3zcjs.lean.js": {
+      "sha256": "58d4229428e833b5b7fb2d44235872779ffa19f92868f2f45d6ff2a30a9726d5",
+      "bytes": 429
+    },
+    "/assets/guide_uninstall.md.C1vlJIKP.js": {
+      "sha256": "a8484fd97bda8dd1d920ccce285433c129f6623bdb1dcef7c2074aecfa7ac0b6",
+      "bytes": 7370
+    },
+    "/assets/guide_uninstall.md.C1vlJIKP.lean.js": {
+      "sha256": "8040d6518e3bf5c09d0b90866fce170ec8b4d8c975270194545824a55e884898",
+      "bytes": 419
+    },
+    "/assets/index.md.CFdFXbVX.js": {
+      "sha256": "05832a433e3c4810f2448d1e4303f7fd8c1fe399f304abe0a47e82863139a8f3",
+      "bytes": 2307
+    },
+    "/assets/index.md.CFdFXbVX.lean.js": {
+      "sha256": "7ad0200313091191ca1d12f76a49724a9433a023faca7b9e9e3c6b0b9b38a1e8",
+      "bytes": 530
+    },
+    "/assets/reference_actions.md.B4rKX7p9.js": {
+      "sha256": "55c6efb420b891ea92f17f59230956fc37c6ba9d2f2c38f0f3704ce3c3648379",
+      "bytes": 4949
+    },
+    "/assets/reference_actions.md.B4rKX7p9.lean.js": {
+      "sha256": "52ea8c846fb9acd0ddad8acdedb235c9502b499093446ab3f31fed56cd8f9ff8",
+      "bytes": 410
+    },
+    "/assets/reference_compatibility.md.DOyBuNeO.js": {
+      "sha256": "9c4e08bdcd48cc490c619b01b773add8d8f6784dfff5c4d5fb6e692e6b4e7dca",
+      "bytes": 6695
+    },
+    "/assets/reference_compatibility.md.DOyBuNeO.lean.js": {
+      "sha256": "649d40e22ed97f41db059bad8f16906598f57714032f76fb87f1de0d56df4890",
+      "bytes": 434
+    },
+    "/assets/reference_configuration.md.CX2M-HrX.js": {
+      "sha256": "a450c7a432e32a81e02daec81f144e493cea03b958c5d194d8af426cc0b9b24a",
+      "bytes": 4770
+    },
+    "/assets/reference_configuration.md.CX2M-HrX.lean.js": {
+      "sha256": "03d568844aa6eb5dd0d4523a5c6f6d242bf8b637fee0ac44ab87f9cf36dd8bd9",
+      "bytes": 441
+    },
+    "/assets/releases.md.DR0hpEPZ.js": {
+      "sha256": "c37d44f4190ce69c16a2d118c4471045e356ffa0135f8e377c8cb6372852ff65",
+      "bytes": 2214
+    },
+    "/assets/releases.md.DR0hpEPZ.lean.js": {
+      "sha256": "0fab19b4be5ec82163ef62a37efa30e985fe2619f1d50ce23bc49fb9f01c038c",
+      "bytes": 388
+    },
+    "/assets/style.DNLp0JT6.css": {
+      "sha256": "0d30490604d49aced561420e6ac7c6a0aa418d4a4a45793664c01bd52eb26e62",
+      "bytes": 114909
+    },
+    "/cat-mark.svg": {
+      "sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d",
+      "bytes": 382
+    },
+    "/contributing/index.html": {
+      "sha256": "9c8bd5f4ee2695decfc4fea65c85c4ade3766587f557846d45c25eddf7a72002",
+      "bytes": 28133
+    },
+    "/development/compatibility-findings.html": {
+      "sha256": "d134cb7d262c19618515adca21867f41981a83243496b24b20db8a5213895dde",
+      "bytes": 24416
+    },
+    "/development/release-checklist.html": {
+      "sha256": "1505a7e1292fae0d408e787915c8bf305e0c5b4f5b0ed34cbe227222262edb12",
+      "bytes": 20858
+    },
+    "/development/website.html": {
+      "sha256": "6d6718942424042163997d8afd410a1e185bcc25403c6c9e17c258764ea28fb0",
+      "bytes": 24693
+    },
+    "/guide/configuration.html": {
+      "sha256": "647ca9f469f6eba8399f9f27cd408a0287c17bf72859a7197d898a7a8574c906",
+      "bytes": 24379
+    },
+    "/guide/getting-started.html": {
+      "sha256": "3eaa236e10d7c069aa3d47c42042a14813fb2945f195af6c1eb5fefac90b40de",
+      "bytes": 23605
+    },
+    "/guide/installation.html": {
+      "sha256": "51d3f3f43e3e56eee4a40f7793ba0836f7ceb214336f1385a1724a15da45f2d8",
+      "bytes": 30069
+    },
+    "/guide/kitty-settings.html": {
+      "sha256": "862da5ecd699bc901409f2ea0be3d64d7245ae4219dcddaa50e5d33c72b63681",
+      "bytes": 22081
+    },
+    "/guide/shells.html": {
+      "sha256": "005c5520550bdd2e58b0fac65309f1a37135f1db108154b7579c77c336e1fd6d",
+      "bytes": 20683
+    },
+    "/guide/troubleshooting.html": {
+      "sha256": "cecb10d2e1c5ea93c33ee08bb9f2382cea0d0ed319c4105b3697d46f9d0bf594",
+      "bytes": 21889
+    },
+    "/guide/uninstall.html": {
+      "sha256": "22b9bbfc4cd05fb7760a594e9c6b82737aa6e0ad8c74adab59d882f9cc6d55bc",
+      "bytes": 23458
+    },
+    "/hashmap.json": {
+      "sha256": "6c9370141a58a4c5158fbed740b4079095c4a5674faa8632581dee780d337970",
+      "bytes": 576
+    },
+    "/index.html": {
+      "sha256": "f036c164e8f5feb644817bd2098c81fbcd878e555d8b973c36a64e1306b7627a",
+      "bytes": 10291
+    },
+    "/reference/actions.html": {
+      "sha256": "a806b886377217d048c461610da83dec9cc5ee6ec6a0121695e643b017c3570a",
+      "bytes": 21026
+    },
+    "/reference/compatibility.html": {
+      "sha256": "f5cbebc8d5b81e68e2a83b0fb33faa6b3a4e40c2b8e9d6eda24215fd3d7dc528",
+      "bytes": 22788
+    },
+    "/reference/configuration.html": {
+      "sha256": "4d5d3de57a672efeb46cc252ff1ce0c6441d0640ee06d425fc9ddcef3b8f2866",
+      "bytes": 20838
+    },
+    "/releases.html": {
+      "sha256": "f46ed32a8bd1861b1ed5e5c872429e3efd87c6c6ed34cbc7fc36240d9992e001",
+      "bytes": 18110
+    },
+    "/terminal-cat.svg": {
+      "sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f",
+      "bytes": 2461
+    },
+    "/vp-icons.css": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "/kittyscape/404.html": {
+      "sha256": "2488a0fb2dd39f27ad4b85272b5e64935e7b4634aa12083585010667271af78c",
+      "bytes": 3653
+    },
+    "/kittyscape/assets/app.CkF-1qSd.js": {
+      "sha256": "2a1ac7e32f15333b9a9582d224541679e1f5f1e7e7d34ba1dca77db4403bcf36",
+      "bytes": 1352
+    },
+    "/kittyscape/assets/chunks/@localSearchIndexroot.BdJC06Y4.js": {
+      "sha256": "df1060f75133d4e66e742dac285014a85d0156f19206d85180dec5e98025a721",
+      "bytes": 84176
+    },
+    "/kittyscape/assets/chunks/VPLocalSearchBox.B3oqEWZN.js": {
+      "sha256": "10a120c142130b98f63467a32b76eeeedc2236d88f331f414b9df29b2701ffaf",
+      "bytes": 64044
+    },
+    "/kittyscape/assets/chunks/framework.Dsl682W-.js": {
+      "sha256": "daf021676b1e39b681edf6c113974fd70dbef8751c33bb632544acade5ecde5e",
+      "bytes": 112981
+    },
+    "/kittyscape/assets/chunks/theme.CUDssrIs.js": {
+      "sha256": "c1d275a661e1cbd53a75a37448c4f6cc1de522652c299925aa150a0bfe613037",
+      "bytes": 54204
+    },
+    "/kittyscape/assets/contributing_index.md.BaL1G9yN.js": {
+      "sha256": "26b69425c0b862cf7d0f2c2791761ec252195e7e63e5b59844e88e64eb1a4ed3",
+      "bytes": 12073
+    },
+    "/kittyscape/assets/contributing_index.md.BaL1G9yN.lean.js": {
+      "sha256": "f5e341530976ea9845f7bda10f08dd4a4c28b62bce26845f93e82c765c951661",
+      "bytes": 418
+    },
+    "/kittyscape/assets/development_compatibility-findings.md.CzAvKV16.js": {
+      "sha256": "1d963f567c8b4bba68c866ebe35ce515a8b2dd1fef3e1fa0a8e738dca1589af8",
+      "bytes": 8375
+    },
+    "/kittyscape/assets/development_compatibility-findings.md.CzAvKV16.lean.js": {
+      "sha256": "728daec31fca8682c9a3033951edf68f942d8b0800a28fbd0e1f353db9891b1d",
+      "bytes": 477
+    },
+    "/kittyscape/assets/development_release-checklist.md.JGotClJx.js": {
+      "sha256": "c0b4063cbf58e68fdcb0e951a935b414dda6f49b6ce39ba4481582947e71a10b",
+      "bytes": 4811
+    },
+    "/kittyscape/assets/development_release-checklist.md.JGotClJx.lean.js": {
+      "sha256": "14a5f4c5dc9b1651f59cdece6205cb02a4a999a20915e3dddf1470d78acd0f53",
+      "bytes": 453
+    },
+    "/kittyscape/assets/development_website.md.BnuuoyJg.js": {
+      "sha256": "3db8ad8793511b511e4a9d17161259bc4857cc5e8935d390d81bbf37a4fd591d",
+      "bytes": 8599
+    },
+    "/kittyscape/assets/development_website.md.BnuuoyJg.lean.js": {
+      "sha256": "023396f9bcdb6e67397010e39ff70229e66e39333ac770b660b29fa28a7baa48",
+      "bytes": 428
+    },
+    "/kittyscape/assets/guide_configuration.md.DBXpsowR.js": {
+      "sha256": "30750238eebc4f2f985db784728121eb3a48d660d637df0f2c6444362bc38d52",
+      "bytes": 8319
+    },
+    "/kittyscape/assets/guide_configuration.md.DBXpsowR.lean.js": {
+      "sha256": "30257ac4884f0119e0b572aedac0e0bca8ad5c3ea40255c05b0771f7d9a9ad30",
+      "bytes": 422
+    },
+    "/kittyscape/assets/guide_getting-started.md.D8cyBgzu.js": {
+      "sha256": "33ee5ca3f5005a0e1bb8e8010798adaaf2aec825d61d95c819a4c26ed261061c",
+      "bytes": 7733
+    },
+    "/kittyscape/assets/guide_getting-started.md.D8cyBgzu.lean.js": {
+      "sha256": "e7c34d2446f42373428367c12e8028da6a988ef42685f70bd4307e0317ca0cf0",
+      "bytes": 430
+    },
+    "/kittyscape/assets/guide_installation.md.Dtc1dyzT.js": {
+      "sha256": "501f162726336f03e7d6c24921b9cf1f18524ca4561593e44edc5d504f8dcadc",
+      "bytes": 13999
+    },
+    "/kittyscape/assets/guide_installation.md.Dtc1dyzT.lean.js": {
+      "sha256": "c79f91f28d3ecc940c1940743f6deb38662478b2199d6ba151198ef41aa51e12",
+      "bytes": 418
+    },
+    "/kittyscape/assets/guide_kitty-settings.md.BE3Z3TyH.js": {
+      "sha256": "b0fbee11209f08ee8963c25d9639c53107e339c9c4329cb118fc7e0997962ab2",
+      "bytes": 6016
+    },
+    "/kittyscape/assets/guide_kitty-settings.md.BE3Z3TyH.lean.js": {
+      "sha256": "cad288cad0489327b539579a81baabfee8c18f13253b0fb3b03247443e38b628",
+      "bytes": 442
+    },
+    "/kittyscape/assets/guide_shells.md.bqDHvCru.js": {
+      "sha256": "a6ee733283892e41eed84e8398603c68a72490c04b489d542c5de47a07a198a6",
+      "bytes": 4598
+    },
+    "/kittyscape/assets/guide_shells.md.bqDHvCru.lean.js": {
+      "sha256": "aed8f258e50d12aedac0f3ead3d40b9a529edcbd83df5ad6728525938da69e5c",
+      "bytes": 394
+    },
+    "/kittyscape/assets/guide_troubleshooting.md.iydcNpnc.js": {
+      "sha256": "94997466363d5df01f7257c1ff48c03b88d095e8808a872e9cd4e60ccc820707",
+      "bytes": 5809
+    },
+    "/kittyscape/assets/guide_troubleshooting.md.iydcNpnc.lean.js": {
+      "sha256": "b4bfba6673c29f0a8c21b5ec149029b0ba37b7685937e336578028485a13769b",
+      "bytes": 429
+    },
+    "/kittyscape/assets/guide_uninstall.md.faoZJdk4.js": {
+      "sha256": "d161de5c0d36973f2fe1315550143d3549b5ca6ebc9958ba92436239399effd0",
+      "bytes": 7370
+    },
+    "/kittyscape/assets/guide_uninstall.md.faoZJdk4.lean.js": {
+      "sha256": "9c52e9b1557f1b3d91efc0ac776b0b14b89f9b3381d1707d59144463872b72ea",
+      "bytes": 419
+    },
+    "/kittyscape/assets/index.md.q-RJ2L71.js": {
+      "sha256": "6192a758fd84dcf7d2f423f115a330a1768e7f0f9a577ba9c6fdcfd92db03960",
+      "bytes": 2318
+    },
+    "/kittyscape/assets/index.md.q-RJ2L71.lean.js": {
+      "sha256": "f8a7be7f0bc8570c40b24cf34d5502d734e709b8af638fcdedb5b6fddddd5119",
+      "bytes": 541
+    },
+    "/kittyscape/assets/reference_actions.md.af6U4Nr-.js": {
+      "sha256": "f4476df5f201e9ee47a60bee270152105ab505dcc390abb9918f09556dbf2e86",
+      "bytes": 4949
+    },
+    "/kittyscape/assets/reference_actions.md.af6U4Nr-.lean.js": {
+      "sha256": "aea3f5bdf6c4891bb36287167a5912d33b0130e11640ab8333c24af4fd382cb1",
+      "bytes": 410
+    },
+    "/kittyscape/assets/reference_compatibility.md.CbOfMI9N.js": {
+      "sha256": "010963b192054709c4c7fa3cb39062107ec29de371c42658c51cec6397f254c5",
+      "bytes": 6706
+    },
+    "/kittyscape/assets/reference_compatibility.md.CbOfMI9N.lean.js": {
+      "sha256": "a43748856a73fdbf677e4034f637c88dc397b13356232f69aa1fb1522c41dbaa",
+      "bytes": 434
+    },
+    "/kittyscape/assets/reference_configuration.md.CvtHa_h_.js": {
+      "sha256": "459b5a2594acc30c329d1d1fc11049394f149242665fa603c8ac7524825382a6",
+      "bytes": 4770
+    },
+    "/kittyscape/assets/reference_configuration.md.CvtHa_h_.lean.js": {
+      "sha256": "159170a7f7acec6572e0e6c914a1ef051196fc41c2dc238abf98cdb101f4bea7",
+      "bytes": 441
+    },
+    "/kittyscape/assets/releases.md.DJm0r7fv.js": {
+      "sha256": "6f171ef75e82892e1317b238508471dd395053add9dfa8d006351913b15014e9",
+      "bytes": 2225
+    },
+    "/kittyscape/assets/releases.md.DJm0r7fv.lean.js": {
+      "sha256": "4a37378ef0c6fe1d64e5ad66fe8702cd0d54e2f8963edf29d18bfe28d2c2a63f",
+      "bytes": 388
+    },
+    "/kittyscape/assets/style.DNLp0JT6.css": {
+      "sha256": "0d30490604d49aced561420e6ac7c6a0aa418d4a4a45793664c01bd52eb26e62",
+      "bytes": 114909
+    },
+    "/kittyscape/cat-mark.svg": {
+      "sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d",
+      "bytes": 382
+    },
+    "/kittyscape/contributing/index.html": {
+      "sha256": "3e54ccf5a2843b63a4f3cca8f0347853ebdb53e1e3efef83d99724ff5419a099",
+      "bytes": 28474
+    },
+    "/kittyscape/development/compatibility-findings.html": {
+      "sha256": "ac529af745cb4bdf8c237ee1b2cab84167b0903920fddd4b384ee7e1d4042d6f",
+      "bytes": 24757
+    },
+    "/kittyscape/development/release-checklist.html": {
+      "sha256": "284f379a0c1e2ee2a080e265b6f2a71fe56ed11612a80c141bc9084cfca35df8",
+      "bytes": 21199
+    },
+    "/kittyscape/development/website.html": {
+      "sha256": "f410e1f801c47839a2f6974f1cecf3e99d93e85d95d77ed315403f6f3c02dca0",
+      "bytes": 25034
+    },
+    "/kittyscape/guide/configuration.html": {
+      "sha256": "fdba00cd2e2f4c5c1e2de7be7ec201e7ec853521b7c0b4a23d226c6f862d9575",
+      "bytes": 24709
+    },
+    "/kittyscape/guide/getting-started.html": {
+      "sha256": "5eabcd21186b7d7556c651cebb05a2f0f9d57e46821ef49d7ddcaa5e5bf06f20",
+      "bytes": 23924
+    },
+    "/kittyscape/guide/installation.html": {
+      "sha256": "5c0751a9ae87ec3e88d5af10db535456aeb280b5836ce1eb963b26cd6e5fd26e",
+      "bytes": 30410
+    },
+    "/kittyscape/guide/kitty-settings.html": {
+      "sha256": "07e39b93597d92fe9155de0ec6f6d91ace80ae2746fff551c232b50f2820dbe7",
+      "bytes": 22411
+    },
+    "/kittyscape/guide/shells.html": {
+      "sha256": "f123d6e420c2eb8fbe70e668d03d692a811950c83e94c507c1eacd3345918b68",
+      "bytes": 21013
+    },
+    "/kittyscape/guide/troubleshooting.html": {
+      "sha256": "3fbfe88ade271bddf8ffaf461376b23c3ab73f8c164e5b14cd585122b06329df",
+      "bytes": 22219
+    },
+    "/kittyscape/guide/uninstall.html": {
+      "sha256": "20b7123c771e39a962ac3e75fb681a524861aac3fa877f3442b2ddeaf09efb82",
+      "bytes": 23788
+    },
+    "/kittyscape/hashmap.json": {
+      "sha256": "d249dc4664237b594d6f9ced522a71996062251d7942c003ddb7c5b93dc563d1",
+      "bytes": 576
+    },
+    "/kittyscape/index.html": {
+      "sha256": "326c7ad29100f9faed232d957d27fa40e6b8aa5796bfa375a98400e1407dc3cd",
+      "bytes": 10456
+    },
+    "/kittyscape/reference/actions.html": {
+      "sha256": "0084c6680ac0ebce7b4279d8858b0e438569a82e2b0db4df8f1b2daa4ac7cb7e",
+      "bytes": 21356
+    },
+    "/kittyscape/reference/compatibility.html": {
+      "sha256": "858f6809e85a90c882e9b8c6ebbc57466cf0296247cdeaab7d033b4878ddbac2",
+      "bytes": 23129
+    },
+    "/kittyscape/reference/configuration.html": {
+      "sha256": "15b506a996a1aeeb106959181b844aad5394104f42bd0e21061e03951ba8256b",
+      "bytes": 21168
+    },
+    "/kittyscape/releases.html": {
+      "sha256": "c3c7fc6478ffc01fc99359c19e523a259b74e168eb199a5af99d5b111427ed1e",
+      "bytes": 18440
+    },
+    "/kittyscape/terminal-cat.svg": {
+      "sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f",
+      "bytes": 2461
+    },
+    "/kittyscape/vp-icons.css": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  }
+}

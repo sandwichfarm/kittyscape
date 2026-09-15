@@ -1,0 +1,26 @@
+{
+  "reload": "ok",
+  "config_errors": "",
+  "workspace": 15,
+  "clients": 0,
+  "layout": {
+    "mode": "tiled",
+    "workspace": 15,
+    "output_pixels": [
+      1280,
+      800
+    ],
+    "expected_single_window_pixels": [
+      1280,
+      800
+    ],
+    "expected_two_window_pixels_each": [
+      640,
+      800
+    ],
+    "reason": "Keep both OS windows visible so frame callbacks continue while another window has focus.",
+    "applied_at": "2026-09-15T14:28:54.858668+00:00",
+    "config_sha256": "d57e9fe425084c2698ac24ee80224d456dd3674f52cc5e15eabf742f47545dc8",
+    "previous_config": "/tmp/kittyscape-private-wayland-27ldgord/hyprland-floating-before-tiling-20260915T142854Z.lua"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "stable_functional_and_manifest_files": 118,
+  "source_fingerprint": "/tmp/kittyscape-final-frontend-scoped-redraw/tested-asset-fingerprints.json",
+  "final_source_archive": "4d304c7c23dc343addd42500a05ca7c7607b3b5641ff60bae9324b99eb3a251a",
+  "scope": "Only nonexecuted evidence files were added or changed; every previously tested HTML/JS/CSS/SVG and routing manifest remains byte-identical."
+}

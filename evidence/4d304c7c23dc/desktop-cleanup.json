@@ -1,0 +1,11 @@
+{
+  "desktop_xwayland_display_0": "reachable",
+  "host_fixture_windows": 0,
+  "wayland_compositor": "responsive",
+  "test_displays_remaining": {
+    "101": false,
+    "102": false,
+    "103": false
+  },
+  "recovery_note": "An early automatic Xvfb probe conflicted with X0. The active X0 -> X0_ desktop endpoint was restored and is deliberately preserved."
+}

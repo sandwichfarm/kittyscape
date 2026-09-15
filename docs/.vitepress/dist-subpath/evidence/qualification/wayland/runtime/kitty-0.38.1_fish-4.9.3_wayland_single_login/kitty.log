@@ -1,0 +1,11 @@
+[0.116] Could not move child process into a systemd scope: [Errno 113] Failed to call StartTransientUnit: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.systemd1 was not provided by any .service files
+[0.186] [glfw error 65544]: process_desktop_settings: failed with error: [org.freedesktop.DBus.Error.ServiceUnknown] The name org.freedesktop.portal.Desktop was not provided by any .service files
+[0.186] [glfw error 65544]: Notify: Failed to get server capabilities error: [org.freedesktop.DBus.Error.ServiceUnknown] The name org.freedesktop.Notifications was not provided by any .service files
+[0.189] [PARSE ERROR] Unknown terminfo property: query-os-name
+[1.451] [glfw error 65544]: Notify: Failed to create notification error: [org.freedesktop.DBus.Error.ServiceUnknown] The name org.freedesktop.Notifications was not provided by any .service files
+[3.655] Could not move child process into a systemd scope: [Errno 113] Failed to call StartTransientUnit: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.systemd1 was not provided by any .service files
+[3.676] [PARSE ERROR] Unknown terminfo property: query-os-name
+[4.346] Could not move child process into a systemd scope: [Errno 113] Failed to call StartTransientUnit: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.systemd1 was not provided by any .service files
+[4.373] [PARSE ERROR] Unknown terminfo property: query-os-name
+[5.409] Could not move child process into a systemd scope: [Errno 113] Failed to call StartTransientUnit: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.systemd1 was not provided by any .service files
+[5.435] [PARSE ERROR] Unknown terminfo property: query-os-name

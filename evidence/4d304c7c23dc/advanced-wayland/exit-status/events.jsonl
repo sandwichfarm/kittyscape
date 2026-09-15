@@ -1,0 +1,8 @@
+{"event": "load", "pid": 3313194, "kitty": [0, 48, 2], "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]", "time": 24827.192773885}
+{"event": "command-start", "pane": 1, "time": 24827.500157552}
+{"event": "command-stop", "pane": 1, "time": 24827.500341212}
+{"event": "image", "os_windows": [1], "digest": "988e2824bc4534c7506d67781eaf98cab81cd52ee696874a3ab9422eaa892c40", "configured": false, "time": 24827.646170929}
+{"event": "command-start", "pane": 1, "time": 24827.768908592}
+{"event": "command-stop", "pane": 1, "time": 24827.769036957}
+{"event": "command-start", "pane": 1, "time": 24827.813935462}
+{"event": "command-stop", "pane": 1, "time": 24827.814067824}

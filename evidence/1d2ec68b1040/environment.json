@@ -1,0 +1,15 @@
+{
+  "os": "Arch Linux",
+  "architecture": "x86_64",
+  "kernel": "6.18.49-2-lts",
+  "cpu": {
+    "Architecture": "x86_64",
+    "CPU(s)": "16",
+    "Model name": "11th Gen Intel(R) Core(TM) i7-11700K @ 3.60GHz",
+    "Thread(s) per core": "2",
+    "Core(s) per socket": "8"
+  },
+  "x11": "Xvfb21.1.24 1280x800x24, LIBGL_ALWAYS_SOFTWARE=1",
+  "fixture_images": "deterministic RGB PNG1920x1080",
+  "source_archive_sha256": "1d2ec68b1040f9faf8304583be273aff5f1e7e69d6411a4466afc58b16335828"
+}

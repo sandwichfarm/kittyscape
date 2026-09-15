@@ -1,0 +1,572 @@
+[
+  {
+    "base": "/",
+    "files": [
+      {
+        "path": "404.html",
+        "bytes": 3474,
+        "sha256": "870c6140c81e8d4659f3d201b4d0152004e276d22c788d97881bd348af0f5855"
+      },
+      {
+        "path": "assets/app.CxZjITuu.js",
+        "bytes": 1352,
+        "sha256": "cd3551af69671ed239314fcbe461b238d38acf94bbc4ea1584627b263d097bc1"
+      },
+      {
+        "path": "assets/chunks/@localSearchIndexroot.CkeJDlNN.js",
+        "bytes": 66149,
+        "sha256": "9a18e4a991bb9e50fdbf78c6a1d422e4da1500b1278f6fd97ffd9a543b69e4fe"
+      },
+      {
+        "path": "assets/chunks/VPLocalSearchBox.Clo0zE4y.js",
+        "bytes": 64044,
+        "sha256": "9a154c3f852904d0102af98d9eb38219df929acd98be6381438c4f050d374442"
+      },
+      {
+        "path": "assets/chunks/framework.BXzK3EA4.js",
+        "bytes": 112959,
+        "sha256": "aab48e5afe404fb51be147b08f8e482a9abee217b591a6235171b35b071cd506"
+      },
+      {
+        "path": "assets/chunks/theme.CsPQUeIY.js",
+        "bytes": 54204,
+        "sha256": "af7a30cc740f3c4f0514e62597410d60c46f9efa6cb3bb4589031bf3a60e336b"
+      },
+      {
+        "path": "assets/contributing_index.md.CZIyLeJp.js",
+        "bytes": 3859,
+        "sha256": "e42967e5bb09d07e93586b6e26aa68b12d49684acd75c41b8f31990e30cae841"
+      },
+      {
+        "path": "assets/contributing_index.md.CZIyLeJp.lean.js",
+        "bytes": 418,
+        "sha256": "5f59128eea1083e08e1e244f170113b2553f64bf7e9b961b9bbbd4542fee6bab"
+      },
+      {
+        "path": "assets/development_compatibility-findings.md.Bw4cYa3V.js",
+        "bytes": 5531,
+        "sha256": "8a22535b758d2da22104c6df6c15a69e2d94816f6b126cf12f8a4022dc15ccb7"
+      },
+      {
+        "path": "assets/development_compatibility-findings.md.Bw4cYa3V.lean.js",
+        "bytes": 479,
+        "sha256": "9cde069ba8e89237aa7ed8f2a95ad3a3941e077cbe9cf2655095960e697eb1f4"
+      },
+      {
+        "path": "assets/development_website.md.BT4WfdNi.js",
+        "bytes": 6777,
+        "sha256": "8be0ebe753a35b6c6e8a03c69b4f9d2805e3161afd4abd555260d5ede48698ea"
+      },
+      {
+        "path": "assets/development_website.md.BT4WfdNi.lean.js",
+        "bytes": 428,
+        "sha256": "ec417980f09dd8b3a081908cbca62829b3338005ecbe12b20032cc4fd9e23961"
+      },
+      {
+        "path": "assets/guide_configuration.md.CLQW6ONq.js",
+        "bytes": 7626,
+        "sha256": "9dd32bf1bd5be4ab738fd58dc05c821a85a94e692e8a767eb3735351b78711d5"
+      },
+      {
+        "path": "assets/guide_configuration.md.CLQW6ONq.lean.js",
+        "bytes": 422,
+        "sha256": "f0cac6016f53e75ffb3bf04b03ecec33d970566f77f010eacaa88330a4c568a8"
+      },
+      {
+        "path": "assets/guide_getting-started.md.CZQwKAAD.js",
+        "bytes": 7700,
+        "sha256": "6e67c1a3f9307d3262b2e0f4b3cce1599b075b9cb6b71f227e1f9f80c52ebef0"
+      },
+      {
+        "path": "assets/guide_getting-started.md.CZQwKAAD.lean.js",
+        "bytes": 430,
+        "sha256": "92c53242b8a22ae783e2a12e5de949cf085299e53d3a7ddd7658bcb7162fd6c5"
+      },
+      {
+        "path": "assets/guide_installation.md.Ddt5cfJH.js",
+        "bytes": 13516,
+        "sha256": "8813857245d0d04b58be68d2b870055e60494ad3a06079fc1c9f5196dfdbbed0"
+      },
+      {
+        "path": "assets/guide_installation.md.Ddt5cfJH.lean.js",
+        "bytes": 418,
+        "sha256": "7dd89a46150480d19a97302505d63a00cfe670e4cdf8f60e4ebd36c78d59e283"
+      },
+      {
+        "path": "assets/guide_kitty-settings.md.VsBZBDBg.js",
+        "bytes": 5067,
+        "sha256": "002ee6194e175cdf87b7867f21513b4819bb252781292d49b9433f2570546a74"
+      },
+      {
+        "path": "assets/guide_kitty-settings.md.VsBZBDBg.lean.js",
+        "bytes": 442,
+        "sha256": "42d19df6ae5ff12c4dc530d97098cace117477d18dfaf041a9a73f2fcbeb63dd"
+      },
+      {
+        "path": "assets/guide_shells.md.Bu4WFZme.js",
+        "bytes": 4207,
+        "sha256": "f2225d448cbafb898660f58c86f143cc11f3e2f256a651fcd3adf13a6f77c84a"
+      },
+      {
+        "path": "assets/guide_shells.md.Bu4WFZme.lean.js",
+        "bytes": 394,
+        "sha256": "b679c52034228aef8887cb489fe4a2197062c550b0c56baf3d1a0e31b7c6b719"
+      },
+      {
+        "path": "assets/guide_troubleshooting.md.Ccb00UGs.js",
+        "bytes": 4688,
+        "sha256": "f6c780acbfc4717f00e1961f35ae5d83ca3cd4498fd6b27661a756ec1a9bdc3b"
+      },
+      {
+        "path": "assets/guide_troubleshooting.md.Ccb00UGs.lean.js",
+        "bytes": 429,
+        "sha256": "58d4229428e833b5b7fb2d44235872779ffa19f92868f2f45d6ff2a30a9726d5"
+      },
+      {
+        "path": "assets/guide_uninstall.md.C1vlJIKP.js",
+        "bytes": 7370,
+        "sha256": "a8484fd97bda8dd1d920ccce285433c129f6623bdb1dcef7c2074aecfa7ac0b6"
+      },
+      {
+        "path": "assets/guide_uninstall.md.C1vlJIKP.lean.js",
+        "bytes": 419,
+        "sha256": "8040d6518e3bf5c09d0b90866fce170ec8b4d8c975270194545824a55e884898"
+      },
+      {
+        "path": "assets/index.md.qtx3a6b5.js",
+        "bytes": 2397,
+        "sha256": "d1e1c124201323d38f50396ba505d5ee3f840b4c3bf56b291d07ace3f2e69589"
+      },
+      {
+        "path": "assets/index.md.qtx3a6b5.lean.js",
+        "bytes": 530,
+        "sha256": "568712d74b51432b4d79877ccabcff65719b12cf3255d85394ccaf1aa93ca140"
+      },
+      {
+        "path": "assets/reference_actions.md.B2mSyYSx.js",
+        "bytes": 4204,
+        "sha256": "638a566df302ec1e9e89d0a23d9cb6b9d3dd289bc02d94f24bafb5810dc54217"
+      },
+      {
+        "path": "assets/reference_actions.md.B2mSyYSx.lean.js",
+        "bytes": 410,
+        "sha256": "b0098ea09f859c3a0d8699613b9ddd8901b2d088f86223fde55d6490c1062166"
+      },
+      {
+        "path": "assets/reference_compatibility.md.Czman45n.js",
+        "bytes": 3440,
+        "sha256": "da5aca2410a422b787138fd24ef01ebd80efe035eb433b6bf526cfa60d3e6906"
+      },
+      {
+        "path": "assets/reference_compatibility.md.Czman45n.lean.js",
+        "bytes": 434,
+        "sha256": "8ae7bac64c1cf241d65ec1e4aa7e84275e47ccdb5c2f7c2e76e2701b1312e4e9"
+      },
+      {
+        "path": "assets/reference_configuration.md.B2r_KKUd.js",
+        "bytes": 4751,
+        "sha256": "afe59a9066fb2415aa363c99ab54975022f99528c6f317d2578d419258aed231"
+      },
+      {
+        "path": "assets/reference_configuration.md.B2r_KKUd.lean.js",
+        "bytes": 441,
+        "sha256": "09c349205b88511c4e230c7ab4461ea2db44976ac5c373a3f570e0553e4ff7ca"
+      },
+      {
+        "path": "assets/releases.md.BCfG4_g6.js",
+        "bytes": 1888,
+        "sha256": "aaf9003c4c2da7444788254bf213f4aba9bbbecaaf69e6bc54bb5268a787f2cb"
+      },
+      {
+        "path": "assets/releases.md.BCfG4_g6.lean.js",
+        "bytes": 388,
+        "sha256": "5faa528a8dd1f333d92a8aa38265554329c345764991a5d08e135a5ac120c9a6"
+      },
+      {
+        "path": "assets/style.DNLp0JT6.css",
+        "bytes": 114909,
+        "sha256": "0d30490604d49aced561420e6ac7c6a0aa418d4a4a45793664c01bd52eb26e62"
+      },
+      {
+        "path": "cat-mark.svg",
+        "bytes": 382,
+        "sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d"
+      },
+      {
+        "path": "contributing/index.html",
+        "bytes": 19496,
+        "sha256": "57bb729e3938e4f1ac43a6a1ddcf92d6760ba8cf3ba6e0dc2af7cb9fe301185f"
+      },
+      {
+        "path": "development/compatibility-findings.html",
+        "bytes": 21138,
+        "sha256": "053b8b9073a31a1874017911e74703b06a9fe2a836845a3c9c3241465633a267"
+      },
+      {
+        "path": "development/website.html",
+        "bytes": 22415,
+        "sha256": "347337185604de2530c4143b57449d9b7f23049a70e89a8eac93738c807ec401"
+      },
+      {
+        "path": "guide/configuration.html",
+        "bytes": 23241,
+        "sha256": "69c427bd94b9e0fcf7d9c01a8eeba3cb3e7dfd1b1e2f669452212c809e1ab5ec"
+      },
+      {
+        "path": "guide/getting-started.html",
+        "bytes": 23127,
+        "sha256": "981ec28874e75ed7574a8779eed8a024e5877fd63f09cf7d5a3e5b41654918b2"
+      },
+      {
+        "path": "guide/installation.html",
+        "bytes": 29152,
+        "sha256": "4d46a3914cf1405f132e6713b21a4ef552f105dd09598f233f625556cbd59efa"
+      },
+      {
+        "path": "guide/kitty-settings.html",
+        "bytes": 20687,
+        "sha256": "5fc5d1ee62bac3a1b7a64ffd5f6f50926934bc1b1d50f1e1fe8c7615e76c606d"
+      },
+      {
+        "path": "guide/shells.html",
+        "bytes": 19847,
+        "sha256": "1080fca8d5ee16ffdeb9089db9a45557c30ecc5b9fcafca3f6dc8c3b55e7f55e"
+      },
+      {
+        "path": "guide/troubleshooting.html",
+        "bytes": 20323,
+        "sha256": "ab9b52f95ddbcba85c47176442e595a9aea07549a729ba431a417975921ee33b"
+      },
+      {
+        "path": "guide/uninstall.html",
+        "bytes": 23013,
+        "sha256": "8399285cef20a5d3c7bc57a53f461320f4c85c81425d8ed2813b62cf8c8cc635"
+      },
+      {
+        "path": "hashmap.json",
+        "bytes": 530,
+        "sha256": "0aa90f5c2ccbb9cf7845f304efb1bb4f038e915b01a99cd1565d5853a4dd67e8"
+      },
+      {
+        "path": "index.html",
+        "bytes": 10257,
+        "sha256": "15680235cec3f6ceb98564f304fa7ad6ace551163137c7799e30cf344d1e3f5f"
+      },
+      {
+        "path": "reference/actions.html",
+        "bytes": 19836,
+        "sha256": "4b9f6c29d5ed1cc44b6103386cbc069830922a3326855975658b50ce9ae2836e"
+      },
+      {
+        "path": "reference/compatibility.html",
+        "bytes": 19088,
+        "sha256": "ee1edb84876a4cfb3330b272dd48d982c556dfee1e33073065528fa924eb09f0"
+      },
+      {
+        "path": "reference/configuration.html",
+        "bytes": 20374,
+        "sha256": "244850405e56de7c04875c498f4e1182c5da999129a27c3d38ed255830af4458"
+      },
+      {
+        "path": "releases.html",
+        "bytes": 17331,
+        "sha256": "af5672fc6d261b4b7d6160dea325afbff52a4e9da0aaaac53d2c9f1dcaf807d3"
+      },
+      {
+        "path": "terminal-cat.svg",
+        "bytes": 2461,
+        "sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f"
+      },
+      {
+        "path": "vp-icons.css",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  },
+  {
+    "base": "/kittyscape/",
+    "files": [
+      {
+        "path": "404.html",
+        "bytes": 3529,
+        "sha256": "977c83fa376f882a156e0c387a401944412f59b4ae0c20ca06da2fadf9ae721e"
+      },
+      {
+        "path": "assets/app.DZcCQ6bX.js",
+        "bytes": 1352,
+        "sha256": "cd127b7fd12fe4cf99ea3e86b98ea6c6150f7773f3991e78affdc2a53a7e5b13"
+      },
+      {
+        "path": "assets/chunks/@localSearchIndexroot.D2JHKjXN.js",
+        "bytes": 66952,
+        "sha256": "eb9a1d8fbb37733464d32f77afded7a7d541292be3925471a1dfcf84e2ecbd13"
+      },
+      {
+        "path": "assets/chunks/VPLocalSearchBox.BK6srSV7.js",
+        "bytes": 64044,
+        "sha256": "b09d5c2bb4fbf182932988bc5c27cd718941a456dfcb777d3c99c8d5068e90ab"
+      },
+      {
+        "path": "assets/chunks/framework.Dsl682W-.js",
+        "bytes": 112981,
+        "sha256": "daf021676b1e39b681edf6c113974fd70dbef8751c33bb632544acade5ecde5e"
+      },
+      {
+        "path": "assets/chunks/theme.lj9PxxjX.js",
+        "bytes": 54204,
+        "sha256": "5d599c7ec1d21241d6f410059d9e9dfc777e937e77d100b9645f62d95935ebcf"
+      },
+      {
+        "path": "assets/contributing_index.md.Bhy6mutx.js",
+        "bytes": 3859,
+        "sha256": "9cb424b454e4623a1d28e7ddbde6cd80f34455bac47682e436f44453f7acf41e"
+      },
+      {
+        "path": "assets/contributing_index.md.Bhy6mutx.lean.js",
+        "bytes": 418,
+        "sha256": "df7bdaca197921651b9729ef93800cade4f12ab700818e7765f9e7788e00332d"
+      },
+      {
+        "path": "assets/development_compatibility-findings.md.Db0DQHcO.js",
+        "bytes": 5531,
+        "sha256": "f9f9ae7b2aa10134d529204ecb6c720458c58b748fb27f4c85e2e86eae225693"
+      },
+      {
+        "path": "assets/development_compatibility-findings.md.Db0DQHcO.lean.js",
+        "bytes": 479,
+        "sha256": "2a826e6f99a1db881b21645fe87ba6e42195872ee17de38b09b9926d95a435f5"
+      },
+      {
+        "path": "assets/development_website.md.C8RseVQQ.js",
+        "bytes": 6777,
+        "sha256": "0f7839ae92e89f53c7117252849492845b4b4b67210b3eb703dfaf34b2ab1aff"
+      },
+      {
+        "path": "assets/development_website.md.C8RseVQQ.lean.js",
+        "bytes": 428,
+        "sha256": "3d35d9f301640dd29c323d66a1522a9ab3ab3f8c83d955429bbf76c6605c3775"
+      },
+      {
+        "path": "assets/guide_configuration.md.WF8eoZeX.js",
+        "bytes": 7626,
+        "sha256": "e2ee58ebc72a27be015353a8e60060637e1f0ce8f623c8322096107b453c0457"
+      },
+      {
+        "path": "assets/guide_configuration.md.WF8eoZeX.lean.js",
+        "bytes": 422,
+        "sha256": "12802d37b5f71e9e0aebdf952cd9847f440651ebd3fdfc4ae5a450b9c5ed40dc"
+      },
+      {
+        "path": "assets/guide_getting-started.md.3TwXB-h_.js",
+        "bytes": 7700,
+        "sha256": "ef486756c7792af38d89ad7fc151a9c61c1a62bd756eb843bd9774d88ea85806"
+      },
+      {
+        "path": "assets/guide_getting-started.md.3TwXB-h_.lean.js",
+        "bytes": 430,
+        "sha256": "5ef3150a57052453c95f3194b4371eaa863295dc7f09feda76a9c29f28762123"
+      },
+      {
+        "path": "assets/guide_installation.md.CJPgck7h.js",
+        "bytes": 13516,
+        "sha256": "322dd94bc1c4987c926e5f9c3a5a121daf4214281556344a5759f2955cd8cdcf"
+      },
+      {
+        "path": "assets/guide_installation.md.CJPgck7h.lean.js",
+        "bytes": 418,
+        "sha256": "ffed69a32f288842bafe267b1a81e600bef78345ace13b049419cf852db941e0"
+      },
+      {
+        "path": "assets/guide_kitty-settings.md.BqVA8g-S.js",
+        "bytes": 5067,
+        "sha256": "c8b8addec82786180e6a4db893939d338f7c17f7c0e3bbb9fe49a83bab81ce19"
+      },
+      {
+        "path": "assets/guide_kitty-settings.md.BqVA8g-S.lean.js",
+        "bytes": 442,
+        "sha256": "738e0de7b4db3c740a790cfb32252f4b36c86005f2d8c6ade94ce61ae10ae293"
+      },
+      {
+        "path": "assets/guide_shells.md.RGBrbLWV.js",
+        "bytes": 4207,
+        "sha256": "a6b6beaf79a10c30ab3b0fcc53de150bd2022e5c09cbd39a218d6dea463a945d"
+      },
+      {
+        "path": "assets/guide_shells.md.RGBrbLWV.lean.js",
+        "bytes": 394,
+        "sha256": "0b450a9d2985a4a858719480ee436bd7f0be30c95404719c5d6f8644fd602488"
+      },
+      {
+        "path": "assets/guide_troubleshooting.md.L1FEZWII.js",
+        "bytes": 4688,
+        "sha256": "d9025c6e3ba053bc6465d97122d45b0b4498ecdbcdad46000474d1c8ad0e05f2"
+      },
+      {
+        "path": "assets/guide_troubleshooting.md.L1FEZWII.lean.js",
+        "bytes": 429,
+        "sha256": "b4bfba6673c29f0a8c21b5ec149029b0ba37b7685937e336578028485a13769b"
+      },
+      {
+        "path": "assets/guide_uninstall.md.faoZJdk4.js",
+        "bytes": 7370,
+        "sha256": "d161de5c0d36973f2fe1315550143d3549b5ca6ebc9958ba92436239399effd0"
+      },
+      {
+        "path": "assets/guide_uninstall.md.faoZJdk4.lean.js",
+        "bytes": 419,
+        "sha256": "9c52e9b1557f1b3d91efc0ac776b0b14b89f9b3381d1707d59144463872b72ea"
+      },
+      {
+        "path": "assets/index.md.J049w833.js",
+        "bytes": 2408,
+        "sha256": "628a12f91b0b3520ff8c4d2ee80d95b52e1350518ffba7098fcd62767d6b3d3c"
+      },
+      {
+        "path": "assets/index.md.J049w833.lean.js",
+        "bytes": 541,
+        "sha256": "ee3d9a6b4ed6574513b2ff5683976ebe70f27f81b576b87464b79e6268595aa1"
+      },
+      {
+        "path": "assets/reference_actions.md.DHbvJG-b.js",
+        "bytes": 4204,
+        "sha256": "58af4669fbfd9d3c8c96153201075819e405cc1c736aece6ab507ef3619d2fca"
+      },
+      {
+        "path": "assets/reference_actions.md.DHbvJG-b.lean.js",
+        "bytes": 410,
+        "sha256": "af647172e5fb2f840c6f677ea2b75815f87d7f527560cfb6c64fbe01ef884190"
+      },
+      {
+        "path": "assets/reference_compatibility.md.DUJ0aOTL.js",
+        "bytes": 3440,
+        "sha256": "26b464679e2b71a4568a2170a0dfaebef6a5a7d35925a5b55e41fd51ba354728"
+      },
+      {
+        "path": "assets/reference_compatibility.md.DUJ0aOTL.lean.js",
+        "bytes": 434,
+        "sha256": "2b1f10081ec2df5e46e80699b3d413d4d5e719ef1610dedc006777eee40bcb2d"
+      },
+      {
+        "path": "assets/reference_configuration.md.DhxuqpY8.js",
+        "bytes": 4751,
+        "sha256": "c2dfe36ccf72bb0fac3614f16387ed4a7b08dd98489b694a2b7d994e77f50545"
+      },
+      {
+        "path": "assets/reference_configuration.md.DhxuqpY8.lean.js",
+        "bytes": 441,
+        "sha256": "ea22535537fe04660cdd1b91881e80e1721241af3d395a66205d3fcfb73e08ec"
+      },
+      {
+        "path": "assets/releases.md.B6iPHI8S.js",
+        "bytes": 1888,
+        "sha256": "96b9572fc71b1818251f2233b465815c363fb4fdcb3a6b6fa92b5431f5d57f3a"
+      },
+      {
+        "path": "assets/releases.md.B6iPHI8S.lean.js",
+        "bytes": 388,
+        "sha256": "19f326f6ead3abaa5f3a551e39bd4504d323f3a8a471da5e558a022214fb7795"
+      },
+      {
+        "path": "assets/style.DNLp0JT6.css",
+        "bytes": 114909,
+        "sha256": "0d30490604d49aced561420e6ac7c6a0aa418d4a4a45793664c01bd52eb26e62"
+      },
+      {
+        "path": "cat-mark.svg",
+        "bytes": 382,
+        "sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d"
+      },
+      {
+        "path": "contributing/index.html",
+        "bytes": 19815,
+        "sha256": "6b61ffe5d54fed374e54828505d4932976d56c1d54e101c37880b6b437f7b52e"
+      },
+      {
+        "path": "development/compatibility-findings.html",
+        "bytes": 21457,
+        "sha256": "4fb404058b36abc42af2f0bbf6d1c97574a8a63439d4ab1e6a68c7071424291a"
+      },
+      {
+        "path": "development/website.html",
+        "bytes": 22734,
+        "sha256": "af80d13fbe0541a07f84d8e9aa606f1d5baabc7fb70b6851a456715b8f3417bb"
+      },
+      {
+        "path": "guide/configuration.html",
+        "bytes": 23560,
+        "sha256": "ba3362a66c27857b3932b53c66b3f41660b243db4914dd70f0782e0dfb1a2292"
+      },
+      {
+        "path": "guide/getting-started.html",
+        "bytes": 23435,
+        "sha256": "85a5342b0bcc3ca0d64b7659425e28c81cdbbda0a3477f63ce91882deb709341"
+      },
+      {
+        "path": "guide/installation.html",
+        "bytes": 29471,
+        "sha256": "b6da85349792dbcf3fb5b76f006b80d9032fc74991ccce284e3d6e553361a1d9"
+      },
+      {
+        "path": "guide/kitty-settings.html",
+        "bytes": 21006,
+        "sha256": "8edb1db2996b237bd804aabb2489820d7cc03f0c0470aefc3742756e6e47205d"
+      },
+      {
+        "path": "guide/shells.html",
+        "bytes": 20166,
+        "sha256": "8d811dee925e3df2b6c863c51da1fe75262925c66ce2b10c3ae36f2866f6ee41"
+      },
+      {
+        "path": "guide/troubleshooting.html",
+        "bytes": 20642,
+        "sha256": "3cd35c6fa7b4912cab0832a73d730945b06211cebf3c2ea8f3b358599a54c868"
+      },
+      {
+        "path": "guide/uninstall.html",
+        "bytes": 23332,
+        "sha256": "791e35434889d4d3c991c77d7411f62fbb29a4c54d24a87b96cadb3656fb8c51"
+      },
+      {
+        "path": "hashmap.json",
+        "bytes": 530,
+        "sha256": "333c5e06f77800a541a6f42345bd7754e457c2d865b4efeab83643f837cd17dd"
+      },
+      {
+        "path": "index.html",
+        "bytes": 10422,
+        "sha256": "5542ce53b886ff52e0309f2747e0efd54e6cf8cb0130239f1d32f961f02363dc"
+      },
+      {
+        "path": "reference/actions.html",
+        "bytes": 20155,
+        "sha256": "80208bba5335799b3f7f8c7b2ec2ca2f572ea1331ef19175478366a0a5efed5f"
+      },
+      {
+        "path": "reference/compatibility.html",
+        "bytes": 19407,
+        "sha256": "417ad249581162de6d39017081c505ebfe13c8baf2609d7bfdacaf632b465836"
+      },
+      {
+        "path": "reference/configuration.html",
+        "bytes": 20693,
+        "sha256": "6cdd0bd6853a3483ed048fe44796551689bd3526d83d9fc4a57188f6dd635825"
+      },
+      {
+        "path": "releases.html",
+        "bytes": 17639,
+        "sha256": "f81a03492271560ad5d78c51635e6369181267352a8bbdb7e51240f49782904c"
+      },
+      {
+        "path": "terminal-cat.svg",
+        "bytes": 2461,
+        "sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f"
+      },
+      {
+        "path": "vp-icons.css",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  }
+]

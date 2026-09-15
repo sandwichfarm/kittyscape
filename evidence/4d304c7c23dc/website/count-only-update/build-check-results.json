@@ -1,0 +1,86 @@
+[
+  {
+    "command": [
+      "pnpm",
+      "docs:build"
+    ],
+    "exit_code": 0,
+    "seconds": 2.737,
+    "log": "/tmp/kittyscape-final-frontend-17c35e39/build-check-1.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "docs:build:subpath"
+    ],
+    "exit_code": 0,
+    "seconds": 2.707,
+    "log": "/tmp/kittyscape-final-frontend-17c35e39/build-check-2.log"
+  },
+  {
+    "command": [
+      "pnpm",
+      "docs:check"
+    ],
+    "exit_code": 0,
+    "seconds": 0.387,
+    "log": "/tmp/kittyscape-final-frontend-17c35e39/build-check-3.log"
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "docs/.vitepress/config.mjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.019,
+    "log": "/tmp/kittyscape-final-frontend-17c35e39/build-check-4.log"
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "docs/.vitepress/theme/index.js"
+    ],
+    "exit_code": 0,
+    "seconds": 0.018,
+    "log": "/tmp/kittyscape-final-frontend-17c35e39/build-check-5.log"
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "tests/site/common.mjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.023,
+    "log": "/tmp/kittyscape-final-frontend-17c35e39/build-check-6.log"
+  },
+  {
+    "command": [
+      "node",
+      "--check",
+      "tests/site/browser.mjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.019,
+    "log": "/tmp/kittyscape-final-frontend-17c35e39/build-check-7.log"
+  },
+  {
+    "command": [
+      "tsc",
+      "--allowJs",
+      "--checkJs",
+      "--noEmit",
+      "--module",
+      "nodenext",
+      "--target",
+      "es2022",
+      "--skipLibCheck",
+      "docs/.vitepress/config.mjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.496,
+    "log": "/tmp/kittyscape-final-frontend-17c35e39/build-check-8.log"
+  }
+]

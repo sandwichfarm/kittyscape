@@ -1,0 +1,37 @@
+T09-install-preview: pass
+T09-install-apply-repeat: pass
+Evidence: /tmp/kittyscape-qualify-yy_4a15q
+Traceback (most recent call last):
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 236, in <module>
+    main()
+    ~~~~^^
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 232, in main
+    qualify_installed(parser.parse_args())
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 197, in qualify_installed
+    session = InstalledSession(args)
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 76, in __init__
+    super().__init__(args)
+    ~~~~~~~~~~~~~~~~^^^^^^
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/qualify.py", line 70, in __init__
+    self._launch()
+    ~~~~~~~~~~~~^^
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 108, in _launch
+    super()._launch()
+    ~~~~~~~~~~~~~~~^^
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/qualify.py", line 128, in _launch
+    self.wait(lambda: self._ready(), "kitty startup", timeout=10)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/qualify.py", line 171, in wait
+    raise AssertionError(label + " timed out; " + json.dumps(self.status()))
+                                                             ~~~~~~~~~~~^^
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/qualify.py", line 154, in status
+    return self.action("status")
+           ~~~~~~~~~~~^^^^^^^^^^
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 123, in action
+    return json.loads(self.rc("kitten", "--match", f"id:{pane}", str(action), name, "--json"))
+                      ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/kittyscape-release-eg5d6_9h/kittyscape-0.1.0.dev1/tests/runtime/qualify.py", line 147, in rc
+    raise RuntimeError(result.stderr or result.stdout)
+RuntimeError: Error: Failed to connect to unix:/tmp/kittyscape-qualify-yy_4a15q/control with error: dial unix /tmp/kittyscape-qualify-yy_4a15q/control: connect: no such file or directory
+

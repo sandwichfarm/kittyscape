@@ -1,0 +1,29 @@
+In development
+
+Kittyscape
+
+A different view for every directory.
+
+Directory-aware backgrounds for kitty, with your image settings intact.
+
+Read the docs
+See compatibility
+
+Small, local, and made for your terminal.
+
+An original terminal illustration.
+01 Follows your directory
+
+Give each project its own background, with separate images for nested directories.
+
+02 Keeps your kitty settings
+
+Keep layout, interpolation, tint, and opacity as configured in kitty.
+
+03 One set of rules
+
+One rules file for Bash, Zsh, and Fish. See tested versions and limitations.
+
+Experimental local build. Linux test evidence is available; macOS qualification remains open.
+
+Check the current status →

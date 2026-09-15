@@ -1,0 +1,10 @@
+{
+  "artifact_sha256": "17c35e39abd86f2d39fa5f55303899e45a7a74c40dbb9ab564f4ed061f453cdb",
+  "source_sha256": "6c859bd3c68c723c93ee3a66fadc83d5e34f42c8546a8ea9b8f12e33030e9066",
+  "rule_count": 1000,
+  "warmup": 100,
+  "samples": 200,
+  "p95_ms": 0.572393,
+  "target_ms": 10,
+  "python": "3.14.7"
+}

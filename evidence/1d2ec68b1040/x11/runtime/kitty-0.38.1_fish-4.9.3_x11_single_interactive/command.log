@@ -1,0 +1,15 @@
+T09-install-preview: pass
+T09-install-apply-repeat: pass
+artifact-installed-runtime-origin: pass
+T01-T03-T07-restoration: pass
+T03-directory-stack: pass
+T14-unchanged-prompts: pass
+T08-pause-resume-restore: pass
+T04-T06-tabs-splits-focus: pass
+T05-independent-OS-windows: pass
+T14-window-state-release: pass
+T13-external-writer-resume: pass
+T10-last-valid-configuration: pass
+T08-installed-explicit-restore: pass
+T09-artifact-uninstall-preview-apply-repeat: pass
+Evidence: /tmp/kittyscape-qualify-h1gygkr8

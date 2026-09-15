@@ -1,0 +1,687 @@
+{
+  "checkedAt": "2026-09-15T14:57:53.346Z",
+  "browsers": [
+    {
+      "name": "chromium",
+      "version": "149.0.7827.55",
+      "layoutChecks": 24,
+      "accessibilityRuns": 24,
+      "searchFlows": 24,
+      "cases": [
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        }
+      ],
+      "axeVersion": "4.12.0",
+      "status": "passed"
+    },
+    {
+      "name": "firefox",
+      "version": "151.0",
+      "layoutChecks": 24,
+      "accessibilityRuns": 24,
+      "searchFlows": 24,
+      "cases": [
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        }
+      ],
+      "axeVersion": "4.12.0",
+      "status": "passed"
+    },
+    {
+      "name": "webkit",
+      "version": "26.5",
+      "layoutChecks": 24,
+      "accessibilityRuns": 24,
+      "searchFlows": 24,
+      "cases": [
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "light",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 320,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 768,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "contributing/index.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        },
+        {
+          "base": "/kittyscape/",
+          "colorScheme": "dark",
+          "width": 1440,
+          "route": "development/compatibility-findings.html",
+          "layout": "passed",
+          "axeViolations": 0,
+          "search": "passed"
+        }
+      ],
+      "axeVersion": "4.12.0",
+      "status": "passed"
+    }
+  ],
+  "failures": []
+}

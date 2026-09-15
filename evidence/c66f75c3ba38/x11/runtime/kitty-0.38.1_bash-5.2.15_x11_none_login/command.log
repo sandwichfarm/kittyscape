@@ -1,0 +1,25 @@
+T09-install-preview: pass
+T09-install-apply-repeat: pass
+artifact-installed-runtime-origin: pass
+T01-T03-T07-restoration: pass
+T03-directory-stack: pass
+T14-unchanged-prompts: pass
+T08-pause-resume-restore: pass
+Evidence: /tmp/kittyscape-qualify-v80a5ylt
+Traceback (most recent call last):
+  File "/tmp/kittyscape-release-5_vjhgdu/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 236, in <module>
+    main()
+    ~~~~^^
+  File "/tmp/kittyscape-release-5_vjhgdu/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 232, in main
+    qualify_installed(parser.parse_args())
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/kittyscape-release-5_vjhgdu/kittyscape-0.1.0.dev1/tests/runtime/installed.py", line 202, in qualify_installed
+    focus_scenarios(session)
+    ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/tmp/kittyscape-release-5_vjhgdu/kittyscape-0.1.0.dev1/tests/runtime/qualify.py", line 333, in focus_scenarios
+    session.rc("focus-window", "--match", f"id:{pane}")
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/kittyscape-release-5_vjhgdu/kittyscape-0.1.0.dev1/tests/runtime/qualify.py", line 147, in rc
+    raise RuntimeError(result.stderr or result.stdout)
+RuntimeError: Error: read unix @->/tmp/kittyscape-qualify-v80a5ylt/control: read: connection reset by peer
+

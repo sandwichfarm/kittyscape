@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" fill="none">
+  <defs>
+    <clipPath id="screen"><rect x="41" y="72" width="398" height="247" rx="9"/></clipPath>
+    <filter id="shadow" x="18" y="56" width="445" height="310" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="9" stdDeviation="9" flood-color="#283a25" flood-opacity=".09"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <rect x="40" y="71" width="400" height="278" rx="11" fill="#eceee3" stroke="#aab39c" stroke-width="1.5"/>
+    <g clip-path="url(#screen)">
+      <path fill="#e4eadc" d="M41 72h398v247H41z"/>
+      <circle cx="357" cy="136" r="27" fill="#e9bca0"/>
+      <path d="m23 253 93-81 86 69 107-77 149 113v76H23z" fill="#b6c6a8"/>
+      <path d="m12 295 120-55 73 41 91-39 152 75v38H12z" fill="#8ba17a"/>
+      <path d="m12 321 96-25 74 14 110-22 166 51v27H12z" fill="#627e56"/>
+      <path d="M41 72h398v33H41z" fill="#f5f5ed"/>
+      <circle cx="58" cy="89" r="3" fill="#bf9b7f"/>
+      <circle cx="70" cy="89" r="3" fill="#b9bea4"/>
+      <circle cx="82" cy="89" r="3" fill="#839574"/>
+      <text x="236" y="93" text-anchor="middle" fill="#5e6c54" font-family="ui-monospace,monospace" font-size="10">kitty</text>
+      <path d="M41 105h398" stroke="#c7d0bc"/>
+      <rect x="60" y="125" width="260" height="81" rx="6" fill="#eef1e6" fill-opacity=".94"/>
+      <text x="77" y="149" fill="#344a30" font-family="ui-monospace,monospace" font-size="12">~/Projects/little-garden</text>
+      <text x="77" y="173" fill="#344a30" font-family="ui-monospace,monospace" font-size="13">❯ cd seedlings</text>
+      <path d="M78 184h7v10h-7z" fill="#6d865e"/>
+    </g>
+    <path d="M41 319h398" stroke="#b7c1a8"/>
+    <text x="59" y="337" fill="#596b50" font-family="ui-monospace,monospace" font-size="10">a familiar place, a fresh view</text>
+  </g>
+  <g aria-hidden="true" stroke="#4c6445" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M316 350c0-28 20-44 41-44 18 0 32 10 39 24l5-30 14 12 16-12 1 29c0 14-10 23-25 23h-91z" fill="#f6e5d4"/>
+    <path d="M327 349c-12 0-20-5-20-14 0-7 5-12 12-12s12 5 12 10c0 4-3 7-7 7"/>
+    <path d="M372 350c-5-5-4-12 0-17m34-7 4 2 4-2m7-1 4 1m-22-1-4 1m14 12h7"/>
+    <path d="m408 333 3 2-3 2"/>
+  </g>
+  <path d="M40 356h400" stroke="#a8b497" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="m59 56 4-9m9 13 9-4" stroke="#bb997e" stroke-width="2" stroke-linecap="round"/>
+</svg>

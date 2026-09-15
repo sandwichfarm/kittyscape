@@ -1,0 +1,2 @@
+[0.314] The output buffer does not support sRGB color encoding, colors will be incorrect.
+[0.315] Failed to enable transparency. This happens when your desktop environment does not support compositing.

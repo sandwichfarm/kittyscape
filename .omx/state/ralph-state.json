@@ -1,0 +1,42 @@
+{
+  "mode": "ralph",
+  "active": false,
+  "current_phase": "cancelled",
+  "outcome": "authorized-local-delivery-complete",
+  "started_at": "2026-09-15T10:32:00Z",
+  "completed_at": "2026-09-15T15:29:03.446506+00:00",
+  "context_snapshot_path": ".omx/context/kittyscape-implementation-20260915T103200Z.md",
+  "artifact": {
+    "path": "dist/kittyscape-0.1.0.dev1.tar.gz",
+    "sha256": "4d304c7c23dc343addd42500a05ca7c7607b3b5641ff60bae9324b99eb3a251a"
+  },
+  "evidence": {
+    "report": "evidence/4d304c7c23dc/REPORT.md",
+    "acceptance": "evidence/4d304c7c23dc/reviews/final-acceptance.md",
+    "artifacts": "dist/ARTIFACTS.json"
+  },
+  "verification": {
+    "unit_tests": 79,
+    "installation_tests": 35,
+    "static_python_files": 29,
+    "linux_matrix_rows": 96,
+    "advanced_native_scenarios": 74,
+    "display_p95_ms": 96.72887899796478,
+    "resolver_p95_ms": 0.571323,
+    "idle_seconds": 60,
+    "idle_timers": 0,
+    "idle_image_writes": 0,
+    "site_pages_per_base": 17,
+    "site_links_per_base": 603,
+    "final_stable_site_files": 118,
+    "artifact_checksums": "passed",
+    "desktop_cleanup": "passed",
+    "architect": "approved-local-delivery"
+  },
+  "remaining": [],
+  "open_gates": [
+    "macOS arm64 qualification remains open by explicit user decision",
+    "Publication/repository/license/hosting choices remain unselected and outside this task"
+  ],
+  "note": "Closed the completed Ralph run using the cancel skill postconditions. CLI reported no active session modes; only this owned legacy state file was terminalized. No unrelated session state changed."
+}

@@ -1,0 +1,10 @@
+{
+  "output": "/tmp/kittyscape-browser-zoom-webkit-native-olxy9imp",
+  "displayPid": 2745577,
+  "displayExit": 0,
+  "artifactsUnchanged": true,
+  "resourcesRemain": {
+    "/tmp/.X103-lock": false,
+    "/tmp/.X11-unix/X103": false
+  }
+}

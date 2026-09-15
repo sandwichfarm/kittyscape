@@ -1,0 +1,1 @@
+{"version": 1, "rules": [{"directory": "$FIXTURE/projects/Project A", "image": "$FIXTURE/A.png"}, {"directory": "$FIXTURE/projects/Project A/deep", "image": "$FIXTURE/B.png"}, {"directory": "$FIXTURE/projects/Project B", "image": "$FIXTURE/B.png"}, {"directory": "$FIXTURE/projects/space # percent% quote' \u00fc", "image": "$FIXTURE/A.png"}]}

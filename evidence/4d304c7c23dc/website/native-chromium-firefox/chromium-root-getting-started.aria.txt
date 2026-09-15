@@ -1,0 +1,156 @@
+- link "Skip to content":
+  - /url: "#VPContent"
+- banner:
+  - link "Kittyscape":
+    - /url: /
+  - button "Search"
+  - button "mobile navigation"
+- button "Menu"
+- button "On this page"
+- complementary:
+  - navigation "Sidebar Navigation":
+    - text: Sidebar Navigation
+    - button "Guide":
+      - heading "Guide" [level=2]
+    - link "Getting started":
+      - /url: /guide/getting-started.html
+      - paragraph: Getting started
+    - link "Installation":
+      - /url: /guide/installation.html
+      - paragraph: Installation
+    - link "Configuration":
+      - /url: /guide/configuration.html
+      - paragraph: Configuration
+    - link "Shells":
+      - /url: /guide/shells.html
+      - paragraph: Shells
+    - link "Kitty settings":
+      - /url: /guide/kitty-settings.html
+      - paragraph: Kitty settings
+    - link "Troubleshooting":
+      - /url: /guide/troubleshooting.html
+      - paragraph: Troubleshooting
+    - link "Uninstall & rollback":
+      - /url: /guide/uninstall.html
+      - paragraph: Uninstall & rollback
+    - button "Reference":
+      - heading "Reference" [level=2]
+    - link "Compatibility":
+      - /url: /reference/compatibility.html
+      - paragraph: Compatibility
+    - link "Configuration fields":
+      - /url: /reference/configuration.html
+      - paragraph: Configuration fields
+    - link "Actions":
+      - /url: /reference/actions.html
+      - paragraph: Actions
+    - button "Project":
+      - heading "Project" [level=2]
+    - link "Contributing":
+      - /url: /contributing/
+      - paragraph: Contributing
+    - link "Runtime findings":
+      - /url: /development/compatibility-findings.html
+      - paragraph: Runtime findings
+    - link "Website & assets":
+      - /url: /development/website.html
+      - paragraph: Website & assets
+    - link "Release checks":
+      - /url: /development/release-checklist.html
+      - paragraph: Release checks
+    - link "Release notes":
+      - /url: /releases.html
+      - paragraph: Release notes
+- main:
+  - heading "Getting started Permalink to \"Getting started\"" [level=1]:
+    - text: Getting started
+    - link "Permalink to \"Getting started\"":
+      - /url: "#getting-started"
+      - text: "#"
+  - paragraph:
+    - text: Kittyscape selects a local background image from your shell’s directory. The active pane in the selected tab controls the image for its
+    - strong: OS window
+    - text: ", meaning the outer window managed by your desktop."
+  - paragraph: Experimental local build
+  - paragraph:
+    - text: Qualification is still in progress. Read the
+    - link "compatibility matrix":
+      - /url: ./../reference/compatibility.html
+    - text: and
+    - link "removal instructions":
+      - /url: ./uninstall.html
+    - text: before changing a kitty configuration. Use a disposable kitty configuration while evaluating this build.
+  - heading "Before you begin Permalink to \"Before you begin\"" [level=2]:
+    - text: Before you begin
+    - link "Permalink to \"Before you begin\"":
+      - /url: "#before-you-begin"
+      - text: "#"
+  - paragraph: You need kitty, a shell with working kitty directory reports, and local PNG images you can read. The extension uses kitty’s embedded Python. Node.js is only needed to work on this documentation site.
+  - paragraph:
+    - text: Check the exact versions and configuration profiles in
+    - link "compatibility":
+      - /url: ./../reference/compatibility.html
+    - text: . An installed shell executable alone does not establish working directory reports.
+  - heading "Install in a test configuration Permalink to \"Install in a test configuration\"" [level=2]:
+    - text: Install in a test configuration
+    - link "Permalink to \"Install in a test configuration\"":
+      - /url: "#install-in-a-test-configuration"
+      - text: "#"
+  - paragraph:
+    - text: Follow
+    - link "installation":
+      - /url: ./installation.html
+    - text: to preview the user-local setup, review the owned files, and apply it to an isolated configuration. Start a new kitty process with that configuration so the watcher observes the original background before changing it. See
+    - link "startup and existing windows":
+      - /url: ./installation.html#startup-and-existing-windows
+    - text: .
+  - heading "Give two directories a background Permalink to \"Give two directories a background\"" [level=2]:
+    - text: Give two directories a background
+    - link "Permalink to \"Give two directories a background\"":
+      - /url: "#give-two-directories-a-background"
+      - text: "#"
+  - paragraph:
+    - text: Place
+    - code: kittyscape.json
+    - text: in the active kitty configuration directory. The following example gives a project one image and a nested directory another. Replace the directory paths and provide the two PNG files.
+  - button "Copy Code"
+  - text: json
+  - code: "{ \"version\": 1, \"enabled\": true, \"rules\": [ { \"directory\": \"~/Projects/Little Garden\", \"image\": \"images/garden.png\" }, { \"directory\": \"~/Projects/Little Garden/seedlings\", \"image\": \"images/seedlings.png\" } ] }"
+  - paragraph:
+    - text: Image paths here are relative to the directory containing
+    - code: kittyscape.json
+    - text: . They do not change meaning when the shell moves. See
+    - link "configuration":
+      - /url: ./configuration.html
+    - text: for symlinks, nested rules, and fallback images.
+  - heading "Check the result Permalink to \"Check the result\"" [level=2]:
+    - text: Check the result
+    - link "Permalink to \"Check the result\"":
+      - /url: "#check-the-result"
+      - text: "#"
+  - paragraph:
+    - text: In an isolated interactive shell, enter each directory. These quoted
+    - code: cd
+    - text: "commands work in Bash, Zsh, and Fish:"
+  - button "Copy Code"
+  - text: sh
+  - code: cd ~/"Projects/Little Garden" cd seedlings cd ~
+  - paragraph:
+    - text: The expected sequence is garden image, seedlings image, then the captured original background. A terminal that began with no image returns to no image. Restoration depends on the
+    - link "qualified baseline profile":
+      - /url: ./../reference/compatibility.html
+    - text: .
+  - paragraph: Switch between two panes with different directories, then between tabs. The selected tab’s active pane decides its OS window’s background. Check that two OS windows keep independent images.
+  - paragraph:
+    - text: If any check fails, use
+    - link "troubleshooting":
+      - /url: ./troubleshooting.html
+    - text: ", then"
+    - link "restore and remove":
+      - /url: ./uninstall.html
+    - text: .
+- contentinfo:
+  - navigation "Pager":
+    - text: Pager
+    - link "Next Installation":
+      - /url: /guide/installation.html

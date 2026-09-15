@@ -1,0 +1,18 @@
+[
+  {
+    "file": "kittyscape-site-root-0.1.0.dev1.zip",
+    "base": "/",
+    "entries": 2016,
+    "sha256": "97a6fec1e54c34f9d6dd69dcca85706b23856a32c3763f3b12989baaf7a1e158",
+    "bytes": 26462441,
+    "verified_bytes": true
+  },
+  {
+    "file": "kittyscape-site-subpath-0.1.0.dev1.zip",
+    "base": "/kittyscape/",
+    "entries": 2016,
+    "sha256": "63e6e3a2394feac794fedd8230dedd48de5840ed57fae1da39ae2ca117a2ae32",
+    "bytes": 26506947,
+    "verified_bytes": true
+  }
+]

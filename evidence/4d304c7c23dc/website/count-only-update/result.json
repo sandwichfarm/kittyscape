@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "checked_at": "2026-09-15T14:50:17.479801+00:00",
+  "final_archive": {
+    "path": "/home/sandwich/Develop/kittyscape/dist/kittyscape-0.1.0.dev1.tar.gz",
+    "sha256": "17c35e39abd86f2d39fa5f55303899e45a7a74c40dbb9ab564f4ed061f453cdb",
+    "bytes": 141198
+  },
+  "full_browser_stage": {
+    "archive_sha256": "1d2ec68b1040f9faf8304583be273aff5f1e7e69d6411a4466afc58b16335828",
+    "fingerprints": {
+      "path": "/tmp/kittyscape-final-frontend-1d2ec68b/tested-asset-fingerprints.json",
+      "sha256": "9fd6bae53f794e12f49d049dd49c60d949d50f3932868d3c4e1fa68835ef8f42",
+      "bytes": 57598
+    },
+    "headless": {
+      "evidence": {
+        "path": "/tmp/kittyscape-final-frontend-1d2ec68b/headless/browser-results.json",
+        "sha256": "2630faa3bbabc853ab9a6bcd6e390f7f288ce2dcb7c50f39cc5d0e0beeccca4a",
+        "bytes": 939
+      },
+      "browsers": [
+        {
+          "name": "chromium",
+          "routes": 32,
+          "layoutChecks": 192,
+          "accessibilityRuns": 224,
+          "version": "149.0.7827.55",
+          "axeVersion": "4.12.0",
+          "status": "passed"
+        },
+        {
+          "name": "firefox",
+          "routes": 32,
+          "layoutChecks": 192,
+          "accessibilityRuns": 224,
+          "version": "151.0",
+          "axeVersion": "4.12.0",
+          "status": "passed"
+        },
+        {
+          "name": "webkit",
+          "routes": 32,
+          "layoutChecks": 192,
+          "accessibilityRuns": 224,
+          "version": "26.5",
+          "axeVersion": "4.12.0",
+          "status": "passed"
+        }
+      ],
+      "total_layout_checks": 576,
+      "total_accessibility_scans": 672
+    },
+    "native_chromium_firefox": {
+      "evidence": {
+        "path": "/tmp/kittyscape-browser-zoom-final-1d2ec68b/zoom-results.json",
+        "sha256": "b0625abaddac8bea9e84bbad30981b9fa5d4bcb2eba75aa07b5b9aea2eec8f7b",
+        "bytes": 223950
+      },
+      "route_theme_checks": 128,
+      "open_state_axe_scans": 8,
+      "exact200": true,
+      "artifact_unchanged": true
+    },
+    "native_webkit": {
+      "evidence": {
+        "path": "/tmp/kittyscape-browser-zoom-webkit-native-olxy9imp/webkit-native-results.json",
+        "sha256": "e5e1b2b407eda0c62a3362fd6a1c6fd617fdde86986461f431170e48842c9445",
+        "bytes": 10787
+      },
+      "controller": {
+        "path": "/tmp/kittyscape-browser-zoom-webkit-native-olxy9imp/controller.json",
+        "sha256": "09d5d24acad735027046b21a073b919580434f0c938f9a11f2cf2c95684b0db8",
+        "bytes": 236
+      },
+      "webkit_gtk_version": "2.53.3",
+      "route_theme_checks": 12,
+      "native_api_zoom": 2.0,
+      "native_geometry": [
+        1440,
+        1000
+      ],
+      "css_width": 720,
+      "dpr": 2,
+      "artifact_unchanged": true
+    },
+    "all_built_files_unchanged_during_tests": 120
+  },
+  "final_count_stage": {
+    "archive_sha256": "17c35e39abd86f2d39fa5f55303899e45a7a74c40dbb9ab564f4ed061f453cdb",
+    "frontend_inputs_compared": 33,
+    "only_frontend_change": "docs/contributing/index.md: 77 unit tests -> 78 unit tests",
+    "build_checks": {
+      "path": "/tmp/kittyscape-final-frontend-17c35e39/build-check-results.json",
+      "sha256": "e9f40e3ac1ab85e128a11ee35c35bd333755caf965a33bd3e37c06f523b93caa",
+      "bytes": 1735
+    },
+    "local_link_and_asset_checks_per_base": 603,
+    "html_pages_per_base": 17,
+    "targeted_three_engine_route_checks": {
+      "path": "/tmp/kittyscape-final-frontend-17c35e39/contributing-results.json",
+      "sha256": "3133e044e5b6c342ba477f59ef376261d645050b8cc8c8b90e5442df78cb16c1",
+      "bytes": 691
+    },
+    "layout_checks": 36,
+    "accessibility_scans": 36,
+    "search_flows": 6,
+    "all_built_files_unchanged_during_targeted_tests": 120
+  },
+  "handoff": {
+    "fingerprints": {
+      "path": "/tmp/kittyscape-final-frontend-17c35e39/tested-asset-fingerprints.json",
+      "sha256": "8b305c2bad2d3b9828be3b62f877dade0beef4db2183e29898b6203a50461e3b",
+      "bytes": 57598
+    },
+    "functional_html_js_css_svg_files": 116,
+    "all_built_files": 120,
+    "stable_non_evidence_files": 118,
+    "instruction": "After data-only rebuild, compare the exact path set and values in stable_non_evidence_files. JSON files under evidence/ are excluded; hashmap.json is included."
+  },
+  "private_display_cleanup": {
+    "/tmp/.X103-lock": false,
+    "/tmp/.X11-unix/X103": false
+  },
+  "source_edits_by_agent": [],
+  "limitations": [
+    "No live screen-reader session.",
+    "Final runtime qualification data remains pending parent assembly.",
+    "Full headless/native runs used the 1d2 source build; the sole frontend change in 17c is a one-digit test-count update, rebuilt and checked by the focused three-engine count-route/search suite.",
+    "Native WebKit exact 200% covers three representative routes in both themes and bases; full native page inventory was tested at exact 200% in Chromium and Firefox."
+  ],
+  "recovered_runner_error": "First native launch used a disallowed evidence directory prefix and failed screenshot path validation. The display closed cleanly; a rerun under /tmp/kittyscape-browser-zoom-final-1d2ec68b passed."
+}

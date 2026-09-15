@@ -1,0 +1,10 @@
+{
+  "previous_archive_sha256": "1d2ec68b1040f9faf8304583be273aff5f1e7e69d6411a4466afc58b16335828",
+  "new_archive_sha256": "17c35e39abd86f2d39fa5f55303899e45a7a74c40dbb9ab564f4ed061f453cdb",
+  "built_files_unchanged_during_all_browsers": 120,
+  "frontend_inputs_compared": 33,
+  "frontend_changes": [
+    "docs/contributing/index.md"
+  ],
+  "new_extract_vs_repo_differences": []
+}

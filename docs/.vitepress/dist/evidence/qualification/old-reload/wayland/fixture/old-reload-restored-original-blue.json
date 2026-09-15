@@ -1,0 +1,96 @@
+{
+  "pixel": [
+    28,
+    40,
+    124
+  ],
+  "inspect": {
+    "background_image": "$FIXTURE/B.png",
+    "background_image_layout": "mirror-tiled",
+    "background_image_linear": "True",
+    "background_tint": "0.2",
+    "background_tint_gaps": "0.4",
+    "background_opacity": "0.85",
+    "background": "Color(22, 21, 27)",
+    "foreground": "Color(240, 232, 223)",
+    "watchers": [
+      "$BUNDLE/tests/runtime/observer.py",
+      "$BUNDLE/kittyscape/watcher.py"
+    ],
+    "has_image": true,
+    "cwd": "kitty-shell-cwd://arch$FIXTURE/home",
+    "prompt": true,
+    "engine_file": "$BUNDLE/kittyscape/engine.py",
+    "config_path": "$FIXTURE/kittyscape.json",
+    "test_timer_count": null,
+    "jobs": {},
+    "job_timer": 0,
+    "runtime": {
+      "enabled": true,
+      "revision": 1,
+      "reason": "",
+      "detail": "",
+      "pending_jobs": 0,
+      "filesystem_stalled": false,
+      "modern_background_api": false,
+      "pending_events": 0,
+      "windows": {
+        "1": {
+          "pane": 1,
+          "owned": false,
+          "paused": false,
+          "reason": "",
+          "uploads": 4
+        }
+      }
+    },
+    "state": {
+      "request": [
+        1,
+        "$FIXTURE/home",
+        "",
+        1
+      ],
+      "generation": 17,
+      "timer": 0,
+      "applied": [
+        "baseline",
+        "$FIXTURE/baseline.png",
+        0,
+        "0e43454ec816f528eb338dd3e5cea749598e71bd3ce6630d6f42f400d1dd66ec"
+      ]
+    }
+  },
+  "native": {
+    "theme": "",
+    "dark": false,
+    "light": false,
+    "baseline": {
+      "kind": "inherited",
+      "layout": "mirror-tiled",
+      "index": 0,
+      "bytes": 8565,
+      "sha256": "0e43454ec816f528eb338dd3e5cea749598e71bd3ce6630d6f42f400d1dd66ec"
+    },
+    "status": {
+      "enabled": true,
+      "revision": 1,
+      "reason": "",
+      "detail": "",
+      "pending_jobs": 0,
+      "filesystem_stalled": false,
+      "modern_background_api": false,
+      "pending_events": 0,
+      "windows": {
+        "1": {
+          "pane": 1,
+          "owned": false,
+          "paused": false,
+          "reason": "",
+          "uploads": 4
+        }
+      }
+    }
+  },
+  "screenshot": "$FIXTURE/old-reload-restored-original-blue.png"
+}
