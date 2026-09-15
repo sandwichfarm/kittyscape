@@ -1,15 +1,15 @@
 {
-  "checkedAt": "2026-09-15T15:46:34.690Z",
+  "checkedAt": "2026-09-15T15:57:34.703Z",
   "artifacts": [
     {
       "base": "/",
-      "pages": 17,
-      "localLinksAndAssets": 600
+      "pages": 18,
+      "localLinksAndAssets": 635
     },
     {
       "base": "/kittyscape/",
-      "pages": 17,
-      "localLinksAndAssets": 600
+      "pages": 18,
+      "localLinksAndAssets": 635
     }
   ],
   "assets": {
@@ -21,6 +21,6 @@
       "bytes": 2461,
       "gzipBytes": 1059
     },
-    "customThemeSourceGzipBytes": 373
+    "customThemeSourceGzipBytes": 366
   }
 }

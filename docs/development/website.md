@@ -22,7 +22,21 @@ pnpm docs:test
 ```
 
 The root artifact is `docs/.vitepress/dist/`. The `/kittyscape/` artifact is `docs/.vitepress/dist-subpath/`.
-Both are static files. Building them does not deploy the site or select a host.
+Both are static files.
+
+## GitHub Pages
+
+`.github/workflows/deploy-pages.yml` deploys the `/kittyscape/` artifact after a
+push to `main` or a manual run on `main`. The landing page resolves at the
+project Pages root, and the documentation entry point resolves at `/docs/`
+relative to that site. For this repository, those URLs are
+`https://sandwichfarm.github.io/kittyscape/` and
+`https://sandwichfarm.github.io/kittyscape/docs/`.
+
+Before the first deployment, select **GitHub Actions** as the Pages publishing
+source in the repository’s Pages settings. Pull requests build through local and
+CI checks but do not deploy a preview site. The workflow keeps one deployment in
+flight and publishes only the validated static artifact.
 
 Browser checks use an existing Playwright installation. Set `PLAYWRIGHT_PATH` to its module path if it is not
 available at `/usr/lib/node_modules/playwright`. Browser binaries must already be installed.

@@ -12,8 +12,8 @@ const { frontmatter } = useData()
       <footer v-if="frontmatter.home" class="home-footer">
         <span>A little change of scenery.</span>
         <nav aria-label="Footer">
-          <a :href="withBase('/guide/getting-started.html')">Documentation</a>
-          <a :href="withBase('/releases.html')">Release notes</a>
+          <a :href="withBase('/docs/')">Documentation</a>
+          <a :href="withBase('/docs/releases.html')">Release notes</a>
         </nav>
       </footer>
     </template>

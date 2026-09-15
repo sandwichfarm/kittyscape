@@ -142,8 +142,8 @@ async function checkKeyboard(page, owner, base, prefix) {
   trace.push(await focusDetails(page))
   assert.match(trace.at(-1).name, /Read the docs/)
   await keys(owner, ['Return'])
-  await page.waitForURL(`${origin}${base}guide/getting-started.html`)
-  await writeFile(`${output}/${prefix}-getting-started.aria.txt`, await page.locator('body').ariaSnapshot())
+  await page.waitForURL(`${origin}${base}docs/`)
+  await writeFile(`${output}/${prefix}-docs.aria.txt`, await page.locator('body').ariaSnapshot())
   await page.goto(origin + base, { waitUntil: 'networkidle' })
   await reach(page, owner, 'button[aria-label="Search"]', trace)
   await keys(owner, ['Return'])
@@ -165,9 +165,9 @@ async function checkKeyboard(page, owner, base, prefix) {
   await page.waitForFunction(previous => document.documentElement.classList.contains('dark') !== previous, wasDark)
   accessibility.push(await interactiveAccessibility(page, 'menu-open'))
   screenshot(owner, `${prefix}-menu-focus`)
-  await reach(page, owner, '.VPNavScreen a[href$="/guide/getting-started.html"]', trace, true)
+  await reach(page, owner, '.VPNavScreen a[href$="/docs/guide/getting-started.html"]', trace, true)
   await keys(owner, ['Return'])
-  await page.waitForURL(`${origin}${base}guide/getting-started.html`)
+  await page.waitForURL(`${origin}${base}docs/guide/getting-started.html`)
   const failed = accessibility.some(state => state.violations.some(item => ['serious', 'critical'].includes(item.impact)))
   return { status: failed ? 'accessibility-failed' : 'passed', trace, accessibility }
 }
@@ -208,7 +208,7 @@ async function checkRoutes(page, owner, base, prefix) {
       for (let index = 1; index < content.headings.length; index += 1) {
         assert(content.headings[index].level <= content.headings[index - 1].level + 1)
       }
-      if (['index.html', 'guide/configuration.html'].includes(route)) {
+      if (['index.html', 'docs/guide/configuration.html'].includes(route)) {
         const label = route === 'index.html' ? 'home' : 'configuration'
         screenshot(owner, `${prefix}-${theme}-${label}`)
         await writeFile(`${output}/${prefix}-${theme}-${label}.aria.txt`, await page.locator('body').ariaSnapshot())

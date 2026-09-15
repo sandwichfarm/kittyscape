@@ -247,10 +247,10 @@ def keyboard_check(host, uri):
     assert "Read the docs" in host.evaluate("document.activeElement.textContent")
     host.keys("Return")
     deadline = time.monotonic() + 5
-    while not host.evaluate("location.pathname.endsWith('/guide/getting-started.html')") and time.monotonic() < deadline:
+    while not host.evaluate("location.pathname.endsWith('/docs/')") and time.monotonic() < deadline:
         host.pump()
-    assert host.evaluate("location.pathname.endsWith('/guide/getting-started.html')")
-    assert "Getting started" in host.evaluate("document.querySelector('main h1').textContent")
+    assert host.evaluate("location.pathname.endsWith('/docs/')")
+    assert "Documentation" in host.evaluate("document.querySelector('main h1').textContent")
     return {"status": "passed", "skipFocus": focus}
 
 
@@ -271,7 +271,7 @@ def check_base(host, origin, base):
     routes = []
     for theme in ("light", "dark"):
         host.evaluate(f"(localStorage.setItem('vitepress-theme-appearance', {json.dumps(theme)}), true)")
-        for route in ("index.html", "guide/configuration.html", "reference/configuration.html"):
+        for route in ("index.html", "docs/guide/configuration.html", "docs/reference/configuration.html"):
             host.load(origin + base + route)
             metrics = host.metrics()
             assert metrics["nativeZoom"] == 2.0 and abs(metrics["dpr"] / baseline["dpr"] - 2) < .001
