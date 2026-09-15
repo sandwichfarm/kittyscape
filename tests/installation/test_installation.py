@@ -131,7 +131,7 @@ class InstallationTests(unittest.TestCase):
         with patch.object(installer, "kitty_capabilities", return_value={"required_apis": "present"}), patch.object(
             installer, "launch_kitty", return_value={"status": "started", "pid": 42},
         ) as launch, patch("builtins.print", side_effect=output.append):
-            code = installer.main(["install", "--kitty-config-dir", str(self.config), "--config-dir", str(rules)],
+            code = installer.main(["install", "--json", "--kitty-config-dir", str(self.config), "--config-dir", str(rules)],
                                   bundle_root=self.source, default_config_dir=self.config,
                                   default_rules_dir=rules, kitty_executable="/fake/kitty")
         self.assertEqual(code, 0)
@@ -144,12 +144,23 @@ class InstallationTests(unittest.TestCase):
         rules = self.root / "user configuration" / "kittyscape"
         output = []
         with patch.object(installer, "kitty_capabilities", return_value={}), patch("builtins.print", side_effect=output.append):
-            code = installer.main(["install", "--preview", "--kitty-config-dir", str(self.config), "--config-dir", str(rules)],
+            code = installer.main(["install", "--json", "--preview", "--kitty-config-dir", str(self.config), "--config-dir", str(rules)],
                                   bundle_root=self.source, default_config_dir=self.config,
                                   default_rules_dir=rules, kitty_executable="/fake/kitty")
         self.assertEqual(code, 0)
         self.assertEqual(json.loads(output[-1])["status"], "preview")
         self.assertFalse(rules.exists())
+
+    def test_human_install_output_is_actionable_without_file_inventory(self):
+        text = installer.display_result({
+            "action": "install", "status": "installed", "config_file": "/home/user/.config/kittyscape/kittyscape.json",
+            "config_created": True, "fresh_window": {"status": "started", "pid": 42},
+            "files": ["a" * 100],
+        })
+        self.assertIn("Kittyscape is ready", text)
+        self.assertIn("kittyscape.json", text)
+        self.assertIn("Ctrl+Shift+F9", text)
+        self.assertNotIn("a" * 100, text)
 
     def test_dangling_rules_configuration_symlink_is_rejected(self):
         rules = self.root / "user configuration" / "kittyscape"
@@ -304,14 +315,14 @@ class InstallationTests(unittest.TestCase):
         base = [shutil.which("kitty"), "+launch", str(setup)]
         rules = self.root / "user rules"
         before = tree_state(self.config)
-        preview = subprocess.run(base + ["install", "--preview", "--no-launch", "--kitty-config-dir", str(self.config),
+        preview = subprocess.run(base + ["install", "--json", "--preview", "--no-launch", "--kitty-config-dir", str(self.config),
                                          "--config-dir", str(rules)], capture_output=True, text=True, check=True)
         self.assertEqual(json.loads(preview.stdout)["status"], "preview")
         self.assertEqual(tree_state(self.config), before)
-        subprocess.run(base + ["install", "--no-launch", "--kitty-config-dir", str(self.config),
+        subprocess.run(base + ["install", "--json", "--no-launch", "--kitty-config-dir", str(self.config),
                                "--config-dir", str(rules)], capture_output=True, check=True)
         installed_setup = self.installed / "setup.py"
-        subprocess.run([shutil.which("kitty"), "+launch", str(installed_setup), "uninstall",
+        subprocess.run([shutil.which("kitty"), "+launch", str(installed_setup), "uninstall", "--json",
                         "--kitty-config-dir", str(self.config), "--apply"], capture_output=True, check=True)
         self.assertEqual(tree_state(self.config), before)
 
