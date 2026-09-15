@@ -44,6 +44,20 @@ def handle_result(args, answer, target_window_id, boss):
                                   global_index=int(args[2]), is_increment=args[3] == "relative")
     elif name == "theme":
         boss.on_system_color_scheme_change(args[2], False)
+    elif name == "global-options":
+        from kitty.fast_data_types import get_options
+        before = tuple(get_options().background_image)
+        boss.set_background_image(None, (), True, None, b"", linear_interpolation=True, tint=0.3, tint_gaps=0.6)
+        opts = get_options()
+        return json.dumps({"before": before, "after": tuple(opts.background_image),
+                           "linear": opts.background_image_linear, "tint": opts.background_tint,
+                           "tint_gaps": opts.background_tint_gaps})
+    elif name == "theme-local":
+        from kitty.colors import patch_colors
+        before = {tm.os_window_id: dict(tm.tab_bar.current_colors) for tm in boss.all_tab_managers}
+        patch_colors({"tab_bar_background": 0x66ccff}, configured=False, windows=(window,))
+        after = {tm.os_window_id: dict(tm.tab_bar.current_colors) for tm in boss.all_tab_managers}
+        return json.dumps({"tab_bars": len(after), "tab_changed": before != after})
     from kitty.colors import theme_colors
     state = boss._kittyscape.windows.get(window.os_window_id)
     baseline = state.baseline if state else None
@@ -275,6 +289,21 @@ def glob_index(session):
     session.record("T09-relative-index-rejected", session.observe("relative-index-rejected"))
 
 
+def global_options(session):
+    observed = session.native("global-options")
+    assert observed["before"] == observed["after"], observed
+    assert observed["linear"] and observed["tint"] == 0.2 and observed["tint_gaps"] == 0.4, observed
+    session.record("T15-global-background-options", observed)
+
+
+def theme_local_scope(session):
+    pane = int(session.rc("launch", "--type=os-window", "--cwd=" + str(session.home), "/usr/bin/bash"))
+    session.wait(lambda: pane in session.boss.window_id_map if hasattr(session, "boss") else True, "second OS window")
+    observed = session.native("theme-local")
+    assert observed["tab_bars"] == 2 and observed["tab_changed"], observed
+    session.record("T16-theme-local-scope", observed)
+
+
 def automatic_theme(session):
     baseline(session)
     session.cd(session.dirs["A"])
@@ -430,6 +459,8 @@ CASES = {
     "reload-inherited": (reload_inherited, "single", (), False),
     "reload-override": (reload_override, "single", (), False),
     "glob-index": (glob_index, "list", (), False),
+    "global-options": (global_options, "list", (), False),
+    "theme-local-scope": (theme_local_scope, "single", (), False),
     "automatic-theme": (automatic_theme, "single", (), True),
     "disabled-integration": (disabled_reports, "single", ("shell_integration disabled",), False),
     "disabled-cwd": (disabled_reports, "single", ("shell_integration no-cwd",), False),

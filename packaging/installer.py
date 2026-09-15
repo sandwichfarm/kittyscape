@@ -56,6 +56,19 @@ def kitty_capabilities():
             "qualification": "Capability check only; consult the release-specific tested compatibility matrix."}
 
 
+def media_capabilities():
+    """Describe optional local media conversion without installing anything."""
+    executable = shutil.which("magick")
+    if not executable:
+        return {"png": "available", "jpeg_gif": "converter-unavailable"}
+    try:
+        version = subprocess.run([executable, "--version"], check=True, capture_output=True, text=True, timeout=2)
+        identity = version.stdout.splitlines()[0]
+    except (OSError, subprocess.SubprocessError):
+        return {"png": "available", "jpeg_gif": "converter-unavailable"}
+    return {"png": "available", "jpeg_gif": "available", "converter": executable, "converter_version": identity}
+
+
 def digest(data):
     return hashlib.sha256(data).hexdigest()
 
@@ -95,6 +108,8 @@ def config_root(path):
 
 def rules_config_path(directory):
     root = Path(directory).expanduser().absolute().resolve()
+    if any(character in str(root) for character in "\r\n\x00"):
+        raise InstallError("The Kittyscape configuration path cannot contain a newline or NUL")
     if root.exists() and not root.is_dir():
         raise InstallError(f"The Kittyscape configuration directory is not a directory: {root}")
     path = root / "kittyscape.json"
@@ -442,6 +457,46 @@ def launch_kitty(kitty_executable, config_dir):
     return {"status": "started", "pid": process.pid}
 
 
+def display_result(result):
+    """Render concise human output; --json remains available for scripts."""
+    action = result.get("action", "install")
+    status = result.get("status", "error")
+    if status == "error":
+        return "Kittyscape could not finish\n\n" + result.get("error", "Unknown setup error")
+    if action == "install":
+        return display_install(result)
+    if action in ("uninstall", "rollback"):
+        return f"Kittyscape {status}\n\nRules kept: {result.get('config_dir', 'unchanged')}"
+    return json.dumps(result, indent=2)
+
+
+def display_install(result):
+    status = result["status"]
+    lines = ["  /\\_/\\", f" ( o.o )  {install_heading(status)}", "  > ^ <", "", f"Rules: {result['config_file']}"]
+    lines.append(install_detail(result))
+    media = result.get("media", {})
+    lines.append("Media: PNG" if media.get("jpeg_gif") != "available" else "Media: PNG, JPEG, GIF via ImageMagick")
+    if status == "preview":
+        lines.append("Run the same command without --preview to install and open a fresh kitty window.")
+    elif result.get("fresh_window", {}).get("status") == "started":
+        lines.append("A fresh kitty window is open. Save your rules, then press Ctrl+Shift+F9 there.")
+    return "\n".join(lines)
+
+
+def install_heading(status):
+    if status == "installed":
+        return "Kittyscape is ready"
+    if status == "already-installed":
+        return "Kittyscape is already installed"
+    return "Kittyscape preview"
+
+
+def install_detail(result):
+    if result.get("config_created"):
+        return "A starter rules file is waiting for your directories and PNGs."
+    return "Your existing rules file is unchanged."
+
+
 def removal_content(current, receipt, original, *, rollback):
     data = current["data"]
     if rollback:
@@ -565,21 +620,30 @@ def main(argv, *, bundle_root, default_config_dir, default_rules_dir, kitty_exec
     parser.add_argument("--kitty-config-dir", type=Path, default=default_config_dir, help="Kitty configuration directory to include the loader")
     parser.add_argument("--config-dir", type=Path, default=default_rules_dir, help="Kittyscape rules directory, defaulting to ~/.config/kittyscape")
     parser.add_argument("--preview", action="store_true", help="Show the install or removal plan without changing files")
+    parser.add_argument("--json", action="store_true", help="Print machine-readable output for automation")
     parser.add_argument("--apply", action="store_true", help="Compatibility alias; install already applies unless --preview is used")
     parser.add_argument("--no-launch", action="store_true", help="Install without opening a fresh configured kitty window")
     args = parser.parse_args(argv)
-    apply = not args.preview and (args.action == "install" or args.apply)
     try:
-        if args.action == "install":
-            capabilities = kitty_capabilities()
-            result = install(bundle_root, args.kitty_config_dir, rules_dir=args.config_dir, apply=apply)
-            result["capabilities"] = capabilities
-            if result["status"] in ("installed", "already-installed") and not args.no_launch:
-                result["fresh_window"] = launch_kitty(kitty_executable, args.kitty_config_dir)
-        else:
-            result = {"uninstall": uninstall, "rollback": rollback}[args.action](args.kitty_config_dir, apply=apply)
+        result = install_result(args, bundle_root, kitty_executable) if args.action == "install" else removal_result(args)
     except (OSError, ValueError, KeyError, TypeError) as error:
-        print(json.dumps({"status": "error", "error": str(error), "action": args.action}, indent=2))
+        result = {"status": "error", "error": str(error), "action": args.action}
+        print(json.dumps(result, indent=2) if args.json else display_result(result))
         return 1
-    print(json.dumps(result, indent=2))
+    print(json.dumps(result, indent=2) if args.json else display_result(result))
     return 0
+
+
+def install_result(args, bundle_root, kitty_executable):
+    capabilities = kitty_capabilities()
+    result = install(bundle_root, args.kitty_config_dir, rules_dir=args.config_dir, apply=not args.preview)
+    result["capabilities"] = capabilities
+    result["media"] = media_capabilities()
+    if result["status"] in ("installed", "already-installed") and not args.no_launch:
+        result["fresh_window"] = launch_kitty(kitty_executable, args.kitty_config_dir)
+    return result
+
+
+def removal_result(args):
+    action = {"uninstall": uninstall, "rollback": rollback}[args.action]
+    return action(args.kitty_config_dir, apply=not args.preview and args.apply)

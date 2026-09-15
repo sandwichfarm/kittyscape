@@ -14,8 +14,8 @@ title: A different view for every directory
       <h1 id="home-heading" class="home-headline">A different view for every directory.</h1>
       <p class="home-description">Directory-aware backgrounds for kitty, with your image settings intact.</p>
       <div class="home-actions">
-        <a class="home-button primary" href="./guide/getting-started.html">Read the docs</a>
-        <a class="home-button secondary" href="./reference/compatibility.html">See compatibility</a>
+        <a class="home-button primary" href="./docs/">Read the docs</a>
+        <a class="home-button secondary" href="./docs/reference/compatibility.html">See compatibility</a>
       </div>
       <p class="hero-note">Small, local, and made for your terminal.</p>
     </div>
@@ -41,7 +41,7 @@ title: A different view for every directory
   </section>
   <div class="home-status">
     <p>Experimental local build. Linux test evidence is available; macOS qualification remains open.</p>
-    <a href="./reference/compatibility.html">Check the current status →</a>
+    <a href="./docs/reference/compatibility.html">Check the current status →</a>
   </div>
 </div>
 </main>

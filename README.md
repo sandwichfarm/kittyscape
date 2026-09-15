@@ -3,7 +3,7 @@
 *A different view for every directory.*
 
 Directory-aware backgrounds for kitty, with your image settings intact.
-Kittyscape uses the active pane in each OS window to select a local PNG from a
+Kittyscape uses the active pane in each OS window to select a local PNG, JPEG, or GIF from a
 central rules file. Leaving a matching directory restores that window's known
 original background.
 
@@ -17,7 +17,8 @@ Exact versions, tested profiles, and limitations are in the
 - Shares one resolver across Bash, Zsh, and Fish using kitty's native reports.
 - Chooses the deepest matching physical directory, including nested rules,
   symlinks, spaces, and Unicode paths.
-- Targets OS windows independently and preserves kitty's rendering settings.
+- Targets OS windows independently and preserves known background state.
+- Plays animated GIF frames as OS-window backgrounds; static PNG remains idle.
 - Provides status, reload, pause, resume, and restore controls.
 - Runs offline using kitty's embedded Python and standard library.
 
@@ -39,14 +40,14 @@ The loader lives in kitty’s active configuration directory. Your rules live in
 their own directory: `~/.config/kittyscape/kittyscape.json` by default. The
 installer never replaces an existing rules file and leaves it behind on uninstall.
 
-Edit that file immediately with existing directories and PNG files:
+Edit that file immediately with existing directories and local image files:
 
 ```json
 {
   "version": 1,
   "rules": [
-    {"directory": "~/Projects/Little Garden", "image": "images/garden.png"},
-    {"directory": "~/Projects/Little Garden/seedlings", "image": "images/seedlings.png"}
+    {"directory": "~/Projects/Little Garden", "image": "images/garden.jpg"},
+    {"directory": "~/Projects/Little Garden/seedlings", "image": "images/seedlings.gif"}
   ]
 }
 ```
@@ -62,6 +63,10 @@ window works immediately and has a known baseline. To target a non-default kitty
 configuration or rules location, pass `--kitty-config-dir` or `--config-dir`.
 Use `--preview` to inspect changes without writing files and `--no-launch` for
 automation.
+
+PNG works without a converter. JPEG and GIF need a local ImageMagick `magick` executable and the system Python launcher
+used for the bounded conversion worker; setup reports ImageMagick availability and never installs software. `validate_bytes: false` skips Kittyscape's PNG semantic validator only. File-size,
+dimension, frame, timeout, and cache bounds remain enforced.
 
 The controls affect all OS windows in that kitty process. Another image writer
 pauses the affected window until explicit resume. Unknown baselines stay paused.

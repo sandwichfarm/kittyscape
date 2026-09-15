@@ -1,7 +1,8 @@
 # Installation
 
 The development build uses a user-local bundle loaded by kitty. No root privileges, shell framework,
-system Python package, Node.js runtime, or network image service belongs in the extension’s normal runtime path.
+Node.js runtime, or network image service belongs in the extension’s normal runtime path. JPEG/GIF normalization invokes
+the existing system Python launcher only to impose OS limits before starting ImageMagick; it does not install Python packages.
 
 ::: warning Experimental local artifact
 There is no public download or published package yet. The local release candidate is

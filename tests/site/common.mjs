@@ -8,11 +8,12 @@ export const artifacts = [
 ]
 
 export const requiredPages = [
-  'index.html', 'guide/getting-started.html', 'guide/installation.html', 'guide/configuration.html',
-  'guide/shells.html', 'guide/kitty-settings.html', 'guide/troubleshooting.html', 'guide/uninstall.html',
-  'reference/compatibility.html', 'reference/configuration.html', 'reference/actions.html',
-  'contributing/index.html', 'releases.html', 'development/compatibility-findings.html', 'development/website.html',
-  'development/release-checklist.html'
+  'index.html', 'docs/index.html', 'docs/guide/getting-started.html', 'docs/guide/installation.html',
+  'docs/guide/configuration.html', 'docs/guide/shells.html', 'docs/guide/kitty-settings.html',
+  'docs/guide/troubleshooting.html', 'docs/guide/uninstall.html', 'docs/reference/compatibility.html',
+  'docs/reference/configuration.html', 'docs/reference/actions.html', 'docs/contributing/index.html',
+  'docs/releases.html', 'docs/development/compatibility-findings.html', 'docs/development/website.html',
+  'docs/development/release-checklist.html'
 ]
 
 export async function filesUnder(directory) {

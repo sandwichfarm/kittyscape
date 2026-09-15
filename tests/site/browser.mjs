@@ -61,8 +61,8 @@ async function checkKeyboard(page, base) {
   await page.keyboard.press('Tab')
   assert.match(await page.locator(':focus').innerText(), /Read the docs/)
   await page.keyboard.press('Enter')
-  await page.waitForURL(`${origin}${base}guide/getting-started.html`)
-  await page.locator('h1').filter({ hasText: 'Getting started' }).waitFor()
+  await page.waitForURL(`${origin}${base}docs/`)
+  await page.locator('h1').filter({ hasText: 'Documentation' }).waitFor()
 }
 
 async function checkSearch(page, base) {
@@ -90,7 +90,7 @@ async function checkLayouts(page, row, name, base) {
         await page.goto(origin + base + route)
         await checkStructure(page)
         await checkAccessibility(page, row)
-        if (['index.html', 'guide/getting-started.html'].includes(route)) {
+        if (['index.html', 'docs/guide/getting-started.html'].includes(route)) {
           await page.waitForLoadState('networkidle')
           const prefix = base === '/' ? 'root' : 'subpath'
           const label = route === 'index.html' ? 'home' : 'guide'
@@ -121,8 +121,8 @@ async function checkMobileControls(page, base) {
   const docs = page.locator('.VPNavScreen').getByRole('link', { name: 'Docs', exact: true })
   await docs.focus()
   await page.keyboard.press('Enter')
-  await page.waitForURL(`${origin}${base}guide/getting-started.html`)
-  await page.locator('h1').filter({ hasText: 'Getting started' }).waitFor()
+  await page.waitForURL(`${origin}${base}docs/`)
+  await page.locator('h1').filter({ hasText: 'Documentation' }).waitFor()
 }
 
 /** A 1440px window at 200% page zoom has a 720 CSS-pixel layout viewport. */
@@ -130,7 +130,7 @@ async function checkZoom(browser, name, base) {
   const context = await browser.newContext({ viewport: { width: 720, height: 500 }, deviceScaleFactor: 2 })
   try {
     const page = await context.newPage()
-    await page.goto(origin + base + 'guide/configuration.html', { waitUntil: 'networkidle' })
+    await page.goto(origin + base + 'docs/guide/configuration.html', { waitUntil: 'networkidle' })
     await checkStructure(page)
     await page.screenshot({ path: `${output}/${name}-${base === '/' ? 'root' : 'subpath'}-zoom200.png`, fullPage: true })
   } finally {
@@ -172,8 +172,8 @@ async function checkArtifact(browser, name, artifact, row) {
   const readable = await noJs.newPage()
   await readable.goto(origin + artifact.base)
   await readable.getByRole('link', { name: 'Read the docs', exact: true }).click()
-  await readable.waitForURL(`${origin}${artifact.base}guide/getting-started.html`)
-  assert.match(await readable.locator('main').innerText(), /Getting started/)
+  await readable.waitForURL(`${origin}${artifact.base}docs/`)
+  assert.match(await readable.locator('main').innerText(), /Documentation/)
   await noJs.close()
 }
 

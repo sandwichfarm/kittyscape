@@ -25,6 +25,7 @@ class Background:
     linear: bool = False
     tint: float = 0.0
     tint_gaps: float = 1.0
+    opacity: float | None = None
     index: int = 0
 
 
@@ -70,10 +71,11 @@ class Kitty:
     """Confine scoped image writes, capability checks, and ownership observation."""
 
     def __init__(self, boss: Any, changed: Callable, reloaded: Callable):
-        from kitty.fast_data_types import add_timer, get_options, wakeup_main_loop
+        from kitty.fast_data_types import add_timer, background_opacity_of, get_options, wakeup_main_loop
 
         self.boss = boss
         self.options = get_options
+        self._opacity_of = background_opacity_of
         self._add_timer = add_timer
         self._timer_callbacks: dict[int, Callable] = {}
         self._timer_dispatcher = self._dispatch_timer
@@ -90,6 +92,8 @@ class Kitty:
         self.reloaded = reloaded
         self.preexisting = {w.os_window_id for w in boss.window_id_map.values()}
         self.overrides: dict[int, Background] = {}
+        self._linear_owners: set[int] = set()
+        self._linear_baseline: bool | None = None
         boss.set_background_image = self._observed_set
         boss.apply_new_options = self._observed_options
         if self.original_theme:
@@ -137,7 +141,10 @@ class Kitty:
             return self.overrides[os_id]
         if os_id in self.preexisting:
             return Background(kind="unknown")
-        return self.inherited()
+        inherited = self.inherited()
+        if self.options().dynamic_background_opacity:
+            return replace(inherited, opacity=self._opacity_of(os_id))
+        return inherited
 
     def active(self, os_id: int) -> Any:
         manager = self.boss.os_window_map.get(os_id)
@@ -197,17 +204,11 @@ class Kitty:
 
     def apply(self, os_id: int, spec: Background, *, restore: bool = False) -> None:
         """Write one OS window; never modify defaults shared by future windows."""
+        self._check_opacity(spec)
         self.internal = True
         try:
-            if restore and spec.kind == "inherited" and self.modern:
-                self.original_set(None, (os_id,), False, None, global_index=spec.index)
-            elif self.modern:
-                self.original_set(
-                    spec.path, (os_id,), False, spec.layout, spec.data,
-                    linear_interpolation=spec.linear, tint=spec.tint, tint_gaps=spec.tint_gaps,
-                )
-            else:
-                self.original_set(spec.path, (os_id,), False, spec.layout, spec.data)
+            self._set_image(os_id, spec, restore)
+            self._set_opacity(os_id, spec)
             window = self.active(os_id)
             if window is not None and not window.destroyed:
                 window.refresh()
@@ -215,6 +216,44 @@ class Kitty:
                 self.wake()
         finally:
             self.internal = False
+
+    def acquire_linear(self, os_id: int, value: bool | None) -> None:
+        if value is None or os_id in self._linear_owners:
+            return
+        if self._linear_baseline is None:
+            self._linear_baseline = self.options().background_image_linear
+            self._set_global_linear(value)
+        self._linear_owners.add(os_id)
+
+    def release_linear(self, os_id: int) -> None:
+        self._linear_owners.discard(os_id)
+        if not self._linear_owners and self._linear_baseline is not None:
+            self._set_global_linear(self._linear_baseline)
+            self._linear_baseline = None
+
+    def _set_global_linear(self, value: bool) -> None:
+        self.internal = True
+        try:
+            self.original_set(None, (), True, None, b"", linear_interpolation=value)
+        finally:
+            self.internal = False
+
+    def _check_opacity(self, spec: Background) -> None:
+        if spec.opacity is not None and not self.options().dynamic_background_opacity:
+            raise ValueError("background-opacity-requires-startup-capability")
+
+    def _set_image(self, os_id: int, spec: Background, restore: bool) -> None:
+        if restore and spec.kind == "inherited" and self.modern:
+            self.original_set(None, (os_id,), False, None, global_index=spec.index)
+        elif self.modern:
+            self.original_set(spec.path, (os_id,), False, spec.layout, spec.data,
+                              linear_interpolation=spec.linear, tint=spec.tint, tint_gaps=spec.tint_gaps)
+        else:
+            self.original_set(spec.path, (os_id,), False, spec.layout, spec.data)
+
+    def _set_opacity(self, os_id: int, spec: Background) -> None:
+        if spec.opacity is not None:
+            self.boss._set_os_window_background_opacity(os_id, spec.opacity)
 
     def shell_error(self, window: Any) -> str:
         argv = window.child.argv

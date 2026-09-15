@@ -12,11 +12,60 @@ if TYPE_CHECKING:
 
 
 @dataclass(frozen=True)
+class BackgroundOptions:
+    """Explicit native background fields; ``None`` inherits the prior layer."""
+
+    layout: str | None = None
+    linear: bool | None = None
+    tint: float | None = None
+    tint_gaps: float | None = None
+    opacity: float | None = None
+
+    def overlay(self, override: "BackgroundOptions") -> "BackgroundOptions":
+        return BackgroundOptions(**{
+            field: getattr(override, field) if getattr(override, field) is not None else getattr(self, field)
+            for field in self.__dataclass_fields__
+        })
+
+
+@dataclass(frozen=True)
+class AnimationOptions:
+    """GIF playback fields; rule objects use ``None`` to inherit global values."""
+
+    enabled: bool | None = None
+    fps_limit: int | None = None
+    speed: float | None = None
+    loop: str | int | None = None
+
+    def overlay(self, override: "AnimationOptions") -> "AnimationOptions":
+        return AnimationOptions(**{
+            field: getattr(override, field) if getattr(override, field) is not None else getattr(self, field)
+            for field in self.__dataclass_fields__
+        })
+
+
+@dataclass(frozen=True)
 class Rule:
     """An absolute normalized directory root and its resolved local image path."""
 
     directory: str
     image: str
+    background: BackgroundOptions = BackgroundOptions()
+    animation: AnimationOptions = AnimationOptions()
+
+
+@dataclass(frozen=True)
+class Selection:
+    """One fully resolved image and its inherited rendering/playback policy."""
+
+    image: str
+    rule: Rule | None
+    background: BackgroundOptions
+    animation: AnimationOptions
+
+    @property
+    def fallback(self) -> bool:
+        return self.rule is None
 
 
 def normalize_directory(path: str) -> str:
@@ -58,19 +107,33 @@ def _contains(root: str, directory: str, folded_directory: str) -> bool:
         return False
 
 
-def resolve(config: Config, cwd: str) -> str | None:
-    """Select the deepest rule, or fallback for unmatched/unavailable directories.
+def _matching_rule(config: Config, cwd: str | None) -> Rule | None:
+    if cwd is None:
+        return None
+    try:
+        directory = normalize_directory(cwd)
+    except ValueError:
+        return None
+    folded_directory = _comparison_key(directory)
+    matches = (rule for rule in config.rules if _contains(rule.directory, directory, folded_directory))
+    return max(matches, key=lambda rule: rule.directory.rstrip(os.sep).count(os.sep), default=None)
+
+
+def resolve(config: Config, cwd: str | None) -> Selection | None:
+    """Select the deepest rule and resolve its inherited option values.
 
     Disabled configuration returns None, requesting baseline restoration. Rule
     roots must already be normalized, as guaranteed by load_config().
     """
     if not config.enabled:
         return None
-    try:
-        directory = normalize_directory(cwd)
-    except ValueError:
-        return config.fallback
-    folded_directory = _comparison_key(directory)
-    matches = (rule for rule in config.rules if _contains(rule.directory, directory, folded_directory))
-    selected = max(matches, key=lambda rule: rule.directory.rstrip(os.sep).count(os.sep), default=None)
-    return config.fallback if selected is None else selected.image
+    selected = _matching_rule(config, cwd)
+    image = config.fallback if selected is None else selected.image
+    if image is None:
+        return None
+    return Selection(
+        image=image,
+        rule=selected,
+        background=config.background if selected is None else config.background.overlay(selected.background),
+        animation=config.animation if selected is None else config.animation.overlay(selected.animation),
+    )

@@ -90,33 +90,54 @@ class InstalledSession(Session):
         self.conf.write_text(content.replace(direct, "", 1))
 
     def _launch(self):
+        # The installer's kitty-config directory is deliberately distinct from
+        # the user-owned rules directory.  Moving the fixture before setup
+        # also makes every later runtime scenario exercise location.json.
+        rules_root = self.root / "kittyscape-rules"
+        rules_root.mkdir()
+        rules_file = rules_root / "kittyscape.json"
+        self.config_file.replace(rules_file)
+        self.config_file = rules_file
+        self.rules_root = rules_root
         self.install_root = self.root / "kittyscape" / self.artifact["version"]
         self.preinstall_conf = self.conf.read_bytes()
         self.preinstall_conf_record = file_record(self.conf, self.installer)
         rules = file_record(self.config_file, self.installer)
         before = tree_record(self.root, self.installer)
-        assert self.setup("install")["status"] == "preview"
+        assert self.setup("install", preview=True)["status"] == "preview"
         assert tree_record(self.root, self.installer) == before, "Install preview wrote fixture files"
         self.record("T09-install-preview", {"writes": 0})
-        assert self.setup("install", apply=True)["status"] == "installed"
+        assert self.setup("install")["status"] == "installed"
         installed = tree_record(self.root, self.installer)
-        assert self.setup("install", apply=True)["status"] == "already-installed"
+        assert self.setup("install")["status"] == "already-installed"
         assert tree_record(self.root, self.installer) == installed, "Repeated install changed files"
         assert file_record(self.config_file, self.installer) == rules, "Installation changed user rules"
         self.original_conf = self.conf.read_bytes()
         self.record("T09-install-apply-repeat", {"version": self.artifact["version"], "user_rules_preserved": True})
         super()._launch()
 
-    def setup(self, action, *, apply=False, installed=False):
+    def setup(self, action, *, preview=False, apply=False, installed=False):
+        assert not (preview and apply), "A preview must never request an apply"
         source = self.install_root if installed else self.args.bundle
         command = [str(self.args.kitty), "+launch", str(source / "setup.py"), action,
-                   "--kitty-config-dir", str(self.root), "--config-dir", str(self.root)]
+                   "--kitty-config-dir", str(self.root), "--config-dir", str(self.rules_root),
+                   "--json", "--no-launch"]
+        if preview:
+            command.append("--preview")
         if apply:
             command.append("--apply")
         process = subprocess.run(command, capture_output=True, text=True, timeout=30)
         assert process.returncode == 0, process.stdout + process.stderr
         result = json.loads(process.stdout)
-        self.setup_calls.append({"action": action, "apply": apply, "helper": str(source / "setup.py"), "result": result})
+        assert "fresh_window" not in result, "Harness setup must not launch a daily-use kitty window"
+        if preview:
+            assert result["status"] == "preview", result
+        if action == "install" and result["status"] in ("installed", "already-installed"):
+            expected = self.rules_root / "kittyscape.json"
+            location = json.loads((self.install_root / "kittyscape/location.json").read_text())
+            assert Path(location["config"]) == expected, location
+        self.setup_calls.append({"action": action, "preview": preview, "apply": apply,
+                                 "helper": str(source / "setup.py"), "command": command, "result": result})
         return result
 
     def action(self, name, *, pane=1):
@@ -156,7 +177,7 @@ class InstalledSession(Session):
     def uninstall_files(self):
         rules = file_record(self.config_file, self.installer)
         before = tree_record(self.root, self.installer)
-        assert self.setup("uninstall", installed=True)["status"] == "preview"
+        assert self.setup("uninstall", preview=True, installed=True)["status"] == "preview"
         assert tree_record(self.root, self.installer) == before, "Uninstall preview wrote fixture files"
         result = self.setup("uninstall", apply=True, installed=True)
         assert result["status"] == "removed" and not result["retained"], result

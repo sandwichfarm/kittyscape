@@ -10,7 +10,7 @@ import unittest
 from pathlib import Path
 
 from kittyscape.config import Config
-from kittyscape.rules import Rule, normalize_directory, resolve
+from kittyscape.rules import AnimationOptions, BackgroundOptions, Rule, normalize_directory, resolve
 
 
 class RulesTests(unittest.TestCase):
@@ -30,7 +30,7 @@ class RulesTests(unittest.TestCase):
 
     def test_directory_sequence_selects_deepest_rule_then_fallback(self):
         config = Config(rules=(Rule(str(self.child), "nested.png"), Rule(str(self.app), "app.png")), fallback="default.png")
-        observed = [resolve(config, str(path)) for path in (self.app, self.child, self.deep, self.root)]
+        observed = [resolve(config, str(path)).image for path in (self.app, self.child, self.deep, self.root)]
         self.assertEqual(observed, ["app.png", "nested.png", "nested.png", "default.png"])
 
     def test_sibling_prefix_is_not_a_directory_match(self):
@@ -39,7 +39,7 @@ class RulesTests(unittest.TestCase):
 
     def test_root_rule_applies_to_descendants(self):
         config = Config(rules=(Rule(os.path.abspath(os.sep), "root.png"),))
-        self.assertEqual(resolve(config, str(self.app)), "root.png")
+        self.assertEqual(resolve(config, str(self.app)).image, "root.png")
 
     def test_rule_order_does_not_change_selection(self):
         rules = (Rule(str(self.root), "root.png"), Rule(str(self.app), "app.png"), Rule(str(self.child), "child.png"))
@@ -49,16 +49,30 @@ class RulesTests(unittest.TestCase):
         config = Config(enabled=False, rules=(Rule(str(self.app), "app.png"),), fallback="fallback.png")
         self.assertIsNone(resolve(config, str(self.app)))
 
+    def test_selection_carries_rule_identity_and_resolved_option_overrides(self):
+        rule = Rule(str(self.app), "app.png", BackgroundOptions(layout="centered", tint=0.7), AnimationOptions(speed=2.0))
+        config = Config(rules=(rule,), fallback="fallback.png", background=BackgroundOptions(layout="scaled", linear=True),
+                        animation=AnimationOptions(enabled=True, fps_limit=12, speed=1.0, loop="source"))
+        selected = resolve(config, str(self.app))
+        self.assertEqual(selected.image, "app.png")
+        self.assertIs(selected.rule, rule)
+        self.assertEqual(selected.background, BackgroundOptions(layout="centered", linear=True, tint=0.7))
+        self.assertEqual(selected.animation, AnimationOptions(enabled=True, fps_limit=12, speed=2.0, loop="source"))
+        fallback = resolve(config, None)
+        self.assertTrue(fallback.fallback)
+        self.assertEqual(fallback.image, "fallback.png")
+        self.assertEqual(fallback.background, config.background)
+
     def test_symlink_reports_use_the_physical_directory(self):
         link = self.root / "linked app"
         link.symlink_to(self.app, target_is_directory=True)
         self.assertEqual(normalize_directory(str(link / "child/../child")), str(self.child))
-        self.assertEqual(resolve(Config(rules=(Rule(str(self.app), "app.png"),)), str(link / "child")), "app.png")
+        self.assertEqual(resolve(Config(rules=(Rule(str(self.app), "app.png"),)), str(link / "child")).image, "app.png")
 
     def test_unicode_spaces_quotes_and_shell_metacharacters_are_literal(self):
         named = self.directory("café 猫/' quoted ; $(touch sentinel) [1] $USER")
         config = Config(rules=(Rule(str(named), "literal.png"),))
-        self.assertEqual(resolve(config, str(named)), "literal.png")
+        self.assertEqual(resolve(config, str(named)).image, "literal.png")
         self.assertFalse((self.root / "sentinel").exists())
 
     def test_home_shortcut_expands_only_at_the_start(self):
@@ -79,10 +93,10 @@ class RulesTests(unittest.TestCase):
         deleted.rmdir()
         with self.assertRaises(ValueError):
             normalize_directory(str(deleted))
-        self.assertEqual(resolve(Config(rules=(Rule(str(self.app), "app.png"),), fallback="fallback.png"), str(deleted)), "fallback.png")
+        self.assertEqual(resolve(Config(rules=(Rule(str(self.app), "app.png"),), fallback="fallback.png"), str(deleted)).image, "fallback.png")
 
     def test_missing_directory_before_parent_component_is_invalid(self):
-        self.assertEqual(resolve(Config(fallback="fallback.png"), str(self.root / "missing/../app")), "fallback.png")
+        self.assertEqual(resolve(Config(fallback="fallback.png"), str(self.root / "missing/../app")).image, "fallback.png")
 
     def test_case_aliases_follow_actual_filesystem_identity(self):
         upper = self.directory("MixedCase")
@@ -125,7 +139,7 @@ class RulesTests(unittest.TestCase):
             matches = [rule for rule in rules if Path(rule.directory) in ancestors]
             expected = max(matches, key=lambda rule: len(Path(rule.directory).parts)).image if matches else "fallback.png"
             rng.shuffle(rules)
-            self.assertEqual(resolve(Config(rules=tuple(rules), fallback="fallback.png"), str(query)), expected)
+            self.assertEqual(resolve(Config(rules=tuple(rules), fallback="fallback.png"), str(query)).image, expected)
 
 
 if __name__ == "__main__":

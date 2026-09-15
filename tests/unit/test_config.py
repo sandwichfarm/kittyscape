@@ -11,7 +11,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 from kittyscape.config import Config, ConfigError, load_config
-from kittyscape.rules import Rule
+from kittyscape.rules import AnimationOptions, BackgroundOptions, Rule
 
 
 class ConfigTests(unittest.TestCase):
@@ -119,6 +119,44 @@ class ConfigTests(unittest.TestCase):
         for value in (0, 1, "true", None, [], {}):
             with self.subTest(value=value):
                 self.assert_invalid(self.document(enabled=value), "enabled")
+
+    def test_additive_background_animation_and_validation_fields_are_strict(self):
+        config = load_config(self.write(self.document(
+            validate_bytes=False,
+            background={"layout": "scaled", "linear": True, "opacity": 0.5},
+            animation={"enabled": False, "fps_limit": 12, "speed": 1.5, "loop": 2},
+        )))
+        self.assertFalse(config.validate_bytes)
+        self.assertEqual(config.background, BackgroundOptions("scaled", True, None, None, 0.5))
+        self.assertEqual(config.animation, AnimationOptions(False, 12, 1.5, 2))
+        for value in (None, 0, 1, "false", []):
+            with self.subTest(value=value):
+                self.assert_invalid(self.document(validate_bytes=value), "validate_bytes")
+        invalid = (
+            ("background", {"layout": "stretch"}),
+            ("animation", {"enabled": 1}), ("animation", {"fps_limit": True}),
+            ("animation", {"fps_limit": 61}), ("animation", {"speed": 0.01}),
+            ("animation", {"loop": 0}), ("animation", {"loop": True}),
+        )
+        for field, value in invalid:
+            with self.subTest(field=field, value=value):
+                self.assert_invalid(self.document(**{field: value}), field)
+        self.assert_invalid(self.document(background={"tint": float("nan")}), "config")
+
+    def test_rule_options_inherit_without_per_rule_validation(self):
+        config = load_config(self.write(self.document(
+            background={"layout": "scaled"}, animation={"fps_limit": 20},
+            rules=[{"directory": str(self.project), "image": "cat.png",
+                    "background": {"layout": "centered"}, "animation": {"speed": 2.0}}],
+        )))
+        rule = config.rules[0]
+        self.assertEqual(rule.background, BackgroundOptions(layout="centered"))
+        self.assertEqual(rule.animation, AnimationOptions(speed=2.0))
+        self.assert_invalid(self.document(rules=[{"directory": str(self.project), "image": "cat.png",
+                                                   "validate_bytes": False}]), "rules[0]")
+        self.assert_invalid(self.document(rules=[{"directory": str(self.project), "image": "cat.png",
+                                                   "background": {"tint": 0.2}}]), "rules[0].background")
+        self.assert_invalid(self.document(background={"tint": 0.2}), "background")
 
     def test_top_level_and_rules_require_correct_container_types(self):
         for value in (None, [], "config", 1, True):
