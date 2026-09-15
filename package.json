@@ -1,0 +1,18 @@
+{
+  "name": "kittyscape-site",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.3.0",
+  "scripts": {
+    "docs:dev": "vitepress dev docs --host 127.0.0.1",
+    "docs:build": "vitepress build docs",
+    "docs:build:subpath": "vitepress build docs --base /kittyscape/ --outDir docs/.vitepress/dist-subpath",
+    "docs:preview": "vitepress preview docs --host 127.0.0.1",
+    "docs:check": "node tests/site/check.mjs",
+    "docs:test": "node tests/site/browser.mjs",
+    "docs:verify": "pnpm docs:build && pnpm docs:build:subpath && pnpm docs:check && pnpm docs:test"
+  },
+  "devDependencies": {
+    "vitepress": "1.6.4"
+  }
+}

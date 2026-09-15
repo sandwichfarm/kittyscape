@@ -1,0 +1,13 @@
+node_modules/
+__pycache__/
+*.py[cod]
+dist/
+evidence/
+docs/.vitepress/dist/
+docs/.vitepress/dist-subpath/
+docs/.vitepress/cache/
+docs/.vitepress/evidence/
+.firecrawl/
+.omx/state/
+.omx/context/
+.omx/logs/

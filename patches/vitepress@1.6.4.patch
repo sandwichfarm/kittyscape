@@ -1,0 +1,115 @@
+diff --git a/dist/client/theme-default/components/VPLocalSearchBox.vue b/dist/client/theme-default/components/VPLocalSearchBox.vue
+index 951a7536c4206bf7c8d4b9473220bcb6bea230d4..2ab6a81a567206bcc6115c60edc827094da469a9 100644
+--- a/dist/client/theme-default/components/VPLocalSearchBox.vue
++++ b/dist/client/theme-default/components/VPLocalSearchBox.vue
+@@ -416,11 +416,9 @@ function onMouseMove(e: MouseEvent) {
+   <Teleport to="body">
+     <div
+       ref="el"
+-      role="button"
+-      :aria-owns="results?.length ? 'localsearch-list' : undefined"
+-      aria-expanded="true"
+-      aria-haspopup="listbox"
+-      aria-labelledby="localsearch-label"
++      role="dialog"
++      aria-modal="true"
++      :aria-label="buttonText"
+       class="VPLocalSearchBox"
+     >
+       <div class="backdrop" @click="$emit('close')" />
+@@ -450,10 +448,13 @@ function onMouseMove(e: MouseEvent) {
+           <input
+             ref="searchInput"
+             v-model="filterText"
++            role="combobox"
++            :aria-expanded="results.length > 0"
++            aria-haspopup="listbox"
+             :aria-activedescendant="selectedIndex > -1 ? ('localsearch-item-' + selectedIndex) : undefined"
+-            aria-autocomplete="both"
++            aria-autocomplete="list"
+             :aria-controls="results?.length ? 'localsearch-list' : undefined"
+-            aria-labelledby="localsearch-label"
++            :aria-label="buttonText"
+             autocapitalize="off"
+             autocomplete="off"
+             autocorrect="off"
+@@ -495,18 +496,20 @@ function onMouseMove(e: MouseEvent) {
+           ref="resultsEl"
+           :id="results?.length ? 'localsearch-list' : undefined"
+           :role="results?.length ? 'listbox' : undefined"
+-          :aria-labelledby="results?.length ? 'localsearch-label' : undefined"
++          :aria-label="results?.length ? buttonText : undefined"
+           class="results"
+           @mousemove="onMouseMove"
+         >
+           <li
+             v-for="(p, index) in results"
+             :key="p.id"
+-            :id="'localsearch-item-' + index"
+-            :aria-selected="selectedIndex === index ? 'true' : 'false'"
+-            role="option"
++            role="presentation"
+           >
+             <a
++              :id="'localsearch-item-' + index"
++              :aria-selected="selectedIndex === index ? 'true' : 'false'"
++              role="option"
++              tabindex="-1"
+               :href="p.id"
+               class="result"
+               :class="{
+@@ -555,22 +558,22 @@ function onMouseMove(e: MouseEvent) {
+ 
+         <div class="search-keyboard-shortcuts">
+           <span>
+-            <kbd :aria-label="translate('modal.footer.navigateUpKeyAriaLabel')">
++            <kbd role="img" :aria-label="translate('modal.footer.navigateUpKeyAriaLabel')">
+               <span class="vpi-arrow-up navigate-icon" />
+             </kbd>
+-            <kbd :aria-label="translate('modal.footer.navigateDownKeyAriaLabel')">
++            <kbd role="img" :aria-label="translate('modal.footer.navigateDownKeyAriaLabel')">
+               <span class="vpi-arrow-down navigate-icon" />
+             </kbd>
+             {{ translate('modal.footer.navigateText') }}
+           </span>
+           <span>
+-            <kbd :aria-label="translate('modal.footer.selectKeyAriaLabel')">
++            <kbd role="img" :aria-label="translate('modal.footer.selectKeyAriaLabel')">
+               <span class="vpi-corner-down-left navigate-icon" />
+             </kbd>
+             {{ translate('modal.footer.selectText') }}
+           </span>
+           <span>
+-            <kbd :aria-label="translate('modal.footer.closeKeyAriaLabel')">esc</kbd>
++            <kbd role="img" :aria-label="translate('modal.footer.closeKeyAriaLabel')">esc</kbd>
+             {{ translate('modal.footer.closeText') }}
+           </span>
+         </div>
+diff --git a/dist/client/theme-default/components/VPSwitchAppearance.vue b/dist/client/theme-default/components/VPSwitchAppearance.vue
+index 2dd062816b958335b1b6c2897206ae5257e678a2..994b99e245b25d290668153fa7ea834eae8ff50c 100644
+--- a/dist/client/theme-default/components/VPSwitchAppearance.vue
++++ b/dist/client/theme-default/components/VPSwitchAppearance.vue
+@@ -1,5 +1,5 @@
+ <script lang="ts" setup>
+-import { inject, ref, watchPostEffect } from 'vue'
++import { computed, inject } from 'vue'
+ import { useData } from '../composables/data'
+ import VPSwitch from './VPSwitch.vue'
+ 
+@@ -9,13 +9,11 @@ const toggleAppearance = inject('toggle-appearance', () => {
+   isDark.value = !isDark.value
+ })
+ 
+-const switchTitle = ref('')
+-
+-watchPostEffect(() => {
+-  switchTitle.value = isDark.value
++const switchTitle = computed(() =>
++  isDark.value
+     ? theme.value.lightModeSwitchTitle || 'Switch to light theme'
+     : theme.value.darkModeSwitchTitle || 'Switch to dark theme'
+-})
++)
+ </script>
+ 
+ <template>

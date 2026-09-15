@@ -1,0 +1,5 @@
+allowBuilds:
+  esbuild: true
+minimumReleaseAge: 10080
+patchedDependencies:
+  vitepress@1.6.4: patches/vitepress@1.6.4.patch

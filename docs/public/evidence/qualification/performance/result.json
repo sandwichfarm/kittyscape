@@ -1,0 +1,376 @@
+{
+  "created_at": "2026-09-15T15:03:15Z",
+  "backend": "x11",
+  "platform": "Linux",
+  "architecture": "x86_64",
+  "kitty": {
+    "event": "load",
+    "pid": 3234884,
+    "kitty": [
+      0,
+      48,
+      2
+    ],
+    "python": "3.14.6 (main, Jun 23 2026, 03:01:40) [GCC 11.4.0]",
+    "time": 24651.075584556
+  },
+  "shell": "GNU bash, version 5.3.20(1)-release (x86_64-pc-linux-gnu)",
+  "baseline": "single",
+  "startup": "interactive",
+  "artifact": {
+    "archive": "$ARCHIVE",
+    "sha256": "4d304c7c23dc343addd42500a05ca7c7607b3b5641ff60bae9324b99eb3a251a",
+    "manifest_sha256": "ba6f8cea33626d40110f06a91de380cad6f9dd7a4bdfd27fb047f4588364ba0a",
+    "files_verified": 74,
+    "version": "0.1.0.dev1",
+    "extracted_bundle": "$BUNDLE"
+  },
+  "installation": "generated-include-only",
+  "setup_calls": [
+    {
+      "action": "install",
+      "apply": false,
+      "helper": "$BUNDLE/setup.py",
+      "result": {
+        "status": "preview",
+        "action": "install",
+        "config_dir": "$FIXTURE",
+        "version": "0.1.0.dev1",
+        "files": [
+          "kittyscape.conf",
+          "kittyscape/0.1.0.dev1/README.md",
+          "kittyscape/0.1.0.dev1/kittyscape/__init__.py",
+          "kittyscape/0.1.0.dev1/kittyscape/action.py",
+          "kittyscape/0.1.0.dev1/kittyscape/compat.py",
+          "kittyscape/0.1.0.dev1/kittyscape/config.py",
+          "kittyscape/0.1.0.dev1/kittyscape/engine.py",
+          "kittyscape/0.1.0.dev1/kittyscape/images.py",
+          "kittyscape/0.1.0.dev1/kittyscape/location.json",
+          "kittyscape/0.1.0.dev1/kittyscape/rules.py",
+          "kittyscape/0.1.0.dev1/kittyscape/watcher.py",
+          "kittyscape/0.1.0.dev1/packaging/builder.py",
+          "kittyscape/0.1.0.dev1/packaging/installer.py",
+          "kittyscape/0.1.0.dev1/setup.py"
+        ],
+        "config_append": "# BEGIN KITTYSCAPE (managed by setup.py)\ninclude $FIXTURE/kittyscape.conf\n# END KITTYSCAPE\n",
+        "generated_config": "# Owned by Kittyscape setup; edit your rules in kittyscape.json.\nwatcher $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/watcher.py\nmap ctrl+shift+f6 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py status\nmap ctrl+shift+f7 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py pause\nmap ctrl+shift+f8 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py resume\nmap ctrl+shift+f9 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py reload\nmap ctrl+shift+f10 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py restore\n",
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher.",
+        "capabilities": {
+          "kitty": "0.48.2",
+          "python": "3.14.6",
+          "required_apis": "present",
+          "qualification": "Capability check only; consult the release-specific tested compatibility matrix."
+        }
+      }
+    },
+    {
+      "action": "install",
+      "apply": true,
+      "helper": "$BUNDLE/setup.py",
+      "result": {
+        "status": "installed",
+        "action": "install",
+        "config_dir": "$FIXTURE",
+        "version": "0.1.0.dev1",
+        "files": [
+          "kittyscape.conf",
+          "kittyscape/0.1.0.dev1/README.md",
+          "kittyscape/0.1.0.dev1/kittyscape/__init__.py",
+          "kittyscape/0.1.0.dev1/kittyscape/action.py",
+          "kittyscape/0.1.0.dev1/kittyscape/compat.py",
+          "kittyscape/0.1.0.dev1/kittyscape/config.py",
+          "kittyscape/0.1.0.dev1/kittyscape/engine.py",
+          "kittyscape/0.1.0.dev1/kittyscape/images.py",
+          "kittyscape/0.1.0.dev1/kittyscape/location.json",
+          "kittyscape/0.1.0.dev1/kittyscape/rules.py",
+          "kittyscape/0.1.0.dev1/kittyscape/watcher.py",
+          "kittyscape/0.1.0.dev1/packaging/builder.py",
+          "kittyscape/0.1.0.dev1/packaging/installer.py",
+          "kittyscape/0.1.0.dev1/setup.py"
+        ],
+        "config_append": "# BEGIN KITTYSCAPE (managed by setup.py)\ninclude $FIXTURE/kittyscape.conf\n# END KITTYSCAPE\n",
+        "generated_config": "# Owned by Kittyscape setup; edit your rules in kittyscape.json.\nwatcher $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/watcher.py\nmap ctrl+shift+f6 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py status\nmap ctrl+shift+f7 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py pause\nmap ctrl+shift+f8 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py resume\nmap ctrl+shift+f9 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py reload\nmap ctrl+shift+f10 kitten $FIXTURE/kittyscape/0.1.0.dev1/kittyscape/action.py restore\n",
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher.",
+        "capabilities": {
+          "kitty": "0.48.2",
+          "python": "3.14.6",
+          "required_apis": "present",
+          "qualification": "Capability check only; consult the release-specific tested compatibility matrix."
+        }
+      }
+    },
+    {
+      "action": "install",
+      "apply": true,
+      "helper": "$BUNDLE/setup.py",
+      "result": {
+        "status": "already-installed",
+        "action": "install",
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher.",
+        "capabilities": {
+          "kitty": "0.48.2",
+          "python": "3.14.6",
+          "required_apis": "present",
+          "qualification": "Capability check only; consult the release-specific tested compatibility matrix."
+        }
+      }
+    },
+    {
+      "action": "uninstall",
+      "apply": false,
+      "helper": "$FIXTURE/kittyscape/0.1.0.dev1/setup.py",
+      "result": {
+        "status": "preview",
+        "action": "uninstall",
+        "config_dir": "$FIXTURE",
+        "retained": [],
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher."
+      }
+    },
+    {
+      "action": "uninstall",
+      "apply": true,
+      "helper": "$FIXTURE/kittyscape/0.1.0.dev1/setup.py",
+      "result": {
+        "status": "removed",
+        "action": "uninstall",
+        "config_dir": "$FIXTURE",
+        "retained": [],
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher."
+      }
+    },
+    {
+      "action": "uninstall",
+      "apply": true,
+      "helper": "$BUNDLE/setup.py",
+      "result": {
+        "status": "already-removed",
+        "action": "uninstall",
+        "notice": "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause in each instance. Reload kitty's config after installation; new windows load the watcher."
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "T09-install-preview",
+      "result": "pass",
+      "detail": {
+        "writes": 0
+      }
+    },
+    {
+      "scenario": "T09-install-apply-repeat",
+      "result": "pass",
+      "detail": {
+        "version": "0.1.0.dev1",
+        "user_rules_preserved": true
+      }
+    },
+    {
+      "scenario": "artifact-installed-runtime-origin",
+      "result": "pass",
+      "detail": {
+        "engine_file": "$FIXTURE/kittyscape/0.1.0.dev1/kittyscape/engine.py",
+        "config_path": "$FIXTURE/kittyscape.json",
+        "watchers": [
+          "$BUNDLE/tests/runtime/observer.py",
+          "$FIXTURE/kittyscape/0.1.0.dev1/kittyscape/watcher.py"
+        ]
+      }
+    },
+    {
+      "scenario": "T01-T03-T07-restoration",
+      "result": "pass",
+      "detail": {
+        "rendering": {
+          "background_image": "('$FIXTURE/baseline.png',)",
+          "background_image_layout": "scaled",
+          "background_image_linear": "True",
+          "background_tint": "0.2",
+          "background_tint_gaps": "0.4",
+          "background_opacity": "0.85",
+          "background": "Color(22, 21, 27)",
+          "foreground": "Color(240, 232, 223)"
+        }
+      }
+    },
+    {
+      "scenario": "T03-directory-stack",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T14-unchanged-prompts",
+      "result": "pass",
+      "detail": {
+        "extra_writes": 0,
+        "screenshot": "directory-A.png"
+      }
+    },
+    {
+      "scenario": "T08-pause-resume-restore",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T04-T06-tabs-splits-focus",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T05-independent-OS-windows",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T14-window-state-release",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T13-external-writer-resume",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "T10-last-valid-configuration",
+      "result": "pass",
+      "detail": null
+    },
+    {
+      "scenario": "performance-100-transitions",
+      "result": "pass",
+      "detail": {
+        "count": 100,
+        "p95_ms": 96.72887899796478,
+        "samples_ms": [
+          75.40578000043752,
+          96.5567640014342,
+          88.31380500123487,
+          92.05667000060203,
+          80.04721999895992,
+          87.73428099812008,
+          93.74782500162837,
+          95.66228299809154,
+          70.282431999658,
+          86.97437999944668,
+          86.55580499907956,
+          75.54594799876213,
+          87.52398000069661,
+          78.38470600108849,
+          78.34235799964517,
+          87.10976899965317,
+          75.93779399758205,
+          87.21650000006775,
+          88.6644480015093,
+          75.72275200072909,
+          87.18192399828695,
+          75.4047089976666,
+          75.61193199944682,
+          76.01813500150456,
+          63.4707499993965,
+          62.91708699791343,
+          74.63118799933,
+          74.12844400096219,
+          76.24876399859204,
+          71.78211700011161,
+          84.12285599843017,
+          73.78564499958884,
+          118.60843099930207,
+          77.01400000223657,
+          84.7381219973613,
+          73.16560899926117,
+          86.02324099774705,
+          74.95640599881881,
+          77.10194700121065,
+          90.54995699989377,
+          69.48728100178414,
+          99.70481699929223,
+          96.72887899796478,
+          74.00679599959403,
+          101.70483099864214,
+          72.1143699993263,
+          77.63677599723451,
+          83.13493300011032,
+          85.07414300038363,
+          74.52902699878905,
+          86.9868440022401,
+          67.6411000022199,
+          75.44953400065424,
+          106.41844900237629,
+          75.15308800066123,
+          86.95495799838682,
+          80.07252300012624,
+          106.9165030021395,
+          86.78121500270208,
+          90.2535400018678,
+          92.22948899696348,
+          81.42310999755864,
+          75.98269699883531,
+          75.84663199668285,
+          78.92754099884769,
+          75.64844399894355,
+          77.81296000030125,
+          76.60641700203996,
+          86.25273100187769,
+          76.16067500202917,
+          79.62428700193414,
+          84.72544300093432,
+          65.03842500023893,
+          68.16761400114046,
+          80.51189100297051,
+          89.8298510001041,
+          72.72205199842574,
+          71.4332560019102,
+          85.32376899893279,
+          73.24745599908056,
+          74.63201800055685,
+          70.10380599967903,
+          72.34015799986082,
+          63.58100400029798,
+          71.69486799830338,
+          84.17015699887997,
+          72.01495300250826,
+          72.61801000277046,
+          76.36513200122863,
+          83.87423300155206,
+          72.53738099825568,
+          89.31380600188277,
+          85.7819830016524,
+          79.17577700209222,
+          73.3943739978713,
+          71.37235600021086,
+          74.05795399972703,
+          72.84122700002627,
+          64.5222589992045,
+          74.83857500119484
+        ]
+      }
+    },
+    {
+      "scenario": "T14-idle-60-seconds",
+      "result": "pass",
+      "detail": {
+        "scheduled_timers": 0,
+        "image_writes": 0
+      }
+    },
+    {
+      "scenario": "T08-installed-explicit-restore",
+      "result": "pass",
+      "detail": {
+        "owned": false,
+        "baseline": "external image B"
+      }
+    },
+    {
+      "scenario": "T09-artifact-uninstall-preview-apply-repeat",
+      "result": "pass",
+      "detail": {
+        "config_restored": true,
+        "user_rules_preserved": true
+      }
+    }
+  ],
+  "error": null
+}
