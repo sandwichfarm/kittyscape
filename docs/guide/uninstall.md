@@ -23,13 +23,13 @@ If ownership or baseline capture is uncertain, preserve the current working term
 From the extracted bundle, preview removal, then apply it:
 
 ```sh
-kitty +launch ./setup.py uninstall --config-dir '/tmp/kittyscape trial'
-kitty +launch ./setup.py uninstall --config-dir '/tmp/kittyscape trial' --apply
+kitty +launch ./setup.py uninstall --kitty-config-dir ~/.config/kitty
+kitty +launch ./setup.py uninstall --kitty-config-dir ~/.config/kitty --apply
 ```
 
-Use the same configuration directory chosen during installation. You can also run the installed helper,
+Use the same kitty configuration directory chosen during installation. You can also run the installed helper,
 for example `kitty +launch '/tmp/kittyscape trial/kittyscape/0.1.0.dev1/setup.py' uninstall
---config-dir '/tmp/kittyscape trial' --apply` as one command.
+--kitty-config-dir ~/.config/kitty --apply` as one command.
 
 Review the preview’s owned-file list. Uninstall removes the exact marked include block while preserving
 later unrelated edits. It removes only unchanged owned files. Modified or untracked files are retained and
@@ -47,8 +47,8 @@ Rollback is the appropriate operation when you want to undo an installation and 
 has not received later edits:
 
 ```sh
-kitty +launch ./setup.py rollback --config-dir '/tmp/kittyscape trial'
-kitty +launch ./setup.py rollback --config-dir '/tmp/kittyscape trial' --apply
+kitty +launch ./setup.py rollback --kitty-config-dir ~/.config/kitty
+kitty +launch ./setup.py rollback --kitty-config-dir ~/.config/kitty --apply
 ```
 
 Rollback requires the original backup to be readable and match its recorded hash. The installed `kitty.conf`

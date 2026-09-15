@@ -32,7 +32,7 @@ profiles and versions for which preservation has been verified.
 The baseline is the effective original image for an OS window, captured before Kittyscape changes it.
 No image and a single image are different baseline states. Leaving a rule, disabling the extension,
 or restoring it uses that baseline while Kittyscape still owns the window. The watcher must observe the
-window’s startup; see [startup and existing windows](./installation.md#startup-and-existing-windows).
+window’s startup; see [existing windows](./installation.md#existing-windows).
 
 Removing the current image is correct only when the baseline contained no image.
 A configured image list, runtime-selected image, theme change, or per-window override may need additional

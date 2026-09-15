@@ -12,6 +12,7 @@ import re
 import shlex
 import shutil
 import stat
+import subprocess
 import tempfile
 
 
@@ -20,9 +21,10 @@ END = "# END KITTYSCAPE"
 RECEIPT = "kittyscape/install-receipt.json"
 BACKUP = "kittyscape/kitty.conf.backup"
 NOTICE = (
-    "File changes do not unload a watcher in running kitty instances. Before removal, invoke Restore and Pause "
-    "in each instance. Reload kitty's config after installation; new windows load the watcher."
+    "A fresh Kittyscape window opens after installation. Existing kitty windows keep their original state; "
+    "restore and pause them before removal."
 )
+DEFAULT_RULES = b'{\n  "version": 1,\n  "enabled": true,\n  "rules": []\n}\n'
 
 
 class InstallError(ValueError):
@@ -89,6 +91,18 @@ def config_root(path):
     if root.exists() and not root.is_dir():
         raise InstallError(f"The configuration directory is not a directory: {root}")
     return root
+
+
+def rules_config_path(directory):
+    root = Path(directory).expanduser().absolute().resolve()
+    if root.exists() and not root.is_dir():
+        raise InstallError(f"The Kittyscape configuration directory is not a directory: {root}")
+    path = root / "kittyscape.json"
+    if path.is_symlink() and not path.exists():
+        raise InstallError(f"The Kittyscape configuration symlink has no target: {path}")
+    if path.exists() and not path.is_file():
+        raise InstallError(f"The Kittyscape configuration path is not a regular file: {path}")
+    return path
 
 
 def confined(root, relative):
@@ -176,10 +190,10 @@ def generated_config(root, version):
     return ("\n".join(lines) + "\n").encode()
 
 
-def expected_payload(source, root, version):
+def expected_payload(source, root, version, rules_path):
     prefix = f"kittyscape/{version}/"
     payload = {prefix + path: data for path, data in bundle_files(source).items()}
-    payload[prefix + "kittyscape/location.json"] = (json.dumps({"config": str(root / "kittyscape.json")}, indent=2) + "\n").encode()
+    payload[prefix + "kittyscape/location.json"] = (json.dumps({"config": str(rules_path)}, indent=2) + "\n").encode()
     payload["kittyscape.conf"] = generated_config(root, version)
     return payload
 
@@ -327,21 +341,27 @@ def check_repeat(root, receipt, payload, version):
         raise InstallError("Existing installation differs or was edited; uninstall it safely before reinstalling")
 
 
-def install(bundle_root, config_dir, *, apply=False):
+def install(bundle_root, config_dir, *, rules_dir=None, apply=False):
     """Preview or install a bundle; repeated identical installs are no-ops."""
     source = Path(bundle_root).resolve()
     root = config_root(config_dir)
+    rules_path = rules_config_path(root if rules_dir is None else rules_dir)
+    create_rules = rules_dir is not None
     version = version_of(source)
-    payload = expected_payload(source, root, version)
+    payload = expected_payload(source, root, version, rules_path)
     if receipt := load_receipt(root):
         check_repeat(root, receipt, payload, version)
-        return {"status": "already-installed", "action": "install", "notice": NOTICE}
+        return {"status": "already-installed", "action": "install", "notice": NOTICE,
+                "kitty_config_dir": str(root), "config_dir": str(rules_path.parent), "config_file": str(rules_path)}
     snapshot = config_snapshot(root)
     block = new_install_block(root, snapshot["data"], payload)
-    result = {"status": "preview", "action": "install", "config_dir": str(root), "version": version,
+    result = {"status": "preview", "action": "install", "kitty_config_dir": str(root),
+              "config_dir": str(rules_path.parent), "config_file": str(rules_path),
+              "config_created": create_rules and not rules_path.exists() and not rules_path.is_symlink(), "version": version,
               "files": sorted(payload), "config_append": block, "generated_config": payload["kittyscape.conf"].decode(), "notice": NOTICE}
     if apply:
-        apply_install(root, snapshot, payload, block, version)
+        result["config_created"] = apply_install(root, snapshot, payload, block, version,
+                                                   rules_path=rules_path if create_rules else None)
         result["status"] = "installed"
     return result
 
@@ -384,9 +404,10 @@ def undo_created_files(created_files, created_dirs):
             pass
 
 
-def apply_install(root, snapshot, payload, block, version):
+def apply_install(root, snapshot, payload, block, version, *, rules_path):
     created_dirs = []
     created_files = []
+    config_created = False
     backup = root / BACKUP
     target = Path(snapshot["target"])
     try:
@@ -396,6 +417,11 @@ def apply_install(root, snapshot, payload, block, version):
         if snapshot["existed"]:
             copy_metadata(target, backup)
         write_payload(root, payload, created_files, created_dirs)
+        if rules_path is not None and not rules_path.exists() and not rules_path.is_symlink():
+            ensure_parents(rules_path, created_dirs)
+            write_new(rules_path, DEFAULT_RULES, mode=0o600)
+            created_files.append(rules_path)
+            config_created = True
         receipt = make_receipt(root, snapshot, payload, block, version, created_dirs=created_dirs)
         write_new(root / RECEIPT, (json.dumps(receipt, indent=2) + "\n").encode(), mode=0o600)
         created_files.append(root / RECEIPT)
@@ -403,9 +429,17 @@ def apply_install(root, snapshot, payload, block, version):
             raise InstallError("kitty.conf changed during setup; retry after inspecting it")
         replace_config(target, snapshot["data"] + block.encode(), metadata_source=backup if snapshot["existed"] else None,
                        expected_config=(root, snapshot))
+        return config_created
     except BaseException:
         undo_created_files(created_files, created_dirs)
         raise
+
+
+def launch_kitty(kitty_executable, config_dir):
+    """Open a new OS window that loads the watcher without restarting existing kitty processes."""
+    process = subprocess.Popen([str(kitty_executable), "--config", str(Path(config_dir) / "kitty.conf"),
+                                "--directory", str(Path.home())], start_new_session=True)
+    return {"status": "started", "pid": process.pid}
 
 
 def removal_content(current, receipt, original, *, rollback):
@@ -525,19 +559,25 @@ def rollback(config_dir, *, apply=False):
     return remove_installation(config_dir, apply=apply, rollback=True)
 
 
-def main(argv, *, bundle_root, default_config_dir):
-    parser = argparse.ArgumentParser(description="Preview-first Kittyscape user-local setup. No shell startup files are changed.")
+def main(argv, *, bundle_root, default_config_dir, default_rules_dir, kitty_executable):
+    parser = argparse.ArgumentParser(description="Install Kittyscape with a separate user configuration directory.")
     parser.add_argument("action", choices=("install", "uninstall", "rollback"))
-    parser.add_argument("--config-dir", type=Path, default=default_config_dir, help="Active kitty configuration directory")
-    parser.add_argument("--apply", action="store_true", help="Apply the displayed operation; omitted means preview only")
+    parser.add_argument("--kitty-config-dir", type=Path, default=default_config_dir, help="Kitty configuration directory to include the loader")
+    parser.add_argument("--config-dir", type=Path, default=default_rules_dir, help="Kittyscape rules directory, defaulting to ~/.config/kittyscape")
+    parser.add_argument("--preview", action="store_true", help="Show the install or removal plan without changing files")
+    parser.add_argument("--apply", action="store_true", help="Compatibility alias; install already applies unless --preview is used")
+    parser.add_argument("--no-launch", action="store_true", help="Install without opening a fresh configured kitty window")
     args = parser.parse_args(argv)
+    apply = not args.preview and (args.action == "install" or args.apply)
     try:
         if args.action == "install":
             capabilities = kitty_capabilities()
-            result = install(bundle_root, args.config_dir, apply=args.apply)
+            result = install(bundle_root, args.kitty_config_dir, rules_dir=args.config_dir, apply=apply)
             result["capabilities"] = capabilities
+            if result["status"] in ("installed", "already-installed") and not args.no_launch:
+                result["fresh_window"] = launch_kitty(kitty_executable, args.kitty_config_dir)
         else:
-            result = {"uninstall": uninstall, "rollback": rollback}[args.action](args.config_dir, apply=args.apply)
+            result = {"uninstall": uninstall, "rollback": rollback}[args.action](args.kitty_config_dir, apply=apply)
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(json.dumps({"status": "error", "error": str(error), "action": args.action}, indent=2))
         return 1

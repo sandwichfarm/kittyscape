@@ -114,6 +114,50 @@ class InstallationTests(unittest.TestCase):
         installer.uninstall(self.config, apply=True)
         self.assertEqual(user_config.read_bytes(), b'{"user-owned": true}\n')
 
+    def test_separate_rules_configuration_is_created_and_preserved(self):
+        rules = self.root / "user configuration" / "kittyscape"
+        result = installer.install(self.source, self.config, rules_dir=rules, apply=True)
+        config = rules / "kittyscape.json"
+        self.assertTrue(result["config_created"])
+        self.assertEqual(json.loads(config.read_text()), {"version": 1, "enabled": True, "rules": []})
+        location = json.loads((self.installed / "kittyscape/location.json").read_text())
+        self.assertEqual(location, {"config": str(config)})
+        installer.uninstall(self.config, apply=True)
+        self.assertTrue(config.exists(), "Rules are user-owned and remain after uninstall")
+
+    def test_one_step_main_installs_and_opens_a_fresh_window(self):
+        rules = self.root / "user configuration" / "kittyscape"
+        output = []
+        with patch.object(installer, "kitty_capabilities", return_value={"required_apis": "present"}), patch.object(
+            installer, "launch_kitty", return_value={"status": "started", "pid": 42},
+        ) as launch, patch("builtins.print", side_effect=output.append):
+            code = installer.main(["install", "--kitty-config-dir", str(self.config), "--config-dir", str(rules)],
+                                  bundle_root=self.source, default_config_dir=self.config,
+                                  default_rules_dir=rules, kitty_executable="/fake/kitty")
+        self.assertEqual(code, 0)
+        result = json.loads(output[-1])
+        self.assertEqual(result["status"], "installed")
+        self.assertTrue((rules / "kittyscape.json").exists())
+        launch.assert_called_once_with("/fake/kitty", self.config)
+
+    def test_preview_does_not_create_the_separate_rules_configuration(self):
+        rules = self.root / "user configuration" / "kittyscape"
+        output = []
+        with patch.object(installer, "kitty_capabilities", return_value={}), patch("builtins.print", side_effect=output.append):
+            code = installer.main(["install", "--preview", "--kitty-config-dir", str(self.config), "--config-dir", str(rules)],
+                                  bundle_root=self.source, default_config_dir=self.config,
+                                  default_rules_dir=rules, kitty_executable="/fake/kitty")
+        self.assertEqual(code, 0)
+        self.assertEqual(json.loads(output[-1])["status"], "preview")
+        self.assertFalse(rules.exists())
+
+    def test_dangling_rules_configuration_symlink_is_rejected(self):
+        rules = self.root / "user configuration" / "kittyscape"
+        rules.mkdir(parents=True)
+        (rules / "kittyscape.json").symlink_to(self.root / "missing.json")
+        with self.assertRaises(installer.InstallError):
+            installer.install(self.source, self.config, rules_dir=rules, apply=True)
+
     def test_uninstall_preserves_later_unrelated_edits(self):
         self.install()
         self.conf.write_bytes(self.conf.read_bytes() + b"\n# Added later\nfont_size 17\n")
@@ -258,14 +302,17 @@ class InstallationTests(unittest.TestCase):
             bundle.extractall(extracted, filter="data")
         setup = extracted / "kittyscape-0.1.0.dev1/setup.py"
         base = [shutil.which("kitty"), "+launch", str(setup)]
+        rules = self.root / "user rules"
         before = tree_state(self.config)
-        preview = subprocess.run(base + ["install", "--config-dir", str(self.config)], capture_output=True, text=True, check=True)
+        preview = subprocess.run(base + ["install", "--preview", "--no-launch", "--kitty-config-dir", str(self.config),
+                                         "--config-dir", str(rules)], capture_output=True, text=True, check=True)
         self.assertEqual(json.loads(preview.stdout)["status"], "preview")
         self.assertEqual(tree_state(self.config), before)
-        subprocess.run(base + ["install", "--config-dir", str(self.config), "--apply"], capture_output=True, check=True)
+        subprocess.run(base + ["install", "--no-launch", "--kitty-config-dir", str(self.config),
+                               "--config-dir", str(rules)], capture_output=True, check=True)
         installed_setup = self.installed / "setup.py"
         subprocess.run([shutil.which("kitty"), "+launch", str(installed_setup), "uninstall",
-                        "--config-dir", str(self.config), "--apply"], capture_output=True, check=True)
+                        "--kitty-config-dir", str(self.config), "--apply"], capture_output=True, check=True)
         self.assertEqual(tree_state(self.config), before)
 
     def test_untracked_user_file_is_retained_and_reported(self):
@@ -477,15 +524,19 @@ class InstallationTests(unittest.TestCase):
     @unittest.skipUnless(Path("/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty").exists(), "candidate portable kitty unavailable")
     def test_candidate_embedded_runtime_install_and_remove(self):
         executable = "/tmp/kittyscape-tools/kitty-0.38.1/bin/kitty"
-        for action, extra in (("install", []), ("install", ["--apply"]), ("rollback", ["--apply"])):
+        rules = self.root / "user rules"
+        for action, extra in (("install", ["--preview", "--no-launch"]), ("install", ["--no-launch"]),
+                              ("rollback", ["--apply"])):
             result = subprocess.run([executable, "+launch", str(self.source / "setup.py"), action,
-                                     "--config-dir", str(self.config)] + extra, capture_output=True, text=True)
+                                     "--kitty-config-dir", str(self.config), "--config-dir", str(rules)] + extra,
+                                    capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertEqual(self.conf.read_bytes(), self.original)
 
     def test_system_python_has_actionable_cli_diagnostic(self):
         result = subprocess.run([shutil.which("python"), str(self.source / "setup.py"), "install",
-                                 "--config-dir", str(self.config), "--apply"], capture_output=True, text=True)
+                                 "--kitty-config-dir", str(self.config), "--config-dir", str(self.config), "--apply"],
+                                capture_output=True, text=True)
         self.assertEqual(result.returncode, 1)
         self.assertIn("kitty +launch", result.stdout)
         self.assertEqual(self.conf.read_bytes(), self.original)
@@ -494,7 +545,7 @@ class InstallationTests(unittest.TestCase):
     def test_missing_kitty_capability_prevents_installation(self):
         code = (
             "import runpy,sys; import kitty.fast_data_types as f; del f.add_timer; "
-            "runpy.run_path(sys.argv[1])['main']([sys.argv[1], 'install', '--config-dir', sys.argv[2], '--apply'])"
+            "runpy.run_path(sys.argv[1])['main']([sys.argv[1], 'install', '--kitty-config-dir', sys.argv[2], '--apply'])"
         )
         before = tree_state(self.config)
         result = subprocess.run([shutil.which("kitty"), "+runpy", code, str(self.source / "setup.py"), str(self.config)],

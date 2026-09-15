@@ -1,7 +1,10 @@
 # Configuration
 
-Kittyscape reads `kittyscape.json` from kitty’s active configuration directory. Rules are shared by every
-qualified shell in that kitty instance. The file is data only; directory visits never execute project hooks.
+Kittyscape reads `kittyscape.json` from its own configuration directory:
+`~/.config/kittyscape/kittyscape.json` by default. Rules are shared by every
+qualified shell in that kitty instance. The file is data only; directory visits
+never execute project hooks. Use `install --config-dir /path/to/kittyscape` to
+choose another rules directory without moving kitty’s own configuration.
 
 ## Match a directory
 
