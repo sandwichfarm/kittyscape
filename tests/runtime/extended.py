@@ -58,6 +58,27 @@ def handle_result(args, answer, target_window_id, boss):
         patch_colors({"tab_bar_background": 0x66ccff}, configured=False, windows=(window,))
         after = {tm.os_window_id: dict(tm.tab_bar.current_colors) for tm in boss.all_tab_managers}
         return json.dumps({"tab_bars": len(after), "tab_changed": before != after})
+    elif name == "profile-inspect":
+        from kitty.fast_data_types import get_options, os_window_font_size
+        opts = get_options()
+        windows = {}
+        for candidate in boss.window_id_map.values():
+            windows[str(candidate.id)] = {
+                "os": candidate.os_window_id,
+                "padding": {edge: getattr(candidate.padding, edge) for edge in ("left", "top", "right", "bottom")},
+                "margin": {edge: getattr(candidate.margin, edge) for edge in ("left", "top", "right", "bottom")},
+                "foreground": int(candidate.screen.color_profile.default_fg),
+            }
+        return json.dumps({
+            "fonts": {str(os_id): os_window_font_size(os_id) for os_id in boss.os_window_map},
+            "configured_padding": tuple(opts.window_padding_width),
+            "configured_margin": tuple(opts.window_margin_width),
+            "foreground": int(opts.foreground),
+            "windows": windows,
+            "status": boss._kittyscape.status(),
+        })
+    elif name == "font":
+        boss._change_font_size({window.os_window_id: float(args[2])})
     from kitty.colors import theme_colors
     state = boss._kittyscape.windows.get(window.os_window_id)
     baseline = state.baseline if state else None
@@ -90,6 +111,15 @@ class ExtendedSession(Session):
     def send(self, text, pane=1):
         # Remote send-text itself decodes Python escapes before Readline sees text.
         self.rc("send-text", "--match", f"id:{pane}", text.replace("\\", "\\\\") + "\r")
+
+    def focus_os(self, pane):
+        if self.args.backend == "x11":
+            self.rc("focus-window", "--match", f"id:{pane}")
+            return
+        client = self._wayland_client(pane)
+        selector = json.dumps("address:" + client["address"])
+        command = f"hl.dsp.focus({{window={selector}}})"
+        subprocess.run(["hyprctl", "dispatch", command], capture_output=True, check=True)
 
     def change_rules(self, config):
         revision = self.status()["revision"]
@@ -304,6 +334,137 @@ def theme_local_scope(session):
     session.record("T16-theme-local-scope", observed)
 
 
+def directory_profiles(session):
+    """Prove scoped ownership and focused-OS process arbitration in one process."""
+    animated = session.root / "profile-animated.gif"
+    subprocess.run([
+        "/usr/bin/magick", "-size", "1920x1080", "xc:#96461e", "-delay", "12",
+        "-size", "1920x1080", "xc:#237046", "-delay", "12", "-loop", "0", str(animated),
+    ], check=True)
+    first_overlay = session.root / "profile-one.conf"
+    second_overlay = session.root / "profile-two.conf"
+    first_overlay.write_text(
+        "font_size 18\nwindow_padding_width 9\nwindow_margin_width 7\n",
+    )
+    second_overlay.write_text("font_size 20\nwindow_padding_width 11\n")
+    process_child = session.dirs["B"] / "process-child"
+    process_child.mkdir()
+    config = {
+        "version": 1,
+        "profiles": {
+            "scoped": {"mode": "scoped", "font_size": 14, "padding": 6, "margin": 4},
+            "process_one": {"mode": "process", "config": first_overlay.name},
+            "process_two": {"mode": "process", "config": second_overlay.name},
+        },
+        "rules": [
+            {"directory": str(session.dirs["A"]), "image": str(animated), "profile": "scoped"},
+            {"directory": str(session.dirs["nested"]), "image": str(animated), "profile": "process_one"},
+            {"directory": str(session.dirs["B"]), "image": str(session.images["B"]), "profile": "process_one"},
+            {"directory": str(process_child), "image": str(session.images["B"]), "profile": "process_two"},
+        ],
+    }
+    session.change_rules(config)
+    scoped, process = _single_window_profiles(session, process_child)
+    released, final = _two_window_profiles(session, process_child)
+    session.record("T17-directory-profiles", {"scoped": scoped, "process": process, "released": released, "final": final})
+
+
+def _single_window_profiles(session, process_child):
+    session.cd(session.dirs["A"])
+    session.settle(session.dirs["A"])
+    session.wait(lambda: state(session)["profile_mode"] == "scoped" and state(session)["playback"] == "playing", "scoped animation")
+    scoped = session.native("profile-inspect")
+    assert scoped["fonts"]["1"] == 14, scoped
+    assert set(scoped["windows"]["1"]["padding"].values()) == {6}, scoped
+    assert set(scoped["windows"]["1"]["margin"].values()) == {4}, scoped
+    split = int(session.rc("launch", "--type=window", "--cwd=" + str(session.home), str(session.args.shell)))
+    session.wait(
+        lambda: state(session)["pane"] == split and state(session)["profile_mode"] is None
+        and not session.status()["pending_jobs"] and not session.status()["pending_events"],
+        "split selection",
+    )
+    restored = session.native("profile-inspect")
+    assert restored["fonts"]["1"] == 11, restored
+    assert set(restored["windows"]["1"]["padding"].values()) == {None}, restored
+    session.rc("close-window", "--match", f"id:{split}")
+    session.focus_os(1)
+    session.wait(lambda: state(session)["pane"] == 1 and state(session)["profile_mode"] == "scoped", "scoped pane restored")
+    session.cd(session.dirs["nested"])
+    session.settle(session.dirs["nested"])
+    session.wait(lambda: session.status()["process_profile_active"], "scoped to process")
+    process = session.native("profile-inspect")
+    assert process["fonts"]["1"] == 18, process
+    assert process["configured_padding"] == [9, 9, 9, 9], process
+    assert process["configured_margin"] == [7, 7, 7, 7], process
+    assert state(session)["playback"] == "playing", session.status()
+    transitions = session.status()["profile_transitions"]
+    session.send(":")
+    time.sleep(0.2)
+    assert session.status()["profile_transitions"] == transitions, session.status()
+    session.send("printf '\\033]10;#123456\\007'")
+    session.wait(
+        lambda: session.native("profile-inspect")["windows"]["1"]["foreground"] == 0x123456,
+        "external OSC color",
+    )
+    session.native("font", 17)
+    session.wait(lambda: session.native("profile-inspect")["fonts"]["1"] == 17, "external font size")
+    session.cd(process_child)
+    session.settle(process_child)
+    session.wait(lambda: session.native("profile-inspect")["fonts"]["1"] == 20, "direct process transition")
+    session.cd(session.home)
+    session.settle(session.home)
+    session.wait(lambda: not session.status()["process_profile_active"], "direct process release")
+    after_direct = session.native("profile-inspect")
+    assert after_direct["fonts"]["1"] == 17, after_direct
+    assert after_direct["windows"]["1"]["foreground"] == 0x123456, after_direct
+    session.cd(session.dirs["nested"])
+    session.settle(session.dirs["nested"])
+    session.wait(lambda: session.status()["process_profile_active"], "process reactivation")
+    return scoped, process
+
+
+def _two_window_profiles(session, process_child):
+    other = int(session.rc("launch", "--type=os-window", "--cwd=" + str(session.dirs["A"]), str(session.args.shell)))
+    session.wait(lambda: len(session.status()["windows"]) == 2, "profile second OS window")
+    session.wait(
+        lambda: not session.status()["process_profile_active"]
+        and not session.status()["pending_jobs"] and not session.status()["pending_events"],
+        "focused scoped OS releases process",
+    )
+    released = session.native("profile-inspect")
+    assert released["fonts"] == {"1": 17, "2": 14}, released
+    assert released["windows"]["1"]["foreground"] == 0x123456, released
+    session.cd(session.dirs["nested"], pane=other)
+    session.settle(session.dirs["nested"], pane=other)
+    session.wait(
+        lambda: session.status()["process_profile_active"] and session.status()["process_profile_controller"] == 2
+        and not session.status()["pending_jobs"] and not session.status()["pending_events"],
+        "second OS controls process",
+    )
+    assert session.native("profile-inspect")["fonts"] == {"1": 18, "2": 18}, session.native("profile-inspect")
+    transitions = session.status()["profile_transitions"]
+    session.send(":", pane=1)
+    time.sleep(0.2)
+    assert session.status()["profile_transitions"] == transitions, session.status()
+    session.cd(session.dirs["B"], pane=other)
+    session.settle(session.dirs["B"], pane=other)
+    session.wait(lambda: session.native("profile-inspect")["fonts"]["2"] == 18, "first process profile")
+    session.cd(process_child, pane=other)
+    session.settle(process_child, pane=other)
+    session.wait(lambda: session.native("profile-inspect")["fonts"]["2"] == 20, "base-derived process transition")
+    session.cd(session.home, pane=other)
+    session.settle(session.home, pane=other)
+    session.wait(lambda: not session.status()["process_profile_active"], "process profile release")
+    session.cd(session.dirs["A"], pane=other)
+    session.settle(session.dirs["A"], pane=other)
+    session.cd(session.home, pane=1)
+    session.settle(session.home, pane=1)
+    final = session.native("profile-inspect")
+    assert final["fonts"] == {"1": 17, "2": 14}, final
+    session.rc("close-window", "--match", f"id:{other}")
+    return released, final
+
+
 def automatic_theme(session):
     baseline(session)
     session.cd(session.dirs["A"])
@@ -461,6 +622,7 @@ CASES = {
     "glob-index": (glob_index, "list", (), False),
     "global-options": (global_options, "list", (), False),
     "theme-local-scope": (theme_local_scope, "single", (), False),
+    "directory-profiles": (directory_profiles, "single", (), False),
     "automatic-theme": (automatic_theme, "single", (), True),
     "disabled-integration": (disabled_reports, "single", ("shell_integration disabled",), False),
     "disabled-cwd": (disabled_reports, "single", ("shell_integration no-cwd",), False),

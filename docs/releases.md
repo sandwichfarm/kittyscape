@@ -1,5 +1,10 @@
 # Release notes
 
+## 0.2.0.dev0 · local development build
+
+Adds bounded JPEG/GIF backgrounds and directory-selected scoped or whole-process kitty settings profiles. Linux
+profile qualification covers kitty 0.38.1 and 0.48.2, X11 and Wayland, and Bash/Zsh/Fish. macOS remains open.
+
 ## 0.1.0.dev1 · local development build
 
 The local archive and website are being qualified against the product requirements. No package or website

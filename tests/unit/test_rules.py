@@ -10,7 +10,7 @@ import unittest
 from pathlib import Path
 
 from kittyscape.config import Config
-from kittyscape.rules import AnimationOptions, BackgroundOptions, Rule, normalize_directory, resolve
+from kittyscape.rules import AnimationOptions, BackgroundOptions, Profile, Rule, normalize_directory, resolve
 
 
 class RulesTests(unittest.TestCase):
@@ -62,6 +62,15 @@ class RulesTests(unittest.TestCase):
         self.assertTrue(fallback.fallback)
         self.assertEqual(fallback.image, "fallback.png")
         self.assertEqual(fallback.background, config.background)
+
+    def test_deepest_rule_selects_only_its_profile(self):
+        profiles = {"parent": Profile("scoped", font_size=12), "child": Profile("process", config="child.conf")}
+        config = Config(profiles=profiles, rules=(
+            Rule(str(self.app), "app.png", profile="parent"),
+            Rule(str(self.child), "child.png", profile="child"),
+        ))
+        self.assertIs(resolve(config, str(self.app)).profile, profiles["parent"])
+        self.assertIs(resolve(config, str(self.deep)).profile, profiles["child"])
 
     def test_symlink_reports_use_the_physical_directory(self):
         link = self.root / "linked app"

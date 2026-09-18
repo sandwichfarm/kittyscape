@@ -25,13 +25,13 @@ original background, unless you configure a fallback image.
 - **Nested rules:** the deepest matching physical directory wins, including paths with symlinks, spaces, and Unicode.
 - **Independent windows:** each OS window follows its own active pane.
 - **Animated backgrounds:** GIF playback with configurable timing and limits; static PNGs need no playback timer.
+- **Settings profiles:** rules can select scoped font/spacing or allowlisted whole-process kitty settings.
 - **Local operation:** no network image service or directory history; directory tracking uses kitty’s native reports.
 - **Explicit controls:** inspect status, reload rules, pause, resume, or restore from the keyboard.
 
-**Experimental development build: `0.2.0.dev0`.** Linux qualification is in progress;
+**Experimental development build: `0.2.0.dev0`.** Linux qualification evidence is recorded locally;
 macOS arm64 remains an open release gate. The [compatibility matrix](docs/reference/compatibility.md)
-contains baseline evidence and limitations; its `0.1.0.dev1` results do not qualify
-this build or its new media formats.
+contains exact test scope, evidence, and limitations.
 
 ## Quick start
 

@@ -1,6 +1,6 @@
 # Compatibility
 
-**0.1.0.dev1 is an experimental local build.** MacOS arm64 qualification remains
+**0.2.0.dev0 is an experimental local build.** MacOS arm64 qualification remains
 open, as requested. Capability checks and a version floor do not establish
 support for every intervening release.
 
@@ -52,8 +52,13 @@ older Debian binary identities are recorded with the release evidence.
 - Original bytes are retained for the older kitty baseline. Its ordinary config
   reload keeps the previously displayed image, matching that kitty runtime's
   behavior, while rendering settings follow the reload.
-- Rule images are static local PNGs within the documented
-  [limits](./configuration.md). Additional formats are not qualified.
+- Rule images are local PNG, JPEG, or GIF files within the documented
+  [limits](./configuration.md). JPEG and static/animated GIF inputs use the bounded conversion path.
+- Directory profiles were exercised with two OS windows and multiple panes on kitty 0.38.1 and 0.48.2 under isolated
+  X11 and Wayland compositors with Bash, Zsh, and Fish. Scoped font size is OS-window state; padding and margin are pane
+  state. Process profiles affect every OS window and use the focused OS window's active pane as controller.
+- Process overlays accept only the documented settings and derive each transition from captured base paths and startup
+  overrides. They do not change an existing shell's environment or command, even when kitty reload succeeds.
 
 These outcomes are specific to the recorded fixtures. Direct C background
 writers, unknown preexisting image state, and other unobserved profiles require

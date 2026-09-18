@@ -1,7 +1,8 @@
 # Kitty settings and restoration
 
-Kittyscape selects an image. Kitty remains responsible for layout, interpolation, tint, gap tint, opacity,
-and theme colors. Changing any of those settings is a separate kitty configuration action.
+Kittyscape selects an image and may select one central settings profile. Scoped profiles support OS-window font size
+and active-pane padding/margin. Process profiles use kitty's native configuration loader for a strict allowlist and
+affect the complete kitty process. See the [configuration reference](../reference/configuration.md#directory-profiles).
 
 ## One image per OS window
 
@@ -42,6 +43,11 @@ baseline information. Such profiles are qualified separately; see [compatibility
 
 Do not let two background tools contend over the same OS window. If another writer replaces an image,
 Kittyscape must relinquish ownership and avoid overwriting that change during restoration.
+
+Scoped settings use live ownership checks. If another tool changes an owned font size, padding, or margin,
+Kittyscape does not restore over that value. Process profiles suspend scoped writes across all OS windows. The focused
+OS window controls process selection; other windows retain their desired scoped profiles until the process profile ends.
+Process reloads never rewrite the daily `kitty.conf` and never inherit unspecified values from the prior overlay.
 
 Use **Ctrl+Shift+F7** to restore owned backgrounds and pause before manual changes. Review status with
 **Ctrl+Shift+F6**, then explicitly resume with **Ctrl+Shift+F8** only when the current baseline is known.

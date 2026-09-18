@@ -7,9 +7,10 @@ import math
 import os
 import re
 import stat
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from pathlib import Path
 
-from .rules import AnimationOptions, BackgroundOptions, Rule, _comparison_key, normalize_directory
+from .rules import AnimationOptions, BackgroundOptions, Profile, Rule, _comparison_key, normalize_directory
 
 MAX_CONFIG_BYTES = 1024 * 1024
 MAX_RULES = 10000
@@ -30,6 +31,7 @@ class Config:
     validate_bytes: bool = True
     background: BackgroundOptions = BackgroundOptions()
     animation: AnimationOptions = AnimationOptions(enabled=True, fps_limit=24, speed=1.0, loop="source")
+    profiles: dict[str, Profile] = field(default_factory=dict)
 
 
 def _read(path: str | os.PathLike[str]) -> bytes:
@@ -178,9 +180,75 @@ def _animation(value: object, location: str, *, defaults: bool) -> AnimationOpti
     return AnimationOptions(enabled=enabled, fps_limit=fps, speed=speed, loop=loop)
 
 
-def _rule(value: object, index: int, config_directory: str) -> Rule:
+def _profiles(value: object, directory: str) -> dict[str, Profile]:
+    if value is None:
+        return {}
+    if not isinstance(value, dict):
+        raise ConfigError("profiles: expected an object")
+    profiles = {}
+    for name, raw in value.items():
+        if type(name) is not str or not name or not name.replace("_", "").isalnum():
+            raise ConfigError("profiles: invalid profile name")
+        item = _fields(raw, {"mode", "font_size", "padding", "margin", "config"}, f"profiles.{name}")
+        mode = item.get("mode")
+        profiles[name] = _profile(mode, item, name, directory)
+    return profiles
+
+
+def _profile(mode: object, item: dict[str, object], name: str, directory: str) -> Profile:
+    if mode == "scoped":
+        return _scoped_profile(item, name)
+    if mode == "process":
+        return _process_profile(item, name, directory)
+    raise ConfigError(f"profiles.{name}.mode: expected scoped or process")
+
+
+def _scoped_profile(item: dict[str, object], name: str) -> Profile:
+    if "config" in item or not ({"font_size", "padding", "margin"} & item.keys()):
+        raise ConfigError(f"profiles.{name}: scoped profile requires settings only")
+    return Profile(
+        "scoped", _profile_font(item.get("font_size"), name),
+        _profile_spacing(item.get("padding"), name, "padding"),
+        _profile_spacing(item.get("margin"), name, "margin"),
+        name=name,
+    )
+
+
+def _profile_font(value: object, name: str) -> float | None:
+    if value is None:
+        return None
+    if type(value) in (int, float) and 1 <= value <= 96:
+        return float(value)
+    raise ConfigError(f"profiles.{name}.font_size: expected number from 1 through 96")
+
+
+def _profile_spacing(value: object, name: str, field: str) -> float | None:
+    if value is None:
+        return None
+    if type(value) in (int, float) and math.isfinite(value) and 0 <= value <= 100:
+        return float(value)
+    raise ConfigError(f"profiles.{name}.{field}: expected number from 0 through 100")
+
+
+def _process_profile(item: dict[str, object], name: str, directory: str) -> Profile:
+    if set(item) != {"mode", "config"}:
+        raise ConfigError(f"profiles.{name}: process profile requires config only")
+    path = _path_string(item.get("config"), f"profiles.{name}.config")
+    if os.path.isabs(path) or ".." in Path(path).parts:
+        raise ConfigError(f"profiles.{name}.config: expected relative local path")
+    from .profiles import read_process_overlay
+
+    selected = os.path.join(directory, path)
+    try:
+        commands = read_process_overlay(selected, directory)
+    except ConfigError as error:
+        raise ConfigError(f"profiles.{name}.config: {error}") from None
+    return Profile("process", config=selected, commands=commands, name=name)
+
+
+def _rule(value: object, index: int, config_directory: str, profiles: dict[str, Profile]) -> Rule:
     location = f"rules[{index}]"
-    data = _fields(value, {"directory", "image", "background", "animation"}, location)
+    data = _fields(value, {"directory", "image", "background", "animation", "profile"}, location)
     directory = _path_string(data.get("directory"), f"{location}.directory")
     try:
         directory = normalize_directory(directory)
@@ -190,10 +258,13 @@ def _rule(value: object, index: int, config_directory: str) -> Rule:
     background = _background(data.get("background"), f"{location}.background")
     if any(value is not None for value in (background.linear, background.tint, background.tint_gaps)):
         raise ConfigError(f"{location}.background: field requires process-wide top-level scope")
-    return Rule(directory, image, background, _animation(data.get("animation"), f"{location}.animation", defaults=False))
+    profile = data.get("profile")
+    if profile is not None and (type(profile) is not str or profile not in profiles):
+        raise ConfigError(f"{location}.profile: unknown profile")
+    return Rule(directory, image, background, _animation(data.get("animation"), f"{location}.animation", defaults=False), profile)
 
 
-def _rules(value: object, config_directory: str) -> tuple[Rule, ...]:
+def _rules(value: object, config_directory: str, profiles: dict[str, Profile]) -> tuple[Rule, ...]:
     if not isinstance(value, list):
         raise ConfigError("rules: expected an array")
     if len(value) > MAX_RULES:
@@ -201,7 +272,7 @@ def _rules(value: object, config_directory: str) -> tuple[Rule, ...]:
     rules = []
     seen: dict[str, list[str]] = {}
     for index, item in enumerate(value):
-        rule = _rule(item, index, config_directory)
+        rule = _rule(item, index, config_directory, profiles)
         aliases = seen.setdefault(_comparison_key(rule.directory), [])
         try:
             duplicate = any(previous == rule.directory or os.path.samefile(previous, rule.directory) for previous in aliases)
@@ -233,7 +304,7 @@ def load_config(path: str | os.PathLike[str]) -> Config:
     """
     selected_path = _config_path(path)
     data = _fields(_decode(_read(selected_path)),
-                   {"version", "enabled", "rules", "fallback", "validate_bytes", "background", "animation"}, "config")
+                   {"version", "enabled", "rules", "fallback", "validate_bytes", "background", "animation", "profiles"}, "config")
     version = data.get("version")
     if type(version) is not int or version != 1:
         raise ConfigError("version: expected integer schema version 1")
@@ -241,7 +312,8 @@ def load_config(path: str | os.PathLike[str]) -> Config:
     if type(enabled) is not bool:
         raise ConfigError("enabled: expected a boolean")
     config_directory = os.path.dirname(selected_path)
-    rules = _rules(data.get("rules", []), config_directory)
+    profiles = _profiles(data.get("profiles"), config_directory)
+    rules = _rules(data.get("rules", []), config_directory, profiles)
     fallback = data.get("fallback")
     fallback_image = None if fallback is None else _image(fallback, config_directory, "fallback")
     validate_bytes = data.get("validate_bytes", True)
@@ -249,4 +321,4 @@ def load_config(path: str | os.PathLike[str]) -> Config:
         raise ConfigError("validate_bytes: expected a boolean")
     return Config(version=version, enabled=enabled, rules=rules, fallback=fallback_image, validate_bytes=validate_bytes,
                   background=_supported_process_options(_background(data.get("background"), "background"), "background"),
-                  animation=_animation(data.get("animation"), "animation", defaults=True))
+                  animation=_animation(data.get("animation"), "animation", defaults=True), profiles=profiles)

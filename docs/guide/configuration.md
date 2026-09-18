@@ -29,6 +29,29 @@ not disable size, decoding, timeout, or cache limits.
 The first rule matches `Little Garden/notes`. The second wins inside `Little Garden/seedlings`.
 A root ending in `app` never matches a sibling named `application`.
 
+## Select kitty settings
+
+Add named profiles beside `rules`. One rule may select one profile. Scoped profiles change OS-window font size and
+active-pane spacing. Process profiles point to a central allowlisted kitty overlay and affect every OS window in the
+same kitty process.
+
+```json
+{
+  "version": 1,
+  "profiles": {
+    "focus": {"mode": "scoped", "font_size": 13, "padding": 8},
+    "present": {"mode": "process", "config": "profiles/present.conf"}
+  },
+  "rules": [
+    {"directory": "~/Projects/Little Garden", "image": "images/garden.png", "profile": "focus"},
+    {"directory": "~/Talks", "image": "images/slides.gif", "profile": "present"}
+  ]
+}
+```
+
+Save `present.conf` beneath this configuration directory, then run reload. Process overlays never use repository-local
+files. See [directory profiles](../reference/configuration.md#directory-profiles) for supported fields and arbitration.
+
 ## Paths and symlinks
 
 - Directory roots must exist and be absolute after expanding a leading `~/` home shortcut.

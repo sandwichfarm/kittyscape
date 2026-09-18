@@ -6,7 +6,7 @@ the existing system Python launcher only to impose OS limits before starting Ima
 
 ::: warning Experimental local artifact
 There is no public download or published package yet. The local release candidate is
-`kittyscape-0.1.0.dev1.tar.gz`. Full platform qualification remains in progress; use the
+`kittyscape-0.2.0.dev0.tar.gz`. Full platform qualification remains in progress; use the
 [compatibility matrix](../reference/compatibility.md) to see the remaining gates.
 :::
 
@@ -54,8 +54,8 @@ The [release record](/evidence/release.json) identifies the artifact, executed c
 From the directory containing the archive:
 
 ```sh
-tar -xzf kittyscape-0.1.0.dev1.tar.gz
-cd kittyscape-0.1.0.dev1
+tar -xzf kittyscape-0.2.0.dev0.tar.gz
+cd kittyscape-0.2.0.dev0
 kitty +launch ./setup.py install
 ```
 
@@ -95,8 +95,8 @@ All runtime paths below are relative to the selected kitty configuration directo
 
 | Path | Purpose |
 | --- | --- |
-| `kittyscape/0.1.0.dev1/` | Versioned runtime and setup bundle. |
-| `kittyscape/0.1.0.dev1/kittyscape/location.json` | Absolute path to the user-owned rules file. |
+| `kittyscape/0.2.0.dev0/` | Versioned runtime and setup bundle. |
+| `kittyscape/0.2.0.dev0/kittyscape/location.json` | Absolute path to the user-owned rules file. |
 | `kittyscape.conf` | Watcher entry and lifecycle key mappings. |
 | Marked block in `kitty.conf` | One include for `kittyscape.conf`. |
 | `kittyscape/kitty.conf.backup` | Original configuration snapshot for verified rollback. |
@@ -108,11 +108,11 @@ hashes before replacement or removal. It preserves later unrelated configuration
 ## Manual installation
 
 The helper is optional. For manual setup, use an empty destination, keep a backup and a written inventory of
-your changes, and copy the extracted bundle into `kittyscape/0.1.0.dev1/` beneath the selected configuration root.
+your changes, and copy the extracted bundle into `kittyscape/0.2.0.dev0/` beneath the selected configuration root.
 Do not overwrite an existing directory.
 
 Create `kittyscape/location.json` **inside the copied bundle**, with the selected absolute JSON path.
-Its full location is `kittyscape/0.1.0.dev1/kittyscape/location.json` beneath the configuration root:
+Its full location is `kittyscape/0.2.0.dev0/kittyscape/location.json` beneath the configuration root:
 
 ```json
 { "config": "/home/you/.config/kittyscape/kittyscape.json" }
@@ -122,12 +122,12 @@ Create a separate include file containing the watcher entry and whichever lifecy
 For the example directory above:
 
 ```text
-watcher /tmp/kittyscape trial/kittyscape/0.1.0.dev1/kittyscape/watcher.py
-map ctrl+shift+f6 kitten '/tmp/kittyscape trial/kittyscape/0.1.0.dev1/kittyscape/action.py' status
-map ctrl+shift+f7 kitten '/tmp/kittyscape trial/kittyscape/0.1.0.dev1/kittyscape/action.py' pause
-map ctrl+shift+f8 kitten '/tmp/kittyscape trial/kittyscape/0.1.0.dev1/kittyscape/action.py' resume
-map ctrl+shift+f9 kitten '/tmp/kittyscape trial/kittyscape/0.1.0.dev1/kittyscape/action.py' reload
-map ctrl+shift+f10 kitten '/tmp/kittyscape trial/kittyscape/0.1.0.dev1/kittyscape/action.py' restore
+watcher /tmp/kittyscape trial/kittyscape/0.2.0.dev0/kittyscape/watcher.py
+map ctrl+shift+f6 kitten '/tmp/kittyscape trial/kittyscape/0.2.0.dev0/kittyscape/action.py' status
+map ctrl+shift+f7 kitten '/tmp/kittyscape trial/kittyscape/0.2.0.dev0/kittyscape/action.py' pause
+map ctrl+shift+f8 kitten '/tmp/kittyscape trial/kittyscape/0.2.0.dev0/kittyscape/action.py' resume
+map ctrl+shift+f9 kitten '/tmp/kittyscape trial/kittyscape/0.2.0.dev0/kittyscape/action.py' reload
+map ctrl+shift+f10 kitten '/tmp/kittyscape trial/kittyscape/0.2.0.dev0/kittyscape/action.py' restore
 ```
 
 Add one `include /absolute/path/to/your/include.conf` line to the intended kitty configuration. Keep your

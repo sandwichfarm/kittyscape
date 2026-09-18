@@ -15,7 +15,7 @@ from .compat import Background, Kitty, local_directory
 from .config import Config, ConfigError, load_config
 from .images import ImageError
 from .media import Media, load_media
-from .rules import AnimationOptions, Selection, normalize_directory, resolve
+from .rules import AnimationOptions, Profile, Selection, normalize_directory, resolve
 
 
 @dataclass
@@ -38,6 +38,11 @@ class WindowState:
     playback_loops: int = 0
     playback_started: float = 0.0
     playback: str = "static"
+    profile: Profile | None = None
+    profile_ready: bool = False
+    profile_failed: tuple | None = None
+    profile_applied: tuple | None = None
+    profile_error: str = ""
 
 
 class Runtime:
@@ -56,6 +61,10 @@ class Runtime:
         self.suspended = False
         self.paused = False
         self.closed = False
+        self.process_profile: tuple | None = None
+        self.process_os = 0
+        self.profile_transitions = 0
+        self.process_restore_failed = False
         self.jobs: dict[str, tuple[Future, Any, float]] = {}
         self.waiting: dict[str, tuple[Any, Any]] = {}
         self.stalled: Future | None = None
@@ -133,6 +142,9 @@ class Runtime:
         self.reason = self.kitty.capability_error()
         for state in self.windows.values():
             state.request = ()
+            state.profile_failed = None
+            state.profile_applied = None
+        self.process_restore_failed = False
         if self.config and not self.config.enabled:
             self._restore_all()
         self._schedule_all()
@@ -211,6 +223,7 @@ class Runtime:
             return
         state, window = target
         state.pane = window.id
+        state.profile_ready = False
         if window.at_prompt:
             self._report(window)
         self._select_for_window(os_id, state, window)
@@ -285,9 +298,9 @@ class Runtime:
             fallback = config.fallback if config.fallback != selection.image else None
             image = self._fallback_image(fallback)
             if image is not None and fallback is not None:
-                selection = Selection(fallback, None, config.background, config.animation)
+                selection = Selection(fallback, None, config.background, config.animation, selection.profile)
         if image is None:
-            return _baseline_selection(baseline, issue)
+            return _baseline_selection(baseline, issue, selection.profile)
         frame = image.frames[0].image
         spec = replace(baseline, kind="override", path="kittyscape.png", data=frame.data,
                        layout=selection.background.layout or baseline.layout,
@@ -297,7 +310,7 @@ class Runtime:
             selection.background.tint, selection.background.tint_gaps, selection.background.opacity,
             selection.animation.enabled, selection.animation.fps_limit, selection.animation.speed, selection.animation.loop,
         )
-        return baseline, spec, key, False, issue, image, selection.animation
+        return baseline, spec, key, False, issue, image, selection.animation, selection.profile
 
     def _fallback_image(self, path: str | None) -> Media | None:
         if path:
@@ -317,11 +330,22 @@ class Runtime:
             state.reason = "filesystem-timeout" if isinstance(error, TimeoutError) else "baseline-or-filesystem-unavailable"
             return
         state.baseline = value[0]
+        self._accept_profile(state, value[7])
         if value[4]:
             state.reason = value[4]
         elif state.failed != value[2]:
             state.reason = request[2]
         self._display(os_id, state, value)
+
+    @staticmethod
+    def _accept_profile(state: WindowState, profile: Profile | None) -> None:
+        previous = None if state.profile is None else state.profile.identity
+        current = None if profile is None else profile.identity
+        if previous != current:
+            state.profile_failed = None
+            state.profile_error = ""
+        state.profile = profile
+        state.profile_ready = True
 
     def _current_selection(self, os_id: int, generation: int, pane: int) -> WindowState | None:
         state = self.windows.get(os_id)
@@ -333,7 +357,8 @@ class Runtime:
         return state
 
     def _display(self, os_id: int, state: WindowState, selection: tuple) -> None:
-        _, spec, key, restore, _, media, animation = selection
+        _, spec, key, restore, _, media, animation, _ = selection
+        self._reconcile_profiles()
         if state.applied == key or state.failed == key or (restore and not state.owned):
             return
         try:
@@ -350,6 +375,128 @@ class Runtime:
         state.failed = ()
         state.uploads += 1
         self._start_playback(os_id, state, (spec, media, animation))
+
+    def _reconcile_profiles(self) -> None:
+        target = self._profile_controller()
+        if target is None:
+            return
+        controller, state = target
+        desired = state.profile if state.profile and state.profile.mode == "process" else None
+        if desired is not None:
+            self._activate_process_profile(controller, state, desired)
+            return
+        if self._release_process_profile(state):
+            self._apply_ready_scoped_profiles()
+
+    def _profile_controller(self) -> tuple[int, WindowState] | None:
+        controller = self.kitty.focused_os_id()
+        if not controller:
+            self._release_orphaned_process_profile()
+            return None
+        state = self.windows.get(controller)
+        if not state or not state.profile_ready or state.paused:
+            return None
+        return controller, state
+
+    def _release_orphaned_process_profile(self) -> None:
+        if self.process_profile is None:
+            return
+        if self.process_restore_failed:
+            return
+        try:
+            self.kitty.release_process_profile()
+        except Exception:
+            self.reason = "profile-restore-failed"
+            self.process_restore_failed = True
+            return
+        self.process_profile, self.process_os = None, 0
+        self.process_restore_failed = False
+        self.profile_transitions += 1
+        self._apply_ready_scoped_profiles()
+
+    def _activate_process_profile(self, controller: int, state: WindowState, profile: Profile) -> None:
+        identity = profile.identity
+        if self._process_apply_blocked(state, identity):
+            return
+        try:
+            if self.process_profile != identity:
+                self.kitty.release_all_scoped_profiles(True)
+                for candidate in self.windows.values():
+                    candidate.profile_applied = None
+            self.kitty.apply_process_profile(profile)
+        except Exception as error:
+            state.reason = "profile-apply-failed"
+            state.profile_error = str(error)[:160] if isinstance(error, ConfigError) else "native profile apply failed"
+            state.profile_failed = identity
+            self._recover_failed_process_profile(state)
+            return
+        if self.process_profile != identity:
+            self.profile_transitions += 1
+        self.process_restore_failed = False
+        state.profile_failed = None
+        state.profile_error = ""
+        self.process_profile, self.process_os = identity, controller
+
+    def _process_apply_blocked(self, state: WindowState, identity: tuple) -> bool:
+        return self.process_restore_failed or state.profile_failed == identity
+
+    def _recover_failed_process_profile(self, state: WindowState) -> None:
+        try:
+            self.kitty.restore_process_baseline()
+        except Exception:
+            state.reason = "profile-restore-failed"
+            state.profile_error = "native profile restore failed"
+            self.process_restore_failed = True
+            return
+        self.process_profile, self.process_os = None, 0
+        self._apply_ready_scoped_profiles()
+
+    def _release_process_profile(self, state: WindowState) -> bool:
+        if self.process_profile is None:
+            return True
+        if self.process_restore_failed:
+            return False
+        try:
+            self.kitty.release_process_profile()
+        except Exception:
+            state.reason = "profile-restore-failed"
+            self.process_restore_failed = True
+            return False
+        self.process_profile, self.process_os = None, 0
+        self.process_restore_failed = False
+        self.profile_transitions += 1
+        return True
+
+    def _apply_ready_scoped_profiles(self) -> None:
+        for os_id, state in self._ready_profile_states():
+            desired = state.profile if state.profile and state.profile.mode == "scoped" else None
+            identity = () if desired is None else desired.identity + (state.pane,)
+            if state.profile_applied == identity:
+                continue
+            if state.profile_failed is not None and state.profile_failed == identity:
+                continue
+            self._apply_scoped_profile(os_id, state, desired, identity)
+
+    def _ready_profile_states(self):
+        return (
+            (os_id, state) for os_id, state in self.windows.items()
+            if state.profile_ready and not state.paused
+        )
+
+    def _apply_scoped_profile(
+        self, os_id: int, state: WindowState, desired: Profile | None, identity: tuple | None,
+    ) -> None:
+        try:
+            self.kitty.apply_scoped_profile(os_id, desired)
+        except Exception:
+            state.reason = "profile-apply-failed"
+            state.profile_error = "native scoped profile apply failed"
+            state.profile_failed = identity
+        else:
+            state.profile_applied = identity
+            state.profile_error = ""
+            if state.profile_failed == identity:
+                state.profile_failed = None
 
     def _start_playback(self, os_id: int, state: WindowState, payload: tuple[Background, Media, AnimationOptions]) -> None:
         spec, media, animation = payload
@@ -432,6 +579,20 @@ class Runtime:
     def _restore_all(self) -> None:
         for os_id, state in self.windows.items():
             self._restore(os_id, state)
+        self._restore_scoped_profiles()
+        for state in self.windows.values():
+            state.profile_applied = None
+        active_process = self.process_profile is not None
+        self.process_restore_failed = False
+        try:
+            self.kitty.release_process_profile()
+        except Exception:
+            self.reason = "profile-restore-failed"
+            self.process_restore_failed = True
+        else:
+            self.process_profile, self.process_os = None, 0
+            if active_process:
+                self.profile_transitions += 1
 
     def external(self, os_id: int, baseline: Background) -> None:
         state = self.windows.get(os_id)
@@ -439,6 +600,7 @@ class Runtime:
             self._cancel_event(state)
             self._cancel_playback(state)
             self.kitty.release_linear(os_id)
+            self.kitty.release_scoped_profile(os_id, False)
             self.waiting.pop(f"window:{os_id}", None)
             state.baseline = baseline
             state.owned = False
@@ -448,9 +610,10 @@ class Runtime:
 
     def options_changed(self, phase: str, theme_windows: tuple[int, ...] = ()) -> None:
         if phase == "before":
-            self.suspended = True
-            self._restore_all()
+            self._before_options_change()
             return
+        self.kitty.release_all_scoped_profiles(False)
+        self.kitty.adopt_process_baseline()
         for os_id, state in self.windows.items():
             if os_id in theme_windows:
                 state.baseline = self.kitty.inherited()
@@ -466,6 +629,31 @@ class Runtime:
             state.request = state.applied = ()
         self.suspended = False
         self._schedule_all()
+
+    def _before_options_change(self) -> None:
+        self.suspended = True
+        for os_id, state in self.windows.items():
+            self._restore(os_id, state)
+        self._restore_scoped_profiles()
+        for state in self.windows.values():
+            state.profile_applied = None
+        active_process = self.process_profile is not None
+        self.kitty.abandon_process_profile()
+        self.process_profile, self.process_os = None, 0
+        if active_process:
+            self.profile_transitions += 1
+
+    def _restore_scoped_profiles(self) -> bool:
+        try:
+            self.kitty.release_all_scoped_profiles(True)
+        except Exception:
+            self.reason = "profile-restore-failed"
+            for state in self.windows.values():
+                if state.profile_applied is not None:
+                    state.reason = "profile-restore-failed"
+                    state.profile_error = "native scoped profile restore failed"
+            return False
+        return True
 
     def action(self, name: str) -> dict:
         if name == "reload":
@@ -489,7 +677,7 @@ class Runtime:
         self._restore_all()
         for state in self.windows.values():
             state.paused = True
-            if state.reason != "restore-failed":
+            if state.reason not in ("restore-failed", "profile-restore-failed"):
                 state.reason = "paused"
 
     def status(self) -> dict:
@@ -499,12 +687,20 @@ class Runtime:
             "reason": self.reason, "detail": self.detail,
             "pending_jobs": len(self.jobs) + len(self.waiting) + int(stalled), "filesystem_stalled": stalled,
             "modern_background_api": self.kitty.modern,
+            "process_profile_active": self.process_profile is not None,
+            "process_profile_controller": self.process_os,
+            "profile_transitions": self.profile_transitions,
+            "profile_restore_failed": self.process_restore_failed,
             "pending_events": sum(bool(state.timer) for state in self.windows.values()),
             "validate_bytes": self.config.validate_bytes if self.config else True,
             "windows": {
                 str(os_id): {key: getattr(state, key) for key in (
                     "pane", "owned", "paused", "reason", "uploads", "playback", "playback_frame", "playback_loops",
-                )}
+                )} | {
+                    "profile": state.profile.name if state.profile_ready and state.profile else None,
+                    "profile_mode": state.profile.mode if state.profile_ready and state.profile else None,
+                    "profile_error": state.profile_error,
+                }
                 for os_id, state in self.windows.items()
             },
         }
@@ -524,9 +720,11 @@ class Runtime:
                     self.kitty.remove_timer(state.timer)
                 self._cancel_playback(state)
                 self.kitty.release_linear(os_id)
+                self.kitty.release_scoped_profile(os_id, False)
                 self.kitty.overrides.pop(os_id, None)
                 self.waiting.pop(f"window:{os_id}", None)
         self._schedule_all()
+        self._reconcile_profiles()
 
     def close(self) -> None:
         self.closed = True
@@ -538,6 +736,11 @@ class Runtime:
                 self.kitty.remove_timer(state.timer)
             self.kitty.release_linear(os_id)
             self._cancel_playback(state)
+        self._restore_scoped_profiles()
+        try:
+            self.kitty.release_process_profile()
+        except Exception:
+            pass
         self.pool.shutdown(wait=False, cancel_futures=True)
 
 
@@ -559,9 +762,9 @@ def _usable_directory(directory: str | None) -> tuple[str | None, str]:
     return directory, ""
 
 
-def _baseline_selection(baseline: Background, issue: str) -> tuple:
+def _baseline_selection(baseline: Background, issue: str, profile: Profile | None = None) -> tuple:
     digest = hashlib.sha256(baseline.data).hexdigest() if baseline.data else ""
-    return baseline, baseline, ("baseline", baseline.path, baseline.index, digest), True, issue, Media((), "png", 1), AnimationOptions()
+    return baseline, baseline, ("baseline", baseline.path, baseline.index, digest), True, issue, Media((), "png", 1), AnimationOptions(), profile
 
 
 def _loop_complete(media: Media, animation: AnimationOptions, completed: int) -> bool:

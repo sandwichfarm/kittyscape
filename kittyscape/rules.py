@@ -45,6 +45,23 @@ class AnimationOptions:
 
 
 @dataclass(frozen=True)
+class Profile:
+    """One centrally defined profile with an explicit runtime mode."""
+
+    mode: str
+    font_size: float | None = None
+    padding: float | None = None
+    margin: float | None = None
+    config: str | None = None
+    commands: tuple[str, ...] = ()
+    name: str = ""
+
+    @property
+    def identity(self) -> tuple:
+        return self.name, self.mode, self.font_size, self.padding, self.margin, self.commands
+
+
+@dataclass(frozen=True)
 class Rule:
     """An absolute normalized directory root and its resolved local image path."""
 
@@ -52,6 +69,7 @@ class Rule:
     image: str
     background: BackgroundOptions = BackgroundOptions()
     animation: AnimationOptions = AnimationOptions()
+    profile: str | None = None
 
 
 @dataclass(frozen=True)
@@ -62,6 +80,7 @@ class Selection:
     rule: Rule | None
     background: BackgroundOptions
     animation: AnimationOptions
+    profile: Profile | None = None
 
     @property
     def fallback(self) -> bool:
@@ -136,4 +155,5 @@ def resolve(config: Config, cwd: str | None) -> Selection | None:
         rule=selected,
         background=config.background if selected is None else config.background.overlay(selected.background),
         animation=config.animation if selected is None else config.animation.overlay(selected.animation),
+        profile=None if selected is None or selected.profile is None else config.profiles[selected.profile],
     )

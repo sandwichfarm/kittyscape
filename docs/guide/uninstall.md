@@ -28,7 +28,7 @@ kitty +launch ./setup.py uninstall --kitty-config-dir ~/.config/kitty --apply
 ```
 
 Use the same kitty configuration directory chosen during installation. You can also run the installed helper,
-for example `kitty +launch '/tmp/kittyscape trial/kittyscape/0.1.0.dev1/setup.py' uninstall
+for example `kitty +launch '/tmp/kittyscape trial/kittyscape/0.2.0.dev0/setup.py' uninstall
 --kitty-config-dir ~/.config/kitty --apply` as one command.
 
 Review the preview’s owned-file list. Uninstall removes the exact marked include block while preserving

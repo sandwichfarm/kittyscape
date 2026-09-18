@@ -1,38 +1,20 @@
 {
-  "version": "0.1.0.dev1",
+  "version": "0.2.0.dev0",
   "status": "local-qualified-macos-open",
   "artifacts": [
     {
-      "name": "kittyscape-0.1.0.dev1.manifest.json",
-      "sha256": "ba6f8cea33626d40110f06a91de380cad6f9dd7a4bdfd27fb047f4588364ba0a",
-      "bytes": 11844
+      "name": "kittyscape-0.2.0.dev0.manifest.json",
+      "sha256": "3c460776049cc82c6fd7755ee2c76218a09b62b25cebee0485a692d77d8a94ca",
+      "bytes": 13625
     },
     {
-      "name": "kittyscape-0.1.0.dev1.tar.gz",
-      "sha256": "4d304c7c23dc343addd42500a05ca7c7607b3b5641ff60bae9324b99eb3a251a",
-      "bytes": 141443
-    },
-    {
-      "name": "kittyscape-evidence-0.1.0.dev1.tar.gz",
-      "sha256": "9d79631989f1a01b24793088d5ae66a0dfc89da7ee091058804bb90116597e07",
-      "bytes": 48762238
-    },
-    {
-      "name": "kittyscape-site-root-0.1.0.dev1.zip",
-      "sha256": "97a6fec1e54c34f9d6dd69dcca85706b23856a32c3763f3b12989baaf7a1e158",
-      "bytes": 26462441
-    },
-    {
-      "name": "kittyscape-site-subpath-0.1.0.dev1.zip",
-      "sha256": "63e6e3a2394feac794fedd8230dedd48de5840ed57fae1da39ae2ca117a2ae32",
-      "bytes": 26506947
+      "name": "kittyscape-0.2.0.dev0.tar.gz",
+      "sha256": "50995d8613e75d0d4535a3ee3d6808768597a410802f6f60ee4e57e16a579fca",
+      "bytes": 170216
     }
   ],
-  "website_mounts": {
-    "kittyscape-site-root-0.1.0.dev1.zip": "/",
-    "kittyscape-site-subpath-0.1.0.dev1.zip": "/kittyscape/"
-  },
-  "qualification_report": "../evidence/4d304c7c23dc/REPORT.md",
+  "website_mounts": {},
+  "qualification_report": "../.omx/plans/profiles/evidence/RECEIPTS.md",
   "macos_arm64": "open",
   "publication": "not performed"
 }

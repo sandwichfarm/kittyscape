@@ -38,8 +38,8 @@ For an X11 display and framebuffer you have already reserved and started:
 
 ```sh
 python tests/runtime/installed.py \
-  --archive /path/to/kittyscape-0.1.0.dev1.tar.gz \
-  --bundle /path/to/extracted/kittyscape-0.1.0.dev1 \
+  --archive /path/to/kittyscape-0.2.0.dev0.tar.gz \
+  --bundle /path/to/extracted/kittyscape-0.2.0.dev0 \
   --kitty /path/to/kitty \
   --shell /path/to/bash \
   --backend x11 \
@@ -74,7 +74,7 @@ inside versioned directories so kitty can identify the native shell integration.
 
 ```sh
 python scripts/qualify_release.py \
-  /path/to/kittyscape-0.1.0.dev1.tar.gz \
+  /path/to/kittyscape-0.2.0.dev0.tar.gz \
   --toolchain /path/to/your/toolchain.json \
   --output /tmp/kittyscape-release-evidence
 ```

@@ -158,6 +158,29 @@ class ConfigTests(unittest.TestCase):
                                                    "background": {"tint": 0.2}}]), "rules[0].background")
         self.assert_invalid(self.document(background={"tint": 0.2}), "background")
 
+    def test_central_profiles_require_one_explicit_mode(self):
+        (self.config_dir / "profiles").mkdir()
+        (self.config_dir / "profiles/talk.conf").write_text("font_size 16\n", encoding="utf-8")
+        config = load_config(self.write(self.document(
+            profiles={
+                "focus": {"mode": "scoped", "font_size": 13, "padding": 8},
+                "talk": {"mode": "process", "config": "profiles/talk.conf"},
+            },
+            rules=[{"directory": str(self.project), "image": "cat.png", "profile": "focus"}],
+        )))
+        self.assertEqual(config.profiles["focus"].font_size, 13.0)
+        self.assertEqual(config.profiles["talk"].config, str(self.config_dir / "profiles/talk.conf"))
+        self.assertEqual(config.profiles["talk"].commands, ("font_size 16",))
+        self.assertEqual(config.rules[0].profile, "focus")
+        for profiles, location in (
+            ({"bad": {"mode": "scoped", "config": "x.conf"}}, "profiles.bad"),
+            ({"bad": {"mode": "process", "config": "../x.conf"}}, "profiles.bad.config"),
+        ):
+            with self.subTest(profiles=profiles):
+                self.assert_invalid(self.document(profiles=profiles), location)
+        self.assert_invalid(self.document(rules=[{"directory": str(self.project), "image": "cat.png", "profile": "missing"}]),
+                            "rules[0].profile")
+
     def test_top_level_and_rules_require_correct_container_types(self):
         for value in (None, [], "config", 1, True):
             self.assert_invalid(value, "config")

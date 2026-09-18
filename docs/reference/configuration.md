@@ -15,6 +15,7 @@ It is user-owned data. No visited repository is searched for configuration.
 | `validate_bytes` | Boolean | `true` | Run Kittyscape's semantic PNG validator. `false` keeps all resource and file-integrity limits. |
 | `background` | Object | Omitted | Requested layout and dynamic per-window opacity. Top-level `linear` is process-wide; tint fields are rejected pending a safe native scope. |
 | `animation` | Object | enabled, 24 FPS, source loop | GIF enablement, speed, FPS ceiling, and loop policy. |
+| `profiles` | Object | `{}` | Named scoped or whole-process settings profiles. |
 
 Unknown fields, repeated JSON fields, unsupported versions, wrong types, and duplicate normalized roots are
 validation errors. The UTF-8 JSON file must be a regular file at most 1 MiB, with at most 10,000 rules.
@@ -26,6 +27,44 @@ Invalid reloads retain the last valid configuration.
 | --- | --- | --- |
 | `directory` | String | Existing absolute directory root, or a path beginning with the user’s `~/` home shortcut. |
 | `image` | String | Local PNG, JPEG, or GIF path; relative values resolve beside the configuration file. |
+| `profile` | String | Optional name from top-level `profiles`. |
+
+## Directory profiles
+
+Each profile has exactly one mode. A rule selects one profile name. Deepest rule wins; parent profiles do not accumulate.
+
+```json
+{
+  "version": 1,
+  "profiles": {
+    "focus": {"mode": "scoped", "font_size": 13, "padding": 8},
+    "talk": {"mode": "process", "config": "profiles/talk.conf"}
+  },
+  "rules": [
+    {"directory": "~/Work", "image": "work.jpg", "profile": "focus"},
+    {"directory": "~/Talk", "image": "talk.gif", "profile": "talk"}
+  ]
+}
+```
+
+Scoped font size affects one kitty OS window. Padding and margin affect only the active pane. Kittyscape snapshots each
+live value before its first write and restores it only while the current value still equals Kittyscape's last write.
+An external font or spacing write therefore wins. Changing the active pane restores owned pane spacing before applying
+the new pane's profile.
+
+The active pane in the focused OS window selects the whole-process profile. Temporary application focus loss retains
+the last focused OS window. A process profile affects every OS window in that kitty process and suspends all scoped
+profiles. On release, targeted native setters restore still-owned font/spacing baselines and reconcile scoped selections.
+Each process-to-process transition derives values from the live baseline plus only the new overlay. External divergence
+becomes the new restoration baseline before the next transition.
+
+Process overlay files must be regular UTF-8 files of at most 1 MiB beneath the Kittyscape configuration directory;
+symlink escapes are rejected. Allowed fields are `font_size`, `window_padding_width`, and `window_margin_width`.
+Native values are validated before mutation. Colors, palette, layout, and opacity remain unsupported in process
+overlays because kitty's full option reload cannot preserve unrelated pane/tab writes at field scope. Includes,
+mappings, launch commands, environment, watcher, shell integration, remote control, and every unlisted field reject
+before mutation. There is no profile inheritance or reference syntax, so profile cycles cannot be expressed;
+reference-like fields are unknown-field errors.
 
 The deepest component ancestor wins. Symlinked roots and reported directories are physically normalized.
 A sibling that merely starts with the same characters does not match.
@@ -47,7 +86,8 @@ and a bounded diagnostic instead of interrupting the shell.
 | Pixel count | 16,000,000 pixels |
 | Decoded image data | 64 MiB |
 
-Only static PNGs are accepted. The shared image cache is bounded to 32 MiB.
+Static PNG, JPEG, and GIF files are accepted. Animated GIFs retain bounded frames and timers. The shared image cache is
+bounded to 32 MiB.
 The [runtime findings](../development/compatibility-findings.md) distinguish validation tests from measured
 decoding and display performance.
 

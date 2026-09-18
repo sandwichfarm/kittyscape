@@ -11,6 +11,23 @@ Bash, Zsh, and Fish native directory reports and prompt/command markers supply
 the same input contract. No shell adapter is required for the qualified root
 shell profiles.
 
+## Directory-selected settings profiles
+
+Kitty 0.38.1 and 0.48.2 expose `os_window_font_size`, `Boss._change_font_size`, and
+`Window.patch_edge_width`. Native fixtures verified OS-window font ownership and pane-local padding/margin restoration.
+Readback comparison prevents restoration over later external values. A process profile passes a bounded allowlisted
+overlay through kitty's native parser, then applies only font and spacing through targeted native APIs. This avoids
+rewriting or rereading daily config, prevents profile-file replacement between validation and application, avoids
+triggering executable daily `geninclude` directives, and leaves unrelated external color/palette state intact.
+
+`current_focused_os_window_id()` selects the process controller. `last_focused_os_window_id()` preserves it during
+temporary application focus loss. Process activation releases scoped owners across the process; release reapplies each
+still-selected scoped profile. X11 and Wayland fixtures cover two OS windows, pane changes, scoped/process transitions,
+base-derived process transitions, unchanged prompt deduplication, and animated GIF playback.
+
+The earlier `patch_colors` experiment changed all tab bars. Direct pane `ColorProfile` mutation avoids that side effect,
+but no qualified hook observes every OSC and native palette writer. Scoped and process colors remain unsupported.
+
 Immediate command-completion callbacks can precede the prompt-ready state and
 the final directory report. A 20 ms coalesced callback reads the settled report,
 then rechecks the active pane in the selected tab before and after asynchronous
