@@ -20,7 +20,7 @@ already uses those keys. Status opens in a scrollback overlay so it does not pri
 
 | Action | Purpose | Failure and recovery |
 | --- | --- | --- |
-| `status` | Report diagnostic reason, pending work, active panes, ownership, paused state, and upload counts. | A missing report or unsupported profile is a diagnostic, not a support claim. |
+| `status` | Report diagnostic reason, pending work, active panes, image ownership, profile mode/controller, transition count, restoration state, and upload counts. | A missing report or unsupported profile is a diagnostic, not a support claim. |
 | `reload` | Asynchronously validate `kittyscape.json`, refresh the image cache, and re-evaluate active contexts. | Malformed rules retain the last valid configuration. Fix the file and reload again. |
 | `pause` | Restore owned baselines, then pause the instance, including windows opened later. | Windows changed by another writer keep that writer’s image. |
 | `resume` | Resume using a known baseline captured at startup or an observed external write. | A window with an unknown baseline stays paused. Resume never guesses GPU state. |
@@ -29,9 +29,9 @@ already uses those keys. Status opens in a scrollback overlay so it does not pri
 Setting `enabled` to `false`, then reloading, restores owned images and disables automatic switching.
 Reload and disable do not rewrite `kitty.conf`.
 
-A failed restore remains labeled `restore-failed` while ownership is retained. Resolve the failure and
-retry `restore` before removing files. Resume, reload, or a changed directory can retry a transient upload
-failure; unchanged prompts retain the error without repeatedly uploading the same failed image.
+A failed image restore remains labeled `restore-failed`. A failed profile restore is labeled
+`profile-restore-failed`; ownership remains available for explicit `restore` or `reload` retry. Resume, reload, or a
+changed directory can retry a transient apply failure. Unchanged prompts do not repeat failed writes or reloads.
 
 Status includes a bounded, privacy-safe `detail` for configuration errors, such as a JSON line/column or
 `rules[0].image`. A `filesystem-timeout` stops collection after five seconds, with the running read retained

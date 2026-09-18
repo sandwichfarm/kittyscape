@@ -1,0 +1,432 @@
+{
+  "schema": 1,
+  "name": "kittyscape",
+  "version": "0.2.0.dev0",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size": 203,
+      "sha256": "c138d4d14c349da70448ca01fc5ea90f4dbe8073bbf9576392c18ac5699f026c"
+    },
+    {
+      "path": ".omx/plans/architecture-kittyscape.md",
+      "size": 9229,
+      "sha256": "a922d51db55ed296ff7902a3874091d10f6d4029a7fe2aac7d34630f22c26250"
+    },
+    {
+      "path": ".omx/plans/cleanup-kittyscape-implementation.md",
+      "size": 1524,
+      "sha256": "b869ad7ba461be08d7e00683418742e859cfce25d4193c16e5c467363e0262a6"
+    },
+    {
+      "path": ".omx/plans/compatibility-kittyscape.md",
+      "size": 5183,
+      "sha256": "0ccc63e27d28af356204cced68f2416e862982d503aa98c97545cbaa6e463622"
+    },
+    {
+      "path": ".omx/plans/feature-expansion/REVIEW.md",
+      "size": 1284,
+      "sha256": "fcd53bdeb5469e11065f0192b15f3c6d8ef515c869b39f7c34aab4d702859da5"
+    },
+    {
+      "path": ".omx/plans/feature-expansion/theme-decision.md",
+      "size": 1764,
+      "sha256": "e1e5e0e967afd2025ec851964bf70202477eb16dff34b330c4859738a11792c0"
+    },
+    {
+      "path": ".omx/plans/prd-kittyscape.md",
+      "size": 6631,
+      "sha256": "c5642d86b7e0e6cb61980065b89c09b10389be1e98916c42f8e783684b48367a"
+    },
+    {
+      "path": ".omx/plans/profiles/CAPABILITIES.md",
+      "size": 1654,
+      "sha256": "06b1b2a5fca19f2614a434aa4567686e6a01c9ba1fb9b2203f242b0844253db4"
+    },
+    {
+      "path": ".omx/plans/profiles/PLAN.md",
+      "size": 1600,
+      "sha256": "1628e57f9f8fa466e5ea07d67f209cd33f24ae5159cb34ea58533850df7a77c1"
+    },
+    {
+      "path": ".omx/plans/research-kittyscape.md",
+      "size": 4645,
+      "sha256": "fa358be67688e882ef9bc2bea1ed4fdfe4fa25652e068574eabbb5f0a71d8e91"
+    },
+    {
+      "path": ".omx/plans/roadmap-kittyscape.md",
+      "size": 6746,
+      "sha256": "32bd49314a793ffaa911e020153d4d4619afd333d2dd417278e4556a6263f297"
+    },
+    {
+      "path": ".omx/plans/site-kittyscape.md",
+      "size": 7197,
+      "sha256": "75dcf3a5fde59167e32618f09be5ee4a3e7f93c9363e8ab318e9c9c41cd17962"
+    },
+    {
+      "path": ".omx/plans/test-spec-kittyscape.md",
+      "size": 6411,
+      "sha256": "4cac60d89df0f0f5d3fc26fa859acfbbbffab2897fe737271f56828bf9a2f5ac"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size": 1064,
+      "sha256": "d16133335cd59a4619efc94a24ff31c478b3fccafce9c35ef260a9a405eae97f"
+    },
+    {
+      "path": "Makefile",
+      "size": 328,
+      "sha256": "544ce6226143a94f3da9e8cf6cd8362b22b3c33e1a140ab59f4ce7bf0b88c827"
+    },
+    {
+      "path": "README.md",
+      "size": 7927,
+      "sha256": "236cccfc3712d23af4135f0a4f0931f364b2877af66e72f322e68ee764a49b3a"
+    },
+    {
+      "path": "docs/.vitepress/config.mjs",
+      "size": 2416,
+      "sha256": "41451a99742cd345c8dc9918c4e335f0365130830d840d11637b5db471ed28a8"
+    },
+    {
+      "path": "docs/.vitepress/theme/Layout.vue",
+      "size": 590,
+      "sha256": "2876d0446065655b1e7108c68227c233ec47ee0da9b09da3607487978810a548"
+    },
+    {
+      "path": "docs/.vitepress/theme/index.js",
+      "size": 162,
+      "sha256": "2e6fb8226b484f3bf345173b338f2ff857beeeb8eb2b4e4b08456b75f843ca53"
+    },
+    {
+      "path": "docs/.vitepress/theme/style.css",
+      "size": 7573,
+      "sha256": "2e8de7bf1fb4b0fdff880f140762cac8dbff187de0dd33d563c65b801161fae8"
+    },
+    {
+      "path": "docs/contributing/index.md",
+      "size": 6367,
+      "sha256": "2456c125838f69f4598d1aaa9daeef55ef7fc785aca33f09ab2bed6000905af9"
+    },
+    {
+      "path": "docs/development/compatibility-findings.md",
+      "size": 7949,
+      "sha256": "99bea539236a00ffb4ca888f3abd5fdf82ae95c6d972b00e27ef5793005efe9e"
+    },
+    {
+      "path": "docs/development/release-checklist.md",
+      "size": 2518,
+      "sha256": "784e88352d3c7d10c4057337fd37f98e6902a33d20c93d7991c0dd2794000d87"
+    },
+    {
+      "path": "docs/development/website.md",
+      "size": 5579,
+      "sha256": "90d29eb7316ca6e238cef44ea6605c1997ad338503eac0b48afa906b416093bd"
+    },
+    {
+      "path": "docs/docs/index.md",
+      "size": 417,
+      "sha256": "22e1447c2ee59e931e5d49d6faae23746cd45e2b5c9bc8adcf598e263b4d15b7"
+    },
+    {
+      "path": "docs/guide/configuration.md",
+      "size": 4943,
+      "sha256": "36e9a1cd249ac8d3e0ee17d78445890f659555cb8e5d8ea1359f51b95b2ceef5"
+    },
+    {
+      "path": "docs/guide/getting-started.md",
+      "size": 2673,
+      "sha256": "9f7f746818ec810f31e85201831d679d93190567f2143ed32caa129ab9e2b8b5"
+    },
+    {
+      "path": "docs/guide/installation.md",
+      "size": 7205,
+      "sha256": "ca5585843f27c153c2bbe8bd24d82bd3839e541bd94e03d5168881967dd8145f"
+    },
+    {
+      "path": "docs/guide/kitty-settings.md",
+      "size": 4572,
+      "sha256": "f9e3000d026f5b1994e38a4e644cdf045dd33e5ba4e90861e2054360fefd74bd"
+    },
+    {
+      "path": "docs/guide/shells.md",
+      "size": 3048,
+      "sha256": "333644a9650c4a63ca420e4928d707304c59094a282320883098f02173770783"
+    },
+    {
+      "path": "docs/guide/troubleshooting.md",
+      "size": 4109,
+      "sha256": "fedc464c641e2134367a16548d3df2e3ab7fdf72ab9c5e93f73dc43aa57280b4"
+    },
+    {
+      "path": "docs/guide/uninstall.md",
+      "size": 3653,
+      "sha256": "b78be3a7c00da783a1b14cea61b729b5ae05c21d3f42f0a405d7f93df983cc46"
+    },
+    {
+      "path": "docs/index.md",
+      "size": 2090,
+      "sha256": "61226dbfe5a957472f2a7d70a5242e1535f17e3609a7531f4ec5622397f60202"
+    },
+    {
+      "path": "docs/public/cat-mark.svg",
+      "size": 382,
+      "sha256": "20ca25fbdcb9672a57e4d5caf1868d373096af29059b7fa751bb960e0df3674d"
+    },
+    {
+      "path": "docs/public/evidence/release.json",
+      "size": 213,
+      "sha256": "a34ddaa1b7e48d0692d1aecd00b0243ad7cc388cd83ceb9aee3bfc9479acc15e"
+    },
+    {
+      "path": "docs/public/terminal-cat.svg",
+      "size": 2461,
+      "sha256": "865993b13527d62d38320b7daec54731b92ebc9fa5bea1477acdba4468b81c6f"
+    },
+    {
+      "path": "docs/reference/actions.md",
+      "size": 3216,
+      "sha256": "c3bfbee753afd4f37586221bcb4807a40d78125afa5a07922bf9eca436f50e3f"
+    },
+    {
+      "path": "docs/reference/compatibility.md",
+      "size": 5431,
+      "sha256": "635cd7d8703f267f3be8a5b4fd2b28b9e6c2a65b3e3b35324002c35d315b970c"
+    },
+    {
+      "path": "docs/reference/configuration.md",
+      "size": 5785,
+      "sha256": "0fa3304fdd26d5f2ce256ae8273b57d251df0ec787ab2f012a7f34dd94d645ea"
+    },
+    {
+      "path": "docs/releases.md",
+      "size": 1478,
+      "sha256": "036067ef7caa19d5eb9ddc1d98f2a0bc40874ec06d5bc7d4d3e8a6bccabb3d9a"
+    },
+    {
+      "path": "kittyscape/__init__.py",
+      "size": 106,
+      "sha256": "83bc085b9ff554c706720b1efd00a1db52196e2b529a8bd69cae98928b8557f6"
+    },
+    {
+      "path": "kittyscape/action.py",
+      "size": 1019,
+      "sha256": "359363ae118e3c4f1d24faba968c34f4dd12568248b82149f0ebcc5b57bd98e3"
+    },
+    {
+      "path": "kittyscape/compat.py",
+      "size": 20926,
+      "sha256": "c97b04520c9ec12ac2a0f6f9fde8cb7ee5bcf99c200c501d1df385425563b69f"
+    },
+    {
+      "path": "kittyscape/config.py",
+      "size": 14093,
+      "sha256": "f85e9e648138b79fd9c566de17c456745bc5630e22b1459ca0813fa0678066c3"
+    },
+    {
+      "path": "kittyscape/engine.py",
+      "size": 33479,
+      "sha256": "39e35d128aa1cdeebc351ac14f6976de239414d833ed430687a86cb601eadb32"
+    },
+    {
+      "path": "kittyscape/images.py",
+      "size": 7006,
+      "sha256": "c7eb744f4f2fd30882f49f2afb08b3f32a57feb2b13d326ed0be71196a127cd6"
+    },
+    {
+      "path": "kittyscape/media.py",
+      "size": 8263,
+      "sha256": "f297c493a54d0d8019565b44b0f4fb0d8f99cab69bca7117f12ee4200f969f7f"
+    },
+    {
+      "path": "kittyscape/media_worker.py",
+      "size": 713,
+      "sha256": "5e65b034c9fc36110f0621d909deca1022de768f039913189b3d84466813dea9"
+    },
+    {
+      "path": "kittyscape/profiles.py",
+      "size": 1992,
+      "sha256": "5c03966e43a29d663204e3c2ed0227640f7779cb37950d82134b6d074c82d4c9"
+    },
+    {
+      "path": "kittyscape/rules.py",
+      "size": 5379,
+      "sha256": "77aa7e78e5801c7ec557a46205d7ebc67355ba070f943c8fe59095e553cd2432"
+    },
+    {
+      "path": "kittyscape/watcher.py",
+      "size": 1934,
+      "sha256": "6595d1698c2d710dca8c08291038eefb9940ec264802111693834e717d28bf28"
+    },
+    {
+      "path": "package.json",
+      "size": 643,
+      "sha256": "4423f08d3ec3eb8d714562e34aa538d306103994a93e936a7c4ba458ebf83ccf"
+    },
+    {
+      "path": "packaging/builder.py",
+      "size": 4673,
+      "sha256": "800ddb3cdce849a72bf4809b30a9bca167872cfe7b5ad968066b2b73bc612c0e"
+    },
+    {
+      "path": "packaging/installer.py",
+      "size": 29071,
+      "sha256": "79d30b81b64d4ef4a7a6e33299664527b1d05bae9c94f02b8ab496c3eced0266"
+    },
+    {
+      "path": "patches/README.md",
+      "size": 2251,
+      "sha256": "88aa4836a4d61b61e4c9b3dd7b7bfa2a584d3c2b43363227bf7c1f103840a272"
+    },
+    {
+      "path": "patches/vitepress@1.6.4.patch",
+      "size": 4892,
+      "sha256": "3052b445758b6a68fea67b8c0725bcc1dab315b09f71a124c0ec7a673b905666"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "size": 54035,
+      "sha256": "ef45efae3f6eae3a731ff41dbfb29d20a30ac85f7f0bd2905e9ff0fe81554bb0"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "size": 124,
+      "sha256": "fc9dd098d6c5d0614115a19314b965721dc275b6b6be038186027904a22a0773"
+    },
+    {
+      "path": "scripts/build_release.py",
+      "size": 484,
+      "sha256": "d069482f302f5b48637d444306fa9aed435c402d614470c8a40fcb8cda442a85"
+    },
+    {
+      "path": "scripts/check.py",
+      "size": 2242,
+      "sha256": "41f35fbc6c2ea561c5deaa52cecf76a87902cb890d394ecd75a2b90b9229a67e"
+    },
+    {
+      "path": "scripts/qualify_release.py",
+      "size": 6719,
+      "sha256": "916ec44dd44f6837c78e583d68c203efd493834e44c23cd1814bf3bc75a00bdf"
+    },
+    {
+      "path": "setup.py",
+      "size": 1134,
+      "sha256": "0e26555ca6c159931ba31aaf1e8d491751df8096402cd341f565df179108096a"
+    },
+    {
+      "path": "tests/installation/test_installation.py",
+      "size": 28977,
+      "sha256": "09a981c0e664d96d53ab0dddce073ba39f5bd2e70ba206a3e9f4a6feb06059ca"
+    },
+    {
+      "path": "tests/runtime/extended.py",
+      "size": 37976,
+      "sha256": "827803b8b5300ebf1e0a6e5eb7251cea974b70525096ce0bc9a97e20fea195bf"
+    },
+    {
+      "path": "tests/runtime/inspect_kitty.py",
+      "size": 2722,
+      "sha256": "4a4dc19e95f101c34f5607b9585e93053f450e386ea902a2ddc7a8f66b3b4528"
+    },
+    {
+      "path": "tests/runtime/installed.py",
+      "size": 13319,
+      "sha256": "7f7e25fd08066d6dd2ec8d739d8723521ced722ddce7bb1265c98c52864eb313"
+    },
+    {
+      "path": "tests/runtime/media.py",
+      "size": 3203,
+      "sha256": "7e3715a9e6270c03c573588f2060276bdd2e1275f62d3109cafc43eba18ff0f4"
+    },
+    {
+      "path": "tests/runtime/observer.py",
+      "size": 1027,
+      "sha256": "cd30c068aa70802527ebd3cfda8d349a2b86c5721b312611a4ce1299821456be"
+    },
+    {
+      "path": "tests/runtime/probe.py",
+      "size": 2229,
+      "sha256": "1922d0198b04c120409f92baa9b07e2550f762c837acff6d68e63940748fa075"
+    },
+    {
+      "path": "tests/runtime/qualify.py",
+      "size": 22499,
+      "sha256": "9e403634492c9c4412efbebfb1cdf9ce43e9f877058a02df118def27a5d2a277"
+    },
+    {
+      "path": "tests/runtime/toolchain.example.json",
+      "size": 1132,
+      "sha256": "48421ff98015738f66971a53572d918095884e72db4143ef45808880712aaf6a"
+    },
+    {
+      "path": "tests/runtime/wayland_capture.py",
+      "size": 3084,
+      "sha256": "bc6da27c32214616f13e3070ba0ef339069ae54ceb10609c8730cbc839146868"
+    },
+    {
+      "path": "tests/site/browser.mjs",
+      "size": 10030,
+      "sha256": "925be421ed7c06b981357241026d61c35ac8d687f79d2a80fcb2275967ef925a"
+    },
+    {
+      "path": "tests/site/check.mjs",
+      "size": 2954,
+      "sha256": "7251ee5168f901d24f95c8b874903595b97065b1f428fc21d521c57a60b13753"
+    },
+    {
+      "path": "tests/site/common.mjs",
+      "size": 2470,
+      "sha256": "bacbe86ae6df665d431fe3102eb7d0fdde5c21cf17cb3fa5e67f6626da8d9a66"
+    },
+    {
+      "path": "tests/site/webkit_zoom.py",
+      "size": 16806,
+      "sha256": "ecae384c0f09ece3b0fb968f98f7d6e0f45bbebdff38bf13cbd65df9e127cbcc"
+    },
+    {
+      "path": "tests/site/zoom.mjs",
+      "size": 13870,
+      "sha256": "b39a6b9d8fa55aa6a59a0c0209a7e9c994ba95767a7f25f778cad34be030ff66"
+    },
+    {
+      "path": "tests/site/zoom.py",
+      "size": 8446,
+      "sha256": "fbc03060b3f4fdae1c3dd22094c82aa6950df6811e346838958ec0b1614fae7c"
+    },
+    {
+      "path": "tests/unit/test_config.py",
+      "size": 13925,
+      "sha256": "14321c42cbd0711696175822b6b2e48a3ec5aac59157759a5c050e05b0fffc68"
+    },
+    {
+      "path": "tests/unit/test_images.py",
+      "size": 4403,
+      "sha256": "d00758284c4e9b5499f0b8e2c52a70bffaa2fae45af5d13c20e08a8982cba424"
+    },
+    {
+      "path": "tests/unit/test_media.py",
+      "size": 3979,
+      "sha256": "2e75d51b6631266ff7e75a4bcdd2e4edcf81cb50cd52feab8d384c300b9431ce"
+    },
+    {
+      "path": "tests/unit/test_profiles.py",
+      "size": 1864,
+      "sha256": "af022ef5363ed2049e76efcbdeec4e1298c7589dc88cad6204a460a1d97e4b4b"
+    },
+    {
+      "path": "tests/unit/test_rules.py",
+      "size": 8094,
+      "sha256": "311f624746377a55e1a5b7687d7b87a21ccadc0379b300b0a5ab8fb7b7bd9251"
+    },
+    {
+      "path": "tests/unit/test_runtime.py",
+      "size": 27808,
+      "sha256": "ccacc577d93c09345f9a79edc8c6d202436f0370d7bf94a80a486d6798c208c2"
+    },
+    {
+      "path": "tests/unit/test_runtime_regressions.py",
+      "size": 17219,
+      "sha256": "eea673bbf7d54c1629ecbcf4368724f61853e482812fd5a8b9b89fb6700f8564"
+    }
+  ]
+}
